@@ -44,23 +44,23 @@ return plural;
  ],
  "Disable tuned": [
   null,
-  ""
+  "tuned 비활성화 "
  ],
  "Failed to disable tuned": [
   null,
-  " Docker 실행을 실패하였습니다: $0"
+  "tuned 비활성화에 실패했습니다 "
  ],
  "Failed to disable tuned profile": [
   null,
-  " Docker 실행을 실패하였습니다: $0"
+  "tuned 프로파일 비활성화에 실패"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "tuned를 활성화하지 못했습니다 "
  ],
  "Failed to switch profile": [
   null,
-  " Docker 실행을 실패하였습니다: $0"
+  "프로파일 전환에 실패했습니다 "
  ],
  "None": [
   null,

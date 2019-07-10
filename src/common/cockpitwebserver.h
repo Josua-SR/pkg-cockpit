@@ -33,7 +33,11 @@ extern gsize cockpit_webserver_request_maximum;
 typedef enum {
   COCKPIT_WEB_SERVER_NONE = 0,
   COCKPIT_WEB_SERVER_FOR_TLS_PROXY = 1 << 0,
-  COCKPIT_WEB_SERVER_FLAGS_MAX = 1 << 1
+  /* http → https redirection for non-localhost addresses */
+  COCKPIT_WEB_SERVER_REDIRECT_TLS = 1 << 1,
+  /* http → https redirection for reverse proxy setups: Look at Host: header instead of connection IP */
+  COCKPIT_WEB_SERVER_REDIRECT_TLS_PROXY = 1 << 2,
+  COCKPIT_WEB_SERVER_FLAGS_MAX = 1 << 3
 } CockpitWebServerFlags;
 
 
@@ -61,11 +65,6 @@ gchar **           cockpit_web_server_parse_languages (GHashTable *headers,
 gboolean           cockpit_web_server_get_socket_activated (CockpitWebServer *self);
 
 gint               cockpit_web_server_get_port             (CockpitWebServer *self);
-
-void               cockpit_web_server_set_redirect_tls     (CockpitWebServer *self,
-                                                            gboolean          redirect_tls);
-
-gboolean           cockpit_web_server_get_redirect_tls     (CockpitWebServer *self);
 
 CockpitWebServerFlags cockpit_web_server_get_flags         (CockpitWebServer *self);
 

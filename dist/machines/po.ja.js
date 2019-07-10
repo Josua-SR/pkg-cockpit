@@ -114,6 +114,10 @@ return plural;
   null,
   "\"リモートビューアーの起動\" をクリックすると、.vv ファイルをダウンロードし、$0 を起動します。"
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "$0 ビューアーアプリケーションに接続します。"
@@ -190,6 +194,10 @@ return plural;
   null,
   "コンテンツの削除"
  ],
+ "Delete Network $0": [
+  null,
+  ""
+ ],
  "Delete Storage Pool $0": [
   null,
   "ストレージプール $0 の削除"
@@ -262,6 +270,10 @@ return plural;
   null,
   "ホストファイルシステム上の既存のディスクイメージ"
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "仮想 CPU の最大数よりも少ない数を有効にするべきです。"
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   "ホストは空にできません"
+ ],
+ "IP Address": [
+  null,
+  "IP アドレス"
  ],
  "IPv4 Address": [
   null,
@@ -429,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   "メモリーは保存できませんでした"
+ ],
+ "Memory must not be 0": [
+  null,
+  ""
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "オペレーティングシステム"
+ ],
+ "Operation is in progress": [
+  null,
+  ""
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   "サーバー上のディレクトリーをエクスポート中"
  ],
+ "The network could not be deleted": [
+  null,
+  ""
+ ],
  "The pool is empty": [
   null,
   "プールが空です"
@@ -930,9 +958,17 @@ return plural;
   null,
   "単位"
  ],
+ "Unknown": [
+  null,
+  "不明"
+ ],
  "Unplug": [
   null,
   "アンプラグ"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1221,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

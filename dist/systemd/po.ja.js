@@ -826,17 +826,9 @@ return plural;
   null,
   "注意以上のレベル"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "On Failure": [
   null,

@@ -64,17 +64,9 @@ return plural;
   null,
   "Niegotowe"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "Path to file": [
   null,

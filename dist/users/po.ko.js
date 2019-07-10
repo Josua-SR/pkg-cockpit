@@ -112,11 +112,11 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  ""
+  "승인된 키를 저장하는 동안 오류가 발생했습니다:"
  ],
  "Excellent password": [
   null,
-  ""
+  "우수한 암호"
  ],
  "Failed to change password": [
   null,
@@ -124,15 +124,15 @@ return plural;
  ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "승인된 키를 불러오지 못했습니다"
  ],
  "Force Change": [
   null,
-  ""
+  "강제 변경 "
  ],
  "Force password change": [
   null,
-  ""
+  "강제 암호 변경 "
  ],
  "Full Name": [
   null,
@@ -144,15 +144,15 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "잘못된 만료 기간 "
  ],
  "Invalid key": [
   null,
-  ""
+  "잘못된 키 "
  ],
  "Invalid number of days": [
   null,
-  ""
+  "일 수가 잘못되었습니다 "
  ],
  "Last Login": [
   null,
@@ -168,11 +168,11 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  " $0의 계정 잠금 "
  ],
  "Logged In": [
   null,
-  ""
+  "로그인되었습니다 "
  ],
  "Never": [
   null,
@@ -180,11 +180,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "암호가 만료되어서는 안됩니다 "
  ],
  "Never lock account": [
   null,
-  ""
+  "계정 잠금을 하지 않습니다 "
  ],
  "New Password": [
   null,
@@ -192,31 +192,23 @@ return plural;
  ],
  "New password was not accepted": [
   null,
-  ""
+  "새 암호가 허용되지 않습니다 "
  ],
  "No real name specified": [
   null,
-  ""
+  "실제 이름이 지정되어 있지 않습니다 "
  ],
  "No user name specified": [
   null,
-  ""
- ],
- "Off": [
-  null,
-  "비활성"
+  "지정된 사용자 이름이 없습니다."
  ],
  "Old Password": [
   null,
-  ""
+  "이전 암호 "
  ],
  "Old password not accepted": [
   null,
-  ""
- ],
- "On": [
-  null,
-  "활성"
+  "이전 암호가 허용되지 않습니다 "
  ],
  "Password": [
   null,
@@ -224,7 +216,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "암호 만료 "
  ],
  "Password is not acceptable": [
   null,
@@ -244,19 +236,19 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "만료 날짜를 지정해 주십시오 "
  ],
  "Prompting via passwd timed out": [
   null,
-  ""
+  "passwd를 통한 메세지 제공 시간이 초과되었습니다 "
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "$0 일 마다 암호를 변경해야 합니다 "
  ],
  "Require password change on $0": [
   null,
-  ""
+  "$0에서 암호를 변경해야 합니다 "
  ],
  "Reset": [
   null,
@@ -280,11 +272,11 @@ return plural;
  ],
  "Terminate Session": [
   null,
-  ""
+  "세션 종료 "
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  " '$0' 계정은 다음 로그인 시 암호를 변경해야 합니다. "
  ],
  "The key you provided was not valid.": [
   null,
@@ -292,7 +284,7 @@ return plural;
  ],
  "The passwords do not match": [
   null,
-  ""
+  "암호가 일치하지 않습니다 "
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,

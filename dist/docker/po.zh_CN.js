@@ -498,17 +498,9 @@ return plural;
   null,
   "笔记本"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Ok": [
   null,
   "确认"
- ],
- "On": [
-  null,
-  "开"
  ],
  "On Failure": [
   null,

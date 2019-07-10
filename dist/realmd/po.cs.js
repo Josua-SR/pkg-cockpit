@@ -150,17 +150,9 @@ return plural;
   null,
   "Další"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "One Time Password": [
   null,

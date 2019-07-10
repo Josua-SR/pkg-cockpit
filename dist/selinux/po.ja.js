@@ -30,6 +30,10 @@ return plural;
   "$1 occurrences",
   "$0 件"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "このソリューションの適用"
@@ -42,9 +46,21 @@ return plural;
   null,
   "監査ログ"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "閉じる"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "SETroubleshoot デーモンへの接続中 ..."
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -66,9 +82,17 @@ return plural;
   null,
   "setroubleshoot-server をインストールして SELinux イベントをトラブルシュートします。"
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "SELinux アラートがありません。"
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -110,6 +134,10 @@ return plural;
   null,
   "設定が設定された状態と異なるため、次回起動時に元の状態に戻ります。"
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "ソリューションが正常に適用されました"
@@ -122,9 +150,17 @@ return plural;
   null,
   "ソリューション"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "設定された状態が不明です。状態は次回の起動時に変わることがあります。"
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -145,6 +181,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "setroubleshootd を起動できません"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

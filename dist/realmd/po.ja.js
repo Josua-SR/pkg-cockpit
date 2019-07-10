@@ -150,17 +150,9 @@ return plural;
   null,
   "次へ"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "One Time Password": [
   null,

@@ -30,6 +30,10 @@ return plural;
   "$1 occurrences",
   "$0 概率"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "应用该方案"
@@ -42,9 +46,21 @@ return plural;
   null,
   "审计日志"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "关闭"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "连接到 SETroubleshoot 守护进程..."
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -66,9 +82,17 @@ return plural;
   null,
   "安装 setroubleshoot-server 来排查 SELinux 事件。"
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "没有 SELinux 警告。"
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -110,6 +134,10 @@ return plural;
   null,
   "设置从配置的状态偏离并将在下一次重启恢复。"
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "方案应用成功"
@@ -122,9 +150,17 @@ return plural;
   null,
   "方案"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "配置状态未知，下一次启动时会改变。"
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -145,6 +181,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "无法启动 setroubleshootd"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

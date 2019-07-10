@@ -34,6 +34,10 @@ return plural;
   null,
   ""
  ],
+ "(default)": [
+  null,
+  "（預設）"
+ ],
  "1 day": [
   null,
   "1天"
@@ -82,6 +86,10 @@ return plural;
   null,
   "使用中備份工作"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "適應性負載平衡"
@@ -118,6 +126,22 @@ return plural;
   null,
   "添加VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "添加 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
@@ -141,6 +165,10 @@ return plural;
  "Addresses": [
   null,
   "位址"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -274,6 +302,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -306,6 +338,10 @@ return plural;
   null,
   "刪除 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
  ],
+ "Description": [
+  null,
+  "說明"
+ ],
  "Details": [
   null,
   "詳情"
@@ -317,6 +353,10 @@ return plural;
  "Enable Service": [
   null,
   "啟用服務"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -341,6 +381,22 @@ return plural;
  "Failed": [
   null,
   "失敗"
+ ],
+ "Failed to add port": [
+  null,
+  ""
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -382,6 +438,10 @@ return plural;
   null,
   "IP 位址"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "IP設置"
@@ -413,6 +473,10 @@ return plural;
  "Inactive": [
   null,
   "未啟用"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -502,10 +566,6 @@ return plural;
   null,
   "最大郵件年齡 $max_年齡"
  ],
- "Members": [
-  null,
-  "會員"
- ],
  "Mode": [
   null,
   "模式"
@@ -546,25 +606,29 @@ return plural;
   null,
   "否"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "沒有承運人"
+ ],
+ "No description available": [
+  null,
+  ""
  ],
  "No open ports": [
   null,
   "沒有開放的端口"
  ],
+ "None": [
+  null,
+  "沒有"
+ ],
  "Not available": [
   null,
   "不存在"
- ],
- "Off": [
-  null,
-  "關閉"
- ],
- "On": [
-  null,
-  "開"
  ],
  "Parent": [
   null,
@@ -646,6 +710,10 @@ return plural;
   null,
   "隨機"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   ""
@@ -661,6 +729,14 @@ return plural;
  "Remove $0": [
   null,
   "去掉 $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -717,6 +793,10 @@ return plural;
  "Shared": [
   null,
   "共享"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -794,6 +874,10 @@ return plural;
   null,
   "此設備無法在此處管理。"
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -850,6 +934,14 @@ return plural;
   null,
   "您無權修改防火牆。"
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 二進制數據的字節]"
@@ -861,6 +953,14 @@ return plural;
  "[no data]": [
   null,
   "[沒有數據]"
+ ],
+ "show less": [
+  null,
+  "顯示較少"
+ ],
+ "show more": [
+  null,
+  "顯示更多"
  ],
  "page-title\u0004Networking": [
   null,

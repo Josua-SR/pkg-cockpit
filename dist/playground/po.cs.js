@@ -64,17 +64,9 @@ return plural;
   null,
   "Nepřipraveno"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Path to file": [
   null,

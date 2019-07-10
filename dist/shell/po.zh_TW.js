@@ -290,10 +290,6 @@ return plural;
   null,
   "不是有效的私鑰"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
@@ -305,10 +301,6 @@ return plural;
  "Old password not accepted": [
   null,
   "舊密碼不被接受"
- ],
- "On": [
-  null,
-  "開"
  ],
  "Ooops!": [
   null,

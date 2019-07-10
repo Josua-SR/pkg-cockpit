@@ -83,14 +83,6 @@ return plural;
   null,
   "Si è verificato tra $0 e $1"
  ],
- "Off": [
-  null,
-  "Off"
- ],
- "On": [
-  null,
-  "On"
- ],
  "SELinux Access Control Errors": [
   null,
   "Errori del controllo accessi SELinux"

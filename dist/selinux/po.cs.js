@@ -32,6 +32,10 @@ return plural;
   "$0 výskyty",
   "$0 výskytů"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "Použít toto řešení"
@@ -44,9 +48,21 @@ return plural;
   null,
   "Záznam auditu"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "Zavřít"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "Připojování k procesu služby SETroubleshoot…"
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -68,9 +84,17 @@ return plural;
   null,
   "Nainstalovat setroubleshoot-server pro řešení potíží s SELinux."
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "Žádné výstrahy SELinux."
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -112,6 +136,10 @@ return plural;
   null,
   "Nastavení se odchyluje od nastaveného stavu a bude navráceno při příštím restartu."
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "Řešení úspěšně uplatněno"
@@ -124,9 +152,17 @@ return plural;
   null,
   "Řešení"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "Nastavený stav není znám, může se změnit při příštím startu."
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -147,6 +183,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "Nedaří se spustit setroubleshootd"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

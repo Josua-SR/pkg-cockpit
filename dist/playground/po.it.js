@@ -39,10 +39,6 @@ return plural;
   null,
   "Controllo"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "Cancellare '{{ name }}' "
- ],
  "Empty": [
   null,
   "Vuoto"

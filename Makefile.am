@@ -302,6 +302,7 @@ valgrind-suppressions: $(VALGRIND_SUPPRESSIONS)
 check-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
+		COCKPIT_SKIP_SLOW_TESTS=1 \
 		$(AM_MAKEFLAGS) check TESTS="$(filter-out tools/% bots/%,$(TESTS))"
 recheck-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
@@ -313,27 +314,57 @@ install-data-hook::
 	chgrp wheel $(DESTDIR)$(localstatedir)/lib/cockpit || true
 	chmod 775 $(DESTDIR)$(localstatedir)/lib/cockpit
 
+FONTSDIR = dist/static/fonts
+
 # Fonts are used by multiple things so put them here
 OPENSANS_FONTS = \
-	dist/fonts/OpenSans-Bold-webfont.woff \
-	dist/fonts/OpenSans-BoldItalic-webfont.woff \
-	dist/fonts/OpenSans-ExtraBold-webfont.woff  \
-	dist/fonts/OpenSans-ExtraBoldItalic-webfont.woff \
-	dist/fonts/OpenSans-Italic-webfont.woff \
-	dist/fonts/OpenSans-Light-webfont.woff \
-	dist/fonts/OpenSans-LightItalic-webfont.woff \
-	dist/fonts/OpenSans-Regular-webfont.woff \
-	dist/fonts/OpenSans-Semibold-webfont.woff \
-	dist/fonts/OpenSans-SemiboldItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Bold-webfont.woff \
+	$(FONTSDIR)/OpenSans-BoldItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-ExtraBold-webfont.woff  \
+	$(FONTSDIR)/OpenSans-ExtraBoldItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Italic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Light-webfont.woff \
+	$(FONTSDIR)/OpenSans-LightItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Regular-webfont.woff \
+	$(FONTSDIR)/OpenSans-Semibold-webfont.woff \
+	$(FONTSDIR)/OpenSans-SemiboldItalic-webfont.woff \
 	$(NULL)
 
-dist/fonts/%.woff:
+REDHATTEXT_FONTS = \
+	$(FONTSDIR)/RedHatText-Bold.woff2 \
+	$(FONTSDIR)/RedHatText-BoldItalic.woff2 \
+	$(FONTSDIR)/RedHatText-Italic.woff2 \
+	$(FONTSDIR)/RedHatText-Medium.woff2 \
+	$(FONTSDIR)/RedHatText-MediumItalic.woff2 \
+	$(FONTSDIR)/RedHatText-Regular.woff2 \
+	$(NULL)
+
+REDHATDISPLAY_FONTS = \
+	$(FONTSDIR)/RedHatDisplay-Black.woff2 \
+	$(FONTSDIR)/RedHatDisplay-BlackItalic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Bold.woff2 \
+	$(FONTSDIR)/RedHatDisplay-BoldItalic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Italic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Medium.woff2 \
+	$(FONTSDIR)/RedHatDisplay-MediumItalic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Regular.woff2 \
+	$(NULL)
+
+$(FONTSDIR)/OpenSans-%.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp -L $(subst dist/fonts,$(srcdir)/node_modules/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
+	cp -L $(subst $(FONTSDIR),$(srcdir)/node_modules/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
 
-EXTRA_DIST += $(OPENSANS_FONTS)
+$(FONTSDIR)/RedHatText-%.woff2:
+	$(V_COPY) $(MKDIR_P) $(dir $@) && \
+	cp -L $(subst $(FONTSDIR),$(srcdir)/node_modules/@redhat/redhat-font/webfonts/RedHatText,$@) $@.tmp && $(MV) $@.tmp $@
 
-MAINTAINERCLEANFILES += $(OPENSANS_FONTS)
+$(FONTSDIR)/RedHatDisplay-%.woff2:
+	$(V_COPY) $(MKDIR_P) $(dir $@) && \
+	cp -L $(subst $(FONTSDIR),$(srcdir)/node_modules/@redhat/redhat-font/webfonts/RedHatDisplay,$@) $@.tmp && $(MV) $@.tmp $@
+
+EXTRA_DIST += $(OPENSANS_FONTS) $(REDHATTEXT_FONTS) $(REDHATDISPLAY_FONTS)
+
+MAINTAINERCLEANFILES += $(OPENSANS_FONTS) $(REDHATTEXT_FONTS) $(REDHATDISPLAY_FONTS)
 
 if ENABLE_DOC
 

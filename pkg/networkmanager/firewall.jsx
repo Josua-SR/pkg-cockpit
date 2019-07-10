@@ -122,7 +122,7 @@ function ZoneRow(props) {
 
     let columns = [
         { name: props.zone.name, header: true },
-        <React.Fragment>{ props.zone.id === firewall.defaultZone ? <span className="fa fa-check">default</span> : '' }</React.Fragment>,
+        <React.Fragment>{ props.zone.id === firewall.defaultZone ? <React.Fragment><span className="fa fa-check" /> default</React.Fragment> : '' }</React.Fragment>,
         <React.Fragment>{ props.zone.interfaces.length > 0 ? props.zone.interfaces.join(', ') : '*' }</React.Fragment>,
         <React.Fragment>{ props.zone.source.length > 0 ? props.zone.source.join(', ') : '*' }</React.Fragment>,
         deleteButton,
@@ -465,7 +465,7 @@ class AddServicesModal extends React.Component {
                     <Modal.Body id="add-services-dialog-body">
                         { firewall.activeZones.size > 1 &&
                             <React.Fragment>
-                                <form className="ct-form-layout horizontal">
+                                <form className="ct-form horizontal">
                                     <label htmlFor="zone-input">{zonesText}</label>
                                     <fieldset id="zone-input">
                                         { Array.from(firewall.activeZones).sort((a, b) => a.localeCompare(b))
@@ -477,46 +477,48 @@ class AddServicesModal extends React.Component {
                                 </form>
                                 <hr />
                             </React.Fragment>}
-                        <form action="" className="toggle-body ct-form-layout">
-                            <label className="radio ct-form-layout-full">
+                        <form action="" className="toggle-body ct-form">
+                            <label className="radio ct-form-full">
                                 <input type="radio" name="type" value="services" onChange={this.onToggleType} defaultChecked />
                                 {_("Services")}
                             </label>
                             { this.state.custom ||
                                 <React.Fragment>
                                     { services ? (
-                                        <fieldset className="ct-form-layout">
-                                            <label htmlFor="filter-services-input" className="control-label">
-                                                {_("Filter Services")}
-                                            </label>
-                                            <SearchInput id="filter-services-input"
-                                                value={this.state.filter}
-                                                className="form-control"
-                                                onChange={this.onFilterChanged} />
-                                            <ListView className="list-group dialog-list-ct ct-form-layout-full">
-                                                {
-                                                    services.map(s => (
-                                                        <ListView.Item key={s.id}
-                                                                       className="list-group-item"
-                                                                       checkboxInput={ <input data-id={s.id}
-                                                                                              id={"firewall-service-" + s.id}
-                                                                                              type="checkbox"
-                                                                                              checked={this.state.selected.has(s.id)}
-                                                                                              onChange={this.onToggleService} /> }
-                                                                       stacked
-                                                                       heading={ <label htmlFor={"firewall-service-" + s.id}>{s.name}</label> }
-                                                                       description={ renderPorts(s.ports) }>
-                                                        </ListView.Item>
-                                                    ))
-                                                }
-                                            </ListView>
+                                        <fieldset>
+                                            <div className="ct-form">
+                                                <label htmlFor="filter-services-input" className="control-label">
+                                                    {_("Filter Services")}
+                                                </label>
+                                                <SearchInput id="filter-services-input"
+                                                    value={this.state.filter}
+                                                    className="form-control"
+                                                    onChange={this.onFilterChanged} />
+                                                <ListView className="list-group dialog-list-ct ct-form-full">
+                                                    {
+                                                        services.map(s => (
+                                                            <ListView.Item key={s.id}
+                                                                        className="list-group-item"
+                                                                        checkboxInput={ <input data-id={s.id}
+                                                                                                id={"firewall-service-" + s.id}
+                                                                                                type="checkbox"
+                                                                                                checked={this.state.selected.has(s.id)}
+                                                                                                onChange={this.onToggleService} /> }
+                                                                        stacked
+                                                                        heading={ <label htmlFor={"firewall-service-" + s.id}>{s.name}</label> }
+                                                                        description={ renderPorts(s.ports) }>
+                                                            </ListView.Item>
+                                                        ))
+                                                    }
+                                                </ListView>
+                                            </div>
                                         </fieldset>
                                     ) : (
                                         <div className="spinner spinner-lg" />
                                     )}
                                 </React.Fragment>
                             }
-                            <label className="radio ct-form-layout-full">
+                            <label className="radio ct-form-full">
                                 <input type="radio" name="type" value="ports" onChange={this.onToggleType} disabled={this.state.avail_services == null} />
                                 {_("Custom Ports")}
                             </label>
@@ -608,7 +610,7 @@ class RemoveServicesModal extends React.Component {
                     <Modal.Title>{ _("Remove service from zones") }</Modal.Title>
                 </Modal.Header>
                 <Modal.Body id="remove-services-dialog-body">
-                    <form className="ct-form-layout horizontal">
+                    <form className="ct-form horizontal">
                         <fieldset id="zone-input">
                             { this.zonesWithService.map(z =>
                                 <label className="radio" key={z}>
@@ -698,7 +700,7 @@ class ActivateZoneModal extends React.Component {
                     <Modal.Title>{ _("Add Zone") }</Modal.Title>
                 </Modal.Header>
                 <Modal.Body id="add-zone-dialog-body">
-                    <form className="ct-form-layout">
+                    <form className="ct-form">
                         <label htmlFor="add-zone-services-readonly" className="control-label">
                             { _("Trust level") }
                         </label>
@@ -723,9 +725,9 @@ class ActivateZoneModal extends React.Component {
                         </div>
 
                         <label htmlFor="add-zone-description-readonly" className="control-label">{ _("Description") }</label>
-                        <div id="add-zone-description-readonly">
+                        <p id="add-zone-description-readonly">
                             { (this.state.zone && firewall.zones[this.state.zone].description) || _("No description available") }
-                        </div>
+                        </p>
 
                         <label htmlFor="add-zone-services-readonly" className="control-label">{ _("Included services") }</label>
                         <div id="add-zone-services-readonly">

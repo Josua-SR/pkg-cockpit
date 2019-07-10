@@ -36,7 +36,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "크래시 덤프를 압축하여 공간 절약하기 "
  ],
  "Compression": [
   null,
@@ -56,11 +56,11 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "디렉토리 $0에 쓰기 불가능하거나 존재하지 않습니다. "
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Kdump 서비스가 설치되어 있지 않습니다. kexec-tools 패키지가 설치되어 있는지 확인하십시오. "
  ],
  "Kernel Dump": [
   null,
@@ -88,11 +88,11 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "알 수 없는 설정"
+  "설정을 찾을 수 없습니다 "
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "메모리가 예약되어 있지 않습니다. crashkernel 옵션을 커맨드라인에 추가하고 (예: /etc/default/grub) 시작시 메모리를 예약합니다. 예: crashkernel=512M"
  ],
  "None": [
   null,
@@ -104,27 +104,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "마운트된 장치 "
  ],
  "Raw to a device": [
   null,
-  ""
+  "로우(raw) 장치"
  ],
  "Reading...": [
   null,
-  ""
+  "읽는 중..."
  ],
  "Remote over NFS": [
   null,
-  ""
+  "NFS를 통한 원격 연결 "
  ],
  "Remote over SSH": [
   null,
-  ""
+  "SSH를 통한 원격 연결 "
  ],
  "Reserved memory": [
   null,
-  ""
+  "예약된 메모리 "
  ],
  "Server": [
   null,
@@ -132,7 +132,7 @@ return plural;
  ],
  "Service has an error": [
   null,
-  ""
+  "서비스에 오류가 발생했습니다 "
  ],
  "Service is running": [
   null,
@@ -140,27 +140,27 @@ return plural;
  ],
  "Service is starting": [
   null,
-  "장치가 재시동되고 있습니다"
+  "서비스가 재시동되고 있습니다"
  ],
  "Service is stopped": [
   null,
-  ""
+  "서비스가 중지되었습니다 "
  ],
  "Service is stopping": [
   null,
-  ""
+  "서비스가 중지되고 있습니다 "
  ],
  "Test Configuration": [
   null,
-  "설정 중입니다"
+  "설정 테스트 "
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "테스트에서는 kdump 서비스가 실행 중인 동안에만 사용할 수 있습니다. "
  ],
  "Test kdump settings": [
   null,
-  ""
+  "kdump 설정 테스트 "
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,

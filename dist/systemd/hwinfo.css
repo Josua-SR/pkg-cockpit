@@ -1,14 +1,13 @@
 label.onoff-ct {
   --switch-width: 40px;
   --switch-height: 24px;
-  --switch-background: #d1d1d1;
-  /* pf-black-300 */
+  --switch-background: var(--color-gray-3);
   --switch-border-color: transparent;
   --switch-border-style: solid;
   --switch-border-width: 1px;
   --switch-text: inherit;
   --switch-dot-size: 14px;
-  --switch-dot: #fff;
+  --switch-dot: var(--color-bg);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -68,22 +67,18 @@ label.onoff-ct > input ~ .switch-toggle::after {
   pointer-events: none;
 }
 label.onoff-ct > input ~ .switch-off {
-  --switch-text: #72767b;
-  /* pf-black-600 */
+  --switch-text: var(--color-subtle-copy);
 }
 label.onoff-ct > input:checked ~ .switch-toggle {
-  --switch-background: #0088ce;
-  /* pf-blue-400 */
+  --switch-background: var(--color-link);
   --switch-dot-offset-x: calc(100% - var(--switch-dot-size) * 1.333333 + var(--switch-border-width));
 }
 label.onoff-ct > input:checked ~ .switch-toggle:last-child {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.583 6.35'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='.529' d='M2.252 3.365l.756.758L4.48 2.65' opacity='.75'/%3E%3C/svg%3E");
 }
 label.onoff-ct > input:disabled ~ .switch-toggle {
-  --switch-background: #72767b;
-  /* pf-black-600 */
-  --switch-dot: #d1d1d1;
-  /* pf-black-300 */
+  --switch-background: var(--color-subtle-copy);
+  --switch-dot: var(--color-gray-3);
 }
 label.onoff-ct > input:disabled ~ * {
   cursor: not-allowed;
@@ -94,8 +89,7 @@ label.onoff-ct > input:not(:checked) ~ .switch-on {
 }
 label.onoff-ct :disabled ~ .switch-on,
 label.onoff-ct :disabled ~ .switch-off {
-  --switch-text: #72767b;
-  /* pf-black-600 */
+  --switch-text: var(--color-subtle-copy);
 }
 label.onoff-ct :focus ~ .switch-toggle::before {
   /* Approximate Chrome's focus ring, for non-Firefox browsers */
@@ -130,6 +124,10 @@ label.onoff-ct:hover :not(:disabled) ~ .switch-toggle {
 h1 label.onoff-ct {
   vertical-align: bottom;
 }
+.panel .table {
+    font-size: var(--font-size-s);
+}
+
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {
     border-top: 1px solid rgb(221, 221, 221);
@@ -147,9 +145,9 @@ h1 label.onoff-ct {
     background: #f5f5f5;
     display: flex;
     flex-wrap: wrap;
-    /* 36px = (26px widget height) + (5px padding * 2) */
-    min-height: 36px;
-    padding: 5px 5px 5px 10px;
+    /* (28px small size widget height) + (0.5rem * 2) */
+    min-height: calc(28px + 1rem);
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
     position: relative;
     z-index: 100;
 }
@@ -161,13 +159,13 @@ h1 label.onoff-ct {
 }
 
 .panel-title > a {
-    color: #0088ceff; /* pf-blue-400 */
+    color: var(--color-link);
     display: inline-block;
 }
 
 .panel-title > a:hover,
 .panel-title > a:focus {
-    color: #00659c; /* pf-blue-500 */
+    color: var(--alert-info-text);
 }
 
 /* Allow children in the title to wrap */
@@ -212,8 +210,8 @@ h1 label.onoff-ct {
     .panel {
         /* Background fade */
         --hi-color: #d1d1d1;
-        --hi-color2: #eee;
-        --bg-color: #fff;
+        --hi-color2: var(--color-gray-2);
+        --bg-color: var(--color-bg);
         --hi-width: 20px;
         --hi-width3: calc(var(--hi-width) * 3);
         --transparent: rgba(255,255,255,0); /* WebKit needs white transparent */
@@ -265,30 +263,33 @@ h1 label.onoff-ct {
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th,
 .dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #edf8ff;
+    /* PF3 uses a light blue; we have to force the override for hover colors */
+    background-color: var(--color-ct-list-hover-bg) !important;
+    color: var(--color-ct-list-hover-text) !important;
 }
 
 /* Override patternfly to fit buttons and such */
 .table > thead > tr > th,
 .table > tbody > tr > td {
-    padding: 8px;
+    padding: 0.5rem;
+    vertical-align: baseline;
 }
 
 /* Override the heavy patternfly headers */
 .table > thead {
     background-image: none;
-    background-color: #fff;
+    background-color: var(--color-bg);
 }
 
 /* Make things line up */
 .table tbody tr > :first-child,
 .table thead tr > :first-child {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 .table tbody tr > :last-child,
 .table thead tr > :last-child {
-    padding-right: 1.5rem;
+    padding-right: 1rem;
 }
 
 .info-table-ct > tbody > tr > th,
@@ -343,10 +344,14 @@ h1 label.onoff-ct {
 }
 
 .form-table-ct td:first-child {
+    font-size: var(--pf-global--FontSize--sm);
+    margin-top: calc(var(--pf-global--FontSize--md) - var(--pf-global--FontSize--sm));
+    vertical-align: baseline;
     text-align: right;
     white-space: nowrap;
-    font-weight: 600;
     width: 5px; /* will be expanded by nowrap */
+    padding-right: 1rem;
+    min-height: 2.25rem;
 }
 
 
@@ -361,7 +366,7 @@ h1 label.onoff-ct {
 .form-table-ct td.header {
     font-weight: bold;
     text-align: left;
-    color: #4D5258;
+    color: var(--color-gray-11);
     padding: 20px 0 10px 0;
 }
 
@@ -407,38 +412,48 @@ tr.listing-ct-item td:last-child {
 }
 /* Listing pattern */
 table.listing-ct {
-  margin-top: 15px;
   min-width: 65%;
+  font-size: var(--font-size-s);
+}
+table.listing-ct + .listing-ct {
+  margin-top: 2rem;
 }
 table.listing-ct > caption,
 table.listing-ct > thead h3 {
-  font-size: 22px;
-  padding: 10px 0px 10px;
-  font-weight: 300;
+  font-size: var(--pf-global--FontSize--2xl);
+  padding: 1rem 0;
+  font-weight: 400;
   margin-top: 0;
+  position: relative;
+}
+table.listing-ct > caption > .pull-right,
+table.listing-ct > thead h3 > .pull-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
 }
 table.listing-ct > caption {
   color: inherit;
   line-height: 1.1;
 }
 table.listing-ct > thead td {
-  padding-top: 20px;
+  padding-top: 1rem;
 }
 table.listing-ct > thead:first-child td {
   padding-top: 0;
 }
 table.listing-ct > thead td > a {
   line-height: 30px;
-  padding: 10px 0 10px;
+  padding: 0.5rem 0 0.5rem;
 }
 table.listing-ct > thead th {
-  border-top: 1px solid #f1f1f1;
   font-weight: normal;
-  padding: 10px 20px;
-  color: #888;
+  padding: 0.5rem 1rem;
+  color: var(--color-subtle-copy);
 }
 table.listing-ct > thead th:first-child {
-  padding-left: 20px;
+  padding-left: 1rem;
 }
 table.listing-ct > thead th:last-child {
   text-align: right;
@@ -446,15 +461,15 @@ table.listing-ct > thead th:last-child {
 /* A listing item is a row in the table */
 tbody > tr.listing-ct-item {
   border: 1px solid transparent;
-  border-top: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
+  border-top: 1px solid var(--color-ct-list-border);
+  border-bottom: 1px solid var(--color-ct-list-border);
   cursor: pointer;
 }
 table.listing-ct > tbody:last-child {
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid var(--color-ct-list-border);
 }
 table.listing-ct > tbody + thead {
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid var(--color-ct-list-border);
 }
 table.listing-ct > tbody.open:last-child {
   border-bottom: none;
@@ -463,25 +478,23 @@ table.listing-ct > tbody.open + thead {
   border-top: none;
 }
 tbody > tr.listing-ct-item.listing-ct-warning {
-  background-color: #fbc7c7;
+  background-color: var(--color-ct-light-red-1);
 }
-tbody.open > tr.listing-ct-item {
-  background-color: #def3ff;
+tbody.open > tr.listing-ct-item,
+tbody.open > tr.listing-ct-panel {
+  background-color: var(--color-ct-list-active-bg);
   border-bottom: none;
   border-top: none;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid var(--color-light-gray);
+  border-right: 1px solid var(--color-light-gray);
   transition: all 200ms;
 }
 tbody.open > tr.listing-ct-item td,
 tbody.open > tr.listing-ct-item th {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--color-light-gray);
 }
 tbody.open td div.listing-ct-head {
   background-color: #fff;
-}
-tbody.open > .listing-ct-panel {
-  border: 1px solid #ccc;
 }
 tbody.open > .listing-ct-panel > td > .listing-ct-body {
   border: none;
@@ -492,20 +505,20 @@ tbody.open > tr.listing-ct-panel + tr.listing-ct-body {
 }
 tbody.open > tr.listing-ct-panel td div.listing-ct-head {
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--color-light-gray);
 }
 /* only highlight the row if navigation is available */
 tbody:not(.open) > tr.listing-ct-item:not(.listing-ct-nonavigate):hover {
-  background-color: #edf8ff;
+  background-color: var(--color-ct-list-hover-bg);
 }
 /* if we can't navigate to a row but expand is available, highlight the caret */
 tbody:not(.open) > tr.listing-ct-item.listing-ct-nonavigate:hover td.listing-ct-toggle {
-  color: #65bedf;
+  color: var(--color-ct-list-hover-icon);
 }
 /* use hover color expanded rows even if navigation isn't available */
-tbody.open:hover > tr.listing-ct-item,
+tbody.open > tr.listing-ct-item:hover,
 tr.listing-ct-item.listing-ct-nonavigate:hover {
-  background-color: #edf8ff;
+  background-color: var(--color-ct-list-hover-bg);
 }
 tr.listing-ct-item .listing-ct-toggle:not(:empty) {
   width: 35px;
@@ -514,7 +527,7 @@ tr.listing-ct-item .listing-ct-toggle:not(:empty) {
 /* Highlight toggle color when hovered or if the row is open */
 .listing-ct-toggle:hover,
 tbody.open .listing-ct-toggle {
-  color: #65bedf;
+  color: var(--color-ct-list-active-bg);
 }
 .listing-ct .listing-ct-toggle:empty {
   width: 0;
@@ -523,18 +536,8 @@ tbody.open .listing-ct-toggle {
 .listing-ct > thead > tr > .listing-ct-toggle + th,
 .listing-ct-item > .listing-ct-toggle + td,
 .listing-ct-item > .listing-ct-toggle + th {
-  padding-left: 10px;
+  padding-left: 0.25rem;
   position: relative;
-}
-.listing-ct-item > .listing-ct-toggle:not(:empty) + th::before,
-.listing-ct-item > .listing-ct-toggle:not(:empty) + td::before {
-  border-left: 1px solid rgba(0, 0, 0, 0.18);
-  /* pf-black-300 */
-  content: "";
-  height: 1.66666667em;
-  left: -5px;
-  position: absolute;
-  top: 15px;
 }
 td.listing-ct-toggle i {
   font-size: 17px;
@@ -562,7 +565,7 @@ tbody.open td.listing-ct-toggle i:before {
 .listing-ct > thead > tr > th,
 tr.listing-ct-item > th,
 tr.listing-ct-item > td {
-  padding: 15px;
+  padding: 0.75rem;
   vertical-align: text-top;
   /* baseline doesn't support wrapped lines */
 }
@@ -581,12 +584,12 @@ tr.listing-ct-item > td > .btn-control-ct {
   font-size: 13px;
   vertical-align: middle;
   color: #0088ce;
-  padding-right: 5px;
+  padding-right: 0.25rem;
 }
 /* Listing actions can be used directly as a cell */
 tr.listing-ct-item td.listing-ct-actions,
 td.listing-ct-actions {
-  padding: 5px 10px;
+  padding: 0.25rem 0.5rem;
   text-align: right;
   float: none;
 }
@@ -616,24 +619,25 @@ tr.listing-ct-item td:last-child {
 }
 div.listing-ct-panel {
   box-shadow: 1px 1px 1px 1px #f5f5f5;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 div.listing-ct-maybe {
-  border: 1px dashed #ddd;
+  border: 1px dashed var(--color-light-gray-3);
   box-shadow: none;
 }
 div.listing-ct-head {
-  padding: 10px 10px 0 10px;
+  padding: 0.5rem 0.5rem 0 0.5rem;
   background-color: #f5f5f5;
-  border-color: #ccc;
+  border-color: var(--color-light-gray);
   border-style: solid;
   border-width: 1px 1px 0 1px;
   overflow: hidden;
   display: flex;
   flex-flow: row-reverse wrap;
+  align-items: center;
 }
 div.listing-ct-head:last-child {
-  padding-bottom: 10px;
+  padding-bottom: 0.5rem;
 }
 div.listing-ct-maybe div.listing-ct-head,
 div.listing-ct-maybe div.listing-ct-body {
@@ -641,14 +645,14 @@ div.listing-ct-maybe div.listing-ct-body {
   border: none;
 }
 tbody.active .listing-ct-head {
-  border-top: 3px solid #0099d3;
+  border-top: 3px solid var(--color-link);
 }
 .listing-ct-head h3 {
   font-weight: normal;
   font-size: 18px;
   margin-top: 0px;
-  margin-left: 5px;
-  margin-bottom: 10px;
+  margin-left: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 .listing-ct-head h3 i {
   float: left;
@@ -657,7 +661,7 @@ tbody.active .listing-ct-head {
 .listing-ct-head .nav li a {
   font-size: 13px;
   /* Counteract listing-ct-head padding */
-  margin-top: -10px;
+  margin-top: -0.5rem;
   margin: 0;
 }
 .listing-ct-head .nav-tabs {
@@ -665,7 +669,7 @@ tbody.active .listing-ct-head {
 }
 .listing-ct-head .nav-tabs-pf {
   /* Counteract listing-ct-head padding */
-  margin: -10px 0 0 -10px;
+  margin: -0.5rem 0 0 -0.5rem;
   flex: auto;
 }
 /* To display info instead of tabs */
@@ -681,26 +685,26 @@ tbody.active .listing-ct-head {
   font-weight: normal;
   display: inline;
   margin-right: 0.5em;
-  color: #888;
+  color: var(--color-subtle-copy);
 }
 .listing-ct-head dd {
   display: inline;
   color: black;
 }
 .listing-ct-body {
-  padding: 20px 25px;
+  padding: 1rem 1.5rem;
   font-size: 13px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-light-gray);
   background-color: #fff;
 }
 .listing-ct-inline > td > .listing-ct-body {
   border: none;
   padding-top: 0px;
-  padding-left: 20px;
+  padding-left: 1rem;
   padding-bottom: 0px;
 }
 .listing-ct-inline > h3 {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--color-light-gray);
   padding-top: 20px;
   margin-top: 30px;
 }
@@ -718,9 +722,9 @@ tbody.active .listing-ct-head {
   clear: right;
 }
 .listing-ct-error {
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-top: 1px solid var(--color-light-gray);
+  border-left: 1px solid var(--color-light-gray);
+  border-right: 1px solid var(--color-light-gray);
 }
 .listing-ct-error.alert {
   margin-bottom: 0;
@@ -739,7 +743,7 @@ tbody.active .listing-ct-head {
   min-height: 26px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: #888;
+  color: var(--color-subtle-copy);
   font-weight: normal;
 }
 .listing-ct-body dt {
@@ -764,12 +768,46 @@ tbody.active .listing-ct-head {
 .listing-ct-body dl.full-width dd {
   margin-left: 0px;
 }
-table.listing-ct tbody {
+table.listing-ct > tbody {
+  /* Nudge blue line above row border */
+}
+table.listing-ct > tbody > tr > td:first-child {
+  position: relative;
   transition: all 100ms ease-out;
 }
-table.listing-ct tbody.open {
+table.listing-ct > tbody > tr > td:first-child::before,
+table.listing-ct > tbody > tr > td:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms;
+}
+table.listing-ct > tbody > tr > td:first-child::after {
+  right: auto;
+  width: 0;
+  background-color: var(--pf-global--active-color--100);
+}
+table.listing-ct > tbody > tr:not(:first-child) > td:first-child::after {
+  top: -1px;
+}
+table.listing-ct > tbody.open > tr > td:first-child {
   transition: all 100ms ease-in;
-  box-shadow: 0 2px 6px rgba(3, 3, 3, 0.2);
+}
+table.listing-ct > tbody.open > tr > td:first-child::before,
+table.listing-ct > tbody.open > tr > td:first-child::after {
+  opacity: 1;
+}
+table.listing-ct > tbody.open > tr > td:first-child::after {
+  width: 3px;
+}
+table.listing-ct > tbody.open {
+  transition: all 100ms ease-in;
+  box-shadow: 0 0.3125rem 0.625rem -0.25rem rgba(3, 3, 3, 0.25);
 }
 /* By default these are hidden */
 /* (HACK: Special-case the user auth dialog) */
@@ -777,6 +815,12 @@ tbody:not(.ssh-key-body) > tr.listing-ct-head,
 tbody > tr.listing-ct-panel,
 tbody > tr.listing-ct-body {
   display: none;
+}
+tbody:not(.ssh-key-body) > tr.listing-ct-head > td,
+tbody > tr.listing-ct-panel > td,
+tbody > tr.listing-ct-body > td {
+  /* Compensate for the left-side blue highlight */
+  padding-left: 3px;
 }
 /* ... unless they are in the right state */
 tbody.open > tr.listing-ct-head,
@@ -818,32 +862,32 @@ tbody.open div.listing-ct-head + div.listing-ct-body:not([hidden]):last-child {
   }
 }
 tbody.open tr.listing-ct-head {
-  border-color: #ccc;
+  border-color: var(--color-light-gray);
   border-style: solid;
   border-width: 1px 1px 0 1px;
-  border-top: 3px solid #0099d3;
+  border-top: 3px solid var(--color-link);
   background-color: #f5f5f5;
 }
 tr.listing-ct-head + tr.listing-ct-head {
   border-top: none;
 }
 tr.listing-ct-head + tr.listing-ct-head td {
-  padding: 0px 10px 0px 10px;
+  padding: 0px 0.5rem 0px 0.5rem;
 }
 tr.listing-ct-body td {
-  padding: 20px 25px;
+  padding: 1rem 1.5rem;
   font-size: 13px;
 }
 .listing-ct-empty {
-  color: #888;
+  color: var(--color-subtle-copy);
   text-align: center;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid var(--color-gray-2);
+  border-bottom: 1px solid var(--color-gray-2);
 }
 /* Used at the end of a group of tbody to show an 'empty' message */
 thead.listing-ct-empty td,
 table.listing-ct > thead.listing-ct-empty td {
-  padding: 10px;
+  padding: 0.5rem;
 }
 tbody + thead.listing-ct-empty {
   display: none;
@@ -856,15 +900,15 @@ tbody + thead.listing-ct-empty {
 .listing-ct-compact > thead > tr > th,
 .listing-ct-compact > tbody > tr > th,
 .listing-ct-compact > tbody > tr > td {
-  padding: 5px;
+  padding: 0.25rem;
 }
 .listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th,
 .listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td {
-  padding-left: 5px;
+  padding-left: 0.25rem;
 }
 .listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th::before,
 .listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td::before {
-  top: 5px;
+  top: 0.25rem;
 }
 div.listing-ct-head {
   overflow: visible;
@@ -882,7 +926,7 @@ tbody tr.listing-ct-noexpand {
 /* Fix up nav-tabs-pf to work properly */
 .nav-tabs-pf > li:first-child a {
   margin-left: 0px !important;
-  padding-left: 15px !important;
+  padding-left: 1rem !important;
 }
 .nav-tabs-pf > li a:before {
   right: 0px !important;

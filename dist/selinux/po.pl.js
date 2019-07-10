@@ -32,6 +32,10 @@ return plural;
   "$0 wystąpienia",
   "$0 wystąpień"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "Zastosuj to rozwiązanie"
@@ -44,9 +48,21 @@ return plural;
   null,
   "Dziennik audytu"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "Zamknij"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "Łączenie z usługą SETroubleshoot…"
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -68,9 +84,17 @@ return plural;
   null,
   "Należy zainstalować setroubleshoot-server, aby rozwiązywać problemy ze zdarzeniami SELinuksa."
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "Brak alarmów SELinuksa."
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -112,6 +136,10 @@ return plural;
   null,
   "Ustawienie odbiega od skonfigurowanego stanu i zostanie przywrócone po następnym uruchomieniu."
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "Pomyślnie zastosowano rozwiązanie"
@@ -124,9 +152,17 @@ return plural;
   null,
   "Rozwiązania"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "Nieznany stan konfiguracji, może zostać zmieniony po następnych uruchomieniu."
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -147,6 +183,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "Nie można uruchomić usługi setroubleshootd"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

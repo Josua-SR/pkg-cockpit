@@ -384,7 +384,7 @@ return plural;
  ],
  "Failed to add port": [
   null,
-  ""
+  "Přidání portu se nezdařilo"
  ],
  "Failed to add service": [
   null,
@@ -629,14 +629,6 @@ return plural;
  "Not available": [
   null,
   "Není k dispozici"
- ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Parent": [
   null,

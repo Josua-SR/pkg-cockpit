@@ -42,7 +42,7 @@ a{cursor:pointer}
 .btn-control-ct,.btn-control-ct:hover{background-position:center center;background-size:16px 16px;background-repeat:no-repeat;background-image:none;-webkit-border-radius:2;-moz-border-radius:2;border-radius:2px;height:28px;width:28px;box-shadow:none}
 .btn-control-ct{background-color:#eee}
 .btn-control-ct:hover{background-color:#e0e0e0}
-.dialog-list-ct .list-group-item:hover:not(.active),.highlight-ct,.table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th{background-color:#edf8ff}
+.dialog-list-ct .list-group-item:hover:not(.active),.highlight-ct,.table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th{background-color:var(--color-link-hover-bg)}
 .table>tbody>tr>td,.table>thead>tr>th{padding:8px}
 .table>thead{background-image:none;background-color:#fff}
 .table tbody tr td:first-child,.table thead tr th:first-child{padding-left:15px}
@@ -51,7 +51,7 @@ a{cursor:pointer}
 .list-group h4{margin-top:0;margin-bottom:5px}
 .list-group p{margin:0}
 .curtains-ct{height:100%;width:100%;position:fixed}
-.panel .well{margin-bottom:0;border:none;border-radius:0;background-color:#FAFAFA}
+.panel .well{margin-bottom:0;border:none;border-radius:0;background-color:var(color-gray-1)}
 .well.blank-slate-pf{box-shadow:0 0 10px rgba(0,0,0,.05) inset;padding-top:40px}
 .blank-slate-pf .spinner-lg{height:58px;width:58px}
 .modal-content .alert{text-align:left;padding-top:5px;padding-bottom:5px}
@@ -61,6 +61,8 @@ a{cursor:pointer}
 .dialog-wait-ct{margin-top:3px}
 .dialog-wait-ct span{vertical-align:4px;padding-left:10px}
 .console-ct-container{border:none}
+table.listing-ct tbody:last-child,tbody tr.listing-ct-item{border-bottom:1px solid #eee}
+table.listing-ct tbody+thead,table.listing-ct thead th,tbody tr.listing-ct-item{border-top:1px solid #eee}
 .console-ct{font-family:Menlo,Monaco,Consolas,monospace;margin:0;font-size:10px;line-height:1}
 @media (min-width:568px){.console-ct{font-size:12px}
 }
@@ -68,18 +70,7 @@ a{cursor:pointer}
 .console-ct>.terminal{color:#F0F0F0;text-align:left;outline:0}
 .listing-ct-body dt,table.listing-ct thead th:last-child,tr.listing-ct-item td:last-child{text-align:right}
 .console-ct .terminal-cursor{color:#000;background:#f0f0f0}
-.btn-onoff-ct{margin:1px 0;text-transform:uppercase}
-.btn-onoff-ct .btn{color:transparent;border-color:#B7B7B7;padding:2px 6px 1px;background-color:#fff;background-image:linear-gradient(to bottom,#fafafa 0,#ededed 100%);-webkit-box-shadow:none;box-shadow:none;width:37px}
-table.listing-ct tbody:last-child,tbody tr.listing-ct-item{border-bottom:1px solid #eee}
-table.listing-ct tbody+thead,table.listing-ct thead th,tbody tr.listing-ct-item{border-top:1px solid #eee}
-.btn-onoff-ct .btn:first-child{border-right:#00435F}
-.btn-onoff-ct .btn:last-child{border-left:#00435F;padding-left:5px}
-.btn-onoff-ct .btn.active{background-image:none;width:36px}
-.btn-onoff-ct .btn.active:first-child{background-color:#0086CF;color:#fff;border-right:1px solid #0071b0}
-.btn-onoff-ct .btn.active:last-child{color:#000;border-left:1px solid #d6d6d6}
-.btn-onoff-ct .btn.disabled{pointer-events:none;color:transparent!important}
-.btn-onoff-ct .btn.active.disabled{background-color:#888!important;color:#fff!important}
-table.listing-ct{margin-top:15px;min-width:65%}
+table.listing-ct{margin-top:3rem;min-width:65%}
 table.listing-ct>caption,table.listing-ct>thead h3{font-size:22px;padding:10px 0;font-weight:300;margin-top:0}
 table.listing-ct>caption{color:inherit;line-height:1.1}
 table.listing-ct>thead td{padding-top:20px}
@@ -97,7 +88,7 @@ tbody.open .listing-ct-panel{border:1px solid #ccc}
 tbody.open .listing-ct-panel .listing-ct-body{border:none}
 tbody.open tr.listing-ct-panel+tr.listing-ct-body{border-top:none}
 tbody.open tr.listing-ct-panel td div.listing-ct-head{border:none;border-bottom:1px solid #ccc}
-tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover{background-color:#edf8ff}
+tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover{background-color:var(--color-link-hover-bg)}
 tbody.open tr.listing-ct-item:hover,td.listing-ct-toggle:hover~td,td.listing-ct-toggle:hover~th,tr.listing-ct-item.listing-ct-nonavigate:hover{background-color:#ededed}
 tr.listing-ct-item .listing-ct-toggle{padding:0!important;width:35px;color:#000}
 table.listing-ct thead .listing-ct-toggle+th,tr.listing-ct-item .listing-ct-toggle+td,tr.listing-ct-item .listing-ct-toggle+th{padding-left:0}

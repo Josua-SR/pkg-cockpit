@@ -1,3 +1,7 @@
+.panel .table {
+    font-size: var(--font-size-s);
+}
+
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {
     border-top: 1px solid rgb(221, 221, 221);
@@ -15,9 +19,9 @@
     background: #f5f5f5;
     display: flex;
     flex-wrap: wrap;
-    /* 36px = (26px widget height) + (5px padding * 2) */
-    min-height: 36px;
-    padding: 5px 5px 5px 10px;
+    /* (28px small size widget height) + (0.5rem * 2) */
+    min-height: calc(28px + 1rem);
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
     position: relative;
     z-index: 100;
 }
@@ -29,13 +33,13 @@
 }
 
 .panel-title > a {
-    color: #0088ceff; /* pf-blue-400 */
+    color: var(--color-link);
     display: inline-block;
 }
 
 .panel-title > a:hover,
 .panel-title > a:focus {
-    color: #00659c; /* pf-blue-500 */
+    color: var(--alert-info-text);
 }
 
 /* Allow children in the title to wrap */
@@ -80,8 +84,8 @@
     .panel {
         /* Background fade */
         --hi-color: #d1d1d1;
-        --hi-color2: #eee;
-        --bg-color: #fff;
+        --hi-color2: var(--color-gray-2);
+        --bg-color: var(--color-bg);
         --hi-width: 20px;
         --hi-width3: calc(var(--hi-width) * 3);
         --transparent: rgba(255,255,255,0); /* WebKit needs white transparent */
@@ -133,30 +137,33 @@
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th,
 .dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #edf8ff;
+    /* PF3 uses a light blue; we have to force the override for hover colors */
+    background-color: var(--color-ct-list-hover-bg) !important;
+    color: var(--color-ct-list-hover-text) !important;
 }
 
 /* Override patternfly to fit buttons and such */
 .table > thead > tr > th,
 .table > tbody > tr > td {
-    padding: 8px;
+    padding: 0.5rem;
+    vertical-align: baseline;
 }
 
 /* Override the heavy patternfly headers */
 .table > thead {
     background-image: none;
-    background-color: #fff;
+    background-color: var(--color-bg);
 }
 
 /* Make things line up */
 .table tbody tr > :first-child,
 .table thead tr > :first-child {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
 }
 
 .table tbody tr > :last-child,
 .table thead tr > :last-child {
-    padding-right: 1.5rem;
+    padding-right: 1rem;
 }
 
 .info-table-ct > tbody > tr > th,
@@ -211,10 +218,14 @@
 }
 
 .form-table-ct td:first-child {
+    font-size: var(--pf-global--FontSize--sm);
+    margin-top: calc(var(--pf-global--FontSize--md) - var(--pf-global--FontSize--sm));
+    vertical-align: baseline;
     text-align: right;
     white-space: nowrap;
-    font-weight: 600;
     width: 5px; /* will be expanded by nowrap */
+    padding-right: 1rem;
+    min-height: 2.25rem;
 }
 
 
@@ -229,7 +240,7 @@
 .form-table-ct td.header {
     font-weight: bold;
     text-align: left;
-    color: #4D5258;
+    color: var(--color-gray-11);
     padding: 20px 0 10px 0;
 }
 

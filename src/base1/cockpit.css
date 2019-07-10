@@ -295,7 +295,7 @@ a {
 }
 
 .highlight-ct {
-    background-color: #edf8ff;
+    background-color: var(--color-link-hover-bg);
 }
 
 /*
@@ -312,7 +312,7 @@ a {
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th,
 .dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #edf8ff;
+    background-color: var(--color-link-hover-bg);
 }
 
 /* Override patternfly to fit buttons and such */
@@ -367,7 +367,7 @@ a {
     margin-bottom: 0px;
     border: none;
     border-radius: 0px;
-    background-color: #FAFAFA;
+    background-color: var(color-gray-1);
 }
 
 .well.blank-slate-pf {
@@ -461,63 +461,10 @@ a {
     background: #f0f0f0;
 }
 
-/* On/off switch */
-
-.btn-onoff-ct {
-    margin: 1px 0px;
-    text-transform: uppercase;
-}
-
-.btn-onoff-ct .btn {
-    color: transparent;
-    border-color: #B7B7B7;
-    padding: 2px 6px 1px 6px;
-    background-color: white;
-    background-image: linear-gradient(to bottom, rgb(250, 250, 250) 0px, rgb(237, 237, 237) 100%);
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    width: 37px;
-}
-
-.btn-onoff-ct .btn:first-child {
-    border-right: #00435F;
-}
-
-.btn-onoff-ct .btn:last-child {
-    border-left: #00435F;
-    padding-left: 5px;
-}
-
-.btn-onoff-ct .btn.active {
-    background-image: none;
-    width: 36px;
-}
-
-.btn-onoff-ct .btn.active:first-child {
-    background-color: #0086CF;
-    color: white;
-    border-right: 1px solid #0071b0;
-}
-
-.btn-onoff-ct .btn.active:last-child {
-    color: #000;
-    border-left: 1px solid #d6d6d6;
-}
-
-.btn-onoff-ct .btn.disabled {
-    pointer-events: none;
-    color: transparent !important;
-}
-
-.btn-onoff-ct .btn.active.disabled {
-    background-color: #888 !important;
-    color: white !important;
-}
-
 /* Listing pattern */
 
 table.listing-ct {
-    margin-top: 15px;
+    margin-top: 3rem;
     min-width: 65%;
 }
 
@@ -618,7 +565,7 @@ tbody.open tr.listing-ct-panel td div.listing-ct-head {
 
 /* only highlight the row if navigation is available */
 tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover {
-    background-color: #edf8ff;
+    background-color: var(--color-link-hover-bg);
 }
 
 /* if we can't navigate to a row but expand is available, highlight the caret */

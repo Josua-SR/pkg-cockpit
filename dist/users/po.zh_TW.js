@@ -202,10 +202,6 @@ return plural;
   null,
   "未指定用戶名"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Old Password": [
   null,
   "舊密碼"
@@ -213,10 +209,6 @@ return plural;
  "Old password not accepted": [
   null,
   "舊密碼不被接受"
- ],
- "On": [
-  null,
-  "開"
  ],
  "Password": [
   null,

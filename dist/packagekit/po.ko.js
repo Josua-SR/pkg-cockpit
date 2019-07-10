@@ -100,7 +100,7 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "다운로드됨 "
  ],
  "Downloading": [
   null,
@@ -160,11 +160,11 @@ return plural;
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "사용 가능한 업데이트 로드에 실패했습니다 "
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "사용 가능한 업데이트를 로딩하고 있습니다. 잠시만 기다리십시오..."
  ],
  "Mondays": [
   null,
@@ -176,7 +176,7 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "보류 중인 업데이트가 없습니다 "
  ],
  "Ok": [
   null,
@@ -188,7 +188,7 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit가 크래시되었습니다 "
  ],
  "PackageKit is not installed": [
   null,
@@ -196,19 +196,19 @@ return plural;
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit가 오류 코드 $0을/를 보고했습니다 "
  ],
  "Refreshing package information": [
   null,
-  ""
+  "패키지 정보 새로고침 중 "
  ],
  "Register…": [
   null,
-  ""
+  "등록 중..."
  ],
  "Removals:": [
   null,
-  ""
+  "삭제: "
  ],
  "Removing $0": [
   null,
@@ -216,27 +216,27 @@ return plural;
  ],
  "Restart Now": [
   null,
-  ""
+  "지금 다시 시작 "
  ],
  "Restart Recommended": [
   null,
-  ""
+  "다시 시작하는 것이 좋습니다 "
  ],
  "Restarting": [
   null,
-  ""
+  "재시작 중 "
  ],
  "Saturdays": [
   null,
-  ""
+  "토요일 "
  ],
  "Set up": [
   null,
-  ""
+  "설정 "
  ],
  "Setting up": [
   null,
-  ""
+  "설정 중 "
  ],
  "Severity": [
   null,
@@ -244,7 +244,7 @@ return plural;
  ],
  "Severity:": [
   null,
-  ""
+  "심각도: "
  ],
  "Software Updates": [
   null,
@@ -252,11 +252,11 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "다른 프로그램이 패키지 관리자를 사용 중입니다. 잠시만 기다려주십시오..."
  ],
  "Sundays": [
   null,
-  ""
+  "일요일 "
  ],
  "System is up to date": [
   null,

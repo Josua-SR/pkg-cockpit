@@ -114,6 +114,10 @@ return plural;
   null,
   "En cliquant sur \"Launch Remote Viewer\" (lancer l’afficheur à distance), vous téléchargerez un fichier .vv et le lancerez $0 ."
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Connectez-vous avec n’importe quel $0 application spectateur."
@@ -190,6 +194,10 @@ return plural;
   null,
   "Supprimer le contenu"
  ],
+ "Delete Network $0": [
+  null,
+  "Supprimer $0"
+ ],
  "Delete Storage Pool $0": [
   null,
   "Supprimer le pool de stockage $0"
@@ -262,6 +270,10 @@ return plural;
   null,
   "Image disque existante sur le système de fichiers de l’hôte"
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "On ne doit pas activer un nombre de CPU supérieur au nombre maximum."
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Le nom d’hôte n’est peut-être pas vide"
+ ],
+ "IP Address": [
+  null,
+  "Adresse IP"
  ],
  "IPv4 Address": [
   null,
@@ -427,6 +443,10 @@ return plural;
   "Mémoire"
  ],
  "Memory could not be saved": [
+  null,
+  "La mémoire n'a pas pu être sauvegardée"
+ ],
+ "Memory must not be 0": [
   null,
   "La mémoire n'a pas pu être sauvegardée"
  ],
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Système d’exploitation"
+ ],
+ "Operation is in progress": [
+  null,
+  "Connexion oVirt en cours"
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   "Le répertoire du serveur à exporter"
  ],
+ "The network could not be deleted": [
+  null,
+  "Le pool de stockage n’a pas pu être supprimé"
+ ],
  "The pool is empty": [
   null,
   "La pool est vide"
@@ -930,9 +958,17 @@ return plural;
   null,
   "Unité"
  ],
+ "Unknown": [
+  null,
+  "Inconnu"
+ ],
  "Unplug": [
   null,
   "Débrancher"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  "Jusqu'à $0 $1 disponibles sur l'hôte"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1221,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

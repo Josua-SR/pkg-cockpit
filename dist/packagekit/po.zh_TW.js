@@ -178,17 +178,9 @@ return plural;
   null,
   "沒有待更新"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
- ],
- "On": [
-  null,
-  "開"
  ],
  "Package information": [
   null,

@@ -384,7 +384,7 @@ return plural;
  ],
  "Failed to add port": [
   null,
-  ""
+  "Dodanie portu się nie powiodło"
  ],
  "Failed to add service": [
   null,
@@ -629,14 +629,6 @@ return plural;
  "Not available": [
   null,
   "Niedostępne"
- ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "Parent": [
   null,

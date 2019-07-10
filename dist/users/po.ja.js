@@ -202,10 +202,6 @@ return plural;
   null,
   "ユーザー名が指定されていません"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Old Password": [
   null,
   "古いパスワード"
@@ -213,10 +209,6 @@ return plural;
  "Old password not accepted": [
   null,
   "古いパスワードは受け入れられません"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Password": [
   null,

@@ -126,6 +126,7 @@ const StoragePoolTargetRow = ({ onValueChanged, dialogValues }) => {
                 </label>
                 <FormGroup validationState={validationState} controlId='target'>
                     <FileAutoComplete id='storage-pool-dialog-target'
+                        superuser='try'
                         placeholder={_("Path on host's filesystem")}
                         onChange={value => onValueChanged('target', value)} />
                     { validationState == 'error' &&
@@ -243,10 +244,11 @@ const StoragePoolSourceRow = ({ onValueChanged, dialogValues }) => {
                 <label className='control-label' htmlFor='storage-pool-dialog-source'>
                     {_("Source Path")}
                 </label>
-                <FormGroup className='ct-form-layout-split'
+                <FormGroup className='ct-form-split'
                            validationState={validationState}
                            controlId='source'>
                     <FileAutoComplete id='storage-pool-dialog-source'
+                        superuser='try'
                         placeholder={placeholder}
                         onChange={value => onValueChanged('source', { 'device': value })} />
                     { validationState == 'error' &&
@@ -258,7 +260,7 @@ const StoragePoolSourceRow = ({ onValueChanged, dialogValues }) => {
                     {_("Format")}
                 </label>
                 <Select.Select id='storage-pool-dialog-source-format'
-                               extraClass='form-control ct-form-layout-split'
+                               extraClass='form-control ct-form-split'
                                initial={dialogValues.source.format}
                                onChange={value => onValueChanged('source', { 'format': value })}>
                     { diskPoolSourceFormatTypes
@@ -444,7 +446,7 @@ class CreateStoragePoolModal extends React.Component {
 
     render() {
         const defaultBody = (
-            <form className="ct-form-layout ct-form-layout-maxmin">
+            <form className="ct-form ct-form-maxmin">
                 <StoragePoolConnectionRow dialogValues={this.state}
                                           onValueChanged={this.onValueChanged}
                                           loggedUser={this.props.loggedUser} />
@@ -517,7 +519,7 @@ export class CreateStoragePoolAction extends React.Component {
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Button className='pull-right' id='create-storage-pool' bsStyle='default' onClick={this.open} >
                     {_("Create Storage Pool")}
                 </Button>
@@ -527,7 +529,7 @@ export class CreateStoragePoolAction extends React.Component {
                     dispatch={this.props.dispatch}
                     libvirtVersion={this.props.libvirtVersion}
                     loggedUser={this.props.loggedUser} /> }
-            </div>
+            </React.Fragment>
         );
     }
 }

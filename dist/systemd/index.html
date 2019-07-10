@@ -83,7 +83,7 @@
         </div>
 
         <div class="info-table-ct-container">
-            <form class="ct-form-layout">
+            <form class="ct-form">
                 <label class="control-label" for="system_information_hardware_text" translatable="yes">Hardware</label>
                 <span> <!-- wrap the <a> so that it doesn't stretch to the whole page width; otherwise tooltip looks bad -->
                     <a tabindex="0" id="system_information_hardware_text"></a>
@@ -131,7 +131,7 @@
 
                 <label class="control-label" translatable="yes">Power Options</label>
                 <div id="shutdown-group" class="btn-group">
-                    <button class="btn btn-default btn-danger shutdown-privileged" data-action="restart"
+                    <button class="btn btn-default shutdown-privileged" data-action="restart"
                         data-container="body" translatable="yes">Restart</button>
                     <button data-toggle="dropdown" class="btn
                         btn-default dropdown-toggle
@@ -352,7 +352,7 @@
 
     <div class="modal" id="system_information_change_systime" tabindex="-1"
         role="dialog" data-backdrop="static">
-        <div class="modal-dialog cockpit-modal-md">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" translate>Change System Time</h4>

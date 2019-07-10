@@ -150,17 +150,9 @@ return plural;
   null,
   "Далі"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "One Time Password": [
   null,

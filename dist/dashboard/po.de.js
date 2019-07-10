@@ -350,17 +350,9 @@ return plural;
   null,
   "Notizbuch"
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Old password not accepted": [
   null,
   "Altes Passwort wurde nicht akzeptiert"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "Other": [
   null,

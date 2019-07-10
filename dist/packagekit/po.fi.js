@@ -182,17 +182,9 @@ return plural;
   null,
   "Ei odottavia päivityksiä"
  ],
- "Off": [
-  null,
-  "Pois"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Päällä"
  ],
  "Package information": [
   null,

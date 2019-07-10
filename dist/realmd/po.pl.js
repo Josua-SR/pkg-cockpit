@@ -150,17 +150,9 @@ return plural;
   null,
   "Dalej"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "One Time Password": [
   null,

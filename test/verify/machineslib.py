@@ -37,6 +37,30 @@ def readFile(name):
     return content
 
 
+# Preparations for physical disk storage pool
+def prepareDisk(m):
+    m.add_disk("50M", serial="DISK1")
+    wait(lambda: m.execute("ls -l /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1"))
+    m.execute("parted /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1 mklabel gpt")
+
+
+# Preparations for iscsi storage pool
+def prepareStorageDeviceOnISCSI(m, target_iqn, orig_iqn=None):
+    if orig_iqn is None:
+        orig_iqn = m.execute("sed </etc/iscsi/initiatorname.iscsi -e 's/^.*=//'").rstrip()
+
+    # Increase the iSCSI timeouts for heavy load during our testing
+    m.execute("""sed -i 's|^\(node\..*log.*_timeout = \).*|\\1 60|' /etc/iscsi/iscsid.conf""")
+
+    # Setup a iSCSI target
+    m.execute("""
+              targetcli /backstores/ramdisk create test 50M
+              targetcli /iscsi create %(tgt)s
+              targetcli /iscsi/%(tgt)s/tpg1/luns create /backstores/ramdisk/test
+              targetcli /iscsi/%(tgt)s/tpg1/acls create %(ini)s
+              """ % {"tgt": target_iqn, "ini": orig_iqn})
+
+
 SPICE_XML = """
     <video>
       <model type='vga' heads='1' primary='yes'/>
@@ -493,12 +517,9 @@ class TestMachines(NetworkCase):
         url_location = "/system/services#/{0}".format(libvirtServiceName)
         b.wait(lambda: url_location in b.eval_js("window.location.href"))
 
-        # Make sure that unpriviledged users can see the VM list when libvirtd is not running
+        # Make sure that unprivileged users can see the VM list when libvirtd is not running
         m.execute("systemctl stop libvirtd.service")
-        if m.image == "debian-stable":
-            m.execute("useradd --shell /bin/bash nonadmin; echo nonadmin:foobar | chpasswd")
-        else:
-            m.execute("useradd nonadmin; echo nonadmin:foobar | chpasswd")
+        m.execute("useradd nonadmin; echo nonadmin:foobar | chpasswd")
         self.login_and_go("/machines", user="nonadmin", authorized=False)
         b.wait_in_text("body", "Virtual Machines")
         b.wait_in_text("#virtual-machines-listing thead tr td", "No VM is running")
@@ -690,18 +711,7 @@ class TestMachines(NetworkCase):
             # Preparations for testing ISCSI pools
 
             target_iqn = "iqn.2019-09.cockpit.lan"
-            orig_iqn = m.execute("sed </etc/iscsi/initiatorname.iscsi -e 's/^.*=//'").rstrip()
-
-            # Increase the iSCSI timeouts for heavy load during our testing
-            m.execute("""sed -i 's|^\(node\..*log.*_timeout = \).*|\\1 60|' /etc/iscsi/iscsid.conf""")
-
-            # Setup a iSCSI target
-            m.execute("""
-                      targetcli /backstores/ramdisk create test 50M
-                      targetcli /iscsi create %(tgt)s
-                      targetcli /iscsi/%(tgt)s/tpg1/luns create /backstores/ramdisk/test
-                      targetcli /iscsi/%(tgt)s/tpg1/acls create %(ini)s
-                      """ % {"tgt": target_iqn, "ini": orig_iqn})
+            prepareStorageDeviceOnISCSI(m, target_iqn)
 
             m.execute("virsh pool-define-as iscsi-pool --type iscsi --target /dev/disk/by-path --source-host 127.0.0.1 --source-dev {0} && virsh pool-start iscsi-pool".format(target_iqn))
             wait(lambda: "unit:0:0:0" in self.machine.execute("virsh pool-refresh iscsi-pool && virsh vol-list iscsi-pool"), delay=3)
@@ -825,6 +835,16 @@ class TestMachines(NetworkCase):
             b.wait_present("#vm-subVmTest1-disks-adddisk-dialog-add:disabled")
             b.click("label:contains(Use Existing)")
             b.wait_present("#vm-subVmTest1-disks-adddisk-dialog-add:disabled")
+            b.click(".modal-footer button:contains(Cancel)")
+
+            # Make sure that trying to inspect the Disks tab will just show the fields that are available when a pool is inactive
+            b.reload()
+            b.enter_page('/machines')
+            b.wait_in_text("body", "Virtual Machines")
+            b.click("tbody tr[data-row-id=vm-subVmTest1] th") # click on the row header
+            b.click("#vm-subVmTest1-disks") # open the "Disks" subtab
+            # Check that usage information can't be fetched since the pool is inactive
+            b.wait_not_present("#vm-subVmTest1-disks-vdd-used")
 
     def testVmNICs(self):
         b = self.browser
@@ -900,10 +920,16 @@ class TestMachines(NetworkCase):
         b.click("#machines-vcpu-modal-dialog-apply")
         b.wait_not_present(".modal-body")
 
+        # Make sure warning next to vcpus appears
+        b.wait_present("#vcpus-tooltip")
+
         # Shut off VM for applying changes after save
         b.click("#vm-subVmTest1-off-caret")
         b.click("#vm-subVmTest1-forceOff")
         b.wait_in_text("#vm-subVmTest1-state", "shut off")
+
+        # Make sure warning is gone after shut off
+        b.wait_not_present("#vcpus-tooltip")
 
         # Check changes
         b.wait_in_text("#vm-subVmTest1-vcpus-count", "3")
@@ -1212,6 +1238,13 @@ class TestMachines(NetworkCase):
                 runner.deleteVm(dialog) \
                       .checkEnvIsEmpty()
 
+        def createThenInstallTest(dialog):
+            runner.tryCreateThenInstall(dialog) \
+                  .assertScriptFinished() \
+                  .assertDomainDefined(dialog.name, dialog.connection) \
+                  .deleteVm(dialog) \
+                  .checkEnvIsEmpty()
+
         def installWithErrorTest(dialog):
             runner.tryInstallWithError(dialog) \
                 .assertScriptFinished() \
@@ -1400,6 +1433,51 @@ class TestMachines(NetworkCase):
                                          storage_pool="No Storage",
                                          start_vm=True,))
 
+        # Test create VM with disk of type "block"
+        prepareDisk(self.machine)
+        cmds = [
+            "virsh pool-define-as poolDisk disk - - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1 - /tmp/poolDiskImages",
+            "virsh pool-build poolDisk --overwrite",
+            "virsh pool-start poolDisk",
+            "virsh vol-create-as poolDisk sda1 1024"
+        ]
+        self.machine.execute(" && ".join(cmds))
+
+        self.browser.reload()
+        self.browser.enter_page('/machines')
+        self.browser.wait_in_text("body", "Virtual Machines")
+
+        # Check choosing existing volume as destination storage
+        createThenInstallTest(TestMachines.VmDialog(self, sourceType='file',
+                                                    location=config.NOVELL_MOCKUP_ISO_PATH,
+                                                    memory_size=50, memory_size_unit='MiB',
+                                                    storage_pool="poolDisk",
+                                                    storage_volume="sda1"))
+
+        if "debian" not in self.machine.image and "ubuntu" not in self.machine.image:
+            # Test create VM with disk of type "network"
+            target_iqn = "iqn.2019-09.cockpit.lan"
+            prepareStorageDeviceOnISCSI(self.machine, target_iqn)
+
+            cmds = [
+                "virsh pool-define-as --name poolIscsi --type iscsi --source-host 127.0.0.1 --source-dev {0} --target /dev/disk/by-path/".format(target_iqn),
+                "virsh pool-build poolIscsi",
+                "virsh pool-start poolIscsi",
+                "virsh pool-refresh poolIscsi", # pool-start takes too long, libvirt's pool-refresh might not catch all volumes, so we do pool-refresh separately
+            ]
+            self.machine.execute(" && ".join(cmds))
+
+            self.browser.reload()
+            self.browser.enter_page('/machines')
+            self.browser.wait_in_text("body", "Virtual Machines")
+
+            # Check choosing existing volume as destination storage
+            createThenInstallTest(TestMachines.VmDialog(self, sourceType='file',
+                                                        location=config.NOVELL_MOCKUP_ISO_PATH,
+                                                        memory_size=50, memory_size_unit='MiB',
+                                                        storage_pool="poolIscsi",
+                                                        storage_volume="unit:0:0:0"))
+
         virtInstallVersion = self.machine.execute("virt-install --version")
         if virtInstallVersion >= "2":
             self.machine.upload(["verify/files/min-openssl-config.cnf", "verify/files/mock-range-server.py"], "/tmp/")
@@ -1580,6 +1658,12 @@ class TestMachines(NetworkCase):
                                          os_name=config.OPENBSD_5_4,
                                          start_vm=False))
 
+        # Test that removing virt-install executable will disable Create VM button
+        self.machine.execute('rm $(which virt-install)')
+        self.browser.reload()
+        self.browser.enter_page('/machines')
+        self.browser.wait_visible("#create-new-vm:disabled")
+
         # TODO: add use cases with start_vm=True and check that vm started
         # - for install when creating vm
         # - for create vm and then install
@@ -1589,6 +1673,9 @@ class TestMachines(NetworkCase):
         self.allow_journal_messages('.*connection.*')
         self.allow_journal_messages('.*Connection.*')
         self.allow_journal_messages('.*session closed.*')
+
+        self.allow_browser_errors("Failed when connecting: Connection closed")
+        self.allow_browser_errors("Tried changing state of a disconnected RFB object")
 
         # Deleting a running guest will disconnect the serial console
         self.allow_browser_errors("Disconnection timed out.")
@@ -1853,7 +1940,6 @@ class TestMachines(NetworkCase):
 
         def createAndExpectError(self, errors):
             b = self.browser
-            m = self.machine
 
             def waitForError(errors, error_location):
                 for retry in range(0, 60):
@@ -1862,11 +1948,8 @@ class TestMachines(NetworkCase):
                         break
                     time.sleep(5)
                 else:
-                    if m.image == "debian-stable" and "internal error: process exited while connecting to monitor" in error_message:
-                        return unittest.skip("QEMU binary crashed in TCG code and error message from QEMU was not printed")
-                    else:
-                        raise Error("Retry limit exceeded: None of [%s] is part of the error message '%s'" % (
-                            ', '.join(errors), b.text(error_location)))
+                    raise Error("Retry limit exceeded: None of [%s] is part of the error message '%s'" % (
+                        ', '.join(errors), b.text(error_location)))
 
             def allowBugErrors(location, original_exception):
                 # CPU must be supported to detect errors
@@ -1968,27 +2051,29 @@ class TestMachines(NetworkCase):
                 b.wait_present("#vm-{0}-memory".format(name))
                 b.wait_present("#vm-{0}-vcpus".format(name))
 
-            # check memory
-            b.click("#vm-{0}-usage".format(name))
-            b.wait_in_text("tbody.open .listing-ct-body td:nth-child(1) .usage-donut-caption", dialog.getMemoryText())
+            self.assertCorrectConfiguration(dialog)
 
-            # check disks
-            b.click("#vm-{0}-disks".format(name)) # open the "Disks" subtab
+            return self
 
-            # Test disk got imported/created
-            if dialog.sourceType == 'disk_image' or dialog.sourceTypeSecondChoice == 'disk_image':
-                b.wait_present("#vm-{0}-disks-vda-device".format(name))
-                b.wait_in_text("#vm-{0}-disks-vda-source-file".format(name), dialog.location)
-            # New volume was created or existing volume was already chosen as destination
-            elif (dialog.storage_size is not None and dialog.storage_size > 0) or dialog.storage_pool not in ["No Storage", "Create New Volume"]:
-                if b.is_present("#vm-{0}-disks-vda-device".format(name)):
-                    b.wait_in_text("#vm-{0}-disks-vda-device".format(name), "disk")
-                else:
-                    b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "disk")
-            elif dialog.start_vm and (((dialog.storage_pool == 'No Storage' or dialog.storage_size == 0) and dialog.sourceType == 'file') or dialog.sourceType == 'url'):
-                b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "cdrom")
-            else:
-                b.wait_in_text("tbody tr td div.listing-ct-body", "No disks defined")
+        def tryCreateThenInstall(self, dialog):
+            b = self.browser
+            dialog.start_vm = False
+            name = dialog.name
+
+            dialog.open() \
+                .fill() \
+                .create()
+
+            b.wait_in_text("#vm-{0}-row".format(name), name)
+            b.click("#vm-{0}-install".format(name))
+            b.wait_present("li.active #vm-{0}-consoles".format(name))
+
+            self.assertCorrectConfiguration(dialog)
+
+            # unfinished install script runs indefinitelly, so we need to force it off
+            b.click("#vm-{0}-off-caret".format(name))
+            b.click("#vm-{0}-forceOff".format(name))
+            b.wait_in_text("#vm-{0}-state".format(name), "shut off")
 
             return self
 
@@ -2034,6 +2119,33 @@ class TestMachines(NetworkCase):
                 return False
             except subprocess.CalledProcessError as e:
                 return hasattr(e, 'returncode') and e.returncode == 1
+
+        def assertCorrectConfiguration(self, dialog):
+            b = self.browser
+            name = dialog.name
+
+            # check memory
+            b.click("#vm-{0}-usage".format(name))
+            b.wait_in_text("tbody.open .listing-ct-body td:nth-child(1) .usage-donut-caption", dialog.getMemoryText())
+
+            # check disks
+            b.click("#vm-{0}-disks".format(name)) # open the "Disks" subtab
+
+            # Test disk got imported/created
+            if dialog.sourceType == 'disk_image' or dialog.sourceTypeSecondChoice == 'disk_image':
+                b.wait_present("#vm-{0}-disks-vda-device".format(name))
+                b.wait_in_text("#vm-{0}-disks-vda-source-file".format(name), dialog.location)
+            # New volume was created or existing volume was already chosen as destination
+            elif (dialog.storage_size is not None and dialog.storage_size > 0) or dialog.storage_pool not in ["No Storage", "Create New Volume"]:
+                if b.is_present("#vm-{0}-disks-vda-device".format(name)):
+                    b.wait_in_text("#vm-{0}-disks-vda-device".format(name), "disk")
+                else:
+                    b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "disk")
+            elif dialog.start_vm and (((dialog.storage_pool == 'No Storage' or dialog.storage_size == 0) and dialog.sourceType == 'file') or dialog.sourceType == 'url'):
+                b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "cdrom")
+            else:
+                b.wait_in_text("tbody tr td div.listing-ct-body", "No disks defined")
+            return self
 
         def assertScriptFinished(self):
             with self.browser.wait_timeout(20):

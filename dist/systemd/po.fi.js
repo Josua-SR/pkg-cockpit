@@ -914,6 +914,10 @@ return plural;
   null,
   ""
  ],
+ "Previous boot": [
+  null,
+  ""
+ ],
  "Problem details": [
   null,
   ""

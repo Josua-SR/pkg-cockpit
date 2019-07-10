@@ -252,7 +252,7 @@ return plural;
  ],
  "Appearance:": [
   null,
-  ""
+  "Appearance:"
  ],
  "Asset Tag": [
   null,
@@ -296,7 +296,7 @@ return plural;
  ],
  "Black": [
   null,
-  ""
+  "블랙 "
  ],
  "Blade": [
   null,
@@ -396,7 +396,7 @@ return plural;
  ],
  "Conflicted By": [
   null,
-  ""
+  "충돌 "
  ],
  "Conflicts": [
   null,
@@ -404,7 +404,7 @@ return plural;
  ],
  "Consists Of": [
   null,
-  ""
+  "구성 "
  ],
  "Convertible": [
   null,
@@ -424,7 +424,7 @@ return plural;
  ],
  "Critical and above": [
   null,
-  ""
+  "중대한 이상 수준 "
  ],
  "Ctrl+Insert": [
   null,
@@ -432,15 +432,15 @@ return plural;
  ],
  "Current boot": [
   null,
-  ""
+  "현재 부팅 "
  ],
  "Dark": [
   null,
-  ""
+  "진하게 "
  ],
  "Debug and above": [
   null,
-  ""
+  "디버그 이상의 수준 "
  ],
  "Delay": [
   null,
@@ -456,7 +456,7 @@ return plural;
  ],
  "Detachable": [
   null,
-  ""
+  "분리 가능 "
  ],
  "Details": [
   null,
@@ -468,7 +468,7 @@ return plural;
  ],
  "Disable simultaneous multithreading": [
   null,
-  ""
+  "동시 멀티스레딩 비활성화 "
  ],
  "Disabled": [
   null,
@@ -488,7 +488,7 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  ""
+  "반복 실행하지 않습니다 "
  ],
  "Downloading $0": [
   null,
@@ -496,7 +496,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "임베디드 PC"
  ],
  "Enable": [
   null,
@@ -504,11 +504,11 @@ return plural;
  ],
  "Enable Forcefully": [
   null,
-  ""
+  "강제로 활성화 "
  ],
  "Enable stored metrics…": [
   null,
-  ""
+  "저장된 메트릭 활성화..."
  ],
  "Enabled": [
   null,
@@ -516,7 +516,7 @@ return plural;
  ],
  "Enhancement Updates Available": [
   null,
-  ""
+  "기능 업데이트를 사용할 수 있습니다 "
  ],
  "Entry": [
   null,
@@ -528,19 +528,19 @@ return plural;
  ],
  "Error and above": [
   null,
-  ""
+  "오류 이상의 수준 "
  ],
  "Everything": [
   null,
-  ""
+  "전체 "
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "확장 섀시"
  ],
  "Filter by name or description...": [
   null,
-  ""
+  "이름 또는 설명에 따라 필터링"
  ],
  "Friday": [
   null,
@@ -552,7 +552,7 @@ return plural;
  ],
  "Go to": [
   null,
-  ""
+  "이동 "
  ],
  "Go to now": [
   null,
@@ -560,7 +560,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "휴대용 "
  ],
  "Hardware": [
   null,
@@ -580,7 +580,7 @@ return plural;
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  ""
+  "시간은 0-23 사이의 값이어야 합니다 "
  ],
  "Hours": [
   null,
@@ -588,11 +588,11 @@ return plural;
  ],
  "I/O Wait": [
   null,
-  ""
+  "I/O 대기 "
  ],
  "Info and above": [
   null,
-  ""
+  "정보 이상의 수준 "
  ],
  "Install": [
   null,
@@ -608,27 +608,27 @@ return plural;
  ],
  "Instantiate": [
   null,
-  ""
+  "인스턴스화 "
  ],
  "Invalid date format": [
   null,
-  ""
+  "잘못된 날짜 형식 "
  ],
  "Invalid date format and invalid time format": [
   null,
-  ""
+  "잘못된 날짜 형식 및 잘못된 시간 형식 "
  ],
  "Invalid date format.": [
   null,
-  ""
+  "날짜 형식이 잘못되어 있습니다. "
  ],
  "Invalid number.": [
   null,
-  ""
+  "잘못된 번호"
  ],
  "Invalid time format": [
   null,
-  ""
+  "잘못된 시간 형식 "
  ],
  "Invalid time zone": [
   null,
@@ -640,7 +640,7 @@ return plural;
  ],
  "Joins Namespace Of": [
   null,
-  ""
+  "네임스페이스에 참여 "
  ],
  "Journal": [
   null,
@@ -660,27 +660,27 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "랩탑 "
  ],
  "Last 24 hours": [
   null,
-  ""
+  "지난 24 시간 "
  ],
  "Last 7 days": [
   null,
-  ""
+  "지난 7일 "
  ],
  "Last Trigger": [
   null,
-  ""
+  "마지막 트리거 "
  ],
  "Light": [
   null,
-  ""
+  "경량 "
  ],
  "Load earlier entries": [
   null,
-  ""
+  "이전 항목 로드 "
  ],
  "Loading...": [
   null,
@@ -696,11 +696,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "낮은 프로파일 데스크탑 "
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Machine ID": [
   null,
@@ -708,11 +708,11 @@ return plural;
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
+  "머신 SSH 키 지문 "
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "메인 서버 섀시 "
  ],
  "Manually": [
   null,
@@ -724,7 +724,7 @@ return plural;
  ],
  "Mask Forcefully": [
   null,
-  ""
+  "강제로 마스크 "
  ],
  "Memory": [
   null,
@@ -736,19 +736,19 @@ return plural;
  ],
  "Message to logged in users": [
   null,
-  ""
+  "로그인한 사용자에게 보내는 메세지 "
  ],
  "Mini PC": [
   null,
-  ""
+  "미니 PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "미니 타워 "
  ],
  "Minute needs to be a number between 0-59": [
   null,
-  ""
+  "분은 0-59 사이의 값이어야 합니다 "
  ],
  "Minutes": [
   null,
@@ -756,7 +756,7 @@ return plural;
  ],
  "Mitigations": [
   null,
-  ""
+  "완화 방법 "
  ],
  "Model": [
   null,
@@ -768,7 +768,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "멀티 시스템 섀시 "
  ],
  "NTP Server": [
   null,
@@ -788,7 +788,7 @@ return plural;
  ],
  "Next Run": [
   null,
-  "다음"
+  "다음 실행 "
  ],
  "Nice": [
   null,
@@ -800,19 +800,19 @@ return plural;
  ],
  "No Matching Results": [
   null,
-  ""
+  "일치하는 결과를 찾을 수 없습니다 "
  ],
  "No host keys found.": [
   null,
-  "찾을 수 없습니다."
+  "호스트 키를 찾을 수 없습니다."
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "upload-report 권한이 없습니다 "
  ],
  "Not synchronized": [
   null,
-  ""
+  "동기화되어 있지 않습니다 "
  ],
  "Note": [
   null,
@@ -820,35 +820,27 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "노트북 "
  ],
  "Notice and above": [
   null,
-  ""
- ],
- "Off": [
-  null,
-  "비활성"
+  "알림 이상의 수준 "
  ],
  "Ok": [
   null,
   "확인"
  ],
- "On": [
-  null,
-  "활성"
- ],
  "On Failure": [
   null,
-  "실패하였습니다"
+  "오류 발생 시 "
  ],
  "Only Emergency": [
   null,
-  ""
+  "긴급 상황에서만 "
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
-  ""
+  "알파벳, 숫자, : , _ , . , @ , - 만 사용할 수 있습니다. "
  ],
  "Operating System": [
   null,
@@ -864,15 +856,15 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit가 크래시되었습니다 "
  ],
  "Part Of": [
   null,
-  ""
+  "일부분"
  ],
  "Paste": [
   null,
-  ""
+  "붙여넣기 "
  ],
  "Path": [
   null,
@@ -888,71 +880,71 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "주변 장치 섀시 "
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Portable": [
   null,
-  ""
+  "이동식 "
  ],
  "Power Options": [
   null,
-  ""
+  "전원 옵션 "
  ],
  "Preset": [
   null,
-  ""
+  "사전 설정 "
  ],
  "Preset Forcefully": [
   null,
-  ""
+  "강제로 사전 설정 "
  ],
  "Pretty Host Name": [
   null,
-  ""
+  "모양새를 갖춘 호스트 이름 "
  ],
  "Previous boot": [
   null,
-  ""
+  "이전 부트 "
  ],
  "Problem details": [
   null,
-  ""
+  "문제 상세 정보 "
  ],
  "Problem info": [
   null,
-  ""
+  "문제 정보 "
  ],
  "Propagates Reload To": [
   null,
-  ""
+  "새로 고침 전달 "
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID 섀시 "
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "랙 마운트 섀시 "
  ],
  "Read more...": [
   null,
-  ""
+  "더 알아보기..."
  ],
  "Real Host Name": [
   null,
-  ""
+  "실제 호스트 이름 "
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
-  ""
+  "실제 호스트 이름에는 소문자, 숫자, 대시, 마침표만 사용할 수 있습니다. (입력된 하위 도메인 포함)"
  ],
  "Real host name must be 64 characters or less": [
   null,
-  ""
+  "실제 호스트 이름은 64자 보다 적은 문자로 구성되어야 합니다 "
  ],
  "Reboot": [
   null,
@@ -968,11 +960,11 @@ return plural;
  ],
  "Reload Propagated From": [
   null,
-  ""
+  "전달 소스를 다시 로드 "
  ],
  "Removals:": [
   null,
-  ""
+  "삭제: "
  ],
  "Removing $0": [
   null,
@@ -980,23 +972,23 @@ return plural;
  ],
  "Repeat Daily": [
   null,
-  ""
+  "매일 반복 "
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "매시간 반복 "
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "매달 반복 "
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "매주 반복 "
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "매년 반복 "
  ],
  "Report": [
   null,
@@ -1004,19 +996,19 @@ return plural;
  ],
  "Reported": [
   null,
-  ""
+  "보고됨 "
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "리포터 'reporter-ureport'를 찾을 수 없습니다 "
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "보고에 실패했습니다. `reporter-ureport -d를 실행해 보십시오. "
  ],
  "Required By": [
   null,
-  ""
+  "필요 사항 "
  ],
  "Requires": [
   null,
@@ -1024,11 +1016,11 @@ return plural;
  ],
  "Requisite": [
   null,
-  ""
+  "필수 사항 "
  ],
  "Requisite Of": [
   null,
-  ""
+  "필수 사항 "
  ],
  "Reset": [
   null,
@@ -1044,7 +1036,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  ""
+  "실행 시작 "
  ],
  "Saturday": [
   null,
@@ -1056,11 +1048,11 @@ return plural;
  ],
  "Save and reboot": [
   null,
-  ""
+  "저장 및 재시작 "
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "쉴드 케이스 PC"
  ],
  "Seconds": [
   null,
@@ -1068,11 +1060,11 @@ return plural;
  ],
  "Secure Shell Keys": [
   null,
-  ""
+  "보안 쉘 키 "
  ],
  "Security Updates Available": [
   null,
-  ""
+  "사용 가능한 보안 업데이트 "
  ],
  "Service": [
   null,
@@ -1104,11 +1096,11 @@ return plural;
  ],
  "Shift+Insert": [
   null,
-  ""
+  "Shift+Insert"
  ],
  "Show fingerprints": [
   null,
-  ""
+  "지문 표시 "
  ],
  "Shut Down": [
   null,
@@ -1116,7 +1108,7 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "슬롯 "
  ],
  "Sockets": [
   null,
@@ -1124,15 +1116,15 @@ return plural;
  ],
  "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
   null,
-  ""
+  "소프트웨어 기반 완화 방법은 CPU 보안 문제를 예방하는데 도움이 될 수 있습니다. 이러한 완화 옵션은 성능을 저하시키는 부작용이 있습니다. 이러한 부작용을 인지하고 필요에 따라 설정을 변경하십시오."
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "공간 절약형 컴퓨터 "
  ],
  "Specific Time": [
   null,
-  ""
+  "특정 시간  "
  ],
  "Start": [
   null,
@@ -1152,23 +1144,23 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "스틱 PC"
  ],
  "Stop": [
   null,
-  ""
+  "중지 "
  ],
  "Store Metrics": [
   null,
-  ""
+  "메트릭 저장 "
  ],
  "Sub Chassis": [
   null,
-  ""
+  "서브 섀시 "
  ],
  "Sub Notebook": [
   null,
-  ""
+  "서브 노트북 "
  ],
  "Sunday": [
   null,
@@ -1176,15 +1168,15 @@ return plural;
  ],
  "Swap Used": [
   null,
-  ""
+  "사용된 스왑 "
  ],
  "Synchronized": [
   null,
-  ""
+  "동기화됨 "
  ],
  "Synchronized with {{Server}}": [
   null,
-  ""
+  "{{Server}}와 동기화됨 "
  ],
  "System": [
   null,
@@ -1196,7 +1188,7 @@ return plural;
  ],
  "System Not Registered": [
   null,
-  ""
+  "시스템이 등록되어 있지 않습니다 "
  ],
  "System Services": [
   null,
@@ -1204,11 +1196,11 @@ return plural;
  ],
  "System Time": [
   null,
-  ""
+  "시스템 시간 "
  ],
  "System Up To Date": [
   null,
-  ""
+  "시스템이 업데이트되어 있음 "
  ],
  "Tablet": [
   null,

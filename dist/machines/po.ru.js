@@ -114,6 +114,10 @@ return plural;
   null,
   "После нажатия «Launch Remote Viewer» будет загружен файл .vv и выполнен запуск $0"
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Подключиться с помощью любого $0-клиента."
@@ -189,6 +193,10 @@ return plural;
  "Delete Content": [
   null,
   "Удалить содержимое"
+ ],
+ "Delete Network $0": [
+  null,
+  "Удалить $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -437,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   ""
+ ],
+ "Memory must not be 0": [
+  null,
+  "Использование памяти:"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -902,6 +914,10 @@ return plural;
   null,
   "Каталог на экспортируемом сервере"
  ],
+ "The network could not be deleted": [
+  null,
+  "Целевой путь не должен быть пустым"
+ ],
  "The pool is empty": [
   null,
   "Пул пуст"
@@ -1241,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

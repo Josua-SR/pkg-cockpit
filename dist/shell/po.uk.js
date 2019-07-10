@@ -290,10 +290,6 @@ return plural;
   null,
   "Некоректний закритий ключ"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
@@ -305,10 +301,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Старий пароль не прийнято"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "Ooops!": [
   null,

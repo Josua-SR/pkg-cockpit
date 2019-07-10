@@ -350,17 +350,9 @@ return plural;
   null,
   "ノートブック"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Old password not accepted": [
   null,
   "古いパスワードは受け入れられません"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Other": [
   null,

@@ -315,9 +315,9 @@ return plural;
   null,
   "Pakkaus"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Vahvista salasana"
+  "Vahvista"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -398,10 +398,6 @@ return plural;
  "Custom": [
   null,
   "Mukautettu"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Mukautettu (Lisää tiedostojärjestelmän tyyppi)"
  ],
  "Custom encryption options": [
   null,
@@ -527,13 +523,13 @@ return plural;
   null,
   "Tyhjennetään $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "Salattu $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Salattu EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -542,10 +538,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Salattu osio $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Salattu XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -594,10 +586,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Tiedostojärjestelmän nimi"
- ],
- "Filesystem type": [
-  null,
-  "Tiedostojärjestelmän tyyppi"
  ],
  "Filesystems": [
   null,
@@ -650,6 +638,10 @@ return plural;
  "Grow": [
   null,
   "Kasvata"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -730,6 +722,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   ""
+ ],
+ "Loading...": [
+  null,
+  "Ladataan..."
  ],
  "Local Mount Point": [
   null,
@@ -967,10 +963,6 @@ return plural;
   null,
   "Ei käynnissä"
  ],
- "Off": [
-  null,
-  "Pois"
- ],
  "Ok": [
   null,
   "OK"
@@ -978,10 +970,6 @@ return plural;
  "Old passphrase": [
   null,
   ""
- ],
- "On": [
-  null,
-  "Päällä"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1327,11 +1315,23 @@ return plural;
   null,
   ""
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   ""
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1543,6 +1543,10 @@ return plural;
   null,
   ""
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Tämä taltio tulee aktivoida, ennen kuin sen kokoa voi muuttaa."
@@ -1699,11 +1703,11 @@ return plural;
   null,
   "Taltioryhmät"
  ],
- "Waiting for other software management operations to finish": [
+ "Volume size is $0. Content size is $1.": [
   null,
   ""
  ],
- "Warning": [
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

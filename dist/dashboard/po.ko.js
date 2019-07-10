@@ -120,7 +120,7 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  ""
+  "Cockpit은 지정된 호스트 $0에 연결할 수 없습니다. 포트 $1에서 ssh가 실행되고 있는지 확인하거나 주소에서 다른 포트를 지정합니다. "
  ],
  "Cockpit is not installed": [
   null,
@@ -144,7 +144,7 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  ""
+  "Cockpit은 {{#strong}}{{host}}{{/strong}}에 로그인할 수 없습니다. 다음에서 인증 정보를 변경할 수 있습니다. {{#can_sync}}{{#sync_link}}계정과 암호 동기화{{/sync_link}}를 실행할 수 있습니다.{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -160,7 +160,7 @@ return plural;
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
-  ""
+  "{{ limit }} 대 이상의 컴퓨터에 동시 연결을 지원하지 않습니다. "
  ],
  "Connection Error": [
   null,
@@ -184,7 +184,7 @@ return plural;
  ],
  "Detachable": [
   null,
-  ""
+  "분리 가능 "
  ],
  "Disk I/O": [
   null,
@@ -200,7 +200,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "임베디드 PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -208,19 +208,19 @@ return plural;
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "여기에 다른 암호를 입력하면 이 컴퓨터에 연결할 때 마다 암호를 다시 입력해야 합니다"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  ""
+  "사용자를 로드하는 동안 오류가 발생했습니다: {{perm_failed}}"
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "확장 섀시"
  ],
  "Failed to add machine: $0": [
   null,
-  ""
+  "컴퓨터를 추가하지 못했습니다: $0"
  ],
  "Failed to change password": [
   null,
@@ -228,7 +228,7 @@ return plural;
  ],
  "Failed to edit machine: $0": [
   null,
-  ""
+  "컴퓨터를 편집하지 못했습니다: $0"
  ],
  "Fingerprint": [
   null,
@@ -240,7 +240,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "휴대용 "
  ],
  "Host Name": [
   null,
@@ -248,7 +248,7 @@ return plural;
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "사용자를 동기화하려면 {{#strong}}{{host}}{{/strong}}에 로그인해야 합니다. "
  ],
  "Incorrect Host Key": [
   null,
@@ -256,7 +256,7 @@ return plural;
  ],
  "Invalid file permissions": [
   null,
-  ""
+  "잘못된 파일 권한 "
  ],
  "IoT Gateway": [
   null,
@@ -264,27 +264,27 @@ return plural;
  ],
  "Is sshd running on a different port?": [
   null,
-  ""
+  "다른 포트에서 sshd가 실행되고 있습니까?"
  ],
  "Kerberos Based SSO": [
   null,
-  ""
+  "Kerberos 기반 SSO"
  ],
  "Kerberos Ticket": [
   null,
-  ""
+  "Kerberos 티켓 "
  ],
  "Laptop": [
   null,
-  ""
+  "랩탑 "
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  ""
+  "이 컴퓨터에 현재 로그인한 사용자로 연결하려면 비워 두십시오. 다른 사용자 이름을 입력한 경우 이 컴퓨터에 연결할 때 이 사용자가 항상 사용됩니다."
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "컴퓨터에 현재 로그인한 사용자{{#default_user}} ({{default_user}}){{/default_user}}로 연결하려면 비워두십시오. 다른 사용자 이름을 입력하면 이 컴퓨터에 연결할 때 입력한 사용자가 항상 사용됩니다."
  ],
  "Log In": [
   null,
@@ -304,15 +304,15 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "낮은 프로파일 데스크탑 "
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "메인 서버 섀시 "
  ],
  "Memory": [
   null,
@@ -320,15 +320,15 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "미니 PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "미니 타워 "
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "멀티 시스템 섀시 "
  ],
  "Network": [
   null,
@@ -336,31 +336,23 @@ return plural;
  ],
  "New password was not accepted": [
   null,
-  ""
+  "새 암호가 허용되지 않습니다 "
  ],
  "No such file or directory": [
   null,
-  ""
+  "이러한 파일 또는 디렉토리가 없습니다 "
  ],
  "Not a valid private key": [
   null,
-  ""
+  "유효한 개인 키가 없습니다 "
  ],
  "Notebook": [
   null,
-  ""
- ],
- "Off": [
-  null,
-  "비활성"
+  "노트북 "
  ],
  "Old password not accepted": [
   null,
-  ""
- ],
- "On": [
-  null,
-  "활성"
+  "이전 암호가 허용되지 않습니다 "
  ],
  "Other": [
   null,
@@ -372,15 +364,15 @@ return plural;
  ],
  "Password not accepted": [
   null,
-  ""
+  "암호가 허용되지 않습니다 "
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "주변 장치 섀시 "
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Port": [
   null,
@@ -388,15 +380,15 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "이동식 "
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "ssh-add를 통한 메세지 제공 시간이 초과되었습니다 "
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "ssh-keygen을 통한 메세지 제공 시간이 초과되었습니다 "
  ],
  "Public Key": [
   null,
@@ -404,19 +396,19 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID 섀시 "
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "랙 마운트 섀시 "
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "쉴드 케이스 PC"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  ""
+  "{{#strong}}{{host}}{{/strong}}와 동기화할 사용자를 선택합니다 "
  ],
  "Servers": [
   null,
@@ -428,19 +420,19 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "공간 절약형 컴퓨터 "
  ],
  "Stick PC": [
   null,
-  ""
+  "스틱 PC"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "서브 섀시 "
  ],
  "Sub Notebook": [
   null,
-  ""
+  "서브 노트북 "
  ],
  "Synchronize": [
   null,
@@ -456,11 +448,11 @@ return plural;
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  ""
+  "IP 주소 또는 호스트 이름에는 공백을 포함할 수 없습니다. "
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  ""
+  "호스트 {{#strong}}{{host}}{{/strong}} 인증을 설정할 수 없습니다. 연결을 유지하시겠습니까?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
@@ -468,7 +460,7 @@ return plural;
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "암호가 일치하지 않습니다. "
  ],
  "The user <b>$0</b> is not permitted to manage servers": [
   null,

@@ -75,7 +75,7 @@ tr.listing-ct-item {
                 overflow: visible;
 
                 .truncating {
-                    background: linear-gradient(to left, rgba(237, 248, 255, 0), rgb(237, 248, 255) 3em);
+                    background: linear-gradient(to left, rgba(237, 248, 255, 0), var(--color-ct-list-hover-bg) 3em);
                     position: relative;
                     padding: 0.5em 4em 0.5em 0;
                 }
@@ -96,7 +96,6 @@ tr.listing-ct-item {
     }
     td.changelog {
         vertical-align: top;
-        text-align: left;
 
         * {
             display: inline;
@@ -108,10 +107,14 @@ tr.listing-ct-item {
         &, p {
             max-width: 60vw;
             margin-bottom: 0;  // counter-act <Markdown>
-            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
+    }
+
+    th:last-child,
+    td.changelog:last-child {
+        text-align: left;
     }
 }
 
@@ -124,7 +127,7 @@ tr.listing-ct-item {
 }
 
 .severity-low {
-    color: #72767b;
+    color: var(--color-subtle-copy);
 }
 
 // backport "pficon-*" for usage on RHEL/CentOS 7
@@ -154,13 +157,24 @@ div.changelog {
 }
 
 tr.security.listing-ct-item {
-    background-color: #fbf0f0 !important;  /* keep red background when expanded */
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
+
+    &, tbody.open > & {
+        background-color: var(--color-ct-list-critical-bg) !important; /* keep red background when expanded */
+        border-top: 1px solid var(--color-ct-list-critical-border);
+        border-bottom: 1px solid var(--color-ct-list-critical-border);
+
+        &:focus,
+        &:focus-within,
+        &:hover {
+            background-color: var(--color-ct-list-critical-bg-hover) !important;
+            border-top-color: var(--color-ct-list-critical-bg-hover);
+            border-bottom-color: var(--color-ct-list-critical-bg-hover);
+        }
+    }
 
     @media screen and (min-width: 641px) {
         td.version:hover .truncating {
-            background: linear-gradient(to left, rgba(251, 240, 240, 0), rgb(251, 240, 240) 3em);
+            background: linear-gradient(to left, rgba(251, 240, 240, 0), var(--color-ct-list-critical-bg-hover) 3em);
         }
     }
 }
@@ -213,6 +227,8 @@ tr.security.listing-ct-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    align-items: center;
+    min-height: 4rem;
 
     @media screen and (min-width: 640px) {
         position: sticky;

@@ -114,6 +114,10 @@ return plural;
   null,
   "Att klicka ”Starta fjärrvisare” kommer hämta en .vv-fil och starta $0"
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Anslut med godtycklig $0-visarprogram."
@@ -190,6 +194,10 @@ return plural;
   null,
   ""
  ],
+ "Delete Network $0": [
+  null,
+  "Ta bort $0"
+ ],
  "Delete Storage Pool $0": [
   null,
   ""
@@ -262,6 +270,10 @@ return plural;
   null,
   ""
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Färre än det maximala antalet virtuella CPU:er skall vara aktiverade."
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Värden får inte vara tom"
+ ],
+ "IP Address": [
+  null,
+  "IP-adress"
  ],
  "IPv4 Address": [
   null,
@@ -429,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   ""
+ ],
+ "Memory must not be 0": [
+  null,
+  "Minnesanvändning:"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Operativsystem"
+ ],
+ "Operation is in progress": [
+  null,
+  "oVirt-inloggning pågår"
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   "Katalogen på servern exporteras"
  ],
+ "The network could not be deleted": [
+  null,
+  "Målsökvägen får inte vara tom"
+ ],
  "The pool is empty": [
   null,
   "Poolen är tom"
@@ -930,9 +958,17 @@ return plural;
   null,
   "Enhet"
  ],
+ "Unknown": [
+  null,
+  "Okänd"
+ ],
  "Unplug": [
   null,
   "Koppla ur"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1221,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhost-användare"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

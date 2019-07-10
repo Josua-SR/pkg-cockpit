@@ -202,10 +202,6 @@ return plural;
   null,
   "Не вказано імені користувача"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Old Password": [
   null,
   "Старий пароль"
@@ -213,10 +209,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Старий пароль не прийнято"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "Password": [
   null,

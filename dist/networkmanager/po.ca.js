@@ -382,6 +382,10 @@ return plural;
   null,
   "Ha fallat"
  ],
+ "Failed to add port": [
+  null,
+  "Ha fallat el canvi de contrasenya"
+ ],
  "Failed to add service": [
   null,
   ""
@@ -561,10 +565,6 @@ return plural;
  "Maximum message age $max_age": [
   null,
   "Envelliment màxim del missatge $max_age"
- ],
- "Members": [
-  null,
-  "Membres"
  ],
  "Mode": [
   null,

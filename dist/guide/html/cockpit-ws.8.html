@@ -129,19 +129,22 @@ getcert request -f ${CERT_FILE} -k ${KEY_FILE} -D $(hostname --fqdn) -C "sed -n 
 </tr>
 <tr>
 <td><p><span class="term"><code class="option">--for-tls-proxy</code></span></p></td>
-<td>
-<p>
+<td><p>
             Tell <span class="command"><strong>cockpit-ws</strong></span> that it is running behind a local reverse proxy that
             does the TLS termination. Then Cockpit puts https:// URLs into the default
             <code class="literal">Content-Security-Policy</code>, and accepts only https:// origins, instead of
             http: ones by default. However, if <code class="literal">Origins</code> is set in the
             <span class="citerefentry"><span class="refentrytitle">cockpit.conf</span>(5)</span>
             configuration file, it will override this default.
-          </p>
-<p>
-            This option implies <code class="option">--no-tls</code>.
-          </p>
-</td>
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">--proxy-tls-redirect</code></span></p></td>
+<td><p>
+            Enable redirection of unencrypted http requests to https (TLS) in <code class="option">--no-tls</code> mode.
+            Use this when running <span class="command"><strong>cockpit-ws</strong></span> behind a reverse http proxy that also
+            supports https, but does no redirection from http to https by itself.
+          </p></td>
 </tr>
 <tr>
 <td><p><span class="term"><code class="option">--local-ssh</code></span></p></td>

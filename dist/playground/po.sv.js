@@ -39,10 +39,6 @@ return plural;
   null,
   "Styrning"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "Ta bort”{{ name }}”"
- ],
  "Empty": [
   null,
   "Tom"

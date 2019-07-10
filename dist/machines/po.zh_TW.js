@@ -46,6 +46,10 @@ return plural;
   null,
   "添加磁盤"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "位址"
@@ -90,6 +94,10 @@ return plural;
   null,
   ""
  ],
+ "Cache": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "取消"
@@ -105,6 +113,10 @@ return plural;
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "單擊“啟動遠程查看器”將下載.vv文件並啟動 $0。"
+ ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -162,6 +174,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "DHCP Range": [
   null,
   ""
@@ -175,6 +191,10 @@ return plural;
   "刪除"
  ],
  "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Network $0": [
   null,
   ""
  ],
@@ -226,6 +246,10 @@ return plural;
   null,
   "磁盤"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "從中下載MSI $0"
@@ -243,6 +267,10 @@ return plural;
   ""
  ],
  "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
   ""
  ],
@@ -290,6 +318,10 @@ return plural;
   null,
   "Desktop Viewer中的圖形控制台"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "主機"
@@ -306,6 +338,10 @@ return plural;
   null,
   "主持人不應該是空的"
  ],
+ "IP Address": [
+  null,
+  "IP 位址"
+ ],
  "IPv4 Address": [
   null,
   ""
@@ -319,6 +355,14 @@ return plural;
   "立即啟動VM"
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
   null,
   ""
  ],
@@ -378,7 +422,15 @@ return plural;
   null,
   "手動連接"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -389,6 +441,18 @@ return plural;
  "Memory": [
   null,
   "記憶體"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory must not be 0": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -466,6 +530,10 @@ return plural;
   null,
   "新卷名稱"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "沒有為此存儲池定義存儲卷"
@@ -473,6 +541,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "此主機上未運行或定義VM"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -498,13 +570,13 @@ return plural;
   null,
   ""
  ],
+ "No networks available": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "此主機上未定義存儲池"
- ],
- "No virtual networks": [
-  null,
-  "沒有虛擬網絡"
  ],
  "None (Isolated Network)": [
   null,
@@ -518,6 +590,10 @@ return plural;
   null,
   ""
  ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
+ ],
  "Open": [
   null,
   ""
@@ -525,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "作業系統"
+ ],
+ "Operation is in progress": [
+  null,
+  ""
  ],
  "Overview": [
   null,
@@ -555,6 +635,14 @@ return plural;
   ""
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -682,6 +770,10 @@ return plural;
   null,
   "作業階段"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "關機"
@@ -697,6 +789,10 @@ return plural;
  "Source": [
   null,
   "來源"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -726,6 +822,10 @@ return plural;
   null,
   "狀態"
  ],
+ "Storage": [
+  null,
+  "儲存裝置"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -745,10 +845,6 @@ return plural;
  "Storage Pools": [
   null,
   "存儲池"
- ],
- "Storage Size": [
-  null,
-  "存儲大小"
  ],
  "Storage Volumes": [
   null,
@@ -818,9 +914,17 @@ return plural;
   null,
   "正在導出的服務器上的目錄"
  ],
+ "The network could not be deleted": [
+  null,
+  ""
+ ],
  "The pool is empty": [
   null,
   "游泳池是空的"
+ ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
  ],
  "Threads per core": [
   null,
@@ -854,9 +958,21 @@ return plural;
   null,
   "單位"
  ],
+ "Unknown": [
+  null,
+  "不明"
+ ],
  "Unplug": [
   null,
   "拔"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -962,6 +1078,10 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "活性"
@@ -973,6 +1093,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -1022,7 +1146,15 @@ return plural;
   null,
   "hostdev"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
  "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
   null,
   ""
  ],
@@ -1074,6 +1206,14 @@ return plural;
   null,
   "服務器"
  ],
+ "show less": [
+  null,
+  "顯示較少"
+ ],
+ "show more": [
+  null,
+  "顯示更多"
+ ],
  "shut off": [
   null,
   "關閉"
@@ -1117,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

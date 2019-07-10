@@ -39,10 +39,6 @@ return plural;
   null,
   "Steuerung"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "'{{ name }}' löschen"
- ],
  "Empty": [
   null,
   "Leer"
@@ -67,17 +63,9 @@ return plural;
   null,
   "Nicht bereit"
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "Path to file": [
   null,

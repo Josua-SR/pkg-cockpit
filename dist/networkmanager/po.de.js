@@ -30,6 +30,14 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  "(optional)"
+ ],
+ "(default)": [
+  null,
+  "(Vorgabe)"
+ ],
  "1 day": [
   null,
   "1 Tag"
@@ -78,6 +86,10 @@ return plural;
   null,
   "Aktive Sicherung"
  ],
+ "Active zones": [
+  null,
+  "aktive Zonen"
+ ],
  "Adaptive load balancing": [
   null,
   "Adaptives Load Balancing (alb)"
@@ -98,13 +110,13 @@ return plural;
   null,
   "Bridge hinzufügen"
  ],
+ "Add Ports": [
+  null,
+  "Ports hinzufügen"
+ ],
  "Add Services": [
   null,
   "Dienste hinzufügen"
- ],
- "Add Services…": [
-  null,
-  "Services hinzufügen…"
  ],
  "Add Team": [
   null,
@@ -113,6 +125,22 @@ return plural;
  "Add VLAN": [
   null,
   "VLAN hinzufügen"
+ ],
+ "Add Zone": [
+  null,
+  "Zone hinzufügen"
+ ],
+ "Add ports to the following zones:": [
+  null,
+  "Ports zu folgenden Zonen hinzufügen"
+ ],
+ "Add services to following zones:": [
+  null,
+  "Services zu folgenden Zonen hinzufügen"
+ ],
+ "Add zone": [
+  null,
+  "Zone hinzufügen"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -137,6 +165,10 @@ return plural;
  "Addresses": [
   null,
   "Adressen"
+ ],
+ "Allowed Addresses": [
+  null,
+  "Erlaubte Adressen"
  ],
  "Allowed Services": [
   null,
@@ -222,6 +254,10 @@ return plural;
   null,
   "Schließen"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Konfigurieren"
@@ -244,7 +280,7 @@ return plural;
  ],
  "Create it": [
   null,
-  "Erstellen"
+  "Anlegen"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -261,6 +297,14 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Durch das Erstellen dieses Teams wird die Verbindung zum Server unterbrochen und die Verwaltungsoberfläche wird nicht verfügbar."
+ ],
+ "Custom Ports": [
+  null,
+  "Eigene Ports"
+ ],
+ "Custom zones": [
+  null,
+  "Eigene Zonen"
  ],
  "DNS": [
   null,
@@ -294,6 +338,10 @@ return plural;
   null,
   "Löschen <b>$0</b> bricht die Verbindung zum Server ab und macht die Administrationsoberfläche nicht verfügbar."
  ],
+ "Description": [
+  null,
+  "Beschreibung"
+ ],
  "Details": [
   null,
   "Details"
@@ -305,6 +353,10 @@ return plural;
  "Enable Service": [
   null,
   "Service aktivieren"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -318,9 +370,33 @@ return plural;
   null,
   "Ethtool"
  ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
+ ],
  "Failed": [
   null,
   "Fehlgeschlagen"
+ ],
+ "Failed to add port": [
+  null,
+  ""
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -362,6 +438,10 @@ return plural;
   null,
   "IP-Adresse"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "IP Einstellungen"
@@ -394,6 +474,10 @@ return plural;
   null,
   "Inaktiv"
  ],
+ "Included services": [
+  null,
+  ""
+ ],
  "Interfaces": [
   null,
   "Schnittstellen"
@@ -406,6 +490,10 @@ return plural;
   null,
   "Ungültiger Schlüssel"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Ungültiger Port"
@@ -413,6 +501,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Ungültiger Port"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -474,10 +566,6 @@ return plural;
   null,
   "Maximales Alter der Nachrichten $max_age"
  ],
- "Members": [
-  null,
-  "Mitglieder"
- ],
  "Mode": [
   null,
   "Modus"
@@ -518,25 +606,29 @@ return plural;
   null,
   "Nein"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Kein Träger"
+ ],
+ "No description available": [
+  null,
+  ""
  ],
  "No open ports": [
   null,
   "Keine offenen Ports"
  ],
+ "None": [
+  null,
+  "Kein"
+ ],
  "Not available": [
   null,
   "Nicht verfügbar"
- ],
- "Off": [
-  null,
-  "Aus"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "Parent": [
   null,
@@ -578,6 +670,10 @@ return plural;
   null,
   "Bitte installieren Sie die $0 Paket"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Ports"
@@ -614,6 +710,14 @@ return plural;
   null,
   "Zufällig"
  ],
+ "Range": [
+  null,
+  ""
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
+ ],
  "Reboot": [
   null,
   "Neustart"
@@ -625,6 +729,14 @@ return plural;
  "Remove $0": [
   null,
   "Entfernen"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -670,6 +782,10 @@ return plural;
   null,
   "Dienst"
  ],
+ "Services": [
+  null,
+  "Dienste"
+ ],
  "Set to": [
   null,
   "Einstellen"
@@ -677,6 +793,10 @@ return plural;
  "Shared": [
   null,
   "Geteilt"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -754,6 +874,10 @@ return plural;
   null,
   "Dieses Gerät kann hier nicht verwaltet werden."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -773,6 +897,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Unbekannte Konfiguration"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,
@@ -806,6 +934,14 @@ return plural;
   null,
   "Sie sind nicht berechtigt, die Firewall zu ändern."
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bytes Binäredaten]"
@@ -817,6 +953,14 @@ return plural;
  "[no data]": [
   null,
   "[keine Daten]"
+ ],
+ "show less": [
+  null,
+  "zeige weniger"
+ ],
+ "show more": [
+  null,
+  "Zeig mehr"
  ],
  "page-title\u0004Networking": [
   null,

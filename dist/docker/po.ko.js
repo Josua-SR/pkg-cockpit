@@ -220,7 +220,7 @@ return plural;
  ],
  "Detachable": [
   null,
-  ""
+  "분리 가능 "
  ],
  "Details": [
   null,
@@ -252,7 +252,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "임베디드 PC"
  ],
  "Entrypoint": [
   null,
@@ -264,7 +264,7 @@ return plural;
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "컨테이너 제거 및 스토리지 풀 재설정 "
  ],
  "Error message from Docker:": [
   null,
@@ -272,7 +272,7 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "전체 "
  ],
  "Exited $ExitCode": [
   null,
@@ -280,11 +280,11 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "확장 섀시"
  ],
  "Expose container ports": [
   null,
-  ""
+  "컨테이너 포트 공개 "
  ],
  "Failed to start Docker: $0": [
   null,
@@ -308,11 +308,11 @@ return plural;
  ],
  "Get new image": [
   null,
-  ""
+  "새 이미지 가져오기 "
  ],
  "Hand Held": [
   null,
-  ""
+  "휴대용 "
  ],
  "Hard Disk": [
   null,
@@ -324,7 +324,7 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  "접두 길이"
+  "IP 접두어 길이:"
  ],
  "Id": [
   null,
@@ -360,7 +360,7 @@ return plural;
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "Docker 스토리지 풀에 관한 정보를 사용할 수 없습니다. "
  ],
  "Invalid port": [
   null,
@@ -372,11 +372,11 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "랩탑 "
  ],
  "Link to another container": [
   null,
-  ""
+  "다른 컨테이너로의 링크 "
  ],
  "Links": [
   null,
@@ -392,11 +392,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "낮은 프로파일 데스크탑 "
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "MAC Address:": [
   null,
@@ -404,7 +404,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "메인 서버 섀시 "
  ],
  "Memory": [
   null,
@@ -424,11 +424,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "미니 PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "미니 타워 "
  ],
  "Mount container volumes": [
   null,
@@ -436,7 +436,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "멀티 시스템 섀시 "
  ],
  "Name": [
   null,
@@ -448,7 +448,7 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "추가 로컬 스토리지를 찾을 수 없습니다. "
  ],
  "No alias specified": [
   null,
@@ -464,7 +464,7 @@ return plural;
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "현재 필터에 일치하는 컨테이너가 없습니다 "
  ],
  "No images": [
   null,
@@ -472,19 +472,19 @@ return plural;
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "현재 필터에 일치하는 이미지가 없습니다 "
  ],
  "No results for $0": [
   null,
-  ""
+  "$0의 결과를 찾을 수 없습니다 "
  ],
  "No running containers": [
   null,
-  ""
+  "실행 중인 컨테이너가 없습니다 "
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "현재 필터에 일치하는 실행 중인 컨테이너가 없습니다 "
  ],
  "Not authorized to access Docker on this system": [
   null,
@@ -496,27 +496,19 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
- ],
- "Off": [
-  null,
-  "비활성"
+  "노트북 "
  ],
  "Ok": [
   null,
   "확인"
  ],
- "On": [
-  null,
-  "활성"
- ],
  "On Failure": [
   null,
-  "실패하였습니다"
+  "오류 발생 시 "
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  ""
+  "오류 발생 시, $0 번 다시 시도 "
  ],
  "Other": [
   null,
@@ -528,11 +520,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "주변 장치 섀시 "
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -544,11 +536,11 @@ return plural;
  ],
  "Please try another term": [
   null,
-  ""
+  "다른 용어를 사용해 보십시오 "
  ],
  "Portable": [
   null,
-  ""
+  "이동식 "
  ],
  "Ports": [
   null,
@@ -560,15 +552,15 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "문제 "
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID 섀시 "
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "랙 마운트 섀시 "
  ],
  "ReadOnly": [
   null,
@@ -576,7 +568,7 @@ return plural;
  ],
  "ReadWrite": [
   null,
-  ""
+  "읽기쓰기 "
  ],
  "Reboot": [
   null,
@@ -584,7 +576,7 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "디스크 재포맷 및 디스크 추가 "
  ],
  "Repository": [
   null,
@@ -596,11 +588,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "스토리지 풀 재설정 "
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "스토리지 풀을 재설정하면 풀의 모든 컨테이너와 릴리스 디스크가 삭제됩니다."
  ],
  "Restart": [
   null,
@@ -608,15 +600,15 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "재시작 정책 "
  ],
  "Restart Policy:": [
   null,
-  ""
+  "재시작 정책: "
  ],
  "Retries:": [
   null,
-  ""
+  "재시도 횟수: "
  ],
  "Run": [
   null,
@@ -624,11 +616,11 @@ return plural;
  ],
  "Run Image": [
   null,
-  ""
+  "이미지 실행"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "쉴드 케이스 PC"
  ],
  "Security": [
   null,
@@ -640,11 +632,11 @@ return plural;
  ],
  "Show all containers": [
   null,
-  ""
+  "모든 컨테이너 표시 "
  ],
  "Show all images": [
   null,
-  ""
+  "모든 이미지 표시 "
  ],
  "Size": [
   null,
@@ -652,11 +644,11 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
+  "솔리드 스테이트 디스크 "
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "공간 절약형 컴퓨터 "
  ],
  "Start": [
   null,
@@ -676,11 +668,11 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "스틱 PC"
  ],
  "Stop": [
   null,
-  ""
+  "중지 "
  ],
  "Stop and delete": [
   null,
@@ -700,11 +692,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "서브 섀시 "
  ],
  "Sub Notebook": [
   null,
-  ""
+  "서브 노트북 "
  ],
  "TCP": [
   null,
@@ -724,11 +716,11 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "Docker 스토리지 풀은 이 시스템에서 관리할 수 없습니다. "
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "다음 컨테이너는 이 이미지에 종속되어 있으며 사용할 수 없게 됩니다. "
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

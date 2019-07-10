@@ -290,10 +290,6 @@ return plural;
   null,
   "Není platná soukromá část klíče"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
@@ -305,10 +301,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Původní heslo nebylo přijato"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Ooops!": [
   null,

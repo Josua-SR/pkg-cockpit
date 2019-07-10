@@ -98,17 +98,9 @@ return plural;
   null,
   "沒有"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
- ],
- "On": [
-  null,
-  "開"
  ],
  "On a mounted device": [
   null,

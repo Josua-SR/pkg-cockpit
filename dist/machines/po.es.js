@@ -114,6 +114,10 @@ return plural;
   null,
   "Dar click en \"Lanzar Visor Remoto\" descargará un archivo con la extensión .vv y lo ejecutará $0."
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Conectar con alguna Aplicación para ver $0"
@@ -190,6 +194,10 @@ return plural;
   null,
   ""
  ],
+ "Delete Network $0": [
+  null,
+  "Eliminar $0"
+ ],
  "Delete Storage Pool $0": [
   null,
   ""
@@ -262,6 +270,10 @@ return plural;
   null,
   ""
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Deben habilitarse menos CPU virtuales de las máximas."
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   "El anfitrión no debe estar vacío"
+ ],
+ "IP Address": [
+  null,
+  "Dirección IP"
  ],
  "IPv4 Address": [
   null,
@@ -429,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   ""
+ ],
+ "Memory must not be 0": [
+  null,
+  "Uso de memoria:"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Sistema Operativo"
+ ],
+ "Operation is in progress": [
+  null,
+  "oVirt acceso progresando"
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   "El directorio en el servidor que se está exportando."
  ],
+ "The network could not be deleted": [
+  null,
+  "La ruta de destino no debe estar vacía"
+ ],
  "The pool is empty": [
   null,
   "El grupo está vacío"
@@ -930,9 +958,17 @@ return plural;
   null,
   "Unidad"
  ],
+ "Unknown": [
+  null,
+  "Desconocido"
+ ],
  "Unplug": [
   null,
   "Desenchufar"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1221,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

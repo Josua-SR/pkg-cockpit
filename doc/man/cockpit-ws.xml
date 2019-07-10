@@ -172,8 +172,15 @@ getcert request -f ${CERT_FILE} -k ${KEY_FILE} -D $(hostname --fqdn) -C "sed -n 
             </citerefentry>
             configuration file, it will override this default.
           </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>--proxy-tls-redirect</option></term>
+        <listitem>
           <para>
-            This option implies <option>--no-tls</option>.
+            Enable redirection of unencrypted http requests to https (TLS) in <option>--no-tls</option> mode.
+            Use this when running <command>cockpit-ws</command> behind a reverse http proxy that also
+            supports https, but does no redirection from http to https by itself.
           </para>
         </listitem>
       </varlistentry>

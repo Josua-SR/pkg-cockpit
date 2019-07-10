@@ -382,6 +382,10 @@ return plural;
   null,
   "Misslyckades"
  ],
+ "Failed to add port": [
+  null,
+  "Misslyckades att ändra lösenord"
+ ],
  "Failed to add service": [
   null,
   ""
@@ -561,10 +565,6 @@ return plural;
  "Maximum message age $max_age": [
   null,
   "Maximal meddelandeålder $max_age"
- ],
- "Members": [
-  null,
-  "Medlemmar"
  ],
  "Mode": [
   null,

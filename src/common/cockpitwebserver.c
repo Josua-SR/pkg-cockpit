@@ -53,7 +53,6 @@ struct _CockpitWebServer {
   GString *url_root;
   gint request_timeout;
   gint request_max;
-  gboolean redirect_tls;
   CockpitWebServerFlags flags;
 
   GSocketService *socket_service;
@@ -69,7 +68,6 @@ enum
   PROP_CERTIFICATE,
   PROP_SSL_EXCEPTION_PREFIX,
   PROP_SOCKET_ACTIVATED,
-  PROP_REDIRECT_TLS,
   PROP_FLAGS,
   PROP_URL_ROOT,
 };
@@ -98,7 +96,6 @@ cockpit_web_server_init (CockpitWebServer *server)
   server->main_context = g_main_context_ref_thread_default ();
   server->ssl_exception_prefix = g_string_new ("");
   server->url_root = g_string_new ("");
-  server->redirect_tls = TRUE;
   server->address = NULL;
 }
 
@@ -160,10 +157,6 @@ cockpit_web_server_get_property (GObject *object,
 
     case PROP_SOCKET_ACTIVATED:
       g_value_set_boolean (value, server->socket_activated);
-      break;
-
-    case PROP_REDIRECT_TLS:
-      g_value_set_boolean (value, server->redirect_tls);
       break;
 
     case PROP_FLAGS:
@@ -228,10 +221,6 @@ cockpit_web_server_set_property (GObject *object,
         g_string_assign (server->url_root, str->str);
 
       g_string_free (str, TRUE);
-      break;
-
-    case PROP_REDIRECT_TLS:
-      server->redirect_tls = g_value_get_boolean (value);
       break;
 
     case PROP_FLAGS:
@@ -421,10 +410,6 @@ cockpit_web_server_class_init (CockpitWebServerClass *klass)
                                    g_param_spec_boolean ("socket-activated", NULL, NULL, FALSE,
                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
-  g_object_class_install_property (gobject_class, PROP_REDIRECT_TLS,
-                                   g_param_spec_boolean ("redirect-tls", NULL, NULL, TRUE,
-                                                         G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
-
   g_object_class_install_property (gobject_class, PROP_FLAGS,
                                    g_param_spec_int ("flags", NULL, NULL, 0, COCKPIT_WEB_SERVER_FLAGS_MAX, 0,
                                                      G_PARAM_READABLE |
@@ -505,23 +490,6 @@ cockpit_web_server_get_port (CockpitWebServer *self)
 {
   g_return_val_if_fail (COCKPIT_IS_WEB_SERVER (self), -1);
   return self->port;
-}
-
-void
-cockpit_web_server_set_redirect_tls (CockpitWebServer *self,
-                                     gboolean          redirect_tls)
-{
-  g_return_if_fail (COCKPIT_IS_WEB_SERVER (self));
-
-  self->redirect_tls = redirect_tls;
-}
-
-gboolean
-cockpit_web_server_get_redirect_tls (CockpitWebServer *self)
-{
-  g_return_val_if_fail (COCKPIT_IS_WEB_SERVER (self), FALSE);
-
-  return self->redirect_tls;
 }
 
 CockpitWebServerFlags
@@ -719,6 +687,7 @@ typedef struct {
   gboolean eof_okay;
   GSource *source;
   GSource *timeout;
+  gboolean check_tls_redirect;
 } CockpitRequest;
 
 static void
@@ -807,10 +776,35 @@ path_has_prefix (const gchar *path,
          (path[prefix->len] == '\0' || path[prefix->len] == '/');
 }
 
+static gboolean
+is_localhost_name (const char *host)
+{
+  return g_strcmp0 (host, "127.0.0.1") == 0 ||
+         g_strcmp0 (host, "[::1]") == 0 ||
+         g_str_has_prefix (host, "127.0.0.1:") ||
+         g_str_has_prefix (host, "[::1]:") ||
+         /* catches localhost4 or localhost6:1234 as well */
+         g_str_has_prefix (host, "localhost");
+}
+
+static gboolean
+is_localhost_connection (GSocketConnection *conn)
+{
+  g_autoptr (GSocketAddress) addr = g_socket_connection_get_local_address (conn, NULL);
+  if (G_IS_INET_SOCKET_ADDRESS (addr))
+    {
+      GInetAddress *inet = g_inet_socket_address_get_address (G_INET_SOCKET_ADDRESS (addr));
+      return g_inet_address_get_is_loopback (inet);
+    }
+
+  return FALSE;
+}
+
 static void
 process_request (CockpitRequest *request,
                  const gchar *method,
                  const gchar *path,
+                 const gchar *host,
                  GHashTable *headers)
 {
   gboolean claimed = FALSE;
@@ -822,14 +816,30 @@ process_request (CockpitRequest *request,
       request->delayed_reply = 404;
     }
 
-  /*
-   * If redirecting to TLS, check the path. Certain paths
-   * don't require us to redirect.
-   */
-  if (request->delayed_reply == 301 &&
-      path_has_prefix (path, request->web_server->ssl_exception_prefix))
+  /* Redirect to TLS? */
+  if (!request->delayed_reply && request->check_tls_redirect)
     {
-      request->delayed_reply = 0;
+      request->check_tls_redirect = FALSE;
+
+      /* Certain paths don't require us to redirect */
+      if (!path_has_prefix (path, request->web_server->ssl_exception_prefix))
+        {
+          gboolean redirect_tls;
+
+          /* In proxy mode, look at Host: header, as the connection IP is meaningless;
+           * in standalone mode, look at the connection IP (mostly for backwards compatibility -- this really ought to
+           * coincide, so clean this up some day) */
+          if (request->web_server->flags & COCKPIT_WEB_SERVER_REDIRECT_TLS_PROXY)
+            redirect_tls = !is_localhost_name (host);
+          else
+            redirect_tls = !is_localhost_connection (G_SOCKET_CONNECTION (request->io));
+
+          if (redirect_tls)
+            {
+              g_debug ("redirecting request from Host: %s to TLS", host);
+              request->delayed_reply = 301;
+            }
+        }
     }
 
   if (request->delayed_reply)
@@ -959,7 +969,7 @@ parse_and_process_request (CockpitRequest *request)
     }
 
   g_byte_array_remove_range (request->buffer, 0, off1 + off2);
-  process_request (request, method, path, headers);
+  process_request (request, method, path, str, headers);
 
 out:
   if (headers)
@@ -1115,10 +1125,6 @@ on_socket_input (GSocket *socket,
   guchar first_byte;
   GInputVector vector[1] = { { &first_byte, 1 } };
   gint flags = G_SOCKET_MSG_PEEK;
-  gboolean redirect_tls;
-  gboolean is_tls;
-  GSocketAddress *addr;
-  GInetAddress *inet;
   GError *error = NULL;
   GIOStream *tls_stream;
   gssize num_read;
@@ -1149,30 +1155,11 @@ on_socket_input (GSocket *socket,
       return FALSE;
     }
 
-  is_tls = TRUE;
-  redirect_tls = FALSE;
-
   /*
    * TLS streams are guaranteed to start with octet 22.. this way we can distinguish them
    * from regular HTTP requests
    */
-  if (first_byte != 22 && first_byte != 0x80)
-    {
-      is_tls = FALSE;
-      redirect_tls = request->web_server->redirect_tls;
-      if (redirect_tls)
-        {
-          addr = g_socket_connection_get_local_address (G_SOCKET_CONNECTION (request->io), NULL);
-          if (G_IS_INET_SOCKET_ADDRESS (addr))
-            {
-              inet = g_inet_socket_address_get_address (G_INET_SOCKET_ADDRESS (addr));
-              redirect_tls = !g_inet_address_get_is_loopback (inet);
-            }
-          g_clear_object (&addr);
-        }
-    }
-
-  if (is_tls)
+  if (first_byte == 22 || first_byte == 0x80)
     {
       tls_stream = g_tls_server_connection_new (request->io,
                                                 request->web_server->certificate,
@@ -1194,9 +1181,11 @@ on_socket_input (GSocket *socket,
       g_object_unref (request->io);
       request->io = G_IO_STREAM (tls_stream);
     }
-  else if (redirect_tls)
+  else
     {
-      request->delayed_reply = 301;
+      /* non-TLS stream; defer redirection check until after header parsing */
+      if (cockpit_web_server_get_flags (request->web_server) & COCKPIT_WEB_SERVER_REDIRECT_TLS)
+        request->check_tls_redirect = TRUE;
     }
 
   start_request_input (request);
@@ -1245,7 +1234,7 @@ cockpit_request_start (CockpitWebServer *self,
       socket = g_socket_connection_get_socket (connection);
       g_socket_set_blocking (socket, FALSE);
 
-      if (self->certificate)
+      if (self->certificate || self->flags & COCKPIT_WEB_SERVER_REDIRECT_TLS)
         {
           request->source = g_socket_create_source (g_socket_connection_get_socket (connection),
                                                     G_IO_IN, NULL);
