@@ -83,14 +83,6 @@ return plural;
   null,
   ""
  ],
- "Off": [
-  null,
-  "Pois"
- ],
- "On": [
-  null,
-  "Päällä"
- ],
  "SELinux Access Control Errors": [
   null,
   ""

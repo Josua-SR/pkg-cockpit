@@ -46,6 +46,10 @@ return plural;
   null,
   "Aggiungi disco"
  ],
+ "Additional": [
+  null,
+  "Memoria aggiuntiva"
+ ],
  "Address": [
   null,
   "Indirizzo"
@@ -90,6 +94,10 @@ return plural;
   null,
   ""
  ],
+ "Cache": [
+  null,
+  "Imbarcato"
+ ],
  "Cancel": [
   null,
   "Annulla"
@@ -105,6 +113,10 @@ return plural;
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Facendo clic su \"Avvia visualizzatore remoto\" si scarica un file .vv e si avvia $0."
+ ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -162,6 +174,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Posizione di montaggio"
+ ],
  "DHCP Range": [
   null,
   ""
@@ -177,6 +193,10 @@ return plural;
  "Delete Content": [
   null,
   ""
+ ],
+ "Delete Network $0": [
+  null,
+  "Cancellare $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -226,6 +246,10 @@ return plural;
   null,
   "Dischi"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "Scarica l'MSI da $0"
@@ -243,6 +267,10 @@ return plural;
   ""
  ],
  "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
   ""
  ],
@@ -290,6 +318,10 @@ return plural;
   null,
   "Console grafica in Desktop Viewer"
  ],
+ "Hide Performance Options": [
+  null,
+  "Profilo di prestazione"
+ ],
  "Host": [
   null,
   "Host"
@@ -306,6 +338,10 @@ return plural;
   null,
   "L'host non deve essere vuoto"
  ],
+ "IP Address": [
+  null,
+  "Indirizzo IP"
+ ],
  "IPv4 Address": [
   null,
   ""
@@ -321,6 +357,14 @@ return plural;
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
   ""
+ ],
+ "Initiator": [
+  null,
+  "Istantanea"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "Installazione La fonte non deve essere vuota"
  ],
  "Install": [
   null,
@@ -378,9 +422,17 @@ return plural;
   null,
   "Collegamento manuale"
  ],
+ "Maximum Allocation": [
+  null,
+  "Posizione della discarica di crash"
+ ],
  "Maximum Transmission Unit": [
   null,
   ""
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Non è stato possibile salvare le impostazioni del VCPU"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -389,6 +441,18 @@ return plural;
  "Memory": [
   null,
   "Memoria"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Non è stato possibile salvare le impostazioni del VCPU"
+ ],
+ "Memory must not be 0": [
+  null,
+  "Utilizzo memoria:"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -466,6 +530,10 @@ return plural;
   null,
   "Nuovo nome del volume"
  ],
+ "No Storage Pools available": [
+  null,
+  "Nome della piscina di stoccaggio"
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Nessun volume di stoccaggio definito per questo pool di stoccaggio"
@@ -473,6 +541,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Nessuna VM è in esecuzione o definita su questo host"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Nessuna rete virtuale"
  ],
  "No boot device found": [
   null,
@@ -498,13 +570,13 @@ return plural;
   null,
   ""
  ],
+ "No networks available": [
+  null,
+  "Non disponibile"
+ ],
  "No storage pool is defined on this host": [
   null,
   "Nessun pool di archiviazione è definito su questo host"
- ],
- "No virtual networks": [
-  null,
-  "Nessuna rete virtuale"
  ],
  "None (Isolated Network)": [
   null,
@@ -518,6 +590,10 @@ return plural;
   null,
   ""
  ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
+ ],
  "Open": [
   null,
   ""
@@ -525,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Sistema Operativo"
+ ],
+ "Operation is in progress": [
+  null,
+  "oVirt login in corso"
  ],
  "Overview": [
   null,
@@ -555,6 +635,14 @@ return plural;
   ""
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -682,6 +770,10 @@ return plural;
   null,
   "Sessione"
  ],
+ "Show Performance Options": [
+  null,
+  "Opzioni di alimentazione"
+ ],
  "Shut Down": [
   null,
   "Arresto"
@@ -697,6 +789,10 @@ return plural;
  "Source": [
   null,
   "Sorgente"
+ ],
+ "Source Format": [
+  null,
+  "Percorso della sorgente"
  ],
  "Source Path": [
   null,
@@ -726,6 +822,10 @@ return plural;
   null,
   "Stato"
  ],
+ "Storage": [
+  null,
+  "Storage"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -745,10 +845,6 @@ return plural;
  "Storage Pools": [
   null,
   "Pool di storage"
- ],
- "Storage Size": [
-  null,
-  "Dimensione storage"
  ],
  "Storage Volumes": [
   null,
@@ -818,9 +914,17 @@ return plural;
   null,
   "La directory sul server da esportare"
  ],
+ "The network could not be deleted": [
+  null,
+  "Il percorso di destinazione non deve essere vuoto"
+ ],
  "The pool is empty": [
   null,
   "La piscina è vuota"
+ ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
  ],
  "Threads per core": [
   null,
@@ -854,9 +958,21 @@ return plural;
   null,
   "Unità"
  ],
+ "Unknown": [
+  null,
+  "Sconosciuto"
+ ],
  "Unplug": [
   null,
   "Scollegare"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -962,6 +1078,10 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "attivo"
@@ -973,6 +1093,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -1022,9 +1146,17 @@ return plural;
   null,
   "hostdev"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  "Cambiare il nome dell'iniziatore iSCSI"
+ ],
  "iSCSI Target": [
   null,
   ""
+ ],
+ "iSCSI direct Target": [
+  null,
+  "target iSCSI"
  ],
  "iSCSI target IQN": [
   null,
@@ -1074,6 +1206,14 @@ return plural;
   null,
   "server"
  ],
+ "show less": [
+  null,
+  "mostra meno"
+ ],
+ "show more": [
+  null,
+  "mostra di più"
+ ],
  "shut off": [
   null,
   "spento"
@@ -1117,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

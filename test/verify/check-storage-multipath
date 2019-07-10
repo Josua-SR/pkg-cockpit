@@ -23,8 +23,7 @@ from storagelib import *
 from testlib import *
 
 
-@skipImage("UDisks doesn't have support for multipath", "debian-stable", "ubuntu-1804", "ubuntu-stable")
-@skipImage("No multipath on Debian", "debian-testing")
+@skipImage("UDisks doesn't have support for multipath", "debian-stable", "debian-testing", "ubuntu-1804", "ubuntu-stable")
 class TestStorage(StorageCase):
 
     def testBasic(self):
@@ -32,10 +31,10 @@ class TestStorage(StorageCase):
         b = self.browser
 
         def detail_row_name(index):
-            return '#detail-header div.ct-form-layout label:nth-of-type(%s)' % index
+            return '#detail-header div.ct-form label:nth-of-type(%s)' % index
 
         def detail_row_value(index):
-            return '#detail-header div.ct-form-layout label:nth-of-type(%s) + div' % index
+            return '#detail-header div.ct-form label:nth-of-type(%s) + div' % index
 
         def wait_detail_row(index, name):
             b.wait_present(detail_row_name(index))

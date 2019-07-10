@@ -48,7 +48,7 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "애플리케이션으로 이동"
  ],
  "Install": [
   null,
@@ -60,7 +60,7 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "애플리케이션이 설치되어 있지 않거나 사용할 수 없습니다. "
  ],
  "No description provided.": [
   null,
@@ -76,7 +76,7 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit가 크래시되었습니다 "
  ],
  "Remove": [
   null,

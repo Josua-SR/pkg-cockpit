@@ -182,17 +182,9 @@ return plural;
   null,
   "Nessun aggiornamento in attesa"
  ],
- "Off": [
-  null,
-  "Off"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "On"
  ],
  "Package information": [
   null,

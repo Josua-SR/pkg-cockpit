@@ -500,17 +500,9 @@ return plural;
   null,
   "Notebook"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "On Failure": [
   null,

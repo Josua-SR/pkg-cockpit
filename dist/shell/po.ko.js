@@ -100,11 +100,11 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  ""
+  "Cockpit은 지정된 호스트 $0에 연결할 수 없습니다. 포트 $1에서 ssh가 실행되고 있는지 확인하거나 주소에서 다른 포트를 지정합니다. "
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  ""
+  "Cockpit에서 예상치 못한 내부 오류가 발생했습니다.  <br/><br/>브라우저에서 업데이트를 눌러 Cockpit 재부팅을 시도할 수 있습니다. javascript 콘솔에는 이러한 오류에 대한 상세 정보가 포함되어 있습니다 (대부분의 브라우저에서 <b>Ctrl-Shift-J</b>)."
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
@@ -132,7 +132,7 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  ""
+  "Cockpit은 {{#strong}}{{host}}{{/strong}}에 로그인할 수 없습니다. 다음에서 인증 정보를 변경할 수 있습니다. {{#can_sync}}{{#sync_link}}계정과 암호 동기화{{/sync_link}}를 실행할 수 있습니다.{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -152,7 +152,7 @@ return plural;
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
-  ""
+  "{{ limit }} 대 이상의 컴퓨터에 동시 연결을 지원하지 않습니다. "
  ],
  "Connecting to the machine": [
   null,
@@ -184,15 +184,15 @@ return plural;
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "여기에 다른 암호를 입력하면 이 컴퓨터에 연결할 때 마다 암호를 다시 입력해야 합니다"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  ""
+  "사용자를 로드하는 동안 오류가 발생했습니다: {{perm_failed}}"
  ],
  "Failed to add machine: $0": [
   null,
-  ""
+  "컴퓨터를 추가하지 못했습니다: $0"
  ],
  "Failed to change password": [
   null,
@@ -200,7 +200,7 @@ return plural;
  ],
  "Failed to edit machine: $0": [
   null,
-  ""
+  "컴퓨터를 편집하지 못했습니다: $0"
  ],
  "Fingerprint": [
   null,
@@ -212,7 +212,7 @@ return plural;
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "사용자를 동기화하려면 {{#strong}}{{host}}{{/strong}}에 로그인해야 합니다. "
  ],
  "Incorrect Host Key": [
   null,
@@ -220,27 +220,27 @@ return plural;
  ],
  "Invalid file permissions": [
   null,
-  ""
+  "잘못된 파일 권한 "
  ],
  "Is sshd running on a different port?": [
   null,
-  ""
+  "다른 포트에서 sshd가 실행되고 있습니까?"
  ],
  "Kerberos Based SSO": [
   null,
-  ""
+  "Kerberos 기반 SSO"
  ],
  "Kerberos Ticket": [
   null,
-  ""
+  "Kerberos 티켓 "
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "컴퓨터에 현재 로그인한 사용자{{#default_user}} ({{default_user}}){{/default_user}}로 연결하려면 비워두십시오. 다른 사용자 이름을 입력하면 이 컴퓨터에 연결할 때 입력한 사용자가 항상 사용됩니다."
  ],
  "Licensed under:": [
   null,
-  ""
+  "라이센스 보유자: "
  ],
  "Log In": [
   null,
@@ -264,7 +264,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "로그인 관리자의 권한이 상승되었습니다 "
  ],
  "Machines": [
   null,
@@ -276,7 +276,7 @@ return plural;
  ],
  "New password was not accepted": [
   null,
-  ""
+  "새 암호가 허용되지 않습니다 "
  ],
  "No matching files found": [
   null,
@@ -284,15 +284,11 @@ return plural;
  ],
  "No such file or directory": [
   null,
-  ""
+  "이러한 파일 또는 디렉토리가 없습니다 "
  ],
  "Not a valid private key": [
   null,
-  ""
- ],
- "Off": [
-  null,
-  "비활성"
+  "유효한 개인 키가 없습니다 "
  ],
  "Ok": [
   null,
@@ -300,15 +296,11 @@ return plural;
  ],
  "Old Password": [
   null,
-  ""
+  "이전 암호 "
  ],
  "Old password not accepted": [
   null,
-  ""
- ],
- "On": [
-  null,
-  "활성"
+  "이전 암호가 허용되지 않습니다 "
  ],
  "Ooops!": [
   null,
@@ -320,15 +312,15 @@ return plural;
  ],
  "Password not accepted": [
   null,
-  ""
+  "암호가 허용되지 않습니다 "
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  ""
+  "권한 작업 실행 또는 다른 컴퓨터에 연결하기 위해 암호를 사용할 수 없습니다 "
  ],
  "Path to file": [
   null,
-  ""
+  "파일의 경로 "
  ],
  "Port": [
   null,
@@ -336,7 +328,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "권한 "
  ],
  "Project website": [
   null,
@@ -344,11 +336,11 @@ return plural;
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "ssh-add를 통한 메세지 제공 시간이 초과되었습니다 "
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "ssh-keygen을 통한 메세지 제공 시간이 초과되었습니다 "
  ],
  "Public Key": [
   null,
@@ -360,7 +352,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  ""
+  "권한 작업 실행 또는 다른 컴퓨터에 연결을 위해 암호를 재사용합니다 "
  ],
  "Select": [
   null,
@@ -368,7 +360,7 @@ return plural;
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  ""
+  "{{#strong}}{{host}}{{/strong}}와 동기화할 사용자를 선택합니다 "
  ],
  "Synchronize": [
   null,
@@ -380,11 +372,11 @@ return plural;
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  ""
+  "IP 주소 또는 호스트 이름에는 공백을 포함할 수 없습니다. "
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  ""
+  "호스트 {{#strong}}{{host}}{{/strong}} 인증을 설정할 수 없습니다. 연결을 유지하시겠습니까?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
@@ -396,7 +388,7 @@ return plural;
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "암호가 일치하지 않습니다. "
  ],
  "There are currently no active pages": [
   null,

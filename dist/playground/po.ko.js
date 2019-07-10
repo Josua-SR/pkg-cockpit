@@ -62,21 +62,13 @@ return plural;
   null,
   "준비되지 않음"
  ],
- "Off": [
-  null,
-  "비활성"
- ],
  "Ok": [
   null,
   "확인"
  ],
- "On": [
-  null,
-  "활성"
- ],
  "Path to file": [
   null,
-  ""
+  "파일의 경로 "
  ],
  "Ready": [
   null,

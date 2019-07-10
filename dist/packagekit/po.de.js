@@ -182,17 +182,9 @@ return plural;
   null,
   "Keine Updates ausstehend"
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "Package information": [
   null,

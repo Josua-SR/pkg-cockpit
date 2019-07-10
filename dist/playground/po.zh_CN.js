@@ -38,10 +38,6 @@ return plural;
   null,
   "控制"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "删除 '{{ name }}'"
- ],
  "Empty": [
   null,
   "空"
@@ -66,17 +62,9 @@ return plural;
   null,
   "未就绪"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Ok": [
   null,
   "确认"
- ],
- "On": [
-  null,
-  "开"
  ],
  "Path to file": [
   null,

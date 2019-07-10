@@ -382,6 +382,10 @@ return plural;
   null,
   "Échoué"
  ],
+ "Failed to add port": [
+  null,
+  "N'a pas pu ajouter de zone"
+ ],
  "Failed to add service": [
   null,
   "N'a pas pu ajouter le service"
@@ -561,10 +565,6 @@ return plural;
  "Maximum message age $max_age": [
   null,
   "Âge maximal du message $max_age"
- ],
- "Members": [
-  null,
-  "Membres"
  ],
  "Mode": [
   null,

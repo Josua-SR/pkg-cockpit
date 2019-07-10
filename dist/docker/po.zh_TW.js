@@ -498,17 +498,9 @@ return plural;
   null,
   "筆記本"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
- ],
- "On": [
-  null,
-  "開"
  ],
  "On Failure": [
   null,

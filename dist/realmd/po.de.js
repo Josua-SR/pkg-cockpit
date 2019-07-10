@@ -44,7 +44,7 @@ return plural;
  ],
  "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "Nach dem Verlassen der Domain können sich nur noch Nutzer mit lokalen Zugängen an dieser Maschine anmelden. Dies betrifft auch andere Dienste wie z.B. die DNS Auflösungs Einstellungen und die Liste der vertrauenswürdigen CAs könnte sich ändern."
  ],
  "Authentication": [
   null,
@@ -150,17 +150,9 @@ return plural;
   null,
   "Weiter"
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "One Time Password": [
   null,

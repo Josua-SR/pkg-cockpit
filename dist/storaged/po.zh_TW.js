@@ -314,9 +314,9 @@ return plural;
   null,
   "壓縮"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "確認密碼"
+  "確認"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -397,10 +397,6 @@ return plural;
  "Custom": [
   null,
   "自訂"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "自定義（輸入文件系統類型）"
  ],
  "Custom encryption options": [
   null,
@@ -526,13 +522,13 @@ return plural;
   null,
   "清空 $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "加密 $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "加密EXT4（LUKS）"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -541,10 +537,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "加密分區 $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "加密XFS（LUKS）"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -593,10 +585,6 @@ return plural;
  "Filesystem Name": [
   null,
   "文件系統名稱"
- ],
- "Filesystem type": [
-  null,
-  "文件系統類型"
  ],
  "Filesystems": [
   null,
@@ -649,6 +637,10 @@ return plural;
  "Grow": [
   null,
   "增長"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -729,6 +721,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "密鑰服務器刪除可能會阻止解鎖 $0。"
+ ],
+ "Loading...": [
+  null,
+  "正在載入..."
  ],
  "Local Mount Point": [
   null,
@@ -966,10 +962,6 @@ return plural;
   null,
   "沒跑"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
@@ -977,10 +969,6 @@ return plural;
  "Old passphrase": [
   null,
   "舊密碼"
- ],
- "On": [
-  null,
-  "開"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1326,6 +1314,14 @@ return plural;
   null,
   "設置循環設備 $target"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   "縮小"
@@ -1333,6 +1329,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "收縮邏輯卷"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1542,6 +1542,10 @@ return plural;
   null,
   "設備恢復時無法刪除此磁盤。"
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "在調整大小之前，需要激活此卷。"
@@ -1698,13 +1702,13 @@ return plural;
   null,
   "卷組"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "等待其他軟件管理操作完成"
- ],
- "Warning": [
-  null,
-  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

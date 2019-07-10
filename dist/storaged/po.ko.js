@@ -284,7 +284,7 @@ return plural;
  ],
  "Checking and Repairing RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 확인 및 복구 중 "
  ],
  "Checking installed software": [
   null,
@@ -408,7 +408,7 @@ return plural;
  ],
  "DISK IS FAILING": [
   null,
-  ""
+  "디스크에 오류 발생 "
  ],
  "Data Used": [
   null,
@@ -424,7 +424,7 @@ return plural;
  ],
  "Deduplication": [
   null,
-  ""
+  "중복 "
  ],
  "Default": [
   null,
@@ -448,11 +448,11 @@ return plural;
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
-  ""
+  "논리 볼륨을 삭제하면 논리 볼륨 내의 모든 데이터도 함께 삭제됩니다. "
  ],
  "Deleting a partition will delete all data in it.": [
   null,
-  ""
+  "파티션을 삭제하면 파티션 내의 모든 데이터도 함께 삭제됩니다. "
  ],
  "Deleting a volume group will erase all data on it.": [
   null,
@@ -464,11 +464,11 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "장치 파일 "
  ],
  "Device is read-only": [
   null,
-  ""
+  "장치는 읽기 전용입니다 "
  ],
  "Disk": [
   null,
@@ -476,11 +476,11 @@ return plural;
  ],
  "Disk is OK": [
   null,
-  ""
+  "디스크는 정상입니다"
  ],
  "Disk passphrase": [
   null,
-  ""
+  "디스크 암호 "
  ],
  "Disks": [
   null,
@@ -488,7 +488,7 @@ return plural;
  ],
  "Don't overwrite existing data": [
   null,
-  ""
+  "기존 데이터를 덮어쓰지 않습니다 "
  ],
  "Downloading $0": [
   null,
@@ -508,11 +508,11 @@ return plural;
  ],
  "Edit Tang keyserver": [
   null,
-  ""
+  "Tang 키 서버 편집 "
  ],
  "Editing a key requires a free slot": [
   null,
-  ""
+  "키 편집에 빈 슬롯이 필요합니다 "
  ],
  "Ejecting $target": [
   null,
@@ -520,31 +520,31 @@ return plural;
  ],
  "Emptying $target": [
   null,
-  ""
+  "$target 비우는 중 "
  ],
  "Encrypt data": [
   null,
-  ""
+  "데이터 암호화 "
  ],
  "Encrypted $0": [
   null,
-  ""
+  "암호화됨 $0"
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "암호화된 $0의 논리 볼륨"
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "암호화된 $0의 파티션"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "여기에서는 암호화된 볼륨 크기를 변경할 수 없습니다. "
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "암호화된 볼륨 크기를 변경하기 전에 잠금을 해제해야 합니다."
  ],
  "Encryption": [
   null,
@@ -560,7 +560,7 @@ return plural;
  ],
  "Erasing $target": [
   null,
-  ""
+  "$target 삭제 중 "
  ],
  "Error": [
   null,
@@ -568,7 +568,7 @@ return plural;
  ],
  "Extended Partition": [
   null,
-  ""
+  "확장 파티션 "
  ],
  "FAILED": [
   null,
@@ -580,7 +580,7 @@ return plural;
  ],
  "Filesystem Mounting": [
   null,
-  ""
+  "파일 시스템 마운트 "
  ],
  "Filesystem Name": [
   null,
@@ -592,11 +592,11 @@ return plural;
  ],
  "For legacy applications only. Reduces performance.": [
   null,
-  ""
+  "레거시 애플리케이션 전용입니다. 성능이 저하됩니다. "
  ],
  "Force remove passphrase in $0": [
   null,
-  ""
+  "$0에서 암호문을 강제 삭제합니다 "
  ],
  "Format": [
   null,
@@ -628,7 +628,7 @@ return plural;
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  ""
+  "이 그룹에서 여유 공간을 확보합니다: 다른 논리 볼륨을 축소 또는 제거하거나 새로운 물리 볼륨을 추가하십시오."
  ],
  "Go to now": [
   null,
@@ -636,39 +636,39 @@ return plural;
  ],
  "Grow": [
   null,
-  ""
+  "확장 "
  ],
  "Grow Content": [
   null,
-  ""
+  "컨텐츠 확장 "
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "논리 불륨 확장 "
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "$0의 논리 크기 확장 "
  ],
  "Grow to take all space": [
   null,
-  ""
+  "모든 공간을 사용하여 확장하기 "
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  ""
+  "tang-show-keys를 사용할 수 없는 경우 다음을 실행합니다:"
  ],
  "In Sync": [
   null,
-  ""
+  "동기화 "
  ],
  "Inactive volume": [
   null,
-  ""
+  "비활성 볼륨 "
  ],
  "Index Memory": [
   null,
-  ""
+  "인덱스 메모리 "
  ],
  "Install": [
   null,
@@ -700,7 +700,7 @@ return plural;
  ],
  "Key slots with unknown types can not be edited here": [
   null,
-  ""
+  "알 수 없는 유형의 키 슬롯은 여기에서 수정할 수 없습니다."
  ],
  "Key source": [
   null,
@@ -712,15 +712,15 @@ return plural;
  ],
  "Keyserver": [
   null,
-  ""
+  "키 서버 "
  ],
  "Keyserver address": [
   null,
-  ""
+  "키 서버 주소 "
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  ""
+  "키 서버를 제거하면 $0 잠금 해제가 되지 않을 수 있습니다."
  ],
  "Loading...": [
   null,
@@ -736,15 +736,15 @@ return plural;
  ],
  "Locking $target": [
   null,
-  ""
+  "$target 잠금 중 "
  ],
  "Logical": [
   null,
-  ""
+  "논리"
  ],
  "Logical Size": [
   null,
-  ""
+  "논리 크기 "
  ],
  "Logical Volume": [
   null,
@@ -760,27 +760,27 @@ return plural;
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
-  ""
+  "Tang 서버의 키 해시가 일치하는지 확인합니다."
  ],
  "Manually check with SSH: ": [
   null,
-  ""
+  "수동으로 SSH로 확인합니다. "
  ],
  "Marking $target as faulty": [
   null,
-  ""
+  "$target을 오류가 있는 것으로 표시"
  ],
  "Member of RAID Device": [
   null,
-  ""
+  "RAID 장치 멤버 "
  ],
  "Member of RAID Device $0": [
   null,
-  ""
+  "RAID 장치 $0 멤버"
  ],
  "Metadata Used": [
   null,
-  ""
+  "사용된 메타데이터 "
  ],
  "Modifying $target": [
   null,
@@ -800,7 +800,7 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "부팅 시 마운트 "
  ],
  "Mount point can not be empty": [
   null,
@@ -812,15 +812,15 @@ return plural;
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "마운트 지점은 \"/\"로 시작해야 합니다. "
  ],
  "Mount read only": [
   null,
-  ""
+  "읽기 전용으로 마운트 "
  ],
  "Mounted At": [
   null,
-  ""
+  "마운트 위치 "
  ],
  "Mounting": [
   null,
@@ -860,7 +860,7 @@ return plural;
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "이름은 $0자를 초과할 수 없습니다 "
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -908,11 +908,11 @@ return plural;
  ],
  "No drives attached": [
   null,
-  ""
+  "드라이브가 연결되어 있지 않습니다 "
  ],
  "No free key slots": [
   null,
-  ""
+  "여유 키 슬롯이 없습니다."
  ],
  "No free space": [
   null,
@@ -920,15 +920,15 @@ return plural;
  ],
  "No iSCSI targets set up": [
   null,
-  ""
+  "iSCSI 대상이 설정되어 있지 않습니다 "
  ],
  "No keys added": [
   null,
-  ""
+  "추가된 키가 없습니다 "
  ],
  "No media inserted": [
   null,
-  ""
+  "미디어가 삽입되어 있지 않습니다 "
  ],
  "No partitioning": [
   null,
@@ -936,19 +936,19 @@ return plural;
  ],
  "No storage set up as RAID": [
   null,
-  ""
+  "RAID로 설정된 스토리지가 없습니다 "
  ],
  "No storage set up as VDO": [
   null,
-  ""
+  "VDO로 설정된 스토리지가 없습니다 "
  ],
  "No volume groups created": [
   null,
-  ""
+  "생성된 볼륨 그룹이 없습니다 "
  ],
  "Not enough space to grow.": [
   null,
-  ""
+  " 확장 공간이 부족합니다. "
  ],
  "Not found": [
   null,
@@ -956,11 +956,11 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "마운트되어 있지 않습니다. "
  ],
  "Not running": [
   null,
-  ""
+  "실행되고 있지 않습니다 "
  ],
  "Ok": [
   null,
@@ -968,15 +968,15 @@ return plural;
  ],
  "Old passphrase": [
   null,
-  ""
+  "이전 암호문 "
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "$1 중 $0만 사용됩니다. "
  ],
  "Operation '$operation' on $target": [
   null,
-  ""
+  "$target에서 '$operation' 작업"
  ],
  "Options": [
   null,
@@ -988,11 +988,11 @@ return plural;
  ],
  "Overwrite existing data with zeros": [
   null,
-  ""
+  "기존의 데이터를 제로로 덮어쓰기 "
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit가 크래시되었습니다 "
  ],
  "Partition": [
   null,
@@ -1000,7 +1000,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  ""
+  "$0의 파티션"
  ],
  "Partitioning": [
   null,
@@ -1012,15 +1012,15 @@ return plural;
  ],
  "Passphrase cannot be empty": [
   null,
-  ""
+  "암호문은 비워둘 수 없습니다 "
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  ""
+  "암호 제거에서 $0 잠금 해제가 되지 않을 수 있습니다. "
  ],
  "Passphrases do not match": [
   null,
-  ""
+  "암호가 일치하지 않습니다 "
  ],
  "Password": [
   null,
@@ -1028,15 +1028,15 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "서버 상의 경로 "
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "서버 상의 경로는 비워둘 수 없습니다. "
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "서버 상의 경로는 \"/\"로 시작해야 합니다. "
  ],
  "Physical": [
   null,
@@ -1052,11 +1052,11 @@ return plural;
  ],
  "Physical volume of $0": [
   null,
-  ""
+  "$0의 물리 볼륨 "
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "여기에서는 물리적 볼륨 크기를 변경할 수 없습니다. "
  ],
  "Please confirm deletion of $0": [
   null,
@@ -1064,7 +1064,7 @@ return plural;
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "$0 정지를 확인하십시오 "
  ],
  "Pool": [
   null,
@@ -1076,11 +1076,11 @@ return plural;
  ],
  "Pool for Thin Volumes": [
   null,
-  ""
+  "씬 볼륨을 위한 풀 "
  ],
  "Pool for thinly provisioned volumes": [
   null,
-  "Thin 논리 볼륨을 위한 풀"
+  "씬 프로비저닝된 볼륨을 위한 풀"
  ],
  "Port": [
   null,
@@ -1104,7 +1104,7 @@ return plural;
  ],
  "RAID 0 (Stripe)": [
   null,
-  ""
+  "RAID 0 (스트라이프)"
  ],
  "RAID 1": [
   null,
@@ -1120,7 +1120,7 @@ return plural;
  ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
-  ""
+  "RAID 10 (미러 스트라이프)"
  ],
  "RAID 4": [
   null,
@@ -1128,7 +1128,7 @@ return plural;
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
-  ""
+  "RAID 4 (전용 패리티)"
  ],
  "RAID 5": [
   null,
@@ -1136,7 +1136,7 @@ return plural;
  ],
  "RAID 5 (Distributed Parity)": [
   null,
-  ""
+  "RAID 5 (분산 패리티)"
  ],
  "RAID 6": [
   null,
@@ -1144,7 +1144,7 @@ return plural;
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
-  ""
+  "RAID 6 (이중 분산 패리티)"
  ],
  "RAID Device": [
   null,
@@ -1164,11 +1164,11 @@ return plural;
  ],
  "RAID Member": [
   null,
-  ""
+  "RAID 멤버 "
  ],
  "Reading": [
   null,
-  ""
+  "읽는 중 "
  ],
  "Reboot": [
   null,
@@ -1176,19 +1176,19 @@ return plural;
  ],
  "Recommended default": [
   null,
-  ""
+  "기본 권장 사항 "
  ],
  "Recovering": [
   null,
-  ""
+  "복구 중 "
  ],
  "Recovering RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 복구 중 "
  ],
  "Removals:": [
   null,
-  ""
+  "삭제: "
  ],
  "Remove": [
   null,
@@ -1200,7 +1200,7 @@ return plural;
  ],
  "Remove Tang keyserver": [
   null,
-  ""
+  "Tang 키 서버 삭제 "
  ],
  "Remove device": [
   null,
@@ -1208,11 +1208,11 @@ return plural;
  ],
  "Remove passphrase": [
   null,
-  ""
+  "암호문 삭제 "
  ],
  "Remove passphrase in $0?": [
   null,
-  ""
+  "$0에서 암호를 삭제하시겠습니까?"
  ],
  "Removing $0": [
   null,
@@ -1220,11 +1220,11 @@ return plural;
  ],
  "Removing $target from RAID Device": [
   null,
-  ""
+  "RAID 장치에서 $target 삭제 중 "
  ],
  "Removing physical volume from $target": [
   null,
-  ""
+  "$target에서 물리 볼륨 삭제 중 "
  ],
  "Rename": [
   null,
@@ -1236,27 +1236,27 @@ return plural;
  ],
  "Rename Volume Group": [
   null,
-  ""
+  "볼륨 그룹 이름 변경 "
  ],
  "Renaming $target": [
   null,
-  ""
+  "$target 이름 변경 중 "
  ],
  "Repairing $target": [
   null,
-  ""
+  "$target 복구 중 "
  ],
  "Repeat passphrase": [
   null,
-  ""
+  "암호문 반복 "
  ],
  "Resizing $target": [
   null,
-  ""
+  "$target 크기 변경 중 "
  ],
  "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "암호화된 파일 시스템의 크기를 변경하려면 디스크 잠금을 해제해야 합니다. 현재 디스크의 암호를 입력하십시오."
  ],
  "Running": [
   null,
@@ -1264,7 +1264,7 @@ return plural;
  ],
  "SMART self-test of $target": [
   null,
-  ""
+  "$target의 SMART 셀프 테스트 "
  ],
  "Save": [
   null,
@@ -1272,19 +1272,19 @@ return plural;
  ],
  "Save space by compressing individual blocks with LZ4": [
   null,
-  ""
+  "LZ4로 개별 블록을 압축하여 공간을 절약합니다 "
  ],
  "Save space by storing identical data blocks just once": [
   null,
-  ""
+  "동일한 데이터 블록을 한 번만 저장하여 공간을 절약합니다 "
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "새 암호를 저장하려면 디스크 잠금 해제가 필요합니다. 현재 디스크의 암호를 제공하십시오."
  ],
  "Securely erasing $target": [
   null,
-  ""
+  "$target을 안전하게 삭제 "
  ],
  "Server": [
   null,
@@ -1292,15 +1292,15 @@ return plural;
  ],
  "Server Address": [
   null,
-  ""
+  "서버 주소 "
  ],
  "Server address cannot be empty.": [
   null,
-  ""
+  "서버 주소는 비워둘 수 없습니다 "
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "서버는 비워둘 수 없습니다 "
  ],
  "Service": [
   null,
@@ -1312,15 +1312,15 @@ return plural;
  ],
  "Setting up loop device $target": [
   null,
-  ""
+  "루프 장치 $target 설정 중 "
  ],
  "Show all": [
   null,
-  ""
+  "모두 표시 "
  ],
  "Show all $0 drives": [
   null,
-  ""
+  "모든 $0 드라이브 표시 "
  ],
  "Shrink": [
   null,
@@ -1328,11 +1328,11 @@ return plural;
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "논리 볼륨 축소 "
  ],
  "Shrink Volume": [
   null,
-  ""
+  "볼륨 축소 "
  ],
  "Size": [
   null,
@@ -1340,31 +1340,31 @@ return plural;
  ],
  "Size cannot be negative": [
   null,
-  ""
+  "크기는 음수일 수 없습니다. "
  ],
  "Size cannot be zero": [
   null,
-  ""
+  "크기가 0이될 수 없습니다 "
  ],
  "Size is too large": [
   null,
-  ""
+  "크기가 너무 큽니다 "
  ],
  "Size must be a number": [
   null,
-  ""
+  "크기는 숫자여야 합니다 "
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "크기는 최소 $0이어야 합니다 "
  ],
  "Slot $0": [
   null,
-  ""
+  "슬롯 $0"
  ],
  "Spare": [
   null,
-  ""
+  "예비 "
  ],
  "Start": [
   null,
@@ -1372,27 +1372,27 @@ return plural;
  ],
  "Start Multipath": [
   null,
-  ""
+  "멀티패스 시작 "
  ],
  "Starting RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 시작 "
  ],
  "Starting swapspace $target": [
   null,
-  ""
+  "스왑공간 $target 시작 "
  ],
  "Stop": [
   null,
-  ""
+  "중지 "
  ],
  "Stop Device": [
   null,
-  ""
+  "장치 중지 "
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "중지 및 마운트 해제 "
  ],
  "Stop and remove": [
   null,
@@ -1400,11 +1400,11 @@ return plural;
  ],
  "Stopping RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 중지 "
  ],
  "Stopping swapspace $target": [
   null,
-  ""
+  "스왑공간 $target 중지 "
  ],
  "Storage": [
   null,
@@ -1412,15 +1412,15 @@ return plural;
  ],
  "Storage Logs": [
   null,
-  ""
+  "스토리지 로그 "
  ],
  "Storage can not be managed on this system.": [
   null,
-  ""
+  "스토리지는 이 시스템에서 관리할 수 없습니다. "
  ],
  "Store passphrase": [
   null,
-  ""
+  "암호 저장 "
  ],
  "Stored Passphrase": [
   null,
@@ -1428,11 +1428,11 @@ return plural;
  ],
  "Stored passphrase": [
   null,
-  ""
+  "저장된 암호"
  ],
  "Support is installed.": [
   null,
-  ""
+  "지원이 설치되어 있습니다."
  ],
  "Swap": [
   null,
@@ -1440,43 +1440,43 @@ return plural;
  ],
  "Synchronizing RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 동기화 "
  ],
  "Tang keyserver": [
   null,
-  ""
+  "Tang 키 서버 "
  ],
  "The RAID Array is in a degraded state": [
   null,
-  ""
+  "RAID 어레이는 성능이 저하된 상태입니다. "
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  ""
+  "예비 디스크를 추가하려면 RAID 장치가 실행되고 있어야 합니다. "
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
-  ""
+  "디스크를 제거하려면 RAID 장치가 실행되고 있어야 합니다. "
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  ""
+  "VDO 장치 생성이 완료되지 않았기 때문에 장치를 사용할 수 없습니다. "
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  ""
+  "현재 로그인한 사용자는 키에 대한 정보를 볼 수 없습니다. "
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "파일 시스템은 로그인 세션 및 시스템 서비스에 사용되고 있습니다. 계속 진행하면 이러한 작업이 중지됩니다.  "
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "파일 시스템은 로그인 세션에서 사용되고 있습니다. 계속 진행하면 이러한 작업이 중지됩니다. "
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "파일 시스템은 시스템 서비스에서 사용되고 있습니다. 계속 진행하면 이러한 작업이 중지됩니다. "
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1484,11 +1484,11 @@ return plural;
  ],
  "The last key slot can not be removed": [
   null,
-  ""
+  "마지막 키 슬롯은 삭제할 수 없습니다 "
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
-  ""
+  "볼륨 그룹의 마지막 물리 볼륨은 삭제할 수 없습니다 "
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1764,7 +1764,7 @@ return plural;
  ],
  "storage-id-desc\u0004Other Data": [
   null,
-  ""
+  "다른 데이터 "
  ],
  "storage-id-desc\u0004Swap Space": [
   null,
@@ -1788,15 +1788,15 @@ return plural;
  ],
  "storage\u0004Optical Drive": [
   null,
-  ""
+  "광학 드라이브 "
  ],
  "storage\u0004Removable Drive": [
   null,
-  ""
+  "삭제 가능한 드라이브 "
  ],
  "storage\u0004Solid-State Disk": [
   null,
-  ""
+  "솔리드 스테이트 디스크 "
  ],
  "format-bytes\u0004bytes": [
   null,

@@ -240,7 +240,7 @@ return plural;
  ],
  "Alert and above": [
   null,
-  "Alarm und oben"
+  "Alarm und höher"
  ],
  "All": [
   null,
@@ -252,7 +252,7 @@ return plural;
  ],
  "Appearance:": [
   null,
-  ""
+  "Erscheinungsbild"
  ],
  "Asset Tag": [
   null,
@@ -264,7 +264,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  ""
+  "Autostart"
  ],
  "Automatically using NTP": [
   null,
@@ -296,7 +296,7 @@ return plural;
  ],
  "Black": [
   null,
-  ""
+  "Schwarz"
  ],
  "Blade": [
   null,
@@ -321,6 +321,14 @@ return plural;
  "CPU": [
   null,
   "CPU"
+ ],
+ "CPU Security": [
+  null,
+  "Prozessor-Sicherheit"
+ ],
+ "CPU Security Toggles": [
+  null,
+  "Prozessor-Sicherheits-Schalter"
  ],
  "Cached": [
   null,
@@ -360,7 +368,7 @@ return plural;
  ],
  "Clear All Filters": [
   null,
-  ""
+  "Alle Filter entfernen"
  ],
  "Click to see system hardware information": [
   null,
@@ -404,7 +412,7 @@ return plural;
  ],
  "Copy": [
   null,
-  ""
+  "Kopieren"
  ],
  "Create Timer": [
   null,
@@ -416,7 +424,7 @@ return plural;
  ],
  "Critical and above": [
   null,
-  "Kritisch und oben"
+  "Kritisch und höher"
  ],
  "Ctrl+Insert": [
   null,
@@ -428,11 +436,11 @@ return plural;
  ],
  "Dark": [
   null,
-  ""
+  "Dunkel"
  ],
  "Debug and above": [
   null,
-  "Debuggen und darüber"
+  "Debug und höher"
  ],
  "Delay": [
   null,
@@ -457,6 +465,10 @@ return plural;
  "Disable": [
   null,
   "Ausschalten"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -516,7 +528,7 @@ return plural;
  ],
  "Error and above": [
   null,
-  "Fehler und darüber"
+  "Fehler und höher"
  ],
  "Everything": [
   null,
@@ -580,7 +592,7 @@ return plural;
  ],
  "Info and above": [
   null,
-  "Info und darüber"
+  "Info und höher"
  ],
  "Install": [
   null,
@@ -742,6 +754,10 @@ return plural;
   null,
   "Minuten"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Modell"
@@ -808,19 +824,11 @@ return plural;
  ],
  "Notice and above": [
   null,
-  "Hinweis und oben"
- ],
- "Off": [
-  null,
-  "Aus"
+  "Hinweis und höher"
  ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "On Failure": [
   null,
@@ -898,6 +906,10 @@ return plural;
   null,
   "Anzeige-Rechnername"
  ],
+ "Previous boot": [
+  null,
+  ""
+ ],
  "Problem details": [
   null,
   "Problemdetails"
@@ -917,6 +929,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "Rack-Einbaugehäuse"
+ ],
+ "Read more...": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1030,6 +1046,10 @@ return plural;
   null,
   "Speichern"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "PC mit versiegeltem Gehäuse"
@@ -1045,6 +1065,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Sicherheitsupdates verfügbar"
+ ],
+ "Service": [
+  null,
+  "Dienst"
  ],
  "Service Logs": [
   null,
@@ -1089,6 +1113,10 @@ return plural;
  "Sockets": [
   null,
   "Sockets"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1185,6 +1213,10 @@ return plural;
  "Terminal": [
   null,
   "Terminal"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1313,7 +1345,7 @@ return plural;
  ],
  "Warning and above": [
   null,
-  "Warnung und oben"
+  "Warnung und höher"
  ],
  "Wednesday": [
   null,

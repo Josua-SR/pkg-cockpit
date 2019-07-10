@@ -150,17 +150,9 @@ return plural;
   null,
   "下一步"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
- ],
- "On": [
-  null,
-  "開"
  ],
  "One Time Password": [
   null,

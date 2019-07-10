@@ -114,6 +114,10 @@ return plural;
   null,
   "У результаті натискання «Запустити віддалений переглядач» буде отримано файл .vv і запущено $0."
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  "Підтвердження вилучення віртуальної мережі"
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "З’єднатися із будь-якою програмою перегляду $0."
@@ -189,6 +193,10 @@ return plural;
  "Delete Content": [
   null,
   "Вилучити дані"
+ ],
+ "Delete Network $0": [
+  null,
+  "Вилучити мережу $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -438,6 +446,10 @@ return plural;
   null,
   "Не вдалося зберегти дані щодо обсягу пам'яті"
  ],
+ "Memory must not be 0": [
+  null,
+  "Об'єм пам'яті не може бути нульовим"
+ ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
   "Обсяг пам'яті між 128 МіБ та максимальним отриманим"
@@ -592,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  ""
+  "Виконується дія"
  ],
  "Overview": [
   null,
@@ -902,6 +914,10 @@ return plural;
   null,
   "Каталог на сервері, який експортується"
  ],
+ "The network could not be deleted": [
+  null,
+  "Не вдалося вилучити мережу"
+ ],
  "The pool is empty": [
   null,
   "Буфер порожній"
@@ -952,7 +968,7 @@ return plural;
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  ""
+  "У типовому місці доступно до $0 $1"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1241,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  "Для створення нових віртуальних машин у системі має бути встановлено пакунок virt-install"
  ],
  "yes": [
   null,

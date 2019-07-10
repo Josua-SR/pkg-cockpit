@@ -304,6 +304,43 @@ class TestMachinesDBus(machineslib.TestMachines):
         b.wait_in_text("#vm-subVmTest1-state", "paused")
         b.wait_attr("#vm-subVmTest1-disks-vdf-detach", "disabled", "")
 
+    def testMultipleSettings(self):
+        b = self.browser
+
+        self.startVm("subVmTest1")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+        # Change Boot Order setting
+        bootOrder = b.text("#vm-subVmTest1-boot-order")
+        b.click("#vm-subVmTest1-boot-order") # Open dialog
+        b.wait_present(".modal-body")
+        b.click("#vm-subVmTest1-order-modal-device-row-0 #vm-subVmTest1-order-modal-down") # Change order
+        b.click("#vm-subVmTest1-order-modal-save") # Save
+        b.wait_not_present(".modal-body")
+
+        # Change vCPUs setting
+        b.click("#vm-subVmTest1-vcpus-count") # Open dialog
+        b.wait_present(".modal-body")
+        b.set_input_text("#machines-vcpu-max-field", "3") # Change values
+        b.set_input_text("#machines-vcpu-count-field", "3")
+        b.click("#machines-vcpu-modal-dialog-apply") # Save
+        b.wait_not_present(".modal-body")
+
+        # Shut off domain
+        b.click("#vm-subVmTest1-off-caret")
+        b.click("#vm-subVmTest1-forceOff")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+
+        # Check both changes have been applied
+        b.wait_not_in_text("#vm-subVmTest1-boot-order", bootOrder)
+        b.wait_in_text("#vm-subVmTest1-vcpus-count", "3")
+
     def testNetworkSettings(self):
         b = self.browser
         m = self.machine
@@ -510,6 +547,19 @@ class TestMachinesDBus(machineslib.TestMachines):
         # check virsh state
         wait(lambda: "no" == m.execute("virsh net-info test_network2 | grep 'Active:' | awk '{print $2}'").strip(), tries=5)
 
+        # Delete an inactive network
+        b.click('#delete-network-test_network2-{0}'.format(connectionName))
+        b.click(".modal-footer button:contains(Delete)")
+        b.wait_not_present("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName))
+
+        # Delete an active network
+        m.execute("echo \"{0}\" > /tmp/xml && virsh net-define /tmp/xml && virsh net-start test_network2".format(TEST_NETWORK2_XML))
+        b.wait_in_text("#network-test_network2-{0}-state".format(connectionName), "active")
+        b.click("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName)) # click on the row header
+        b.click('#delete-network-test_network2-{0}'.format(connectionName))
+        b.click(".modal-footer button:contains(Delete)")
+        b.wait_not_present("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName))
+
     def testNetworks(self):
         b = self.browser
         m = self.machine
@@ -702,7 +752,7 @@ class TestMachinesDBus(machineslib.TestMachines):
         # Delete an inactive Pool. It's volumes won't be deleted
         b.wait_present("#delete-pool-myPoolTwo-{0}".format(connectionName))
         b.click("#delete-pool-myPoolTwo-{0}".format(connectionName))
-        b.wait_in_text("div.modal-dialog div.modal-body div.ct-form-layout", "Its content will not be deleted.")
+        b.wait_in_text("div.modal-dialog div.modal-body div.ct-form", "Its content will not be deleted.")
         b.click('div.modal-footer button:contains("Delete")')
         b.wait_not_present("div.modal-dialog")
         b.wait_not_present("#pool-myPoolTwo-{0}-storage-volumes-list".format(connectionName))
@@ -960,9 +1010,7 @@ class TestMachinesDBus(machineslib.TestMachines):
         ).execute()
 
         # Prepare a ramdisk with gpt partition table to test the disk storage pool type
-        m.add_disk("50M", serial="DISK1")
-        wait(lambda: m.execute("ls -l /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1"))
-        m.execute("parted /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1 mklabel gpt")
+        machineslib.prepareDisk(m)
 
         StoragePoolCreateDialog(
             self,
@@ -979,17 +1027,7 @@ class TestMachinesDBus(machineslib.TestMachines):
 
             target_iqn = "iqn.2019-09.cockpit.lan"
             orig_iqn = m.execute("sed </etc/iscsi/initiatorname.iscsi -e 's/^.*=//'").rstrip()
-
-            # Increase the iSCSI timeouts for heavy load during our testing
-            m.execute("""sed -i 's|^\(node\..*log.*_timeout = \).*|\\1 60|' /etc/iscsi/iscsid.conf""")
-
-            # Setup a iSCSI target
-            m.execute("""
-                      targetcli /backstores/ramdisk create test 50M
-                      targetcli /iscsi create %(tgt)s
-                      targetcli /iscsi/%(tgt)s/tpg1/luns create /backstores/ramdisk/test
-                      targetcli /iscsi/%(tgt)s/tpg1/acls create %(ini)s
-                      """ % {"tgt": target_iqn, "ini": orig_iqn})
+            machineslib.prepareStorageDeviceOnISCSI(m, target_iqn, orig_iqn)
 
             StoragePoolCreateDialog(
                 self,

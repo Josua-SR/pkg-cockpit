@@ -109,9 +109,11 @@ Recommends: (cockpit-docker if /usr/bin/docker)
 Recommends: (cockpit-networkmanager if NetworkManager)
 Recommends: (cockpit-storaged if udisks2)
 Recommends: cockpit-packagekit
-Recommends: subscription-manager-cockpit
 Suggests: cockpit-pcp
 Suggests: cockpit-selinux
+%endif
+%if 0%{?rhel} && 0%{?centos} == 0
+Recommends: subscription-manager-cockpit
 %endif
 
 %prep
@@ -552,7 +554,7 @@ BuildArch: noarch
 Summary: Cockpit user interface for virtual machines
 Requires: cockpit-bridge >= 122
 Requires: cockpit-system >= 122
-Requires: (libvirt-daemon-kvm or libvirt)
+Requires: libvirt-daemon-kvm
 Requires: libvirt-client
 Requires: libvirt-dbus >= 1.2.0
 # Optional components

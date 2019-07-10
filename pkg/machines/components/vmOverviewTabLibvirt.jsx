@@ -99,7 +99,7 @@ class VmOverviewTabLibvirt extends React.Component {
     }
 
     render() {
-        const runningVmChanged = () => {
+        const bootOrderChanged = () => {
             const activeDevices = getBootOrderDevices(vm);
             const inactiveDevices = getBootOrderDevices(vm.inactiveXML);
 
@@ -113,6 +113,12 @@ class VmOverviewTabLibvirt extends React.Component {
 
         const { vm, dispatch, config, nodeDevices } = this.props;
         const idPrefix = vmId(vm.name);
+
+        const vcpusChanged = (vm.vcpus.count !== vm.inactiveXML.vcpus.count) ||
+                             (vm.vcpus.max !== vm.inactiveXML.vcpus.max) ||
+                             (vm.cpu.sockets !== vm.inactiveXML.cpu.sockets) ||
+                             (vm.cpu.threads !== vm.inactiveXML.cpu.threads) ||
+                             (vm.cpu.cores !== vm.inactiveXML.cpu.cores);
 
         let autostart = rephraseUI('autostart', vm.autostart);
         let bootOrder = getBootOrder(vm);
@@ -134,7 +140,7 @@ class VmOverviewTabLibvirt extends React.Component {
                     <a id={`${vmId(vm.name)}-boot-order`} onClick={this.openBootOrder}>
                         {getBootOrder(vm)}
                     </a>
-                    { vm.state === "running" && runningVmChanged() && <WarningInactive iconId="boot-order-tooltip" tooltipId="tip-boot-order" /> }
+                    { vm.state === "running" && bootOrderChanged() && <WarningInactive iconId="boot-order-tooltip" tooltipId="tip-boot-order" /> }
                 </div>
             );
 
@@ -144,7 +150,12 @@ class VmOverviewTabLibvirt extends React.Component {
                 </a>
             );
         }
-        const vcpuLink = (<a id={`${vmId(vm.name)}-vcpus-count`} onClick={this.openVcpu}>{vm.vcpus.count}</a>);
+        const vcpuLink = (
+            <React.Fragment>
+                <a id={`${vmId(vm.name)}-vcpus-count`} onClick={this.openVcpu}>{vm.vcpus.count}</a>
+                { vm.state === "running" && vcpusChanged && <WarningInactive iconId="vcpus-tooltip" tooltipId="tip-vcpus" /> }
+            </React.Fragment>
+        );
 
         let items = [
             { title: commonTitles.MEMORY, value: memoryLink, idPostfix: 'memory' },

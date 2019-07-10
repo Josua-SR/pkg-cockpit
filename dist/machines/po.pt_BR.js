@@ -114,6 +114,10 @@ return plural;
   null,
   "Clicar em \"Iniciar Visualizador Remoto\" fará o download de um arquivo .vv e será iniciado $0."
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Conecte-se com qualquer $0 aplicativo visualizador ."
@@ -190,6 +194,10 @@ return plural;
   null,
   ""
  ],
+ "Delete Network $0": [
+  null,
+  "Deletar $0"
+ ],
  "Delete Storage Pool $0": [
   null,
   ""
@@ -262,6 +270,10 @@ return plural;
   null,
   ""
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Menos do que o número máximo de CPUs virtuais deve ser ativado."
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Host não deve estar vazio"
+ ],
+ "IP Address": [
+  null,
+  "Endereço IP"
  ],
  "IPv4 Address": [
   null,
@@ -429,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   ""
+ ],
+ "Memory must not be 0": [
+  null,
+  "Uso de memória:"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Sistema Operacional"
+ ],
+ "Operation is in progress": [
+  null,
+  "login do theVirt em andamento"
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   "O diretório no servidor que está sendo exportado"
  ],
+ "The network could not be deleted": [
+  null,
+  "O caminho de destino não deve estar vazio"
+ ],
  "The pool is empty": [
   null,
   "A piscina está vazia"
@@ -930,9 +958,17 @@ return plural;
   null,
   "Unidade"
  ],
+ "Unknown": [
+  null,
+  "Desconhecido"
+ ],
  "Unplug": [
   null,
   "Desplugar"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1221,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

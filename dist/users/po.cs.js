@@ -202,10 +202,6 @@ return plural;
   null,
   "Nebylo zadáno uživatelské jméno"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Old Password": [
   null,
   "Původní heslo"
@@ -213,10 +209,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Původní heslo nebylo přijato"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Password": [
   null,

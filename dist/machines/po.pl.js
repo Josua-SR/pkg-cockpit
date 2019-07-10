@@ -114,6 +114,10 @@ return plural;
   null,
   "Kliknięcie „Uruchom zdalną przeglądarkę” pobierze plik .vv i uruchomi $0."
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  "Potwierdź usunięcie sieci wirtualnej"
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Połącz z dowolną przeglądarką $0."
@@ -189,6 +193,10 @@ return plural;
  "Delete Content": [
   null,
   "Usuń zawartość"
+ ],
+ "Delete Network $0": [
+  null,
+  "Usuń sieć $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -438,6 +446,10 @@ return plural;
   null,
   "Nie można zapisać pamięci"
  ],
+ "Memory must not be 0": [
+  null,
+  "Pamięć nie może wynosić 0"
+ ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
   "Rozmiar między 128 MiB a maksymalnym przydziałem"
@@ -592,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  ""
+  "Działanie jest wykonywane"
  ],
  "Overview": [
   null,
@@ -902,6 +914,10 @@ return plural;
   null,
   "Eksportowany katalog na serwerze"
  ],
+ "The network could not be deleted": [
+  null,
+  "Nie można usunąć sieci"
+ ],
  "The pool is empty": [
   null,
   "Pula jest pusta"
@@ -952,7 +968,7 @@ return plural;
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  ""
+  "Do $0 $1 dostępnej w domyślnym położeniu"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1241,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "użytkownik gospodarza wirtualizacji"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  "Aby tworzyć nowe maszyny wirtualne, w systemie musi być zainstalowany pakiet virt-install"
  ],
  "yes": [
   null,

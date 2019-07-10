@@ -826,17 +826,9 @@ return plural;
   null,
   "Oznámení a závažnější"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "On Failure": [
   null,

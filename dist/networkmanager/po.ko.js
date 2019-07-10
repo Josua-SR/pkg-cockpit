@@ -244,7 +244,7 @@ return plural;
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "설정을 변경하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Checking IP": [
   null,
@@ -256,7 +256,7 @@ return plural;
  ],
  "Comma-separated ports, ranges, and aliases are accepted": [
   null,
-  ""
+  "콤마로 구분하여 포트, 범위, 별칭을 사용할 수 있습니다. "
  ],
  "Configure": [
   null,
@@ -352,7 +352,7 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "서비스 활성화 "
  ],
  "Entire subnet": [
   null,
@@ -384,7 +384,7 @@ return plural;
  ],
  "Failed to add port": [
   null,
-  ""
+  "포트를 추가하지 못했습니다     "
  ],
  "Failed to add service": [
   null,
@@ -408,7 +408,7 @@ return plural;
  ],
  "Firewall is not available": [
   null,
-  ""
+  "방화벽을 사용할 수 없습니다 "
  ],
  "Forward delay $forward_delay": [
   null,
@@ -432,7 +432,7 @@ return plural;
  ],
  "Hello time $hello_time": [
   null,
-  "Hello 시간 $hello_time"
+  "Hello 타임 $hello_time"
  ],
  "IP Address": [
   null,
@@ -476,7 +476,7 @@ return plural;
  ],
  "Included services": [
   null,
-  ""
+  "포함된 서비스 "
  ],
  "Interfaces": [
   null,
@@ -488,11 +488,11 @@ return plural;
  ],
  "Invalid metric $0": [
   null,
-  "잘못된 포트"
+  "잘못된 메트릭 $0"
  ],
  "Invalid port number": [
   null,
-  ""
+  "잘못된 포트 번호 "
  ],
  "Invalid prefix $0": [
   null,
@@ -500,7 +500,7 @@ return plural;
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "잘못된 포트"
+  "잘못된 접두어 또는 넷마스크 $0"
  ],
  "Invalid range": [
   null,
@@ -508,7 +508,7 @@ return plural;
  ],
  "Keep connection": [
   null,
-  ""
+  "계속 연결 "
  ],
  "LACP Key": [
   null,
@@ -520,7 +520,7 @@ return plural;
  ],
  "Link Watch": [
   null,
-  ""
+  "링크 보기 "
  ],
  "Link down delay": [
   null,
@@ -552,7 +552,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU는 양수여야 합니다 "
  ],
  "Manual": [
   null,
@@ -588,7 +588,7 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "네트워크 장치 및 그래프에는 NetworkManager가 필요합니다 "
  ],
  "NetworkManager is not running.": [
   null,
@@ -608,7 +608,7 @@ return plural;
  ],
  "No active zones": [
   null,
-  ""
+  "활성 영역이 아닙니다 "
  ],
  "No carrier": [
   null,
@@ -620,7 +620,7 @@ return plural;
  ],
  "No open ports": [
   null,
-  ""
+  "열린 포트가 없습니다 "
  ],
  "None": [
   null,
@@ -629,14 +629,6 @@ return plural;
  "Not available": [
   null,
   "사용할 수 없습니다"
- ],
- "Off": [
-  null,
-  "비활성"
- ],
- "On": [
-  null,
-  "활성"
  ],
  "Parent": [
   null,
@@ -652,7 +644,7 @@ return plural;
  ],
  "Passive": [
   null,
-  ""
+  "수동 "
  ],
  "Path cost": [
   null,
@@ -668,19 +660,19 @@ return plural;
  ],
  "Ping Interval": [
   null,
-  ""
+  "Ping 간격 "
  ],
  "Ping Target": [
   null,
-  ""
+  "Ping 대상 "
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "$0 패키지를 설치해 주십시오 "
  ],
  "Port number and type do not match": [
   null,
-  ""
+  "포트 번호 및 유형이 일치하지 않습니다 "
  ],
  "Ports": [
   null,
@@ -720,11 +712,11 @@ return plural;
  ],
  "Range": [
   null,
-  ""
+  "범위 "
  ],
  "Range must be strictly ordered": [
   null,
-  ""
+  "범위의 순서를 준수해야 합니다 "
  ],
  "Reboot": [
   null,
@@ -736,23 +728,23 @@ return plural;
  ],
  "Remove $0": [
   null,
-  ""
+  "$0 삭제 "
  ],
  "Remove service": [
   null,
-  ""
+  "서비스 삭제 "
  ],
  "Remove service from zones": [
   null,
-  ""
+  "영역에서 서비스 삭제 "
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "<b>$0</b>을/를 삭제하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Restoring connection": [
   null,
-  "재연결"
+  "연결 복원 중 "
  ],
  "Round Robin": [
   null,
@@ -760,11 +752,11 @@ return plural;
  ],
  "Routes": [
   null,
-  ""
+  "경로 "
  ],
  "Runner": [
   null,
-  ""
+  "실행자 "
  ],
  "STP Forward delay": [
   null,
@@ -796,7 +788,7 @@ return plural;
  ],
  "Set to": [
   null,
-  ""
+  "설정 "
  ],
  "Shared": [
   null,
@@ -804,7 +796,7 @@ return plural;
  ],
  "Sorted from least trusted to most trusted": [
   null,
-  ""
+  "신뢰성이 가장 낮은 순서에서 가장 높은 순으로 정렬"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -816,7 +808,7 @@ return plural;
  ],
  "Stable": [
   null,
-  ""
+  "안정적 "
  ],
  "Start Service": [
   null,
@@ -828,27 +820,27 @@ return plural;
  ],
  "Sticky": [
   null,
-  ""
+  "Sticky"
  ],
  "Switch off $0": [
   null,
-  ""
+  "$0 끄기 "
  ],
  "Switch on $0": [
   null,
-  ""
+  "$0 켜기 "
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "<b>$0</b>을/를 끄면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "<b>$0</b>을/를 끄면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "<b>$0</b>을/를 켜면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "TCP": [
   null,
@@ -864,15 +856,15 @@ return plural;
  ],
  "Team Port Settings": [
   null,
-  ""
+  "팀 포트 설정 "
  ],
  "Team Settings": [
   null,
-  ""
+  "팀 설정 "
  ],
  "Testing connection": [
   null,
-  ""
+  "연결 테스트 중 "
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,

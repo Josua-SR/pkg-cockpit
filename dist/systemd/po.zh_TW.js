@@ -826,17 +826,9 @@ return plural;
   null,
   "注意及以上"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
- ],
- "On": [
-  null,
-  "開"
  ],
  "On Failure": [
   null,
@@ -913,6 +905,10 @@ return plural;
  "Pretty Host Name": [
   null,
   "漂亮的主機名"
+ ],
+ "Previous boot": [
+  null,
+  ""
  ],
  "Problem details": [
   null,

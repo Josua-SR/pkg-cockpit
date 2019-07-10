@@ -114,6 +114,10 @@ return plural;
   null,
   "点击 \"启动 Remote Viewer\" 将下载一个  .vv 文件并加载 $0。"
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "使用任何 $0 查看器应用来连接。"
@@ -190,6 +194,10 @@ return plural;
   null,
   "删除内容"
  ],
+ "Delete Network $0": [
+  null,
+  ""
+ ],
  "Delete Storage Pool $0": [
   null,
   "删除存储池$0"
@@ -262,6 +270,10 @@ return plural;
   null,
   "主机文件系统上存在的磁盘镜像"
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "启用的虚拟 CPU 数量应少于最大虚拟 CPU 数量。"
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   "主机不能为空"
+ ],
+ "IP Address": [
+  null,
+  "IP 地址"
  ],
  "IPv4 Address": [
   null,
@@ -429,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   "内存不能被保存"
+ ],
+ "Memory must not be 0": [
+  null,
+  ""
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "操作系统"
+ ],
+ "Operation is in progress": [
+  null,
+  ""
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   "服务器上的目录被导出"
  ],
+ "The network could not be deleted": [
+  null,
+  ""
+ ],
  "The pool is empty": [
   null,
   "池为空"
@@ -930,9 +958,17 @@ return plural;
   null,
   "单位"
  ],
+ "Unknown": [
+  null,
+  "未知"
+ ],
  "Unplug": [
   null,
   "拔"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1221,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

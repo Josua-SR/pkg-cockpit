@@ -826,17 +826,9 @@ return plural;
   null,
   "Notice 及以上"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Ok": [
   null,
   "确认"
- ],
- "On": [
-  null,
-  "开"
  ],
  "On Failure": [
   null,

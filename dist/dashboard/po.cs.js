@@ -350,17 +350,9 @@ return plural;
   null,
   "Notebook"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Old password not accepted": [
   null,
   "Původní heslo nebylo přijato"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Other": [
   null,

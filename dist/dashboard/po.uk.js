@@ -350,17 +350,9 @@ return plural;
   null,
   "Ноутбук"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Old password not accepted": [
   null,
   "Старий пароль не прийнято"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "Other": [
   null,

@@ -826,17 +826,9 @@ return plural;
   null,
   "Зауваження і вище"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "On Failure": [
   null,

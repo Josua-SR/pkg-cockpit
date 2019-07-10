@@ -34,6 +34,10 @@ return plural;
   null,
   ""
  ],
+ "(default)": [
+  null,
+  "(oletus)"
+ ],
  "1 day": [
   null,
   "1 päivä"
@@ -82,6 +86,10 @@ return plural;
   null,
   "Aktiivinen varmuuskopio"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Mukautuva kuorman tasapainottaja (balance-alb)"
@@ -118,6 +126,22 @@ return plural;
   null,
   "Lisää VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "<b>$0</b>  lisääminen katkaisee yhteyden palvelimeen, jolloin hallintakäyttöliittymä ei ole saatavilla."
@@ -141,6 +165,10 @@ return plural;
  "Addresses": [
   null,
   "Osoitteet"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -274,6 +302,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -306,6 +338,10 @@ return plural;
   null,
   "Kohteen <b>$0</b>  poistaminen katkaisee yhteyden palvelimeen, jolloin hallintakäyttöliittymä ei ole saatavilla."
  ],
+ "Description": [
+  null,
+  "Kuvaus"
+ ],
  "Details": [
   null,
   "Yksityiskohdat"
@@ -315,6 +351,10 @@ return plural;
   "Ei käytössä"
  ],
  "Enable Service": [
+  null,
+  ""
+ ],
+ "Entire subnet": [
   null,
   ""
  ],
@@ -341,6 +381,22 @@ return plural;
  "Failed": [
   null,
   "Epäonnistui"
+ ],
+ "Failed to add port": [
+  null,
+  ""
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -382,6 +438,10 @@ return plural;
   null,
   "IP-osoite"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "IP-asetukset"
@@ -413,6 +473,10 @@ return plural;
  "Inactive": [
   null,
   "Epäaktiivinen"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -502,10 +566,6 @@ return plural;
   null,
   ""
  ],
- "Members": [
-  null,
-  "Jäsenet"
- ],
  "Mode": [
   null,
   "Tila"
@@ -546,13 +606,25 @@ return plural;
   null,
   ""
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
+  null,
+  ""
+ ],
+ "No description available": [
   null,
   ""
  ],
  "No open ports": [
   null,
   "Ei avoimia portteja"
+ ],
+ "None": [
+  null,
+  ""
  ],
  "Not available": [
   null,
@@ -646,6 +718,10 @@ return plural;
   null,
   "Satunnainen"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   ""
@@ -661,6 +737,14 @@ return plural;
  "Remove $0": [
   null,
   "Poista $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -717,6 +801,10 @@ return plural;
  "Shared": [
   null,
   "Jaettu"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -794,6 +882,10 @@ return plural;
   null,
   "Tätä laitetta ei voida hallita täällä."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -850,6 +942,14 @@ return plural;
   null,
   "Sinulla ei ole valtuuksia muokata palomuuria."
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 tavua binääridatasta]"
@@ -861,6 +961,14 @@ return plural;
  "[no data]": [
   null,
   "[ei dataa]"
+ ],
+ "show less": [
+  null,
+  "näytä vähemmän"
+ ],
+ "show more": [
+  null,
+  "näytä enemmän"
  ],
  "page-title\u0004Networking": [
   null,

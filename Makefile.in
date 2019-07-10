@@ -1768,11 +1768,11 @@ DISTCLEANFILES = \
 	$(NULL)
 
 MAINTAINERCLEANFILES = $(NULL) $(WEBPACK_STAMPS) $(WEBPACK_DEPS) \
-	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_4) \
-	dist/base1/cockpit.js dist/base1/cockpit.min.css \
-	dist/base1/cockpit.min.css.gz dist/base1/cockpit.min.css.map \
-	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.gz \
-	dist/base1/cockpit.min.js.map \
+	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(REDHATTEXT_FONTS) \
+	$(REDHATDISPLAY_FONTS) $(am__append_4) dist/base1/cockpit.js \
+	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.gz \
+	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
+	dist/base1/cockpit.min.js.gz dist/base1/cockpit.min.js.map \
 	dist/base1/fonts/fontawesome.woff \
 	dist/base1/fonts/glyphicons.woff \
 	dist/base1/fonts/patternfly.woff dist/base1/jquery.js \
@@ -1794,18 +1794,18 @@ MAINTAINERCLEANFILES = $(NULL) $(WEBPACK_STAMPS) $(WEBPACK_DEPS) \
 	dist/static/login.min.css $(NULL)
 EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	$(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) webpack.config.js \
-	$(OPENSANS_FONTS) $(am__append_2) $(PO_INPUTS) po/LINGUAS \
-	po/po.empty.js po/po2json po/zanata.xml $(NULL) \
-	dist/playground/extra.de.po pkg/playground/extra.de.po \
-	pkg/users/mock pkg/lib/qunit-template.html $(playground_DATA) \
-	$(pkg_TESTS) $(metainfo_DATA) $(pixmaps_DATA) $(NULL) \
-	dist/base1/cockpit.js dist/base1/cockpit.min.css \
-	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
-	dist/base1/cockpit.min.js.map dist/base1/jquery.js \
-	dist/base1/jquery.min.js dist/base1/jquery.min.js.map \
-	dist/base1/mustache.js dist/base1/mustache.min.js \
-	dist/base1/mustache.min.js.map dist/base1/patternfly-base.css \
-	dist/base1/patternfly.min.css \
+	$(OPENSANS_FONTS) $(REDHATTEXT_FONTS) $(REDHATDISPLAY_FONTS) \
+	$(am__append_2) $(PO_INPUTS) po/LINGUAS po/po.empty.js \
+	po/po2json po/zanata.xml $(NULL) dist/playground/extra.de.po \
+	pkg/playground/extra.de.po pkg/users/mock \
+	pkg/lib/qunit-template.html $(playground_DATA) $(pkg_TESTS) \
+	$(metainfo_DATA) $(pixmaps_DATA) $(NULL) dist/base1/cockpit.js \
+	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
+	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
+	dist/base1/jquery.js dist/base1/jquery.min.js \
+	dist/base1/jquery.min.js.map dist/base1/mustache.js \
+	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
+	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/patternfly.css.map \
 	dist/base1/patternfly-additions.css \
@@ -2021,19 +2021,40 @@ VALGRIND_SUPPRESSIONS = \
 	tools/json-glib.supp \
 	$(NULL)
 
+FONTSDIR = dist/static/fonts
 
 # Fonts are used by multiple things so put them here
 OPENSANS_FONTS = \
-	dist/fonts/OpenSans-Bold-webfont.woff \
-	dist/fonts/OpenSans-BoldItalic-webfont.woff \
-	dist/fonts/OpenSans-ExtraBold-webfont.woff  \
-	dist/fonts/OpenSans-ExtraBoldItalic-webfont.woff \
-	dist/fonts/OpenSans-Italic-webfont.woff \
-	dist/fonts/OpenSans-Light-webfont.woff \
-	dist/fonts/OpenSans-LightItalic-webfont.woff \
-	dist/fonts/OpenSans-Regular-webfont.woff \
-	dist/fonts/OpenSans-Semibold-webfont.woff \
-	dist/fonts/OpenSans-SemiboldItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Bold-webfont.woff \
+	$(FONTSDIR)/OpenSans-BoldItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-ExtraBold-webfont.woff  \
+	$(FONTSDIR)/OpenSans-ExtraBoldItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Italic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Light-webfont.woff \
+	$(FONTSDIR)/OpenSans-LightItalic-webfont.woff \
+	$(FONTSDIR)/OpenSans-Regular-webfont.woff \
+	$(FONTSDIR)/OpenSans-Semibold-webfont.woff \
+	$(FONTSDIR)/OpenSans-SemiboldItalic-webfont.woff \
+	$(NULL)
+
+REDHATTEXT_FONTS = \
+	$(FONTSDIR)/RedHatText-Bold.woff2 \
+	$(FONTSDIR)/RedHatText-BoldItalic.woff2 \
+	$(FONTSDIR)/RedHatText-Italic.woff2 \
+	$(FONTSDIR)/RedHatText-Medium.woff2 \
+	$(FONTSDIR)/RedHatText-MediumItalic.woff2 \
+	$(FONTSDIR)/RedHatText-Regular.woff2 \
+	$(NULL)
+
+REDHATDISPLAY_FONTS = \
+	$(FONTSDIR)/RedHatDisplay-Black.woff2 \
+	$(FONTSDIR)/RedHatDisplay-BlackItalic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Bold.woff2 \
+	$(FONTSDIR)/RedHatDisplay-BoldItalic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Italic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Medium.woff2 \
+	$(FONTSDIR)/RedHatDisplay-MediumItalic.woff2 \
+	$(FONTSDIR)/RedHatDisplay-Regular.woff2 \
 	$(NULL)
 
 @ENABLE_DOC_TRUE@GUIDE_DOCBOOK = doc/guide/cockpit-guide.xml
@@ -2098,7 +2119,7 @@ OPENSANS_FONTS = \
 @ENABLE_DOC_TRUE@	doc/guide/version-greater-or-equal.xsl \
 @ENABLE_DOC_TRUE@	$(NULL)
 
-@ENABLE_DOC_TRUE@GUIDE_FONTS = $(subst dist/fonts/,dist/guide/html/,$(OPENSANS_FONTS))
+@ENABLE_DOC_TRUE@GUIDE_FONTS = $(subst dist/static/fonts/,dist/guide/html/,$(REDHATTEXT_FONTS))
 @ENABLE_DOC_TRUE@MAN_PROC = $(MKDIR_P) doc/man/ && $(XSLTPROC) -nonet --param man.output.quietly 1 --output $@ \
 @ENABLE_DOC_TRUE@	http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
 
@@ -2841,7 +2862,7 @@ LOGIN_PO_FILES = $(patsubst %,dist/static/login.po.%.html,$(LINGUAS))
 staticdir = $(datadir)/cockpit/static
 nodist_static_DATA = dist/static/login.min.html dist/static/login.po.html $(LOGIN_PO_FILES)
 staticfontsdir = $(staticdir)/fonts
-staticfonts_DATA = $(OPENSANS_FONTS)
+staticfonts_DATA = $(OPENSANS_FONTS) $(REDHATTEXT_FONTS) $(REDHATDISPLAY_FONTS)
 libcockpit_ws_a_SOURCES = \
 	src/ws/cockpitws.h				\
 	src/ws/cockpithandlers.h	src/ws/cockpithandlers.c	\
@@ -3115,7 +3136,6 @@ test_ssh_add_SOURCES = src/pam-ssh-add/test-ssh-add.c
 test_ssh_add_CFLAGS = $(libpam_ssh_add_a_CFLAGS)
 test_ssh_add_LDADD = $(libpam_ssh_add_a_LIBS) libretest.a
 WS_DIR = $(srcdir)/containers/ws
-UNIT_TESTS_DIR = $(srcdir)/containers/unit-tests
 all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -9515,6 +9535,7 @@ valgrind-suppressions: $(VALGRIND_SUPPRESSIONS)
 check-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
+		COCKPIT_SKIP_SLOW_TESTS=1 \
 		$(AM_MAKEFLAGS) check TESTS="$(filter-out tools/% bots/%,$(TESTS))"
 recheck-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
@@ -9526,9 +9547,17 @@ install-data-hook::
 	chgrp wheel $(DESTDIR)$(localstatedir)/lib/cockpit || true
 	chmod 775 $(DESTDIR)$(localstatedir)/lib/cockpit
 
-dist/fonts/%.woff:
+$(FONTSDIR)/OpenSans-%.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp -L $(subst dist/fonts,$(srcdir)/node_modules/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
+	cp -L $(subst $(FONTSDIR),$(srcdir)/node_modules/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
+
+$(FONTSDIR)/RedHatText-%.woff2:
+	$(V_COPY) $(MKDIR_P) $(dir $@) && \
+	cp -L $(subst $(FONTSDIR),$(srcdir)/node_modules/@redhat/redhat-font/webfonts/RedHatText,$@) $@.tmp && $(MV) $@.tmp $@
+
+$(FONTSDIR)/RedHatDisplay-%.woff2:
+	$(V_COPY) $(MKDIR_P) $(dir $@) && \
+	cp -L $(subst $(FONTSDIR),$(srcdir)/node_modules/@redhat/redhat-font/webfonts/RedHatDisplay,$@) $@.tmp && $(MV) $@.tmp $@
 
 @ENABLE_DOC_TRUE@render-doc-images:
 @ENABLE_DOC_TRUE@	 inkscape --without-gui --export-area-page \
@@ -9536,7 +9565,7 @@ dist/fonts/%.woff:
 @ENABLE_DOC_TRUE@		--export-png=$(srcdir)/doc/cockpit-transport.png \
 @ENABLE_DOC_TRUE@		$(srcdir)/doc/cockpit-transport.svg
 
-@ENABLE_DOC_TRUE@dist/guide/html/%.woff: dist/fonts/%.woff
+@ENABLE_DOC_TRUE@dist/guide/html/%.woff2: dist/static/fonts/%.woff2
 @ENABLE_DOC_TRUE@	$(COPY_RULE)
 
 @ENABLE_DOC_TRUE@dist/guide/html/index.html: $(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) $(man_MANS) $(GUIDE_STATIC) $(GUIDE_XSLT) $(GUIDE_FONTS)
@@ -10007,18 +10036,6 @@ ws-container:
 ws-container-shell:
 	sudo docker run -ti --rm --publish=9001:9090 \
 		cockpit/ws /bin/bash
-
-unit-tests-container:
-	sudo docker build -t cockpit/unit-tests $(UNIT_TESTS_DIR)
-	sudo docker tag  cockpit/unit-tests:latest docker.io/cockpit/unit-tests:latest
-	sudo docker build --build-arg arch=i386 -t cockpit/unit-tests:i386 $(UNIT_TESTS_DIR)
-	sudo docker tag  cockpit/unit-tests:i386 docker.io/cockpit/unit-tests:i386
-
-unit-tests-container-run:
-	sudo docker run --shm-size=512M -ti --rm -v $(abs_srcdir):/source:ro cockpit/unit-tests
-
-unit-tests-container-shell:
-	sudo docker run --shm-size=512M -ti --rm -v $(abs_srcdir):/source:ro cockpit/unit-tests /bin/bash
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

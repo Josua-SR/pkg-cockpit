@@ -38,10 +38,6 @@ return plural;
   null,
   "コントロール"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "'{{ name }}' の削除"
- ],
  "Empty": [
   null,
   "空"
@@ -66,17 +62,9 @@ return plural;
   null,
   "準備ができていません"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Path to file": [
   null,

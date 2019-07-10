@@ -64,17 +64,9 @@ return plural;
   null,
   "Не готовий"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "Path to file": [
   null,

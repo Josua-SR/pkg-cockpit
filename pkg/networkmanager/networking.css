@@ -58,21 +58,6 @@
     height: 120px;
 }
 
-#network-interface-graph-toolbar .ct-select,
-#networking-graph-toolbar .ct-select,
-#network-interface-graph-toolbar .dropdown,
-#networking-graph-toolbar .dropdown {
-    display: inline-block;
-}
-
-#network-interface-graph-toolbar .dropdown button span,
-#networking-graph-toolbar .dropdown button span {
-    width: 6em;
-    text-align: left;
-    padding-left: 5px;
-    display: inline-block;
-}
-
 th.networking-speed {
     width: 20%;
 }
@@ -171,7 +156,7 @@ h1 .onoff-ct {
 
 #networking-firewall-summary:hover {
     cursor: pointer;
-    background-color: #def3ff;
+    background-color: var(--color-ct-list-hover-bg);
 }
 
 /* set min-height to the same as max-height, so that the list doesn't shrink
@@ -233,15 +218,15 @@ h1 .onoff-ct {
     margin: calc(((100vh - 40rem) - 30px + 0.5rem) / 2) auto;
 }
 
-#add-services-dialog .toggle-body > .ct-form-layout {
+#add-services-dialog .toggle-body > .ct-form {
     margin-left: 1rem;
 }
 
-#add-services-dialog .toggle-body > .ct-form-layout + label {
+#add-services-dialog .toggle-body > .ct-form + label {
     margin-top: 1rem;
 }
 
-#add-services-dialog .toggle-body > .ct-form-layout > .control-label {
+#add-services-dialog .toggle-body > .ct-form > .control-label {
     padding-left: 0;
 }
 
@@ -283,22 +268,28 @@ h1 .onoff-ct {
     }
 }
 
+#zones-listing,
+#services-listing {
+    margin: 2rem 0;
+}
+
+#add-zone-dialog .add-zone-zones legend {
+    all: unset;
+    color: var(--color-subtle-copy);
+    display: block;
+    font: inherit;
+    /* Align with label padding */
+    line-height: 3;
+    padding: 0 0.5rem;
+    font-size: var(--pf-global--FontSize--sm);
+}
+
 #add-zone-dialog .add-zone-zones {
     display: flex;
     flex-flow: row wrap;
     align-items: last baseline;
     /* Compensate for bottom fieldset padding */
     margin-bottom: -1rem;
-}
-
-#add-zone-dialog .add-zone-zones legend {
-    all: unset;
-    color: #72767b; /* pf-black-600 */
-    display: block;
-    font: inherit;
-    line-height: 26px;
-    /* Align with label padding */
-    padding-left: 0.5rem;
 }
 
 #add-zone-dialog .add-zone-zones > fieldset {
@@ -315,20 +306,23 @@ h1 .onoff-ct {
     flex-flow: column;
     padding: 0 0.5rem;
     text-transform: capitalize;
+    font-size: var(--pf-global--FontSize--sm);
 }
 
 /* Move firewalld zones higher in z-index (so lines can go behind) */
 .add-zone-zones-firewalld input {
     position: relative;
     z-index: 2;
+    width: 16px;
+    height: 16px;
 }
 
 /* Add lines behind the radio buttons */
 .add-zone-zones-firewalld > label::after {
-    border-bottom: 1px solid #d1d1d1; /* pf-black-300 */
+    border-bottom: 1px solid #d1d1d1;
     content: "";
     position: absolute;
-    top: 1em;
+    top: 8px;
     right: 0;
     left: 0;
 }
@@ -347,11 +341,16 @@ form.horizontal fieldset {
     flex-direction: row;
 }
 
+#add-zone-description-readonly {
+    padding: 0.5rem 0 0;
+    color: var(--color-subtle-copy);
+}
+
 .add-zone-interfaces {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
     grid-gap: 0 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0 0;
     /* 70px seems to be minimum UI padding width */
     /* This is needed for iPhone SE sizes, but does not affect other sizes */
     /* Needs !important to override specificity of "100%" */

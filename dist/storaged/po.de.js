@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  "$0 Schlitze bleiben"
+  "$0 Slots verbleibend"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -293,7 +293,7 @@ return plural;
  ],
  "Chunk Size": [
   null,
-  "Happengröße"
+  "Datenblock Grösse"
  ],
  "Cleaning up for $target": [
   null,
@@ -315,9 +315,9 @@ return plural;
   null,
   "Komprimierung"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Passphrase wiederholen"
+  "Bestätigen"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -338,6 +338,14 @@ return plural;
  "Create Partition": [
   null,
   "Partition erzeugen"
+ ],
+ "Create Partition Table": [
+  null,
+  "Partitionstabelle anlegen"
+ ],
+ "Create Partition on $0": [
+  null,
+  "Partition auf $0 anlegen"
  ],
  "Create RAID Device": [
   null,
@@ -362,14 +370,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Logischen Datenträger erstellen"
- ],
- "Create Partition on $0": [
-  null,
-  "Partition auf $0 erzeugen"
- ],
- "Create Partition Table": [
-  null,
-  "Partitionstabelle erzeugen"
  ],
  "Creating RAID Device $target": [
   null,
@@ -398,10 +398,6 @@ return plural;
  "Custom": [
   null,
   "Benutzerdefiniert"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Benutzerdefiniert (Geben Sie den Dateisystemtyp an)"
  ],
  "Custom encryption options": [
   null,
@@ -505,7 +501,7 @@ return plural;
  ],
  "Drives": [
   null,
-  "Fährt"
+  "Laufwerke"
  ],
  "Edit": [
   null,
@@ -527,13 +523,13 @@ return plural;
   null,
   "Leere $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "Verschlüsselt $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Verschlüsseltes EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -542,10 +538,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Verschlüsselte Partition von $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Verschlüsseltes XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -594,10 +586,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Dateisystemname"
- ],
- "Filesystem type": [
-  null,
-  "Dateisystemtyp"
  ],
  "Filesystems": [
   null,
@@ -650,6 +638,10 @@ return plural;
  "Grow": [
   null,
   "Wachsen"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -730,6 +722,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "Das Entfernen des Keyservers verhindert möglicherweise das Entsperren $0."
+ ],
+ "Loading...": [
+  null,
+  "Lade..."
  ],
  "Local Mount Point": [
   null,
@@ -846,10 +842,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "NFS-Unterstützung nicht installiert"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Kompatibel mit den meisten Systemen"
  ],
  "Name": [
   null,
@@ -971,10 +963,6 @@ return plural;
   null,
   "Läuft nicht"
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Ok": [
   null,
   "OK"
@@ -982,10 +970,6 @@ return plural;
  "Old passphrase": [
   null,
   "Alte Passphrase"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1191,6 +1175,10 @@ return plural;
   null,
   "Neustart"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "Am Erholen"
@@ -1327,6 +1315,14 @@ return plural;
   null,
   "Richte Loop Device $target ein"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  "Zeige alle $0 Laufwerke"
+ ],
  "Shrink": [
   null,
   "Verkleinern"
@@ -1334,6 +1330,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Logisches Volumen verkleinern"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1543,6 +1543,10 @@ return plural;
   null,
   "Diese Diskette kann nicht entfernt werden, während das Gerät wiederhergestellt wird."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Dieses Volume muss aktiviert werden, bevor die Größe geändert werden kann."
@@ -1675,10 +1679,6 @@ return plural;
   null,
   "VDO-Unterstützung nicht installiert"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Kompatibel mit allen System und Geräten"
- ],
  "Verify key": [
   null,
   "Schlüssel überprüfen"
@@ -1703,13 +1703,13 @@ return plural;
   null,
   "Datenträgerverbünde"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Warten, bis andere Software-Verwaltungsvorgänge abgeschlossen sind"
- ],
- "Warning": [
-  null,
-  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1723,10 +1723,6 @@ return plural;
   null,
   "Schreiben"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 default"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bytes Binäredaten]"
@@ -1738,10 +1734,6 @@ return plural;
  "[no data]": [
   null,
   "[keine Daten]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 default"
  ],
  "iSCSI Targets": [
   null,

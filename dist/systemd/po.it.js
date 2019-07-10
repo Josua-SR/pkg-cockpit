@@ -914,6 +914,10 @@ return plural;
   null,
   "Nome dell'host grazioso"
  ],
+ "Previous boot": [
+  null,
+  "riavvia"
+ ],
  "Problem details": [
   null,
   "Dettagli del problema"

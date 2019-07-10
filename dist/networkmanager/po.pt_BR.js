@@ -382,6 +382,10 @@ return plural;
   null,
   "Falhou"
  ],
+ "Failed to add port": [
+  null,
+  "Falha ao mudar senha"
+ ],
  "Failed to add service": [
   null,
   ""
@@ -561,10 +565,6 @@ return plural;
  "Maximum message age $max_age": [
   null,
   "Máxima permanência da mensagem $max_age"
- ],
- "Members": [
-  null,
-  "Membros"
  ],
  "Mode": [
   null,

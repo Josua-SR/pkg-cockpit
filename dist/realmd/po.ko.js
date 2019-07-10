@@ -72,7 +72,7 @@ return plural;
  ],
  "Contacted domain": [
   null,
-  ""
+  "연결된 도메인 "
  ],
  "Domain": [
   null,
@@ -80,7 +80,7 @@ return plural;
  ],
  "Domain $0 could not be contacted": [
   null,
-  ""
+  "도메인 $0에 연결할 수 없습니다 "
  ],
  "Domain $0 is not supported": [
   null,
@@ -128,51 +128,43 @@ return plural;
  ],
  "Join a Domain": [
   null,
-  ""
+  "도메인에 가입 "
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "도메인 가입이 지원되지 않습니다"
  ],
  "Leave Domain": [
   null,
-  ""
+  "도메인 나가기 "
  ],
  "Login Format": [
   null,
-  ""
+  "로그인 형식 "
  ],
  "More": [
   null,
-  ""
+  "기타 "
  ],
  "Next": [
   null,
   "다음"
  ],
- "Off": [
-  null,
-  "비활성"
- ],
  "Ok": [
   null,
   "확인"
  ],
- "On": [
-  null,
-  "활성"
- ],
  "One Time Password": [
   null,
-  ""
+  "일회용 암호 "
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit가 크래시되었습니다 "
  ],
  "Removals:": [
   null,
-  ""
+  "삭제: "
  ],
  "Removing $0": [
   null,
@@ -180,7 +172,7 @@ return plural;
  ],
  "Server Software": [
   null,
-  ""
+  "서버 소프트웨어 "
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,

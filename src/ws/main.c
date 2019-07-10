@@ -45,6 +45,7 @@ static gint      opt_port         = 9090;
 static gchar     *opt_address     = NULL;
 static gboolean  opt_no_tls       = FALSE;
 static gboolean  opt_for_tls_proxy    = FALSE;
+static gboolean  opt_proxy_tls_redirect = FALSE;
 static gboolean  opt_local_ssh    = FALSE;
 static gchar     *opt_local_session = NULL;
 static gboolean  opt_version      = FALSE;
@@ -54,7 +55,10 @@ static GOptionEntry cmd_entries[] = {
   {"address", 'a', 0, G_OPTION_ARG_STRING, &opt_address, "Address to bind to (binds on all addresses if unset)", "ADDRESS"},
   {"no-tls", 0, 0, G_OPTION_ARG_NONE, &opt_no_tls, "Don't use TLS", NULL},
   {"for-tls-proxy", 0, 0, G_OPTION_ARG_NONE, &opt_for_tls_proxy,
-      "Act behind a https-terminating proxy: accept only https:// origins by default; implies --no-tls",
+      "Act behind a https-terminating proxy: accept only https:// origins by default",
+      NULL},
+  {"proxy-tls-redirect", 0, 0, G_OPTION_ARG_NONE, &opt_proxy_tls_redirect,
+      "Redirect http requests to https even with --no-tls (useful for running behind a http reverse proxy)",
       NULL},
   {"local-ssh", 0, 0, G_OPTION_ARG_NONE, &opt_local_ssh, "Log in locally via SSH", NULL },
   {"local-session", 0, 0, G_OPTION_ARG_STRING, &opt_local_session,
@@ -127,6 +131,7 @@ main (int argc,
   g_autofree gchar *login_html = NULL;
   g_autofree gchar *login_po_html = NULL;
   g_autoptr(CockpitWebServer) server = NULL;
+  CockpitWebServerFlags server_flags = COCKPIT_WEB_SERVER_NONE;
   CockpitHandlerData data;
   int outfd = -1;
 
@@ -146,6 +151,18 @@ main (int argc,
   g_option_context_add_main_entries (context, cmd_entries, NULL);
   if (!g_option_context_parse (context, &argc, &argv, &error))
     goto out;
+
+  /* check mutually exclusive options */
+  if (opt_for_tls_proxy && opt_no_tls)
+    {
+      g_printerr ("--for-tls-proxy and --no-tls are mutually exclusive");
+      goto out;
+    }
+  if (opt_for_tls_proxy && opt_proxy_tls_redirect)
+    {
+      g_printerr ("--for-tls-proxy (running behind a https proxy) and --proxy-tls-redirect (running behind a http proxy) are mutually exclusive");
+      goto out;
+    }
 
   if (opt_version)
     {
@@ -197,10 +214,20 @@ main (int argc,
   login_po_html = g_strdup (DATADIR "/cockpit/static/login.po.html");
   data.login_po_html = (const gchar *)login_po_html;
 
+  if (opt_for_tls_proxy)
+    server_flags |= COCKPIT_WEB_SERVER_FOR_TLS_PROXY;
+  if (!cockpit_conf_bool ("WebService", "AllowUnencrypted", FALSE))
+    {
+      if (!opt_no_tls)
+        server_flags |= COCKPIT_WEB_SERVER_REDIRECT_TLS;
+      if (opt_proxy_tls_redirect)
+        server_flags |= COCKPIT_WEB_SERVER_REDIRECT_TLS | COCKPIT_WEB_SERVER_REDIRECT_TLS_PROXY;
+    }
+
   server = cockpit_web_server_new (opt_address,
                                    opt_port,
                                    certificate,
-                                   opt_for_tls_proxy ? COCKPIT_WEB_SERVER_FOR_TLS_PROXY : COCKPIT_WEB_SERVER_NONE,
+                                   server_flags,
                                    NULL,
                                    &error);
   if (server == NULL)
@@ -208,8 +235,6 @@ main (int argc,
       g_prefix_error (&error, "Error starting web server: ");
       goto out;
     }
-
-  cockpit_web_server_set_redirect_tls (server, !cockpit_conf_bool ("WebService", "AllowUnencrypted", FALSE));
 
   if (cockpit_conf_string ("WebService", "UrlRoot"))
     {

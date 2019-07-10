@@ -826,17 +826,9 @@ return plural;
   null,
   "Uwagi i powyżej"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "On Failure": [
   null,

@@ -114,6 +114,10 @@ return plural;
   null,
   ""
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Connecta amb qualsevol aplicació de visualització $0."
@@ -190,6 +194,10 @@ return plural;
   null,
   ""
  ],
+ "Delete Network $0": [
+  null,
+  "Suprimeix $0"
+ ],
  "Delete Storage Pool $0": [
   null,
   ""
@@ -262,6 +270,10 @@ return plural;
   null,
   ""
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   ""
@@ -325,6 +337,10 @@ return plural;
  "Host should not be empty": [
   null,
   ""
+ ],
+ "IP Address": [
+  null,
+  "Adreça IP"
  ],
  "IPv4 Address": [
   null,
@@ -429,6 +445,10 @@ return plural;
  "Memory could not be saved": [
   null,
   ""
+ ],
+ "Memory must not be 0": [
+  null,
+  "Ús de la memòria: "
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -581,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Sistema operatiu"
+ ],
+ "Operation is in progress": [
+  null,
+  "Inici de sessió d'oVirt en progrés"
  ],
  "Overview": [
   null,
@@ -890,6 +914,10 @@ return plural;
   null,
   ""
  ],
+ "The network could not be deleted": [
+  null,
+  ""
+ ],
  "The pool is empty": [
   null,
   ""
@@ -930,7 +958,15 @@ return plural;
   null,
   ""
  ],
+ "Unknown": [
+  null,
+  "Desconegut"
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available in the default location": [
   null,
   ""
  ],
@@ -1219,6 +1255,10 @@ return plural;
   "vCPU"
  ],
  "vhostuser": [
+  null,
+  ""
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
   null,
   ""
  ],

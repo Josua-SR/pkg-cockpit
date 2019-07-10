@@ -202,10 +202,6 @@ return plural;
   null,
   "Es wurde kein Benutzername angegeben."
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Old Password": [
   null,
   "Altes Passwort"
@@ -213,10 +209,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Altes Passwort wurde nicht akzeptiert"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "Password": [
   null,

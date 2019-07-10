@@ -60,7 +60,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  ""
+  "항상 연결 "
  ],
  "Apply": [
   null,
@@ -112,7 +112,11 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "\"원격 뷰어 시작\"을 클릭하면 .vv 파일을 다운로드하여 $0을 시작합니다. "
+ ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  "가상 네트워크 삭제 확인 "
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -190,21 +194,25 @@ return plural;
   null,
   "컨텐츠 삭제 "
  ],
+ "Delete Network $0": [
+  null,
+  "네트워크 $0 삭제 "
+ ],
  "Delete Storage Pool $0": [
   null,
-  ""
+  "스토리지 풀 $0 삭제 "
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "연결된 스토리지 파일 삭제: "
  ],
  "Delete the Volumes inside this Pool": [
   null,
-  ""
+  "풀 내에 있는 볼륨을 삭제합니다 "
  ],
  "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
-  ""
+  "비활성화된 스토리지 풀을 삭제하려면 풀 정의를 해제하면 됩니다. 컨텐츠는 삭제되지 않습니다. "
  ],
  "Device": [
   null,
@@ -220,19 +228,19 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "직렬 콘솔 연결이 끊어졌습니다. '다시 연결' 버튼을 클릭합니다. "
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "디스크 $ 0이/가 VM $ 1에서 분리되지 않음"
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "디스크를 연결하지 못했습니다"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "디스크를 만들지 못했습니다 "
  ],
  "Disks": [
   null,
@@ -244,7 +252,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "$0에서 MSI를 다운로드합니다  "
  ],
  "Edit": [
   null,
@@ -252,7 +260,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  ""
+  "에뮬레이트된 기기 "
  ],
  "Existing Disk Image": [
   null,
@@ -264,11 +272,11 @@ return plural;
  ],
  "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
-  ""
+  "$0에 표시된 인터페이스의 IP 주소를 가져오지 못했습니다 "
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "최대 가상 CPU 수 보다 적은 수를 활성화해야 합니다."
  ],
  "File": [
   null,
@@ -280,11 +288,11 @@ return plural;
  ],
  "Force Restart": [
   null,
-  ""
+  "강제 재시작"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "강제 종료 "
  ],
  "Format": [
   null,
@@ -292,7 +300,7 @@ return plural;
  ],
  "Forwarding mode": [
   null,
-  ""
+  "전송 모드 "
  ],
  "General": [
   null,
@@ -308,11 +316,11 @@ return plural;
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "데스크탑 뷰어 그래픽 콘솔"
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "성능 옵션 숨기기   "
  ],
  "Host": [
   null,
@@ -328,7 +336,7 @@ return plural;
  ],
  "Host should not be empty": [
   null,
-  ""
+  "호스트는 비워둘 수 없습니다  "
  ],
  "IP Address": [
   null,
@@ -344,7 +352,7 @@ return plural;
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "가상 머신을 바로 시작 "
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
@@ -352,11 +360,11 @@ return plural;
  ],
  "Initiator": [
   null,
-  ""
+  "개시자 "
  ],
  "Initiator IQN should not be empty": [
   null,
-  ""
+  "개시자 IQN은 비워둘 수 없습니다 "
  ],
  "Install": [
   null,
@@ -388,7 +396,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "원격 뷰어 시작 "
  ],
  "Loading ...": [
   null,
@@ -416,19 +424,19 @@ return plural;
  ],
  "Maximum Allocation": [
   null,
-  ""
+  "최대 할당 "
  ],
  "Maximum Transmission Unit": [
   null,
-  ""
+  "MTU (Maximum Transmission Unit)"
  ],
  "Maximum memory could not be saved": [
   null,
-  ""
+  "최대 메모리는 저장할 수 없습니다 "
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "게스트 OS에 할당된 가상 CPU의 최대 개수는 1에서 $0 사이여야 합니다 "
  ],
  "Memory": [
   null,
@@ -438,9 +446,13 @@ return plural;
   null,
   "메모리를 저장할 수 없습니다 "
  ],
+ "Memory must not be 0": [
+  null,
+  "메모리는 0이 아니어야 합니다 "
+ ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
-  ""
+  "128 MiB와 최대 할당 사이의 메모리 크기 "
  ],
  "MiB": [
   null,
@@ -456,15 +468,15 @@ return plural;
  ],
  "More Information": [
   null,
-  ""
+  "자세한 정보 "
  ],
  "NAT to $0": [
   null,
-  ""
+  " $0에 NAT"
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "VM $1의 NIC $0은 상태 변경에 실패했습니다 "
  ],
  "Name": [
   null,
@@ -484,11 +496,11 @@ return plural;
  ],
  "Network $0 failed to get activated": [
   null,
-  ""
+  "네트워크 $0의 활성화에 실패했습니다 "
  ],
  "Network $0 failed to get deactivated": [
   null,
-  ""
+  "네트워크 $0의 비활성화에 실패했습니다 "
  ],
  "Network Boot (PXE)": [
   null,
@@ -524,11 +536,11 @@ return plural;
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  ""
+  "이 스토리지 풀에 대해 정의된 스토리지 볼륨이 없습니다 "
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "이 호스트에서 실행 중이거나 정의된 가상 머신이 없습니다 "
  ],
  "No Virtual Networks": [
   null,
@@ -536,15 +548,15 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "부팅 장치를 찾을 수 없습니다 "
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "이 가상 머신에 지정된 콘솔이 없습니다. "
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "이 가상 머신에 지정된 디스크가 없습니다 "
  ],
  "No matching files found": [
   null,
@@ -552,23 +564,23 @@ return plural;
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "이 가상 머신에 네트워크 인터페이스가 정의되어 있지 않습니다 "
  ],
  "No network is defined on this host": [
   null,
-  ""
+  "이 호스트에 정의된 네트워크가 없습니다 "
  ],
  "No networks available": [
   null,
-  ""
+  "사용 가능한 네트워크가 없습니다 "
  ],
  "No storage pool is defined on this host": [
   null,
-  ""
+  "이 호스트에 지정된 스토리지 풀이 없습니다 "
  ],
  "None (Isolated Network)": [
   null,
-  ""
+  "없음 (격리된 네트워크)"
  ],
  "OS Vendor": [
   null,
@@ -576,11 +588,11 @@ return plural;
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
-  ""
+  "하나 이상의 선택된 볼륨이 도메인에서 사용되고 있습니다. 먼저 디스크를 분리하여 볼륨을 삭제하십시오."
  ],
  "Only editable when the guest is shut off": [
   null,
-  ""
+  "게스트가 종료된 경우에만 편집할 수 있습니다 "
  ],
  "Open": [
   null,
@@ -592,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  ""
+  "실행 중인 작업"
  ],
  "Overview": [
   null,
@@ -604,15 +616,15 @@ return plural;
  ],
  "Path on host's filesystem": [
   null,
-  ""
+  "호스트 파일시스템의 경로 "
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "호스트의 파일 시스템에서 ISO 파일로의 경로 "
  ],
  "Path to file": [
   null,
-  ""
+  "파일의 경로 "
  ],
  "Pause": [
   null,
@@ -620,11 +632,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  ""
+  "영구적 "
  ],
  "Persistent": [
   null,
-  ""
+  "영구적 "
  ],
  "Physical Disk Device": [
   null,
@@ -632,23 +644,23 @@ return plural;
  ],
  "Physical disk device on host": [
   null,
-  ""
+  "호스트에서 물리적 디스크 장치 "
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "새 볼륨 이름을 입력해 주십시오"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "새 볼륨 크기를 입력해 주십시오 "
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "가상 머신을 시작하여 콘솔에 액세스하십시오 "
  ],
  "Plug": [
   null,
-  ""
+  "플러그 "
  ],
  "Pool": [
   null,
@@ -660,15 +672,15 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "게스트에게 공개하기 위한 권장 소캣 수입니다. "
  ],
  "Prefix": [
   null,
-  ""
+  "접두어 "
  ],
  "Private": [
   null,
-  ""
+  "비공개 "
  ],
  "Product": [
   null,
@@ -704,15 +716,15 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "다시 시작"
  ],
  "Route to $0": [
   null,
-  ""
+  "$0로 라우팅 "
  ],
  "Routed Network": [
   null,
-  ""
+  "라우팅된 네트워크"
  ],
  "Run": [
   null,
@@ -720,7 +732,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "호스트 부팅 시 실행 "
  ],
  "SPICE": [
   null,
@@ -744,15 +756,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "마스크 불가능 인터럽트 보내기 "
  ],
  "Send key": [
   null,
-  ""
+  "키 전송 "
  ],
  "Serial Console": [
   null,
-  ""
+  "직렬 콘솔 "
  ],
  "Session": [
   null,
@@ -760,7 +772,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "성능 옵션 보기 "
  ],
  "Shut Down": [
   null,
@@ -780,7 +792,7 @@ return plural;
  ],
  "Source Format": [
   null,
-  ""
+  "소스 형식 "
  ],
  "Source Path": [
   null,
@@ -788,11 +800,11 @@ return plural;
  ],
  "Source path should not be empty": [
   null,
-  ""
+  "소스 경로를 비워둘 수 없습니다 "
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "소스는 http, ftp, nfs 프로토콜로 시작해야 합니다  "
  ],
  "Start libvirt": [
   null,
@@ -800,11 +812,11 @@ return plural;
  ],
  "Start pool when host boots": [
   null,
-  ""
+  "호스트 부팅 시 풀 시작 "
  ],
  "Startup": [
   null,
-  ""
+  "시작 "
  ],
  "State": [
   null,
@@ -816,11 +828,11 @@ return plural;
  ],
  "Storage Pool $0 failed to get activated": [
   null,
-  ""
+  "스토리지 풀 $0의 활성화에 실패했습니다 "
  ],
  "Storage Pool $0 failed to get deactivated": [
   null,
-  ""
+  "스토리지 풀 $0의 비활성화에 실패했습니다 "
  ],
  "Storage Pool Name": [
   null,
@@ -828,7 +840,7 @@ return plural;
  ],
  "Storage Pool failed to be created": [
   null,
-  ""
+  "스토리지 풀 생성에 실패했습니다 "
  ],
  "Storage Pools": [
   null,
@@ -840,7 +852,7 @@ return plural;
  ],
  "Storage Volumes could not be deleted": [
   null,
-  ""
+  "스토리지 볼륨은 삭제할 수 없습니다 "
  ],
  "System": [
   null,
@@ -856,55 +868,59 @@ return plural;
  ],
  "Target path should not be empty": [
   null,
-  ""
+  "대상 경로를 비워둘 수 없습니다 "
  ],
  "The Storage Pool could not be deleted": [
   null,
-  ""
+  "스토리지 풀을 삭제할 수 없습니다 "
  ],
  "The VM crashed.": [
   null,
-  ""
+  "가상 머신이 크래시되었습니다. "
  ],
  "The VM is down.": [
   null,
-  ""
+  "가상 머신이 다운되었습니다. "
  ],
  "The VM is going down.": [
   null,
-  ""
+  "가상 머신이 다운됩니다. "
  ],
  "The VM is idle.": [
   null,
-  ""
+  "가상 머신이 유휴 상태입니다. "
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "가상 머신이 종료되고 있습니다 (종료 또는 크래시가 완료되지 않았습니다). "
  ],
  "The VM is paused.": [
   null,
-  ""
+  "가상 머신이 일시 중지합니다. "
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "가상 머신이 실행되고 있으므로 삭제 전 강제로 종료됩니다. "
  ],
  "The VM is running.": [
   null,
-  ""
+  "가상 머신이 실행되고 있습니다. "
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "가상 머신은 게스트 전원 관리에 의해 일시 중지됩니다. "
  ],
  "The directory on the server being exported": [
   null,
-  ""
+  "서버의 디렉토리를 내보내는 중 "
+ ],
+ "The network could not be deleted": [
+  null,
+  "네트워크는 삭제할 수 없습니다 "
  ],
  "The pool is empty": [
   null,
-  ""
+  "풀이 비어 있습니다 "
  ],
  "This volume is already used by another VM.": [
   null,
@@ -1241,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "vhostuser"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  ""
  ],
  "yes": [
   null,

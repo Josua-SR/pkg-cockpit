@@ -290,10 +290,6 @@ return plural;
   null,
   "有効な秘密鍵ではありません"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
@@ -305,10 +301,6 @@ return plural;
  "Old password not accepted": [
   null,
   "古いパスワードは受け入れられません"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Ooops!": [
   null,

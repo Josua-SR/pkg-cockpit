@@ -498,17 +498,9 @@ return plural;
   null,
   "ノートブック"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "On Failure": [
   null,

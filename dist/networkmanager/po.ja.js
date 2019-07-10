@@ -382,6 +382,10 @@ return plural;
   null,
   "失敗"
  ],
+ "Failed to add port": [
+  null,
+  ""
+ ],
  "Failed to add service": [
   null,
   "サービスの追加に失敗しました"
@@ -562,10 +566,6 @@ return plural;
   null,
   "メッセージ最大期間 $max_age"
  ],
- "Members": [
-  null,
-  "メンバー"
- ],
  "Mode": [
   null,
   "モード"
@@ -629,14 +629,6 @@ return plural;
  "Not available": [
   null,
   "利用できません"
- ],
- "Off": [
-  null,
-  "オフ"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Parent": [
   null,

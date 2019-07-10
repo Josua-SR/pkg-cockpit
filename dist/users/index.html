@@ -49,7 +49,7 @@
   </div>
 
   <div id="accounts" class="container-fluid" hidden>
-    <button class="btn btn-default accounts-privileged" id="accounts-create" translatable="yes" data-container="body" data-placement="right">Create New Account</button>
+    <button class="btn btn-primary accounts-privileged" id="accounts-create" translatable="yes" data-container="body" data-placement="right">Create New Account</button>
     <div id="accounts-list">
     </div>
   </div>
@@ -163,7 +163,7 @@
           <h4 class="modal-title" translatable="yes">Create New Account</h4>
         </div>
         <div class="modal-body">
-          <form class="ct-form-layout">
+          <form class="ct-form">
             <label class="control-label" for="accounts-create-real-name" translatable="yes">Full Name</label>
             <input class="form-control" type="text" id="accounts-create-real-name" value=""/>
 
@@ -211,7 +211,7 @@
           <h4 class="modal-title" translatable="yes">Set Password</h4>
         </div>
         <div class="modal-body">
-          <form class="ct-form-layout">
+          <form class="ct-form">
             <label class="control-label" for="account-set-password-old" translatable="yes">Old Password</label>
             <input class="form-control check-passwords" type="password" id="account-set-password-old"/>
 
@@ -377,7 +377,7 @@
         <span translatable="yes">Invalid key</span>
         {{/valid}}
       </div>
-      <div class="action"><button data-raw="{{raw}}" class="btn btn-default btn-control-ct accounts-self-privileged account-remove-key">-</button></div>
+      <div class="action"><button data-raw="{{raw}}" class="btn btn-default btn-control-ct accounts-self-privileged account-remove-key fa fa-minus"/></div>
     </div>
     {{/keys}}
     {{^keys}}

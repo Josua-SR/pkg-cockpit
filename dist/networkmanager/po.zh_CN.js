@@ -382,6 +382,10 @@ return plural;
   null,
   "已失败"
  ],
+ "Failed to add port": [
+  null,
+  ""
+ ],
  "Failed to add service": [
   null,
   "添加服务失败"
@@ -562,10 +566,6 @@ return plural;
   null,
   "最大消息有效期 $max_age"
  ],
- "Members": [
-  null,
-  "成员"
- ],
  "Mode": [
   null,
   "模式"
@@ -629,14 +629,6 @@ return plural;
  "Not available": [
   null,
   "不可用"
- ],
- "Off": [
-  null,
-  "关"
- ],
- "On": [
-  null,
-  "开"
  ],
  "Parent": [
   null,

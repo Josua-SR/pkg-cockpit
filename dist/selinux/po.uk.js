@@ -32,6 +32,10 @@ return plural;
   "$0 відповідники",
   "$0 відповідників"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "Застосувати це рішення"
@@ -44,9 +48,21 @@ return plural;
   null,
   "Журнал інспектування"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "Закрити"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "Встановлюємо з’єднання із фоновою службою SETroubleshoot…"
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -68,9 +84,17 @@ return plural;
   null,
   "Встановіть setroubleshoot-server, щоб мати змогу діагностувати причини подій SELinux."
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "Немає сповіщень SELinux."
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -112,6 +136,10 @@ return plural;
   null,
   "Параметр не відповідає налаштованому стану, його буде скинуто під час наступного завантаження."
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "Рішення успішно застосовано"
@@ -124,9 +152,17 @@ return plural;
   null,
   "Рішення"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "Налаштований стан є невідомим, його може бути змінено під час наступного завантаження."
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -147,6 +183,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "Не вдалося запустити setroubleshootd"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

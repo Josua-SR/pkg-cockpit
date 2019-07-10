@@ -31,6 +31,10 @@ return plural;
   "$0 Auftreten",
   "$1 Vorkommen"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "Wenden Sie diese Lösung an"
@@ -43,9 +47,21 @@ return plural;
   null,
   "Audit-Protokoll"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "Schließen"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "Verbinde zum SETroubleshoot Daemon..."
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -67,9 +83,17 @@ return plural;
   null,
   "Installieren Sie setroubleshoot-server, um SELinux-Ereignisse zu behandeln."
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "Keine SELinux-Alarme"
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -82,14 +106,6 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "Zwischen aufgetreten $0 und $1"
- ],
- "Off": [
-  null,
-  "Aus"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "SELinux Access Control Errors": [
   null,
@@ -119,6 +135,10 @@ return plural;
   null,
   "Abweichungen vom konfigurierten Zustand werden beim nächsten Neustart zurückgesetzt."
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "Lösung erfolgreich angewendet"
@@ -131,9 +151,17 @@ return plural;
   null,
   "Lösungen"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "Der konfigurierte Zustand ist unbekannt und kann sich beim nächsten Neustart ändern."
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -154,6 +182,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "Kann setroubleshootd nicht starten"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

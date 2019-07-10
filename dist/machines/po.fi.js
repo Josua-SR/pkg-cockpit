@@ -46,6 +46,10 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Osoite"
@@ -90,6 +94,10 @@ return plural;
   null,
   ""
  ],
+ "Cache": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Peru"
@@ -105,6 +113,10 @@ return plural;
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Painamalla \"Launch Remote Viewer\" lataat .vv-tiedoston ja avaat $0."
+ ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  ""
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -162,6 +174,10 @@ return plural;
   null,
   ""
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "DHCP Range": [
   null,
   ""
@@ -175,6 +191,10 @@ return plural;
   "Poista"
  ],
  "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Network $0": [
   null,
   ""
  ],
@@ -226,6 +246,10 @@ return plural;
   null,
   "Levyt"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "Lataa MSI kohteesta $0"
@@ -243,6 +267,10 @@ return plural;
   ""
  ],
  "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
   ""
  ],
@@ -290,6 +318,10 @@ return plural;
   null,
   ""
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Kone"
@@ -306,6 +338,10 @@ return plural;
   null,
   ""
  ],
+ "IP Address": [
+  null,
+  "IP-osoite"
+ ],
  "IPv4 Address": [
   null,
   ""
@@ -319,6 +355,14 @@ return plural;
   "Käynnistä VM välittömästi"
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
   null,
   ""
  ],
@@ -378,7 +422,15 @@ return plural;
   null,
   "Manuaalinen yhteys"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -389,6 +441,18 @@ return plural;
  "Memory": [
   null,
   "Muisti"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory must not be 0": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -466,11 +530,19 @@ return plural;
   null,
   ""
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
  ],
  "No VM is running or defined on this host": [
+  null,
+  ""
+ ],
+ "No Virtual Networks": [
   null,
   ""
  ],
@@ -498,11 +570,11 @@ return plural;
   null,
   ""
  ],
- "No storage pool is defined on this host": [
+ "No networks available": [
   null,
   ""
  ],
- "No virtual networks": [
+ "No storage pool is defined on this host": [
   null,
   ""
  ],
@@ -518,6 +590,10 @@ return plural;
   null,
   ""
  ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
+ ],
  "Open": [
   null,
   ""
@@ -525,6 +601,10 @@ return plural;
  "Operating System": [
   null,
   "Käyttöjärjestelmä"
+ ],
+ "Operation is in progress": [
+  null,
+  ""
  ],
  "Overview": [
   null,
@@ -555,6 +635,14 @@ return plural;
   ""
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -682,6 +770,10 @@ return plural;
   null,
   "Istunto"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Sammuta"
@@ -697,6 +789,10 @@ return plural;
  "Source": [
   null,
   "Lähde"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -726,6 +822,10 @@ return plural;
   null,
   "Tila"
  ],
+ "Storage": [
+  null,
+  "Tallennustila"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -745,10 +845,6 @@ return plural;
  "Storage Pools": [
   null,
   ""
- ],
- "Storage Size": [
-  null,
-  "Tallennustilan koko"
  ],
  "Storage Volumes": [
   null,
@@ -818,7 +914,15 @@ return plural;
   null,
   ""
  ],
+ "The network could not be deleted": [
+  null,
+  ""
+ ],
  "The pool is empty": [
+  null,
+  ""
+ ],
+ "This volume is already used by another VM.": [
   null,
   ""
  ],
@@ -854,7 +958,19 @@ return plural;
   null,
   "Yksikkö"
  ],
+ "Unknown": [
+  null,
+  "Tuntematon"
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available on the host": [
   null,
   ""
  ],
@@ -962,6 +1078,10 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   ""
@@ -971,6 +1091,10 @@ return plural;
   ""
  ],
  "cdrom": [
+  null,
+  ""
+ ],
+ "control-label $0": [
   null,
   ""
  ],
@@ -1022,7 +1146,15 @@ return plural;
   null,
   ""
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
  "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
   null,
   ""
  ],
@@ -1074,6 +1206,14 @@ return plural;
   null,
   "palvelin"
  ],
+ "show less": [
+  null,
+  "näytä vähemmän"
+ ],
+ "show more": [
+  null,
+  "näytä enemmän"
+ ],
  "shut off": [
   null,
   "sammutettu"
@@ -1115,6 +1255,10 @@ return plural;
   ""
  ],
  "vhostuser": [
+  null,
+  ""
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
   null,
   ""
  ],

@@ -30,6 +30,10 @@ return plural;
   "$1 occurrences",
   "$0 發生"
  ],
+ "Ansible Playbook": [
+  null,
+  ""
+ ],
  "Apply this solution": [
   null,
   "應用此解決方案"
@@ -42,9 +46,21 @@ return plural;
   null,
   "稽核日誌"
  ],
+ "Automation Script": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  "關閉"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "連接到SETENCshoot守護程序..."
+ ],
+ "Copy to clipboard": [
+  null,
+  ""
  ],
  "Enforce policy:": [
   null,
@@ -66,9 +82,17 @@ return plural;
   null,
   "安裝setroubleshoot-server以解決SELinux事件的故障。"
  ],
+ "Loading system modifications...": [
+  null,
+  ""
+ ],
  "No SELinux alerts.": [
   null,
   "沒有SELinux警報。"
+ ],
+ "No System Modifications": [
+  null,
+  ""
  ],
  "Not connected": [
   null,
@@ -81,14 +105,6 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "發生在。之間 $0 和 $1"
- ],
- "Off": [
-  null,
-  "關閉"
- ],
- "On": [
-  null,
-  "開"
  ],
  "SELinux Access Control Errors": [
   null,
@@ -118,6 +134,10 @@ return plural;
   null,
   "設置偏離配置狀態，並在下次引導時恢復。"
  ],
+ "Shell Script": [
+  null,
+  ""
+ ],
  "Solution applied successfully": [
   null,
   "解決方案成功應用"
@@ -130,9 +150,17 @@ return plural;
   null,
   "解決方案"
  ],
+ "System Modifications": [
+  null,
+  ""
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "配置狀態未知，可能會在下次引導時更改。"
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  ""
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -153,6 +181,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "無法啟動setroubleshootd"
+ ],
+ "View automation script": [
+  null,
+  ""
  ],
  "Waiting for details...": [
   null,

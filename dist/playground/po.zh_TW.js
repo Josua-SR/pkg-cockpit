@@ -38,10 +38,6 @@ return plural;
   null,
   "控制"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "刪除'{{ name }}“"
- ],
  "Empty": [
   null,
   "空的"
@@ -66,17 +62,9 @@ return plural;
   null,
   "沒有準備好"
  ],
- "Off": [
-  null,
-  "關閉"
- ],
  "Ok": [
   null,
   "確定"
- ],
- "On": [
-  null,
-  "開"
  ],
  "Path to file": [
   null,

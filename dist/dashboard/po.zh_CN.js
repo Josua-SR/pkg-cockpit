@@ -350,17 +350,9 @@ return plural;
   null,
   "笔记本"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Old password not accepted": [
   null,
   "旧密码不被接受"
- ],
- "On": [
-  null,
-  "开"
  ],
  "Other": [
   null,

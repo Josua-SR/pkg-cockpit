@@ -114,6 +114,10 @@ return plural;
   null,
   "Kliknutím na „Spustit vzdálený prohlížeč“ se stáhne soubor ve formátu .vv a spustí se $0."
  ],
+ "Confirm deletion of the Virtual Network": [
+  null,
+  "Potvrďte smazání virtuální sítě"
+ ],
  "Connect with any $0 viewer application.": [
   null,
   "Připojte se libovolnou aplikací pro zobrazování $0."
@@ -189,6 +193,10 @@ return plural;
  "Delete Content": [
   null,
   "Smazat obsah"
+ ],
+ "Delete Network $0": [
+  null,
+  "Smazat síť $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -438,6 +446,10 @@ return plural;
   null,
   "Paměť se nepodařilo uložit"
  ],
+ "Memory must not be 0": [
+  null,
+  "Je třeba, aby paměť nebyla 0 (nula)"
+ ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
   "Velikost paměti z rozmezí 128 MiB a maxima"
@@ -592,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  ""
+  "Operace probíhá"
  ],
  "Overview": [
   null,
@@ -902,6 +914,10 @@ return plural;
   null,
   "Složka na serveru, kterou exportovat"
  ],
+ "The network could not be deleted": [
+  null,
+  "Síť nebylo možné smazat"
+ ],
  "The pool is empty": [
   null,
   "Fond je prázdný"
@@ -952,7 +968,7 @@ return plural;
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  ""
+  "Ve výchozím umístění je k dipozici až $0 $1"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1241,6 +1257,10 @@ return plural;
  "vhostuser": [
   null,
   "uzivatelvirtstroje"
+ ],
+ "virt-install package needs to be installed on the system in order to create new VMs": [
+  null,
+  "Aby bylo možné vytvářet nové virt. stroje je třeba, aby byl nainstalovaný balíček virt-install"
  ],
  "yes": [
   null,

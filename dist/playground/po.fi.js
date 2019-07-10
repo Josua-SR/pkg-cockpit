@@ -39,10 +39,6 @@ return plural;
   null,
   "Hallinta"
  ],
- "Delete '{{ name }}'": [
-  null,
-  "Poista '{{ name }}'"
- ],
  "Empty": [
   null,
   "Tyhjä"

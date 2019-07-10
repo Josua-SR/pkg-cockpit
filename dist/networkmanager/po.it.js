@@ -34,6 +34,10 @@ return plural;
   null,
   ""
  ],
+ "(default)": [
+  null,
+  "(predefinito)"
+ ],
  "1 day": [
   null,
   "1 giorno"
@@ -82,6 +86,10 @@ return plural;
   null,
   "Backup attivo"
  ],
+ "Active zones": [
+  null,
+  "Pagine attive"
+ ],
  "Adaptive load balancing": [
   null,
   "Adaptive Load Balancing"
@@ -118,6 +126,22 @@ return plural;
   null,
   "Aggiungi VLAN"
  ],
+ "Add Zone": [
+  null,
+  "Aggiungi bond"
+ ],
+ "Add ports to the following zones:": [
+  null,
+  " 1\"Eliminare i seguenti Nodi?"
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  "Aggiungi bond"
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "L'aggiunta di I <b>$0</b>interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
@@ -141,6 +165,10 @@ return plural;
  "Addresses": [
   null,
   "Indirizzi"
+ ],
+ "Allowed Addresses": [
+  null,
+  "Indirizzo"
  ],
  "Allowed Services": [
   null,
@@ -274,6 +302,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  "Personalizzata"
+ ],
  "DNS": [
   null,
   "DNS"
@@ -306,6 +338,10 @@ return plural;
   null,
   "L'eliminazione di xcelection <b>$0</b>interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
+ "Description": [
+  null,
+  "Descrizione"
+ ],
  "Details": [
   null,
   "Dettagli"
@@ -317,6 +353,10 @@ return plural;
  "Enable Service": [
   null,
   "Attivare il servizio"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -341,6 +381,22 @@ return plural;
  "Failed": [
   null,
   "Non riuscito"
+ ],
+ "Failed to add port": [
+  null,
+  "Impossibile cambiare la password"
+ ],
+ "Failed to add service": [
+  null,
+  "Non è riuscito ad aggiungere la macchina: $0"
+ ],
+ "Failed to add zone": [
+  null,
+  "Non è riuscito ad aggiungere la macchina: $0"
+ ],
+ "Failed to remove service": [
+  null,
+  "Impossibile raggiungere il server"
  ],
  "Filter Services": [
   null,
@@ -382,6 +438,10 @@ return plural;
   null,
   "Indirizzo IP"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Impostazioni IP"
@@ -413,6 +473,10 @@ return plural;
  "Inactive": [
   null,
   "Inattiva"
+ ],
+ "Included services": [
+  null,
+  "Aggiungi servizi"
  ],
  "Interfaces": [
   null,
@@ -502,10 +566,6 @@ return plural;
   null,
   "Età massima del messaggio $max_età"
  ],
- "Members": [
-  null,
-  "Membri"
- ],
  "Mode": [
   null,
   "Modalità"
@@ -546,13 +606,25 @@ return plural;
   null,
   "No"
  ],
+ "No active zones": [
+  null,
+  "Volume inattivo"
+ ],
  "No carrier": [
   null,
   "Nessun vettore"
  ],
+ "No description available": [
+  null,
+  "Nessuna descrizione fornita."
+ ],
  "No open ports": [
   null,
   "Nessuna porta aperta"
+ ],
+ "None": [
+  null,
+  "Nessuno"
  ],
  "Not available": [
   null,
@@ -646,6 +718,10 @@ return plural;
   null,
   "Casuale"
  ],
+ "Range": [
+  null,
+  "Cambia"
+ ],
  "Range must be strictly ordered": [
   null,
   ""
@@ -661,6 +737,14 @@ return plural;
  "Remove $0": [
   null,
   "Rimuovere $0"
+ ],
+ "Remove service": [
+  null,
+  "Rimuovere il dispositivo"
+ ],
+ "Remove service from zones": [
+  null,
+  "Rimuovere il dispositivo"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -717,6 +801,10 @@ return plural;
  "Shared": [
   null,
   "Condivisa"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -794,6 +882,10 @@ return plural;
   null,
   "Questo dispositivo non può essere gestito qui."
  ],
+ "Trust level": [
+  null,
+  "Chiave della fiducia"
+ ],
  "UDP": [
   null,
   "UDP"
@@ -850,6 +942,14 @@ return plural;
   null,
   "Non sei autorizzato a modificare il firewall."
  ],
+ "Zone": [
+  null,
+  "Fuso Orario"
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0byte di dati binari]"
@@ -861,6 +961,14 @@ return plural;
  "[no data]": [
   null,
   "[nessun dato]"
+ ],
+ "show less": [
+  null,
+  "mostra meno"
+ ],
+ "show more": [
+  null,
+  "mostra di più"
  ],
  "page-title\u0004Networking": [
   null,

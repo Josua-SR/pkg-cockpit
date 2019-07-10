@@ -98,17 +98,9 @@ return plural;
   null,
   "Kein"
  ],
- "Off": [
-  null,
-  "Aus"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Ein"
  ],
  "On a mounted device": [
   null,
