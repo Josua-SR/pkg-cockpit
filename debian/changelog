@@ -1,4 +1,4 @@
-cockpit (198-1) UNRELEASED; urgency=medium
+cockpit (198-1) unstable; urgency=medium
 
   * New upstream release:
     - PatternFly4 user interface design
@@ -8,7 +8,7 @@ cockpit (198-1) UNRELEASED; urgency=medium
     - Docker: Change menu label
     - Web server: More flexible https redirection for proxies
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 10 Jul 2019 14:25:10 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 10 Jul 2019 14:25:47 +0000
 
 cockpit (197-1) experimental; urgency=medium
 
