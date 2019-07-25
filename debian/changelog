@@ -1,3 +1,14 @@
+cockpit (199-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Redesigned logs all over cockpit
+    - Services: Design and accesibility improvements
+    - System: Show DIMM information on Hardware Info page
+    - Machines: VM creation dialog now shows the recommended memory for the
+      selected OS
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 25 Jul 2019 09:37:20 +0000
+
 cockpit (198-1) unstable; urgency=medium
 
   * New upstream release:
