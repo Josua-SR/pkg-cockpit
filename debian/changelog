@@ -1,4 +1,4 @@
-cockpit (199-1) UNRELEASED; urgency=medium
+cockpit (199-1) unstable; urgency=medium
 
   * New upstream release:
     - Redesigned logs all over cockpit
@@ -7,7 +7,7 @@ cockpit (199-1) UNRELEASED; urgency=medium
     - Machines: VM creation dialog now shows the recommended memory for the
       selected OS
 
- -- Martin Pitt <mpitt@debian.org>  Thu, 25 Jul 2019 09:37:20 +0000
+ -- Martin Pitt <mpitt@debian.org>  Thu, 25 Jul 2019 09:38:12 +0000
 
 cockpit (198-1) unstable; urgency=medium
 
