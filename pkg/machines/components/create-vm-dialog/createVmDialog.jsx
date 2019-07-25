@@ -33,6 +33,7 @@ import {
     units,
     getStorageVolumesUsage,
     LIBVIRT_SYSTEM_CONNECTION,
+    LIBVIRT_SESSION_CONNECTION,
 } from "../../helpers.js";
 import {
     getPXEInitialNetworkSource,
@@ -154,6 +155,18 @@ function validateParams(vmParams) {
 
     if (vmParams.memorySize === 0) {
         validationFailed['memory'] = _("Memory must not be 0");
+    } else {
+        const osObj = vmParams.osInfoList.find(osElem => osElem.shortId == vmParams.os);
+        if (osObj &&
+            osObj['minimumResources']['ram'] &&
+            (convertToUnit(vmParams.memorySize, vmParams.memorySizeUnit, units.B) < osObj['minimumResources']['ram'])) {
+            validationFailed['memory'] = (
+                cockpit.format(
+                    _("The selected Operating System has minimum memory requirement of $0 $1"),
+                    convertToUnit(osObj['minimumResources']['ram'], units.B, vmParams.memorySizeUnit),
+                    vmParams.memorySizeUnit)
+            );
+        }
     }
 
     return validationFailed;
@@ -183,7 +196,7 @@ const NameRow = ({ vmName, onValueChanged, validationFailed }) => {
     );
 };
 
-const SourceRow = ({ source, sourceType, networks, nodeDevices, providerName, onValueChanged, validationFailed }) => {
+const SourceRow = ({ connectionName, source, sourceType, networks, nodeDevices, providerName, onValueChanged, validationFailed }) => {
     let installationSource;
     let installationSourceId;
     let installationSourceWarning;
@@ -261,7 +274,11 @@ const SourceRow = ({ source, sourceType, networks, nodeDevices, providerName, on
                     key={LOCAL_INSTALL_MEDIA_SOURCE}>{_("Local Install Media")}</Select.SelectEntry>
                 <Select.SelectEntry data={URL_SOURCE} key={URL_SOURCE}>{_("URL")}</Select.SelectEntry>
                 { providerName == 'LibvirtDBus' &&
-                <Select.SelectEntry data={PXE_SOURCE} key={PXE_SOURCE}>{_("Network Boot (PXE)")}</Select.SelectEntry> }
+                <Select.SelectEntry title={connectionName == 'session' ? _("Network Boot is available only when using System connection") : null}
+                    disabled={connectionName == 'session'}
+                    data={PXE_SOURCE}
+                    key={PXE_SOURCE}>{_("Network Boot (PXE)")}
+                </Select.SelectEntry>}
                 <Select.SelectEntry data={EXISTING_DISK_IMAGE_SOURCE} key={EXISTING_DISK_IMAGE_SOURCE}>{_("Existing Disk Image")}</Select.SelectEntry>
             </Select.Select>
 
@@ -340,8 +357,14 @@ const OSRow = ({ vendor, osInfoList, os, vendors, onValueChanged, validationFail
     );
 };
 
-const MemoryRow = ({ memorySize, memorySizeUnit, nodeMaxMemory, onValueChanged, validationFailed }) => {
+const MemoryRow = ({ memorySize, memorySizeUnit, nodeMaxMemory, recommendedMemory, onValueChanged, validationFailed }) => {
     const validationStateMemory = validationFailed.memory ? 'error' : undefined;
+    let recommendedMemoryHelpBlock = null;
+    if (recommendedMemory && recommendedMemory > memorySize) {
+        recommendedMemoryHelpBlock = <p>{cockpit.format(
+            "The selected Operating System has recommended memory $0 $1",
+            recommendedMemory, memorySizeUnit)}</p>;
+    }
 
     return (
         <React.Fragment>
@@ -355,18 +378,15 @@ const MemoryRow = ({ memorySize, memorySizeUnit, nodeMaxMemory, onValueChanged, 
                     initialUnit={memorySizeUnit}
                     onValueChange={e => onValueChanged('memorySize', e.target.value)}
                     onUnitChange={value => onValueChanged('memorySizeUnit', value)} />
-                {validationStateMemory === "error" &&
-                <HelpBlock>
-                    <p className="text-danger">{validationFailed.memory}</p>
-                </HelpBlock> }
-                {nodeMaxMemory &&
                 <HelpBlock id="memory-size-helpblock">
-                    {cockpit.format(
+                    {validationStateMemory === "error" && <p>{validationFailed.memory}</p>}
+                    {recommendedMemoryHelpBlock}
+                    {nodeMaxMemory && <p> {cockpit.format(
                         _("Up to $0 $1 available on the host"),
                         Math.floor(convertToUnit(nodeMaxMemory, units.KiB, memorySizeUnit)),
                         memorySizeUnit,
-                    )}
-                </HelpBlock>}
+                    )}</p>}
+                </HelpBlock>
             </FormGroup>
         </React.Fragment>
     );
@@ -511,13 +531,7 @@ class CreateVmModal extends React.Component {
                                         os: osEntry[0].shortId
                                     });
                                 }
-                            }, ex => {
-                                console.log("osinfo-detect command failed: ", ex.message);
-                                this.setState({
-                                    vendor: NOT_SPECIFIED,
-                                    os: OTHER_OS_SHORT_ID,
-                                });
-                            });
+                            }, ex => console.log("osinfo-detect command failed: ", ex.message));
                 };
                 this.typingTimeout = setTimeout(() => onOsAutodetect(value), 250);
             }
@@ -585,9 +599,9 @@ class CreateVmModal extends React.Component {
         }
         case 'connectionName':
             this.setState({ [key]: value });
-            if (this.state.sourceType == PXE_SOURCE) {
-                // If the installation source mode is PXE refresh the list of available networks
-                this.onValueChanged('sourceType', PXE_SOURCE);
+            if (this.state.sourceType == PXE_SOURCE && value == LIBVIRT_SESSION_CONNECTION) {
+                // When changing to session connection, reset media source
+                this.onValueChanged('sourceType', LOCAL_INSTALL_MEDIA_SOURCE);
             }
 
             // specific storage pool is selected
@@ -604,7 +618,7 @@ class CreateVmModal extends React.Component {
     onCreateClicked() {
         const { dispatch } = this.props;
 
-        if (Object.getOwnPropertyNames(validateParams(this.state)).length > 0) {
+        if (Object.getOwnPropertyNames(validateParams({ ...this.state, osInfoList: this.props.osInfoList })).length > 0) {
             this.setState({ inProgress: false, validate: true });
         } else {
             // leave dialog open to show immediate errors from the backend
@@ -641,7 +655,12 @@ class CreateVmModal extends React.Component {
 
     render() {
         const { nodeMaxMemory, nodeDevices, networks, osInfoList, loggedUser, providerName, storagePools, vms } = this.props;
-        const validationFailed = this.state.validate && validateParams(this.state);
+        const validationFailed = this.state.validate && validateParams({ ...this.state, osInfoList });
+        const osObj = osInfoList.find(osElem => osElem.shortId == this.state.os);
+        let recommendedMemory;
+        if (osObj && osObj['recommendedResources']['ram'])
+            recommendedMemory = convertToUnit(osObj['recommendedResources']['ram'], units.B, this.state.memorySizeUnit);
+
         const dialogBody = (
             <form className="ct-form">
                 <label className="control-label" htmlFor="connection">
@@ -662,6 +681,7 @@ class CreateVmModal extends React.Component {
                 <hr />
 
                 <SourceRow
+                    connectionName={this.state.connectionName}
                     networks={networks.filter(network => network.connectionName == this.state.connectionName)}
                     nodeDevices={nodeDevices.filter(nodeDevice => nodeDevice.connectionName == this.state.connectionName)}
                     providerName={providerName}
@@ -693,6 +713,7 @@ class CreateVmModal extends React.Component {
                     nodeMaxMemory={nodeMaxMemory}
                     onValueChanged={this.onValueChanged}
                     validationFailed={validationFailed}
+                    recommendedMemory={recommendedMemory}
                 />
 
                 <hr />
@@ -813,4 +834,7 @@ CreateVmAction.propTypes = {
     onAddErrorNotification: PropTypes.func.isRequired,
     providerName: PropTypes.string.isRequired,
     systemInfo: PropTypes.object.isRequired,
+};
+CreateVmAction.defaultProps = {
+    nodeMaxMemory: 1048576, // 1GiB
 };

@@ -32,7 +32,7 @@ return plural;
  ],
  "Ansible Playbook": [
   null,
-  ""
+  "Ansible Playbook"
  ],
  "Apply this solution": [
   null,
@@ -48,7 +48,7 @@ return plural;
  ],
  "Automation Script": [
   null,
-  ""
+  "オートメーションスクリプト"
  ],
  "Close": [
   null,
@@ -60,11 +60,15 @@ return plural;
  ],
  "Copy to clipboard": [
   null,
+  "クリップボードにコピー"
+ ],
+ "Enforcing": [
+  null,
   ""
  ],
- "Enforce policy:": [
+ "Error running semanage to discover system modifications": [
   null,
-  "ポリシーの適用:"
+  "システム変更を検出するための semanage の実行にエラーが発生しました"
  ],
  "Error while deleting alert: $0": [
   null,
@@ -84,7 +88,7 @@ return plural;
  ],
  "Loading system modifications...": [
   null,
-  ""
+  "システム変更を読み込み中..."
  ],
  "No SELinux alerts.": [
   null,
@@ -92,7 +96,7 @@ return plural;
  ],
  "No System Modifications": [
   null,
-  ""
+  "システム変更がありません"
  ],
  "Not connected": [
   null,
@@ -105,6 +109,10 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "$0〜$1 の発生件数"
+ ],
+ "Permissive": [
+  null,
+  ""
  ],
  "SELinux Access Control Errors": [
   null,
@@ -136,7 +144,7 @@ return plural;
  ],
  "Shell Script": [
   null,
-  ""
+  "シェルスクリプト"
  ],
  "Solution applied successfully": [
   null,
@@ -152,7 +160,7 @@ return plural;
  ],
  "System Modifications": [
   null,
-  ""
+  "システム変更"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -160,7 +168,7 @@ return plural;
  ],
  "The logged in user is not permitted to view system modifications": [
   null,
-  ""
+  "ログインしているユーザーには、システム変更を表示する権限がありません"
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -184,7 +192,7 @@ return plural;
  ],
  "View automation script": [
   null,
-  ""
+  "オートメーションスクリプトの表示"
  ],
  "Waiting for details...": [
   null,

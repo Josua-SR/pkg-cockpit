@@ -826,17 +826,9 @@ return plural;
   null,
   "Notification et au-dessus"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "On Failure": [
   null,

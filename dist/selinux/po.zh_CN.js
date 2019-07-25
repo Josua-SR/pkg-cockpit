@@ -32,7 +32,7 @@ return plural;
  ],
  "Ansible Playbook": [
   null,
-  ""
+  "Ansible Playbook"
  ],
  "Apply this solution": [
   null,
@@ -48,7 +48,7 @@ return plural;
  ],
  "Automation Script": [
   null,
-  ""
+  "自动化脚本"
  ],
  "Close": [
   null,
@@ -60,11 +60,15 @@ return plural;
  ],
  "Copy to clipboard": [
   null,
-  ""
+  "复制到剪贴板"
  ],
  "Enforce policy:": [
   null,
   "强制策略："
+ ],
+ "Error running semanage to discover system modifications": [
+  null,
+  ""
  ],
  "Error while deleting alert: $0": [
   null,
@@ -84,7 +88,7 @@ return plural;
  ],
  "Loading system modifications...": [
   null,
-  ""
+  "加载系统改变..."
  ],
  "No SELinux alerts.": [
   null,
@@ -92,7 +96,7 @@ return plural;
  ],
  "No System Modifications": [
   null,
-  ""
+  "没有系统改变"
  ],
  "Not connected": [
   null,
@@ -136,7 +140,7 @@ return plural;
  ],
  "Shell Script": [
   null,
-  ""
+  "Shell 脚本"
  ],
  "Solution applied successfully": [
   null,
@@ -152,7 +156,7 @@ return plural;
  ],
  "System Modifications": [
   null,
-  ""
+  "系统改变"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -160,7 +164,7 @@ return plural;
  ],
  "The logged in user is not permitted to view system modifications": [
   null,
-  ""
+  "登陆的用户没有权限查看系统改变"
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -184,7 +188,7 @@ return plural;
  ],
  "View automation script": [
   null,
-  ""
+  "查看自动化脚本"
  ],
  "Waiting for details...": [
   null,

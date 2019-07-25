@@ -72,7 +72,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "사용자 <b>$0</b>는 프로파일을 변경할 수 없습니다."
  ],
  "This system is using a custom profile": [
   null,
@@ -80,23 +80,23 @@ return plural;
  ],
  "This system is using the recommended profile": [
   null,
-  ""
+  "이 시스템은 권장 프로파일을 사용하고 있습니다"
  ],
  "Tuned has failed to start": [
   null,
-  ""
+  "Tuned 시작에 실패했습니다 "
  ],
  "Tuned is not available": [
   null,
-  ""
+  "Tuned를 사용할 수 없습니다 "
  ],
  "Tuned is not running": [
   null,
-  ""
+  "Tuned가 실행되고 있지 않습니다 "
  ],
  "Tuned is off": [
   null,
-  ""
+  "Tuned이 종료되어 있습니다. "
  ],
  "none": [
   null,

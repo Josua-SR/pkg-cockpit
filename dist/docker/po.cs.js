@@ -38,6 +38,10 @@ return plural;
   null,
   "${hip}:${hport} -> $cport"
  ],
+ "Absent": [
+  null,
+  ""
+ ],
  "Add Additional Storage": [
   null,
   "Přidat další úložiště"
@@ -243,6 +247,10 @@ return plural;
  "Drive": [
   null,
   "Jednotka"
+ ],
+ "Dual Rank": [
+  null,
+  ""
  ],
  "Duplicate alias": [
   null,
@@ -554,6 +562,10 @@ return plural;
   null,
   "Porty:"
  ],
+ "Present": [
+  null,
+  ""
+ ],
  "Problems": [
   null,
   "Problémy"
@@ -641,6 +653,10 @@ return plural;
  "Show all images": [
   null,
   "Zobrazit všechny obrazy"
+ ],
+ "Single Rank": [
+  null,
+  ""
  ],
  "Size": [
   null,

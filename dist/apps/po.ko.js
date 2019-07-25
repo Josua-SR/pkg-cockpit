@@ -92,6 +92,6 @@ return plural;
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "패키지 관리자를 사용하여 다른 프로그램을 종료할 때 까지 대기 중 ..."
  ]
 }));

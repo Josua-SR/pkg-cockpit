@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # This file is part of Cockpit.
 #
 # Copyright (C) 2013 Red Hat, Inc.
@@ -61,6 +59,7 @@ __all__ = (
     'Browser',
     'MachineCase',
     'skipImage',
+    'allowImage',
     'skipPackage',
     'enableAxe',
     'Error',
@@ -385,6 +384,9 @@ class Browser:
     def wait_not_in_text(self, selector, text):
         self.wait_visible(selector)
         self.wait_js_func('!ph_in_text', selector, text)
+
+    def wait_collected_text(self, selector, text):
+        self.wait_js_func('ph_collected_text_is', selector, text)
 
     def wait_text(self, selector, text):
         self.wait_visible(selector)
@@ -1069,6 +1071,12 @@ def jsquote(str):
 
 def skipImage(reason, *args):
     if testvm.DEFAULT_IMAGE in args:
+        return unittest.skip("{0}: {1}".format(testvm.DEFAULT_IMAGE, reason))
+    return lambda func: func
+
+
+def allowImage(reason, *args):
+    if testvm.DEFAULT_IMAGE not in args:
         return unittest.skip("{0}: {1}".format(testvm.DEFAULT_IMAGE, reason))
     return lambda func: func
 

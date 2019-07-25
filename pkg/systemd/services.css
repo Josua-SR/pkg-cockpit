@@ -9,11 +9,12 @@
 }
 
 .comma-list > li {
-  display: inline;
+  display: inline-block;
 }
 
 .comma-list > li:not(:last-child):after {
   content: ",";
+  margin-right: 0.5em;
 }
 
 table.systemd-unit-relationship-table td:first-child {
@@ -38,13 +39,6 @@ table.systemd-unit-relationship-table td:first-child {
 #services .filter-group {
   display: flex;
   align-items: start;
-}
-
-#services .nav-tabs > li:not([tabindex]),
-#services .nav-tabs:before,
-#services .nav-tabs:after {
-  /* Hide odd non-tabs */
-  display: none;
 }
 
 .content-header-extra.with-navtabs {

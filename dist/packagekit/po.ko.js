@@ -276,7 +276,7 @@ return plural;
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "소프트웨어 업데이트를 받으려면 Red Hat 고객 포털이나 로컬 서브스크립션 서버를 사용하여 시스템을 Red Hat에 등록해야 합니다."
  ],
  "Total size: $0": [
   null,
@@ -288,11 +288,11 @@ return plural;
  ],
  "Update History": [
   null,
-  ""
+  "변경 내역 업데이트 "
  ],
  "Update Log": [
   null,
-  ""
+  "로그 업데이트 "
  ],
  "Updated": [
   null,
@@ -300,7 +300,7 @@ return plural;
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "업데이트된 패키지를 적용하려면 시스템을 다시 시작해야 합니다. "
  ],
  "Updating": [
   null,
@@ -308,7 +308,7 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "확인 "
  ],
  "Verifying": [
   null,
@@ -320,7 +320,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "다른 소프트웨어 관리 작업이 완료될 때 까지 대기 중 "
  ],
  "Wednesdays": [
   null,
@@ -328,15 +328,15 @@ return plural;
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "브라우저 연결이 해제되지만 업데이트 프로세스에는 영향을 미치지 않습니다. 다시 연결 하여 진행 상황을 계속 확인할 수 있습니다."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "서버 연결이 종료됩니다. 다시 시작하여 연결을 재개할 수 있습니다. "
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "자동으로 컴퓨터를 다시 시작합니다. "
  ],
  "at": [
   null,
@@ -348,7 +348,7 @@ return plural;
  ],
  "enhancement": [
   null,
-  ""
+  "기능 개선 "
  ],
  "every day": [
   null,

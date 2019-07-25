@@ -290,10 +290,6 @@ return plural;
   null,
   "Clé privée non valide"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
@@ -305,10 +301,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Ancien mot de passe non accepté"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "Ooops!": [
   null,

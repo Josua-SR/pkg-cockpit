@@ -50,6 +50,10 @@ return plural;
   null,
   "У {{#strong}}{{host}}{{/strong}} не встановлено сумісної версії Cockpit."
  ],
+ "Absent": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "Додати"
@@ -193,6 +197,10 @@ return plural;
  "Docking Station": [
   null,
   "Станція заряджання"
+ ],
+ "Dual Rank": [
+  null,
+  ""
  ],
  "Edit Server": [
   null,
@@ -382,6 +390,10 @@ return plural;
   null,
   "Портативний"
  ],
+ "Present": [
+  null,
+  ""
+ ],
  "Prompting via ssh-add timed out": [
   null,
   "Час очікування відповіді на запит за допомогою ssh-add вичерпано"
@@ -417,6 +429,10 @@ return plural;
  "Set": [
   null,
   "Встановити"
+ ],
+ "Single Rank": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,

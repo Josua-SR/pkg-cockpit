@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 
 # This file is part of Cockpit.
 #
@@ -71,11 +70,18 @@ OnCalendar=daily
         b.enter_page("/system/services")
         b.reload()
         b.enter_page("/system/services")
-        b.wait_text("#service-unit .panel-heading", "Test Service")
+        if m.image in ["rhel-8-0-distropkg"]: # Changed in #12265
+            b.wait_text("#service-unit .panel-heading", "Test Service")
+        else:
+            b.wait_text(".service-name", "Test Service")
+
 
         m.restart_cockpit()
         b.relogin("/system/services")
-        b.wait_text("#service-unit .panel-heading", "Test Service")
+        if m.image in ["rhel-8-0-distropkg"]: # Changed in #12265
+            b.wait_text("#service-unit .panel-heading", "Test Service")
+        else:
+            b.wait_text(".service-name", "Test Service")
 
         # check that navigating away and back preserves place
         b.switch_to_top()
@@ -85,10 +91,11 @@ OnCalendar=daily
         b.switch_to_top()
         b.click("a[href='/system/services']")
         b.enter_page("/system/services")
-        b.wait_present("#service-unit .panel-heading")
-        b.wait_visible("#service-unit")
         b.wait_present("ol.breadcrumb")
-        b.wait_text("#service-unit .panel-heading", "Test Service")
+        if m.image in ["rhel-8-0-distropkg"]: # Changed in #12265
+            b.wait_text("#service-unit .panel-heading", "Test Service")
+        else:
+            b.wait_text(".service-name", "Test Service")
         b.switch_to_top()
         b.wait_js_cond('window.location.pathname === "/system/services"')
         b.wait_js_cond('window.location.hash === "#/test.service"')
@@ -100,9 +107,10 @@ OnCalendar=daily
         b.enter_page("/system/services")
         if m.image in ["rhel-8-0-distropkg"]:
             b.wait_present("#services-list-enabled")
+            b.wait_not_visible("#service-unit")
         else:
             b.wait_present("#services-list")
-        b.wait_not_visible("#service-unit")
+            b.wait_not_visible("#service-details")
         b.switch_to_top()
         b.wait_js_cond('window.location.pathname === "/system/services"')
         b.wait_js_cond('window.location.hash === ""')
@@ -159,7 +167,7 @@ OnCalendar=daily
         if m.image in ["rhel-8-0-distropkg"]:
             b.click('#services-filter button[data-pattern=\'\\\.timer\$\']')
         else:
-            b.click('#services-filter li[data-pattern=\'\\\.timer\$\']')
+            b.click('#services-filter li:nth-child(4) a')
         # HACK: the timers' next run/last trigger (col 3/4) don't always get filled (issue #9439)
         # b.wait_in_text("tr[data-goto-unit='test\.timer'] td:nth-child(3)", "morgen um")
 
@@ -306,7 +314,7 @@ OnCalendar=daily
         if m.image in ["rhel-8-0-distropkg"]:
             b.click('#services-filter button[data-pattern=\'\\\.timer\$\']')
         else:
-            b.click('#services-filter li[data-pattern=\'\\\.timer\$\']')
+            b.click('#services-filter li:nth-child(4) a')
         # HACK: the timers' next run/last trigger (col 3/4) don't always get filled (issue #9439)
         # b.wait_in_text('tr[data-goto-unit=\'test\.timer\'] td:nth-child(3)', 'morgen um')
 

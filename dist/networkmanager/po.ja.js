@@ -146,6 +146,10 @@ return plural;
   null,
   "<b>$0</b> を追加すると、サーバーへの接続が切断され、管理 UI が利用できなくなります。"
  ],
+ "Adding custom ports will reload firewalld. A reload will result in the loss of any runtime-only configuration!": [
+  null,
+  ""
+ ],
  "Additional DNS $val": [
   null,
   "追加の DNS $val"
@@ -384,7 +388,7 @@ return plural;
  ],
  "Failed to add port": [
   null,
-  ""
+  "ポートの追加に失敗しました"
  ],
  "Failed to add service": [
   null,

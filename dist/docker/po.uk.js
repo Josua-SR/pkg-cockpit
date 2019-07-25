@@ -38,6 +38,10 @@ return plural;
   null,
   "${hip}:${hport} -> $cport"
  ],
+ "Absent": [
+  null,
+  ""
+ ],
  "Add Additional Storage": [
   null,
   "Додати додаткове сховище"
@@ -243,6 +247,10 @@ return plural;
  "Drive": [
   null,
   "Диск"
+ ],
+ "Dual Rank": [
+  null,
+  ""
  ],
  "Duplicate alias": [
   null,
@@ -554,6 +562,10 @@ return plural;
   null,
   "Порти:"
  ],
+ "Present": [
+  null,
+  ""
+ ],
  "Problems": [
   null,
   "Проблеми"
@@ -641,6 +653,10 @@ return plural;
  "Show all images": [
   null,
   "Показати усі образи"
+ ],
+ "Single Rank": [
+  null,
+  ""
  ],
  "Size": [
   null,

@@ -922,6 +922,14 @@ return plural;
   null,
   "Буфер порожній"
  ],
+ "The selected Operating System has minimum memory requirement of $0 $1": [
+  null,
+  ""
+ ],
+ "This pool type does not support Storage Volume creation": [
+  null,
+  ""
+ ],
  "This volume is already used by another VM.": [
   null,
   "Цей том вже використано іншою ВМ."

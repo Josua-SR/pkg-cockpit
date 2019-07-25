@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # This file is part of Cockpit.
 #
 # Copyright (C) 2013 Red Hat, Inc.
@@ -204,6 +202,12 @@ class TestMachines(NetworkCase):
         # we don't have configuration to open the firewall for local libvirt machines, so just stop firewalld
         m.execute("systemctl stop firewalld; systemctl try-restart libvirtd")
 
+    def tearDown(self):
+        # HACK: Because of https://bugzilla.redhat.com/show_bug.cgi?id=1728530
+        # tests might fail not deterministically, always check journal, even if test failed.
+        if self.machine.image == 'rhel-8-1' and self._testMethodName == 'testCreate' and not self.checkSuccess():
+            self.check_journal_messages()
+
     def startLibvirt(self):
         m = self.machine
         # Ensure everything has started correctly
@@ -263,7 +267,6 @@ class TestMachines(NetworkCase):
         m.execute('[ "$(virsh domstate {0})" = running ] || '
                   '{{ virsh dominfo {0} >&2; cat /var/log/libvirt/qemu/{0}.log >&2; exit 1; }}'.format(name))
 
-        self.allow_journal_messages('.*denied.*search.*"qemu-.*".*dev="proc".*')
         self.allow_journal_messages('.*denied.*comm="pmsignal".*')
 
         return args
@@ -596,7 +599,8 @@ class TestMachines(NetworkCase):
                 vm_name='subVmTest1',
                 volume_size=1, volume_size_unit='GiB',
                 use_existing_volume=False,
-                expected_target='vda', permanent=False, cache_mode=None
+                expected_target='vda', permanent=False, cache_mode=None,
+                verify=True, pool_type=None,
             ):
                 print(pool_name, volume_name)
                 self.test_obj = test_obj
@@ -609,12 +613,15 @@ class TestMachines(NetworkCase):
                 self.expected_target = expected_target
                 self.permanent = permanent
                 self.cache_mode = cache_mode
+                self.verify = verify
+                self.pool_type = pool_type
 
             def execute(self):
                 self.open()
                 self.fill()
-                self.add_disk()
-                self.verify_disk_added()
+                if self.verify:
+                    self.add_disk()
+                    self.verify_disk_added()
 
             def open(self):
                 b.click("#vm-{0}-disks-adddisk".format(self.vm_name)) # button
@@ -629,7 +636,13 @@ class TestMachines(NetworkCase):
             def fill(self):
                 if not self.use_existing_volume:
                     # Choose storage pool
-                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-select-pool".format(self.vm_name), self.pool_name)
+                    if not self.pool_type or self.pool_type not in ['iscsi', 'iscsi-direct']:
+                        b.select_from_dropdown("#vm-{0}-disks-adddisk-new-select-pool".format(self.vm_name), self.pool_name)
+                    else:
+                        b.click("#vm-{0}-disks-adddisk-new-select-pool".format(self.vm_name))
+                        b.wait_present(".modal-dialog option[data-value={0}]:disabled".format(self.pool_name))
+                        return self
+
                     # Insert name for the new volume
                     b.set_input_text("#vm-{0}-disks-adddisk-new-name".format(self.vm_name), self.volume_name)
                     # Insert size for the new volume
@@ -801,6 +814,13 @@ class TestMachines(NetworkCase):
 
         if "debian" not in m.image and "ubuntu" not in m.image:
             # ISCSI driver does not support virStorageVolCreate API
+            VMAddDiskDialog(
+                self,
+                pool_name='iscsi-pool',
+                pool_type='iscsi',
+                verify=False
+            ).execute()
+
             VMAddDiskDialog(
                 self,
                 pool_name='iscsi-pool',
@@ -1136,6 +1156,17 @@ class TestMachines(NetworkCase):
         self.browser.reload()
         b.wait_not_present("tbody tr[data-row-id=vm-{0}] th".format(name)) # click on the row header
 
+        # Try to delete a transient VM
+        name = "transient-VM"
+        args = self.startVm(name)
+        b.reload()
+        self.browser.enter_page('/machines')
+        b.click("tbody tr[data-row-id=vm-{0}] th".format(name)) # click on the row header
+        b.click("#vm-{0}-delete".format(name))
+        b.click("#vm-{0}-delete-modal-dialog button:contains(Delete)".format(name))
+        b.wait_not_present("tbody tr[data-row-id=vm-{0}] th".format(name))
+        b.wait_not_present(".toast-notifications.list-pf div.alert")
+
     def testSerialConsole(self):
         b = self.browser
         name = "vmWithSerialConsole"
@@ -1201,10 +1232,9 @@ class TestMachines(NetworkCase):
             runner.assertScriptFinished() \
                 .checkEnvIsEmpty()
 
-        def checkSourceNetworkAbsentTest(dialog):
+        def checkPXENotAvailableSessionTest(dialog):
             dialog.open() \
-                .fill() \
-                .checkSourceNetworkAbsent() \
+                .checkPXENotAvailableSession() \
                 .cancel(True)
             runner.assertScriptFinished() \
                 .checkEnvIsEmpty()
@@ -1228,11 +1258,12 @@ class TestMachines(NetworkCase):
         def createTest(dialog):
             runner.tryCreate(dialog) \
 
-            # We call virt-install always with --wait 0 which means we should
-            # check for virt-install script to always finish and the domain to get
-            # defined when creating new VMs.
-            runner.assertScriptFinished() \
-                  .assertDomainDefined(dialog.name, dialog.connection)
+            # When not booting the actual OS from either existing image or PXE
+            # configure virt-install to wait for the installation to complete.
+            # Thus we should only check that virt-install exited when using existing disk images.
+            if dialog.sourceType == 'disk_image' or dialog.sourceType == 'pxe':
+                runner.assertScriptFinished() \
+                    .assertDomainDefined(dialog.name, dialog.connection)
 
             if dialog.delete:
                 runner.deleteVm(dialog) \
@@ -1310,6 +1341,12 @@ class TestMachines(NetworkCase):
         # memory
         checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1, memory_size=0), {"Memory": "Memory must not be 0"})
 
+        # memory
+        checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1,
+                                                            os_vendor=config.FEDORA_VENDOR,
+                                                            os_name=config.FEDORA_28,
+                                                            memory_size=256, memory_size_unit='MiB'), {"Memory": "minimum memory requirement of 1024 MiB"})
+
         # start vm
         checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1,
                                                             os_vendor=config.NOVELL_VENDOR,
@@ -1327,12 +1364,13 @@ class TestMachines(NetworkCase):
         createTest(TestMachines.VmDialog(self, sourceType='url',
                                          location=config.VALID_URL,
                                          storage_size=1,
+                                         memory_size=512, memory_size_unit='MiB',
                                          os_vendor=config.MICROSOFT_VENDOR,
                                          os_name=config.MICROSOFT_VISTA))
 
         createTest(TestMachines.VmDialog(self, sourceType='url',
                                          location=config.VALID_URL,
-                                         memory_size=256, memory_size_unit='MiB',
+                                         memory_size=512, memory_size_unit='MiB',
                                          storage_size=100, storage_size_unit='MiB',
                                          os_vendor=config.MICROSOFT_VENDOR,
                                          os_name=config.MICROSOFT_XP_OS,
@@ -1402,10 +1440,10 @@ class TestMachines(NetworkCase):
         # End of tests for import existing disk as installation option
 
         cmds = [
-            "mkdir /mnt/tmpPool; chmod a+rwx /mnt/tmpPool",
-            "virsh pool-define-as tmpPool --type dir --target /mnt/tmpPool",
+            "mkdir -p /var/lib/libvirt/pools/tmpPool; chmod a+rwx /var/lib/libvirt/pools/tmpPool",
+            "virsh pool-define-as tmpPool --type dir --target /var/lib/libvirt/pools/tmpPool",
             "virsh pool-start tmpPool",
-            "qemu-img create -f qcow2 /mnt/tmpPool/vmTmpDestination.qcow2 128M",
+            "qemu-img create -f qcow2 /var/lib/libvirt/pools/tmpPool/vmTmpDestination.qcow2 128M",
             "virsh pool-refresh tmpPool"
         ]
         self.machine.execute(" && ".join(cmds))
@@ -1536,6 +1574,12 @@ class TestMachines(NetworkCase):
 
         # test PXE Source
         if self.provider == "libvirt-dbus":
+            # check that the pxe booting is not available on session connection
+            checkPXENotAvailableSessionTest(TestMachines.VmDialog(self, name='pxe-guest',
+                                                                  sourceType='pxe',
+                                                                  storage_size=0, storage_size_unit='MiB',
+                                                                  connection="session"))
+
             # test PXE Source
             self.machine.execute("virsh net-destroy default && virsh net-undefine default")
 
@@ -1565,13 +1609,6 @@ class TestMachines(NetworkCase):
             self.browser.reload()
             self.browser.enter_page('/machines')
             self.browser.wait_in_text("body", "Virtual Machines")
-
-            # check that the pxe-nat network is not available on session connection
-            checkSourceNetworkAbsentTest(TestMachines.VmDialog(self, name='pxe-guest',
-                                                               sourceType='pxe',
-                                                               location="Virtual Network pxe-nat: NAT",
-                                                               storage_size=0, storage_size_unit='MiB',
-                                                               connection="session"))
 
             # First create the PXE VM but do not start it. We 'll need to tweak a bit the XML
             # to have serial console at bios and also redirect serial console to a file
@@ -1719,6 +1756,9 @@ class TestMachines(NetworkCase):
         REDHAT_VENDOR = 'Red Hat, Inc'
         REDHAT_RHEL_4_7_FILTERED_OS = 'Red Hat Enterprise Linux 4.9'
 
+        FEDORA_VENDOR = 'Fedora Project'
+        FEDORA_28 = 'Fedora 28'
+
         MANDRIVA_FILTERED_VENDOR = 'Mandriva'
         MANDRIVA_2011_FILTERED_OS = 'Mandriva Linux 2011'
 
@@ -1824,8 +1864,9 @@ class TestMachines(NetworkCase):
                 # os not found which is ok
                 return self
 
-        def checkSourceNetworkAbsent(self):
-            self.browser.wait_not_present("#network-select option[data-value*='{0}']".format(self.location))
+        def checkPXENotAvailableSession(self):
+            self.browser.select_from_dropdown("#connection", self.connectionText)
+            self.browser.wait_present("#source-type option[value*='{0}']:disabled".format(self.sourceType))
             return self
 
         def fill(self):
@@ -1929,7 +1970,7 @@ class TestMachines(NetworkCase):
             b.click(".modal-footer button:contains(Create)")
 
             for error, error_msg in errors.items():
-                error_location = ".modal-body label:contains('{0}') + div.form-group.has-error span p".format(error)
+                error_location = ".modal-body label:contains('{0}') + div.form-group.has-error span.help-block".format(error)
                 b.wait_visible(error_location)
                 if (error_msg):
                     b.wait_in_text(error_location, error_msg)
@@ -1995,7 +2036,7 @@ class TestMachines(NetworkCase):
 
             # Close the notificaton
             b.click(".toast-notifications-list-pf div.alert button.close")
-            b.wait_not_present(".toast-notifications.list-pf div.alert")
+            b.wait_not_present(".toast-notifications-list-pf div.alert")
 
             return self
 
@@ -2179,10 +2220,10 @@ class TestMachines(NetworkCase):
             b.wait(lambda: self.machine.execute(
                 "ls /home/admin/.local/share/libvirt/images/ 2>/dev/null | wc -l") == '0\n')
 
-            if b.is_present(".toast-notifications.list-pf div.alert .close"):
-                b.click(".toast-notifications.list-pf div.alert .close")
+            if b.is_present(".toast-notifications-list-pf div.alert .close"):
+                b.click(".toast-notifications-list-pf div.alert .close")
 
-            b.wait_not_present(".toast-notifications.list-pf div.alert")
+            b.wait_not_present(".toast-notifications-list-pf div.alert")
 
             return self
 

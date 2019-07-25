@@ -150,17 +150,9 @@ return plural;
   null,
   "Prochain"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "One Time Password": [
   null,

@@ -176,11 +176,11 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "사용자 <b>$0</b>는 영역을 수정할 수 없습니다."
  ],
  "This may take a while": [
   null,
-  ""
+  "시간이 걸릴 수 있습니다."
  ],
  "Total size: $0": [
   null,
@@ -196,11 +196,11 @@ return plural;
  ],
  "Validating address": [
   null,
-  ""
+  "주소 확인 "
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "다른 소프트웨어 관리 작업이 완료될 때 까지 대기 중 "
  ],
  "e.g. \"$0\"": [
   null,

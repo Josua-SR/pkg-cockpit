@@ -1480,7 +1480,7 @@ return plural;
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
-  ""
+  "RAID의 마지막 디스크는 삭제할 수 없습니다. "
  ],
  "The last key slot can not be removed": [
   null,
@@ -1492,15 +1492,15 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
-  ""
+  "사용자 <b>$0</b>는 스토리지를 관리할 수 없습니다. "
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
-  ""
+  "시스템에 여러 경로를 갖는 장치가 있지만 멀티패스 서비스가 실행되고 있지 않습니다. "
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  ""
+  "이 물리 볼륨을 제거하는데 필요한 공간이 충분하지 않습니다. 최소 $0의 여유 공간이 필요합니다. "
  ],
  "Thin Logical Volume": [
   null,
@@ -1508,15 +1508,15 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "NFS 마운트는 사용되고 있으며 옵션만 변경할 수 있습니다. "
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  ""
+  "이 VDO 장치는 백업 장치를 사용하지 않습니다."
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "이 장치에는 현재 사용 중인 파일 시스템이 있습니다. 계속 진행하면 이 장치의 파일 시스템을 모두 마운트 해제하게 됩니다. "
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1524,7 +1524,7 @@ return plural;
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "현재 이 장치는 RAID 장치로 사용되고 있습니다. 계속 진행하면 RAID 장치에서 이 장치가 제거됩니다."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1536,19 +1536,19 @@ return plural;
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "현재 이 장치는 볼륨 그룹으로 사용되고 있습니다. 계속 진행하면 볼륨 그룹에서 이 장치가 제거됩니다. "
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
-  ""
+  "장치를 복구하는 동안 디스크를 제거할 수 없습니다. "
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  ""
+  "이 논리 볼륨의 컨텐츠에 의해 완전히 사용되고 있지 않습니다. "
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "볼륨 크기를 변경하기 전에 활성화해야 합니다. "
  ],
  "Total size: $0": [
   null,
@@ -1556,7 +1556,7 @@ return plural;
  ],
  "Trust key": [
   null,
-  ""
+  "신뢰 키 "
  ],
  "Type": [
   null,
@@ -1604,11 +1604,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "부팅 시 잠금 해제 "
  ],
  "Unlock read only": [
   null,
-  ""
+  "읽기 전용 잠금 해제 "
  ],
  "Unlocking $target": [
   null,
@@ -1632,7 +1632,7 @@ return plural;
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "여기에서는 인식되지 않은 데이터를 작게할 수 없습니다. "
  ],
  "Unsupported volume": [
   null,
@@ -1644,7 +1644,7 @@ return plural;
  ],
  "Use 512 Byte emulation": [
   null,
-  ""
+  "512 바이트 에뮬레이션 사용 "
  ],
  "Used": [
   null,
@@ -1684,7 +1684,7 @@ return plural;
  ],
  "Very securely erasing $target": [
   null,
-  ""
+  "$target을 매우 안전하게 삭제 "
  ],
  "Volume": [
   null,
@@ -1704,15 +1704,15 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "볼륨 크기는 $0입니다. 컨텐츠 크기는 $1입니다. "
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "다른 소프트웨어 관리 작업이 완료될 때 까지 대기 중 "
  ],
  "What if tang-show-keys is not available?": [
   null,
-  ""
+  "tang-show-keys를 사용할 수 없는 경우는 어떻게 합니까?"
  ],
  "Write-mostly": [
   null,
@@ -1720,11 +1720,11 @@ return plural;
  ],
  "Writing": [
   null,
-  ""
+  "쓰기 "
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[바이너리 데이터의 $0 바이트]"
  ],
  "[binary data]": [
   null,
@@ -1740,7 +1740,7 @@ return plural;
  ],
  "key slot $0": [
   null,
-  ""
+  "키 슬롯 $0"
  ],
  "undefined": [
   null,

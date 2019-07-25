@@ -34,7 +34,7 @@ return plural;
  ],
  "Ansible Playbook": [
   null,
-  ""
+  "Ansible Playbook"
  ],
  "Apply this solution": [
   null,
@@ -50,7 +50,7 @@ return plural;
  ],
  "Automation Script": [
   null,
-  ""
+  "Automatizační skript"
  ],
  "Close": [
   null,
@@ -62,11 +62,15 @@ return plural;
  ],
  "Copy to clipboard": [
   null,
+  "Zkopírovat do schránky"
+ ],
+ "Enforcing": [
+  null,
   ""
  ],
- "Enforce policy:": [
+ "Error running semanage to discover system modifications": [
   null,
-  "Vynutit zásadu:"
+  "Chyba při spouštění semanage pro objevení změn v systému"
  ],
  "Error while deleting alert: $0": [
   null,
@@ -86,7 +90,7 @@ return plural;
  ],
  "Loading system modifications...": [
   null,
-  ""
+  "Načítání modifikací systému…"
  ],
  "No SELinux alerts.": [
   null,
@@ -94,7 +98,7 @@ return plural;
  ],
  "No System Modifications": [
   null,
-  ""
+  "Žádné modifikace systému"
  ],
  "Not connected": [
   null,
@@ -107,6 +111,10 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "Vyskytlo se mezi $0 a $1"
+ ],
+ "Permissive": [
+  null,
+  ""
  ],
  "SELinux Access Control Errors": [
   null,
@@ -138,7 +146,7 @@ return plural;
  ],
  "Shell Script": [
   null,
-  ""
+  "Shellový skript"
  ],
  "Solution applied successfully": [
   null,
@@ -154,7 +162,7 @@ return plural;
  ],
  "System Modifications": [
   null,
-  ""
+  "Modifikace systému"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -162,7 +170,7 @@ return plural;
  ],
  "The logged in user is not permitted to view system modifications": [
   null,
-  ""
+  "Přihlášený uživatel není oprávněn zobrazovat modifikace systému"
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -186,7 +194,7 @@ return plural;
  ],
  "View automation script": [
   null,
-  ""
+  "Zobrazit automatizační skript"
  ],
  "Waiting for details...": [
   null,

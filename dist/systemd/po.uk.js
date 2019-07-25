@@ -26,6 +26,10 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.6.2"
  },
+ " template.": [
+  null,
+  ""
+ ],
  "$0 Template": [
   null,
   "Шаблон $0"
@@ -222,6 +226,18 @@ return plural;
   null,
   "9-е"
  ],
+ "Absent": [
+  null,
+  ""
+ ],
+ "Active since ": [
+  null,
+  ""
+ ],
+ "Additional actions": [
+  null,
+  ""
+ ],
  "Additional packages:": [
   null,
   "Додаткові пакунки:"
@@ -250,6 +266,10 @@ return plural;
   null,
   "Усе-в-одному"
  ],
+ "Allow running (unmask)": [
+  null,
+  ""
+ ],
  "Appearance:": [
   null,
   "Вигляд:"
@@ -265,6 +285,10 @@ return plural;
  "Automatic Startup": [
   null,
   "Автоматичний запуск"
+ ],
+ "Automatically starts": [
+  null,
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,10 +486,6 @@ return plural;
   null,
   "Подробиці"
  ],
- "Disable": [
-  null,
-  "Вимкнути"
- ],
  "Disable simultaneous multithreading": [
   null,
   "Вимкнути багатопотоковість"
@@ -473,6 +493,10 @@ return plural;
  "Disabled": [
   null,
   "Вимкнено"
+ ],
+ "Disallow running (mask)": [
+  null,
+  ""
  ],
  "Disk I/O": [
   null,
@@ -494,17 +518,13 @@ return plural;
   null,
   "Отримуємо $0"
  ],
+ "Dual Rank": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   "Вбудований ПК"
- ],
- "Enable": [
-  null,
-  "Увімкнути"
- ],
- "Enable Forcefully": [
-  null,
-  "Примусово увімкнути"
  ],
  "Enable stored metrics…": [
   null,
@@ -538,9 +558,17 @@ return plural;
   null,
   "Апаратний блок розширення"
  ],
+ "Failed to start": [
+  null,
+  ""
+ ],
  "Filter by name or description...": [
   null,
   "Фільтрувати за назвою або описом…"
+ ],
+ "Forbidden from running": [
+  null,
+  ""
  ],
  "Friday": [
   null,
@@ -589,6 +617,10 @@ return plural;
  "I/O Wait": [
   null,
   "Очікування В-В"
+ ],
+ "ID": [
+  null,
+  ""
  ],
  "Info and above": [
   null,
@@ -718,13 +750,17 @@ return plural;
   null,
   "Вручну"
  ],
- "Mask": [
+ "Mask Service": [
   null,
-  "Маска"
+  ""
  ],
- "Mask Forcefully": [
+ "Masked": [
   null,
-  "Примусово замаскувати"
+  ""
+ ],
+ "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -733,6 +769,10 @@ return plural;
  "Memory & Swap": [
   null,
   "Пам'ять і резерв"
+ ],
+ "Memory Technology": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,
@@ -809,6 +849,10 @@ return plural;
  "Not authorized to upload-report": [
   null,
   "Не уповноважено на вивантаження звітів"
+ ],
+ "Not running": [
+  null,
+  "Зупинено"
  ],
  "Not synchronized": [
   null,
@@ -894,13 +938,9 @@ return plural;
   null,
   "Параметри живлення"
  ],
- "Preset": [
+ "Present": [
   null,
-  "Шаблон"
- ],
- "Preset Forcefully": [
-  null,
-  "Примусово початкові налаштування"
+  ""
  ],
  "Pretty Host Name": [
   null,
@@ -930,9 +970,17 @@ return plural;
   null,
   "Апаратний блок монтування стійок"
  ],
+ "Rank": [
+  null,
+  ""
+ ],
  "Read more...": [
   null,
   "Докладніше…"
+ ],
+ "Read-only": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1010,9 +1058,17 @@ return plural;
   null,
   "Потрібен для"
  ],
+ "Required by ": [
+  null,
+  ""
+ ],
  "Requires": [
   null,
   "Потребує"
+ ],
+ "Requires administration access to edit": [
+  null,
+  ""
  ],
  "Requisite": [
   null,
@@ -1034,9 +1090,9 @@ return plural;
   null,
   "Запустити"
  ],
- "Running Since": [
+ "Running": [
   null,
-  "Працює з"
+  "Працює"
  ],
  "Saturday": [
   null,
@@ -1106,6 +1162,14 @@ return plural;
   null,
   "Вимкнути"
  ],
+ "Single Rank": [
+  null,
+  ""
+ ],
+ "Size": [
+  null,
+  "Розмір"
+ ],
  "Slot": [
   null,
   "Слот"
@@ -1126,9 +1190,21 @@ return plural;
   null,
   "У визначений час"
  ],
+ "Speed": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Почати"
+ ],
+ "Start Service": [
+  null,
+  "Запустити службу"
+ ],
+ "Start and Enable": [
+  null,
+  ""
  ],
  "State": [
   null,
@@ -1149,6 +1225,10 @@ return plural;
  "Stop": [
   null,
   "Зупинити"
+ ],
+ "Stop and Disable": [
+  null,
+  ""
  ],
  "Store Metrics": [
   null,
@@ -1226,10 +1306,6 @@ return plural;
   null,
   "Користувачу <b>$0</b> заборонено змінювати час системи"
  ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "Користувачеві <b>$0</b> заборонено вмикати або вимикати служби"
- ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "Користувачу <b>$0</b> не дозволено змінювати назви вузлів"
@@ -1237,10 +1313,6 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "Користувачеві <b>$0</b> заборонено вимикати або перезапускати цей сервер"
- ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "Користувачеві <b>$0</b> заборонено запускати або зупиняти служби"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1250,9 +1322,9 @@ return plural;
   null,
   "Вміст цього поля не може бути порожнім."
  ],
- "This unit is an instance of the $0 template.": [
+ "This unit is an instanced from ": [
   null,
-  "Цей модуль є екземпляром шаблона $0."
+  ""
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1302,13 +1374,13 @@ return plural;
   null,
   "Невідомий"
  ],
- "Unmask": [
-  null,
-  "Розмаскувати"
- ],
  "Updates Available": [
   null,
   "Доступні оновлення"
+ ],
+ "Updating status...": [
+  null,
+  ""
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

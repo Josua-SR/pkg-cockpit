@@ -50,6 +50,10 @@ return plural;
   null,
   "Cockpit の互換バージョンが {{#strong}}{{host}}{{/strong}} にインストールされていません。"
  ],
+ "Absent": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "追加する"
@@ -193,6 +197,10 @@ return plural;
  "Docking Station": [
   null,
   "ドッキングステーション"
+ ],
+ "Dual Rank": [
+  null,
+  ""
  ],
  "Edit Server": [
   null,
@@ -382,6 +390,10 @@ return plural;
   null,
   "ポータブル"
  ],
+ "Present": [
+  null,
+  ""
+ ],
  "Prompting via ssh-add timed out": [
   null,
   "ssh-add によるプロンプトがタイムアウトしました"
@@ -417,6 +429,10 @@ return plural;
  "Set": [
   null,
   "セット"
+ ],
+ "Single Rank": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,

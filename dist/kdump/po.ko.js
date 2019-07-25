@@ -164,11 +164,11 @@ return plural;
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "kdump 설정은 커널을 크래시햐여 테스트합니다. 설정에 따라 재부팅이 자동으로 수행되지 않고 처리 시간이 길어질 수 있습니다. "
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "kdump 설정은 커널을 크래시햐여 테스트합니다. "
  ],
  "Unable to apply settings: $0": [
   null,
@@ -176,7 +176,7 @@ return plural;
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "유효하지 않음: 여러 대상이 정의되어 있습니다 "
  ],
  "kdump status": [
   null,
@@ -184,11 +184,11 @@ return plural;
  ],
  "locally in $0": [
   null,
-  ""
+  " $0 (로컬)"
  ],
  "nfs dump target isn't formated as server:path": [
   null,
-  ""
+  "nfs 덤프 대상이 server:path 형식으로 되어 있지 않습니다 "
  ],
  "ssh key": [
   null,

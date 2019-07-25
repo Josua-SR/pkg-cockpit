@@ -350,17 +350,9 @@ return plural;
   null,
   "Notebook"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Old password not accepted": [
   null,
   "Ancien mot de passe non accepté"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "Other": [
   null,

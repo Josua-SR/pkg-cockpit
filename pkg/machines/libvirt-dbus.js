@@ -340,11 +340,11 @@ LIBVIRT_DBUS_PROVIDER = {
         id: objPath,
         options
     }) {
-        function destroy(dispatch) {
+        function destroy() {
             return call(connectionName, objPath, 'org.libvirt.Domain', 'Destroy', [0], TIMEOUT);
         }
 
-        function undefine(dispatch) {
+        function undefine() {
             let storageVolPromises = [];
             let flags = Enum.VIR_DOMAIN_UNDEFINE_MANAGED_SAVE | Enum.VIR_DOMAIN_UNDEFINE_SNAPSHOTS_METADATA | Enum.VIR_DOMAIN_UNDEFINE_NVRAM;
 
@@ -373,7 +373,7 @@ LIBVIRT_DBUS_PROVIDER = {
             // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
             // https://github.com/cockpit-project/cockpit/issues/10956
             // eslint-disable-next-line cockpit/no-cockpit-all
-            return dispatch => cockpit.all(storageVolPromises)
+            return cockpit.all(storageVolPromises)
                     .then(() => {
                         return call(connectionName, objPath, 'org.libvirt.Domain', 'Undefine', [flags], TIMEOUT);
                     });
@@ -382,7 +382,12 @@ LIBVIRT_DBUS_PROVIDER = {
         if (options.destroy) {
             return destroy().then(undefine());
         } else {
-            return undefine();
+            return undefine()
+                    .catch(ex => {
+                        // Transient domains get undefined after shut off
+                        if (!ex.message.includes("Domain not found"))
+                            return Promise.reject(ex);
+                    });
         }
     },
 
@@ -460,12 +465,20 @@ LIBVIRT_DBUS_PROVIDER = {
         connectionName,
     }) {
         return dispatch => {
-            call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListStoragePools', [0], TIMEOUT)
+            return call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListStoragePools', [0], TIMEOUT)
                     .then(objPaths => {
                         // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
                         // https://github.com/cockpit-project/cockpit/issues/10956
                         // eslint-disable-next-line cockpit/no-cockpit-all
-                        return cockpit.all(objPaths[0].map((path) => dispatch(getStoragePool({ connectionName, id:path }))));
+                        return cockpit.all(objPaths[0].map(path => {
+                            return call(connectionName, path, 'org.freedesktop.DBus.Properties', 'Get', ['org.libvirt.StoragePool', 'Active'], TIMEOUT)
+                                    .then(active => {
+                                        if (active[0].v)
+                                            return storagePoolRefresh(connectionName, path);
+                                        else
+                                            return dispatch(getStoragePool({ connectionName, id:path }));
+                                    });
+                        }));
                     })
                     .fail(ex => console.warn('GET_ALL_STORAGE_POOLS action failed:', JSON.stringify(ex)));
         };
@@ -690,7 +703,7 @@ LIBVIRT_DBUS_PROVIDER = {
         let domainXML;
 
         return dispatch => {
-            call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
+            return call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
                     .then(domXml => {
                         domainXML = domXml[0];
                         return call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [Enum.VIR_DOMAIN_XML_INACTIVE], TIMEOUT);
@@ -743,7 +756,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         else
                             dispatch(updateOrAddVm(Object.assign({}, props, dumpxmlParams)));
                     })
-                    .catch(function(ex) { console.warn("GET_VM action failed failed for path", objPath, ex) });
+                    .catch(function(ex) { console.warn("GET_VM action failed failed for path", objPath, ex); return cockpit.reject(ex) });
         };
     },
 
@@ -1041,9 +1054,12 @@ function startEventMonitorDomains(connectionName, dispatch) {
                     connectionName,
                     id: objPath,
                     updateOnly: true,
-                }));
-                // transient VMs don't have a separate Undefined event, so remove them on stop
-                dispatch(undefineVm({ connectionName, id: objPath, transientOnly: true }));
+                }))
+                        .catch(ex => {
+                            if (ex.message.includes('Domain not found'))
+                                // transient VMs don't have a separate Undefined event, so remove them on stop
+                                dispatch(undefineVm({ connectionName, id: objPath, transientOnly: true }));
+                        });
                 break;
 
             default:
@@ -1068,7 +1084,7 @@ function startEventMonitorDomains(connectionName, dispatch) {
             case 'MetadataChanged':
             case 'TrayChange':
             /* These signals imply possible changes in what we display, so re-read the state */
-                dispatch(getVm({ connectionName, id:path }));
+                dispatch(getVm({ connectionName, id:path, updateOnly: true }));
                 break;
 
             default:
@@ -1144,11 +1160,11 @@ function startEventMonitorStoragePools(connectionName, dispatch) {
 
             switch (eventType) {
             case Enum.VIR_STORAGE_POOL_EVENT_DEFINED:
-            case Enum.VIR_STORAGE_POOL_EVENT_STARTED:
             case Enum.VIR_STORAGE_POOL_EVENT_CREATED:
                 dispatch(getStoragePool({ connectionName, id:objPath }));
                 break;
             case Enum.VIR_STORAGE_POOL_EVENT_STOPPED:
+            case Enum.VIR_STORAGE_POOL_EVENT_STARTED:
                 dispatch(getStoragePool({ connectionName, id:objPath, updateOnly: true }));
                 break;
             case Enum.VIR_STORAGE_POOL_EVENT_UNDEFINED:

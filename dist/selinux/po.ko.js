@@ -32,7 +32,7 @@ return plural;
  ],
  "Ansible Playbook": [
   null,
-  ""
+  "Ansible Playbook"
  ],
  "Apply this solution": [
   null,
@@ -48,7 +48,7 @@ return plural;
  ],
  "Automation Script": [
   null,
-  ""
+  "자동 스크립트 "
  ],
  "Close": [
   null,
@@ -60,11 +60,15 @@ return plural;
  ],
  "Copy to clipboard": [
   null,
-  ""
+  "클립보드로 복사 "
  ],
  "Enforce policy:": [
   null,
   "정책 적용:"
+ ],
+ "Error running semanage to discover system modifications": [
+  null,
+  ""
  ],
  "Error while deleting alert: $0": [
   null,
@@ -84,7 +88,7 @@ return plural;
  ],
  "Loading system modifications...": [
   null,
-  ""
+  "시스템 수정 로딩 중 "
  ],
  "No SELinux alerts.": [
   null,
@@ -92,7 +96,7 @@ return plural;
  ],
  "No System Modifications": [
   null,
-  ""
+  "시스템 수정 없음 "
  ],
  "Not connected": [
   null,
@@ -136,7 +140,7 @@ return plural;
  ],
  "Shell Script": [
   null,
-  ""
+  "쉘 스크립트 "
  ],
  "Solution applied successfully": [
   null,
@@ -152,7 +156,7 @@ return plural;
  ],
  "System Modifications": [
   null,
-  ""
+  "시스템 수정 "
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -160,7 +164,7 @@ return plural;
  ],
  "The logged in user is not permitted to view system modifications": [
   null,
-  ""
+  "로그인한 사용자는 시스템 수정 사항을 볼 수 없습니다"
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -168,15 +172,15 @@ return plural;
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "알림 세부 정보를 가져올 수 없습니다. "
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "알림을 받을 수 없음: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "수정 프로그램을 실행할 수 없습니다: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
@@ -184,11 +188,11 @@ return plural;
  ],
  "View automation script": [
   null,
-  ""
+  "자동 스크립트 보기 "
  ],
  "Waiting for details...": [
   null,
-  ""
+  "상세 정보 대기 중 "
  ],
  "solution details": [
   null,

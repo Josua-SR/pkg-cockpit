@@ -26,6 +26,10 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
+ " template.": [
+  null,
+  ""
+ ],
  "$0 Template": [
   null,
   "$0 Šablona"
@@ -222,6 +226,18 @@ return plural;
   null,
   "9."
  ],
+ "Absent": [
+  null,
+  ""
+ ],
+ "Active since ": [
+  null,
+  ""
+ ],
+ "Additional actions": [
+  null,
+  ""
+ ],
  "Additional packages:": [
   null,
   "Další balíčky:"
@@ -250,6 +266,10 @@ return plural;
   null,
   "Vše v jednom"
  ],
+ "Allow running (unmask)": [
+  null,
+  ""
+ ],
  "Appearance:": [
   null,
   "Vzhled:"
@@ -265,6 +285,10 @@ return plural;
  "Automatic Startup": [
   null,
   "Automatické spouštění"
+ ],
+ "Automatically starts": [
+  null,
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,10 +486,6 @@ return plural;
   null,
   "Podrobnosti"
  ],
- "Disable": [
-  null,
-  "Vypnout"
- ],
  "Disable simultaneous multithreading": [
   null,
   "Vypnout souběžné vícevláknové zpracovávání"
@@ -473,6 +493,10 @@ return plural;
  "Disabled": [
   null,
   "Vypnuto"
+ ],
+ "Disallow running (mask)": [
+  null,
+  ""
  ],
  "Disk I/O": [
   null,
@@ -494,17 +518,13 @@ return plural;
   null,
   "Stahuje se $0"
  ],
+ "Dual Rank": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   "Jednodeskový počítač"
- ],
- "Enable": [
-  null,
-  "Povolit"
- ],
- "Enable Forcefully": [
-  null,
-  "Vynuceně zapnout"
  ],
  "Enable stored metrics…": [
   null,
@@ -538,9 +558,17 @@ return plural;
   null,
   "Rozšiřující šasi"
  ],
+ "Failed to start": [
+  null,
+  ""
+ ],
  "Filter by name or description...": [
   null,
   "Filtrovat podle názvu nebo popisu…"
+ ],
+ "Forbidden from running": [
+  null,
+  ""
  ],
  "Friday": [
   null,
@@ -589,6 +617,10 @@ return plural;
  "I/O Wait": [
   null,
   "Čekání na vst./výst."
+ ],
+ "ID": [
+  null,
+  ""
  ],
  "Info and above": [
   null,
@@ -718,13 +750,17 @@ return plural;
   null,
   "Ručně"
  ],
- "Mask": [
+ "Mask Service": [
   null,
-  "Maska"
+  ""
  ],
- "Mask Forcefully": [
+ "Masked": [
   null,
-  "Vynuceně zamaskovat"
+  ""
+ ],
+ "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -733,6 +769,10 @@ return plural;
  "Memory & Swap": [
   null,
   "Operační paměť a odkládací prostor stránek"
+ ],
+ "Memory Technology": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,
@@ -809,6 +849,10 @@ return plural;
  "Not authorized to upload-report": [
   null,
   "Neoprávněni k nahrání výkazu"
+ ],
+ "Not running": [
+  null,
+  "Není spuštěné"
  ],
  "Not synchronized": [
   null,
@@ -894,13 +938,9 @@ return plural;
   null,
   "Možnosti napájení"
  ],
- "Preset": [
+ "Present": [
   null,
-  "Přednastavené"
- ],
- "Preset Forcefully": [
-  null,
-  "Vynucené přednastavené"
+  ""
  ],
  "Pretty Host Name": [
   null,
@@ -930,9 +970,17 @@ return plural;
   null,
   "Skříň do stojanu"
  ],
+ "Rank": [
+  null,
+  ""
+ ],
  "Read more...": [
   null,
   "Zjistit více…"
+ ],
+ "Read-only": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1010,9 +1058,17 @@ return plural;
   null,
   "Vyžadováno"
  ],
+ "Required by ": [
+  null,
+  ""
+ ],
  "Requires": [
   null,
   "Vyžaduje"
+ ],
+ "Requires administration access to edit": [
+  null,
+  ""
  ],
  "Requisite": [
   null,
@@ -1034,9 +1090,9 @@ return plural;
   null,
   "Spustit"
  ],
- "Running Since": [
+ "Running": [
   null,
-  "Spuštěno od doby"
+  "Spuštěné"
  ],
  "Saturday": [
   null,
@@ -1106,6 +1162,14 @@ return plural;
   null,
   "Vypnout"
  ],
+ "Single Rank": [
+  null,
+  ""
+ ],
+ "Size": [
+  null,
+  "Velikost"
+ ],
  "Slot": [
   null,
   "Slot"
@@ -1126,9 +1190,21 @@ return plural;
   null,
   "Konkrétní čas"
  ],
+ "Speed": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Spustit"
+ ],
+ "Start Service": [
+  null,
+  "Spustit službu"
+ ],
+ "Start and Enable": [
+  null,
+  ""
  ],
  "State": [
   null,
@@ -1149,6 +1225,10 @@ return plural;
  "Stop": [
   null,
   "Zastavit"
+ ],
+ "Stop and Disable": [
+  null,
+  ""
  ],
  "Store Metrics": [
   null,
@@ -1226,10 +1306,6 @@ return plural;
   null,
   "Uživatel <b>$0</b> není oprávněn měnit systémový čas"
  ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "Uživatel <b>$0</b> není oprávněn povolovat nebo zakazovat služby"
- ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "Uživatel <b>$0</b> není oprávněn upravovat názvy strojů"
@@ -1237,10 +1313,6 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "Uživatel <b>$0</b> není oprávněn vypínat či restartovat tento server"
- ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "Uživatel <b>$0</b> není oprávněn spouštět či zastavovat služby"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1250,9 +1322,9 @@ return plural;
   null,
   "Tuto kolonku je třeba vyplnit."
  ],
- "This unit is an instance of the $0 template.": [
+ "This unit is an instanced from ": [
   null,
-  "Tato jednotka je instancí šablony $0."
+  ""
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1302,13 +1374,13 @@ return plural;
   null,
   "Neznámé"
  ],
- "Unmask": [
-  null,
-  "Odmaskovat"
- ],
  "Updates Available": [
   null,
   "Jsou k dispozici aktualizace"
+ ],
+ "Updating status...": [
+  null,
+  ""
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

@@ -116,7 +116,7 @@ return plural;
  ],
  "Confirm deletion of the Virtual Network": [
   null,
-  ""
+  "仮想ネットワークの削除を確定"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -196,7 +196,7 @@ return plural;
  ],
  "Delete Network $0": [
   null,
-  ""
+  "ネットワーク $0 の削除"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -272,7 +272,7 @@ return plural;
  ],
  "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
-  ""
+  "$0 のインターフェイスの IP アドレスの取得に失敗しました"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -448,7 +448,7 @@ return plural;
  ],
  "Memory must not be 0": [
   null,
-  ""
+  "メモリは 0 以外である必要があります"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -604,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  ""
+  "操作を実行中"
  ],
  "Overview": [
   null,
@@ -916,11 +916,19 @@ return plural;
  ],
  "The network could not be deleted": [
   null,
-  ""
+  "ネットワークを削除できませんでした"
  ],
  "The pool is empty": [
   null,
   "プールが空です"
+ ],
+ "The selected Operating System has minimum memory requirement of $0 $1": [
+  null,
+  ""
+ ],
+ "This pool type does not support Storage Volume creation": [
+  null,
+  ""
  ],
  "This volume is already used by another VM.": [
   null,
@@ -968,7 +976,7 @@ return plural;
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  ""
+  "デフォルトの場所では、最大 $0 $1 まで利用できます"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1260,7 +1268,7 @@ return plural;
  ],
  "virt-install package needs to be installed on the system in order to create new VMs": [
   null,
-  ""
+  "新しい VM を作成するには、virt-install パッケージをシステムにインストールする必要があります"
  ],
  "yes": [
   null,

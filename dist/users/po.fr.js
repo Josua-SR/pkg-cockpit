@@ -202,10 +202,6 @@ return plural;
   null,
   "Aucun nom d’utilisateur n’est renseigné"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Old Password": [
   null,
   "Ancien mot de passe"
@@ -213,10 +209,6 @@ return plural;
  "Old password not accepted": [
   null,
   "Ancien mot de passe non accepté"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "Password": [
   null,
