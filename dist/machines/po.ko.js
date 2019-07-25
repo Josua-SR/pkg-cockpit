@@ -924,15 +924,15 @@ return plural;
  ],
  "This volume is already used by another VM.": [
   null,
-  ""
+  "이 볼륨은 이미 다른 가상 머신에서 사용하고 있습니다. "
  ],
  "Threads per core": [
   null,
-  ""
+  "코어 당 스레드 "
  ],
  "Too many files found": [
   null,
-  ""
+  "너무 많은 파일이 검색되었습니다. "
  ],
  "Troubleshoot": [
   null,
@@ -952,7 +952,7 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "고유한 이름 "
  ],
  "Unit": [
   null,
@@ -964,15 +964,15 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "언플러그 "
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  ""
+  "기본 위치에서 $0 $1까지 사용 가능 "
  ],
  "Up to $0 $1 available on the host": [
   null,
-  ""
+  "호스트에서 $0 $1 까지 사용 가능 "
  ],
  "Usage": [
   null,
@@ -980,7 +980,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "기존 사용 "
  ],
  "Used": [
   null,
@@ -988,7 +988,7 @@ return plural;
  ],
  "Used by": [
   null,
-  ""
+  "사용됨 "
  ],
  "VCPU settings could not be saved": [
   null,
@@ -996,43 +996,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "VM $0 재부팅에 실패했습니다 "
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "VM $0 강제 재부팅에 실패했습니다 "
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "VM $0 강제 종료에 실패했습니다 "
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "VM $0 삭제에 실패했습니다 "
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "VM $0 설치에 실패했습니다 "
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "VM $0 일시 정지에 실패했습니다 "
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "VM $0 재개에 실패했습니다 "
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "VM $0의 NMI 전송에 실패했습니다 "
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "VM $0 종료에 실패했습니다 "
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "VM $0 시작에 실패했습니다 "
  ],
  "VNC": [
   null,
@@ -1080,7 +1080,7 @@ return plural;
  ],
  "You need to select the most closely matching OS vendor and Operating System": [
   null,
-  ""
+  "가장 적합한 OS 벤더 및 운영 체제를 선택해야 합니다. "
  ],
  "active": [
   null,
@@ -1108,7 +1108,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "직접 "
  ],
  "disabled": [
   null,
@@ -1124,7 +1124,7 @@ return plural;
  ],
  "dying": [
   null,
-  ""
+  "종료 중 "
  ],
  "enabled": [
   null,
@@ -1132,7 +1132,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "이더넷"
  ],
  "host": [
   null,
@@ -1156,7 +1156,7 @@ return plural;
  ],
  "iSCSI direct Target": [
   null,
-  ""
+  "iSCSI 직접 대상 "
  ],
  "iSCSI target IQN": [
   null,
@@ -1260,7 +1260,7 @@ return plural;
  ],
  "virt-install package needs to be installed on the system in order to create new VMs": [
   null,
-  ""
+  "새로운 가상 머신을 생성하려면 시스템에 virt-install 패키지를 설치해야 합니다 "
  ],
  "yes": [
   null,

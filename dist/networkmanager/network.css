@@ -59,9 +59,16 @@ a.disabled:hover {
 /* Limit dropdown menus to 90% of the viewport size */
 .dropdown-menu {
     height: auto;
-    overflow-x: hidden;
+    overflow-y: auto;
     max-height: 90vh;
 }
+
+/* Allow kebab menus to have a ^ with overflowing */
+/* Note: This means kebab menus cannot be _too_ long */
+.dropdown-kebab-pf > .dropdown-menu {
+    overflow: visible;
+}
+
 /* Align these buttons more nicely */
 .btn.fa-minus,
 .btn.fa-plus {
@@ -869,37 +876,34 @@ input[type=number] {
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-.cockpit-log-panel {
-    border: 0;
-}
-
-.cockpit-log-panel .panel-heading {
-    background-color: var(--color-gray-11);
-    border-color: var(--color-gray-11);
-    color: var(--color-ct-list-bg);
+.cockpit-log-panel:empty {
+    border: none;
 }
 
 .cockpit-log-panel .panel-body {
     padding: 0;
-    border-bottom: 1px var(--color-ct-list-border) solid;
 }
 
 .cockpit-log-panel .panel-body .panel-heading {
-    border-left: 1px var(--color-ct-list-border) solid;
-    border-right: 1px var(--color-ct-list-border) solid;
     border-top: 0;
-    border-bottom: 1px var(--color-ct-list-border) solid;
     background-color: var(--color-bg);
     font-weight: bold;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     width: auto;
     color: var(--color-ct-list-text);
+    display: flex;
+}
+
+.cockpit-log-panel .panel-body .panel-heading:not(:first-child)::after {
+    content: '\A0';
+    display: block;
+    flex: auto;
+    background: linear-gradient(var(--color-bg) 50%, var(--color-border) calc(50% + 1px), var(--color-bg) calc(50% + 2px));
+    margin: 0 0 0 0.5rem;
 }
 
 .cockpit-logline {
-    border-left: 1px var(--color-ct-list-border) solid;
-    border-right: 1px var(--color-ct-list-border) solid;
     background-color: var(--color-ct-list-bg);
     font-size: var(--font-small);
     padding: 0.5rem 1rem;
@@ -923,6 +927,10 @@ input[type=number] {
     cursor: pointer;
 }
 
+.cockpit-log-panel .cockpit-logline + .panel-heading {
+    border-top-width: 1px;
+}
+
 .cockpit-logmsg-reboot {
     font-style: italic;
 }
@@ -931,6 +939,14 @@ input[type=number] {
     display: inline-block;
     vertical-align: middle;
     min-width: 24px;
+}
+
+.empty-message {
+    width: 100%;
+    color: var(--pf-global--Color--200);
+    display: block;
+    padding: 0.5rem 1rem;
+    text-align: center;
 }
 
 .cockpit-log-warning > .fa-times-circle-o {
@@ -997,7 +1013,8 @@ input[type=number] {
 .cockpit-log-service-container > .badge {
     min-width: 2.5em;
     text-align: right;
-}.ipv4-address {
+}
+.ipv4-address {
   display: inline;
 }
 

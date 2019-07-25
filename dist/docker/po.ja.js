@@ -38,6 +38,10 @@ return plural;
   null,
   "${hip}:${hport} -> $cport"
  ],
+ "Absent": [
+  null,
+  ""
+ ],
  "Add Additional Storage": [
   null,
   "ストレージの追加"
@@ -241,6 +245,10 @@ return plural;
  "Drive": [
   null,
   "ドライブ"
+ ],
+ "Dual Rank": [
+  null,
+  ""
  ],
  "Duplicate alias": [
   null,
@@ -550,6 +558,10 @@ return plural;
   null,
   "ポート:"
  ],
+ "Present": [
+  null,
+  ""
+ ],
  "Problems": [
   null,
   "問題"
@@ -637,6 +649,10 @@ return plural;
  "Show all images": [
   null,
   "すべてのイメージの表示"
+ ],
+ "Single Rank": [
+  null,
+  ""
  ],
  "Size": [
   null,

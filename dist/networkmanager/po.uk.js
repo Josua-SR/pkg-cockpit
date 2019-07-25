@@ -146,6 +146,10 @@ return plural;
   null,
   "Додавання <b>$0</b> призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
  ],
+ "Adding custom ports will reload firewalld. A reload will result in the loss of any runtime-only configuration!": [
+  null,
+  ""
+ ],
  "Additional DNS $val": [
   null,
   "Додатковий DNS $val"

@@ -724,11 +724,11 @@ return plural;
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "$time ($type) 검사에서 취약점이 발견되지 않았습니다. "
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "$time ($type) 검사에 성공하지 못했습니다. "
  ],
  "This image does not exist.": [
   null,
@@ -740,7 +740,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "타워 "
  ],
  "Try again": [
   null,
@@ -748,7 +748,7 @@ return plural;
  ],
  "Type to filter…": [
   null,
-  ""
+  "필터 입력..."
  ],
  "UDP": [
   null,
@@ -764,11 +764,11 @@ return plural;
  ],
  "Unless Stopped": [
   null,
-  "정지됨"
+  "중지될 때 까지 "
  ],
  "Up since $0": [
   null,
-  ""
+  "$0에서 실행 중 "
  ],
  "Used": [
   null,
@@ -776,7 +776,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "컨테이너들"
+  "컨테이너에 의해 사용 "
  ],
  "Volumes": [
   null,
@@ -792,11 +792,11 @@ return plural;
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "Docker 스토리지 풀을 관리할 수 있는 권한이 없습니다."
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[바이너리 데이터의 $0 바이트]"
  ],
  "[binary data]": [
   null,

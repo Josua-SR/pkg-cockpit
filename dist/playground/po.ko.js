@@ -76,7 +76,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "너무 많은 파일이 검색되었습니다. "
  ],
  "Unavailable": [
   null,

@@ -499,17 +499,9 @@ return plural;
   null,
   "Notebook"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "On Failure": [
   null,

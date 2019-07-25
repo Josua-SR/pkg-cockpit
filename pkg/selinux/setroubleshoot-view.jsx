@@ -286,21 +286,29 @@ class SELinuxStatus extends React.Component {
                 </div>
             );
         }
-        var note;
+        var note = null;
         var configUnknown = (this.props.selinuxStatus.configEnforcing === undefined);
         if (configUnknown)
-            note = <span> {_("The configured state is unknown, it might change on the next boot.")}</span>;
+            note = _("The configured state is unknown, it might change on the next boot.");
         else if (!configUnknown && this.props.selinuxStatus.enforcing !== this.props.selinuxStatus.configEnforcing)
-            note = <span> {_("Setting deviates from the configured state and will revert on the next boot.")}</span>;
+            note = _("Setting deviates from the configured state and will revert on the next boot.");
+
+        let statusMsg = this.props.selinuxStatus.enforcing ? _("Enforcing") : _("Permissive");
 
         return (
             <div className="selinux-policy-ct">
-                <h2>{_("SELinux Policy")}</h2>
-                {errorMessage}
-                <label>{_("Enforce policy:")}
+                <div className="selinux-state">
+                    <h2>{_("SELinux Policy")}</h2>
                     <OnOffSwitch state={this.props.selinuxStatus.enforcing} onChange={this.props.changeSelinuxMode} />
-                </label>
-                {note}
+                    <span className="status">{ statusMsg }</span>
+                </div>
+                { note !== null &&
+                    <label className="note">
+                        <i className="pficon pficon-info" />
+                        { note }
+                    </label>
+                }
+                {errorMessage}
             </div>
         );
     }
@@ -458,8 +466,9 @@ export class SETroubleshootPage extends React.Component {
             <Modifications
                 title={ _("System Modifications") }
                 permitted={ this.props.selinuxStatus.permitted }
-                shell={ this.props.selinuxStatus.shell }
+                shell={ "semanage import <<EOF\n" + this.props.selinuxStatus.shell.trim() + "\nEOF" }
                 entries={ this.props.selinuxStatus.modifications }
+                failed={ this.props.selinuxStatus.failed }
             />
         );
 
@@ -485,8 +494,8 @@ export class SETroubleshootPage extends React.Component {
                     dismissError={this.props.dismissStatusError}
                 />
                 {errorMessage}
-                {troubleshooting}
                 {modifications}
+                {troubleshooting}
             </div>
         );
     }

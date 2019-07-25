@@ -116,7 +116,7 @@ return plural;
  ],
  "Confirm deletion of the Virtual Network": [
   null,
-  ""
+  "确认删除虚拟网络"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -196,7 +196,7 @@ return plural;
  ],
  "Delete Network $0": [
   null,
-  ""
+  "删除网络 $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -272,7 +272,7 @@ return plural;
  ],
  "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
-  ""
+  "获取在 $0 中的接口的 IP 地址失败"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -448,7 +448,7 @@ return plural;
  ],
  "Memory must not be 0": [
   null,
-  ""
+  "内存不能为 0"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -604,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  ""
+  "操作进行中"
  ],
  "Overview": [
   null,
@@ -916,7 +916,7 @@ return plural;
  ],
  "The network could not be deleted": [
   null,
-  ""
+  "网络不能被删除"
  ],
  "The pool is empty": [
   null,
@@ -968,7 +968,7 @@ return plural;
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  ""
+  "在默认位置中最多有 $0 $1可用"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1260,7 +1260,7 @@ return plural;
  ],
  "virt-install package needs to be installed on the system in order to create new VMs": [
   null,
-  ""
+  "为了创建新虚拟机需要在系统上安装 virt-install 软件包"
  ],
  "yes": [
   null,

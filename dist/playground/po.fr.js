@@ -63,17 +63,9 @@ return plural;
   null,
   "Pas prêt"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "Path to file": [
   null,

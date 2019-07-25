@@ -26,6 +26,10 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
+ " template.": [
+  null,
+  ""
+ ],
  "$0 Template": [
   null,
   "$0 テンプレート"
@@ -222,6 +226,18 @@ return plural;
   null,
   "9 日"
  ],
+ "Absent": [
+  null,
+  ""
+ ],
+ "Active since ": [
+  null,
+  ""
+ ],
+ "Additional actions": [
+  null,
+  ""
+ ],
  "Additional packages:": [
   null,
   "追加のパッケージ:"
@@ -250,6 +266,10 @@ return plural;
   null,
   "一体型"
  ],
+ "Allow running (unmask)": [
+  null,
+  ""
+ ],
  "Appearance:": [
   null,
   "Appearance:"
@@ -265,6 +285,10 @@ return plural;
  "Automatic Startup": [
   null,
   "自動起動"
+ ],
+ "Automatically starts": [
+  null,
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,10 +486,6 @@ return plural;
   null,
   "詳細"
  ],
- "Disable": [
-  null,
-  "無効化"
- ],
  "Disable simultaneous multithreading": [
   null,
   "同時マルチスレッディングの無効化"
@@ -473,6 +493,10 @@ return plural;
  "Disabled": [
   null,
   "無効"
+ ],
+ "Disallow running (mask)": [
+  null,
+  ""
  ],
  "Disk I/O": [
   null,
@@ -494,17 +518,13 @@ return plural;
   null,
   "$0 をダウンロード中"
  ],
+ "Dual Rank": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   "組み込み PC"
- ],
- "Enable": [
-  null,
-  "有効化"
- ],
- "Enable Forcefully": [
-  null,
-  "強制的に有効にします"
  ],
  "Enable stored metrics…": [
   null,
@@ -538,9 +558,17 @@ return plural;
   null,
   "拡張シャーシ"
  ],
+ "Failed to start": [
+  null,
+  ""
+ ],
  "Filter by name or description...": [
   null,
   "名前または説明による絞り込み..."
+ ],
+ "Forbidden from running": [
+  null,
+  ""
  ],
  "Friday": [
   null,
@@ -589,6 +617,10 @@ return plural;
  "I/O Wait": [
   null,
   "I/O 待機"
+ ],
+ "ID": [
+  null,
+  ""
  ],
  "Info and above": [
   null,
@@ -718,13 +750,17 @@ return plural;
   null,
   "手動"
  ],
- "Mask": [
+ "Mask Service": [
   null,
-  "マスク"
+  ""
  ],
- "Mask Forcefully": [
+ "Masked": [
   null,
-  "強制的にマスク"
+  ""
+ ],
+ "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -733,6 +769,10 @@ return plural;
  "Memory & Swap": [
   null,
   "メモリー & スワップ"
+ ],
+ "Memory Technology": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,
@@ -809,6 +849,10 @@ return plural;
  "Not authorized to upload-report": [
   null,
   "upload-report の権限がありません"
+ ],
+ "Not running": [
+  null,
+  "実行中ではありません"
  ],
  "Not synchronized": [
   null,
@@ -894,13 +938,9 @@ return plural;
   null,
   "電源オプション"
  ],
- "Preset": [
+ "Present": [
   null,
-  "事前設定"
- ],
- "Preset Forcefully": [
-  null,
-  "強制的に事前設定"
+  ""
  ],
  "Pretty Host Name": [
   null,
@@ -930,9 +970,17 @@ return plural;
   null,
   "ラックマウントシャーシ"
  ],
+ "Rank": [
+  null,
+  ""
+ ],
  "Read more...": [
   null,
   "さらに読む..."
+ ],
+ "Read-only": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1010,9 +1058,17 @@ return plural;
   null,
   "必要とされる"
  ],
+ "Required by ": [
+  null,
+  ""
+ ],
  "Requires": [
   null,
   "必要"
+ ],
+ "Requires administration access to edit": [
+  null,
+  ""
  ],
  "Requisite": [
   null,
@@ -1034,9 +1090,9 @@ return plural;
   null,
   "実行"
  ],
- "Running Since": [
+ "Running": [
   null,
-  "実行開始"
+  "実行中"
  ],
  "Saturday": [
   null,
@@ -1106,6 +1162,14 @@ return plural;
   null,
   "シャットダウン"
  ],
+ "Single Rank": [
+  null,
+  ""
+ ],
+ "Size": [
+  null,
+  "Size"
+ ],
  "Slot": [
   null,
   "スロット"
@@ -1126,9 +1190,21 @@ return plural;
   null,
   "特定の時間"
  ],
+ "Speed": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "開始日"
+ ],
+ "Start Service": [
+  null,
+  "サービスの開始"
+ ],
+ "Start and Enable": [
+  null,
+  ""
  ],
  "State": [
   null,
@@ -1149,6 +1225,10 @@ return plural;
  "Stop": [
   null,
   "停止"
+ ],
+ "Stop and Disable": [
+  null,
+  ""
  ],
  "Store Metrics": [
   null,
@@ -1226,10 +1306,6 @@ return plural;
   null,
   "ユーザー <b>$0</b> は、システムの時間の変更を許可されていません"
  ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "ユーザー <b>$0</b> は、サービスを有効または無効にすることを許可されていません"
- ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "ユーザー <b>$0</b> はホスト名を変更することを許可されていません"
@@ -1237,10 +1313,6 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "ユーザー <b>$0</b> は、このサーバーをシャットダウンまたは再起動することを許可されていません"
- ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "ユーザー <b>$0</b> は、サービスを開始または停止することを許可されていません"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1250,9 +1322,9 @@ return plural;
   null,
   "このフィールドは空にできません。"
  ],
- "This unit is an instance of the $0 template.": [
+ "This unit is an instanced from ": [
   null,
-  "このユニットは $0 テンプレートのインスタンスです。"
+  ""
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1302,13 +1374,13 @@ return plural;
   null,
   "不明"
  ],
- "Unmask": [
-  null,
-  "マスク解除"
- ],
  "Updates Available": [
   null,
   "更新を利用できます"
+ ],
+ "Updating status...": [
+  null,
+  ""
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

@@ -801,7 +801,7 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  "Am Kofferraum montieren"
+  "beim Start einhängen"
  ],
  "Mount point can not be empty": [
   null,
@@ -1105,7 +1105,7 @@ return plural;
  ],
  "RAID 0 (Stripe)": [
   null,
-  "RAID 0 (Gestreift)"
+  "RAID 0 (verteilt)"
  ],
  "RAID 1": [
   null,
@@ -1113,7 +1113,7 @@ return plural;
  ],
  "RAID 1 (Mirror)": [
   null,
-  "RAID 1 (Gespiegelt)"
+  "RAID 1 (gespiegelt)"
  ],
  "RAID 10": [
   null,
@@ -1121,7 +1121,7 @@ return plural;
  ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
-  "RID 10 (Gestreifte Spiegel)"
+  "RAID 10 (verteilt & gespiegelt)"
  ],
  "RAID 4": [
   null,
@@ -1129,7 +1129,7 @@ return plural;
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
-  "RAID 4 (Dedizierte Parität)"
+  "RAID 4 (verteilte Daten & feste Parität)"
  ],
  "RAID 5": [
   null,
@@ -1137,7 +1137,7 @@ return plural;
  ],
  "RAID 5 (Distributed Parity)": [
   null,
-  "RAID 5 (Verteilte Parität)"
+  "RAID 5 (verteilte Daten & verteilte Parität)"
  ],
  "RAID 6": [
   null,
@@ -1145,7 +1145,7 @@ return plural;
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
-  "RAID 6 (Doppelt Verteilte Parität)"
+  "RAID 6 (verteilte Daten & doppelt verteilte Parität)"
  ],
  "RAID Device": [
   null,

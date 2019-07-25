@@ -384,7 +384,7 @@ return plural;
  ],
  "Failed to add port": [
   null,
-  ""
+  "添加端口失败"
  ],
  "Failed to add service": [
   null,

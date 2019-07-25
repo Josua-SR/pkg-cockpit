@@ -34,7 +34,7 @@ return plural;
  ],
  "Ansible Playbook": [
   null,
-  ""
+  "Сценарій Ansible"
  ],
  "Apply this solution": [
   null,
@@ -50,7 +50,7 @@ return plural;
  ],
  "Automation Script": [
   null,
-  ""
+  "Скрипт автоматизації"
  ],
  "Close": [
   null,
@@ -62,11 +62,15 @@ return plural;
  ],
  "Copy to clipboard": [
   null,
+  "Копіювати до буфера"
+ ],
+ "Enforcing": [
+  null,
   ""
  ],
- "Enforce policy:": [
+ "Error running semanage to discover system modifications": [
   null,
-  "Правила примушення:"
+  "Помилка під час виконання semanage для виявлення змін у системі"
  ],
  "Error while deleting alert: $0": [
   null,
@@ -86,7 +90,7 @@ return plural;
  ],
  "Loading system modifications...": [
   null,
-  ""
+  "Завантажуємо модифікації системи…"
  ],
  "No SELinux alerts.": [
   null,
@@ -94,7 +98,7 @@ return plural;
  ],
  "No System Modifications": [
   null,
-  ""
+  "Немає модифікацій системи"
  ],
  "Not connected": [
   null,
@@ -107,6 +111,10 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "Сталося між $0 і $1"
+ ],
+ "Permissive": [
+  null,
+  ""
  ],
  "SELinux Access Control Errors": [
   null,
@@ -138,7 +146,7 @@ return plural;
  ],
  "Shell Script": [
   null,
-  ""
+  "Скрипт оболонки"
  ],
  "Solution applied successfully": [
   null,
@@ -154,7 +162,7 @@ return plural;
  ],
  "System Modifications": [
   null,
-  ""
+  "Модифікації системи"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -162,7 +170,7 @@ return plural;
  ],
  "The logged in user is not permitted to view system modifications": [
   null,
-  ""
+  "Користувач, який увійшов до системи, не має права переглядати модифікації системи"
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -186,7 +194,7 @@ return plural;
  ],
  "View automation script": [
   null,
-  ""
+  "Переглянути скрипт автоматизації"
  ],
  "Waiting for details...": [
   null,

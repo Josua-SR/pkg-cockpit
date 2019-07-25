@@ -280,7 +280,7 @@ return plural;
  ],
  "The key you provided was not valid.": [
   null,
-  ""
+  "입력하신 키가 유효하지 않습니다. "
  ],
  "The passwords do not match": [
   null,
@@ -288,15 +288,15 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
-  ""
+  "사용자 <b>$0</b>는 계정을 수정할 수 없습니다."
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
-  ""
+  "사용자 이름에는 a~z 문자, 숫자, 점, 대시, 밑줄만 사용할 수 있습니다. "
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
+  "이 계정에 승인된 공개키가 없습니다. "
  ],
  "This user name already exists": [
   null,
@@ -324,11 +324,11 @@ return plural;
  ],
  "Validating key": [
   null,
-  ""
+  "키 확인 "
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  ""
+  "이 계정에 승인된 공개 키를 표시할 수 있는 권한이 없습니다. "
  ],
  "You must wait longer to change your password": [
   null,

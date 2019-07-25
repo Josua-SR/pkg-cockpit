@@ -872,11 +872,11 @@ return plural;
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "이 장치는 여기서 관리할 수 없습니다. "
  ],
  "Trust level": [
   null,
-  ""
+  "신뢰 레벨 "
  ],
  "UDP": [
   null,
@@ -904,7 +904,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "관리되지 않는 인터페이스 "
  ],
  "VLAN": [
   null,
@@ -944,7 +944,7 @@ return plural;
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[바이너리 데이터의 $0 바이트]"
  ],
  "[binary data]": [
   null,

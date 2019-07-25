@@ -1216,35 +1216,35 @@ return plural;
  ],
  "The user $0 is not permitted to change cpu security mitigations": [
   null,
-  ""
+  "사용자 $0은/는 cpu 보안 완화 변경을 허용하지 않습니다. "
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  ""
+  "사용자 <b>$0</b>은/는 타이머를 만들 권한이 없습니다"
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
-  ""
+  "사용자 <b>$0</b>는 시스템 시간을 변경할 수 없습니다."
  ],
  "The user <b>$0</b> is not permitted to enable or disable services": [
   null,
-  ""
+  "사용자 <b>$0</b>는 서비스를 활성화 또는 비활성화할 수 없습니다. "
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
-  ""
+  "사용자 <b>$0</b>는 호스트 이름을 변경할 수 없습니다. "
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  ""
+  "사용자 <b>$0</b>는 이 서버를 종료 또는 재시작할 수 없습니다. "
  ],
  "The user <b>$0</b> is not permitted to start or stop services": [
   null,
-  ""
+  "사용자 <b>$0</b>는 서비스를 시작 또는 중지할 수 없습니다. "
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
-  ""
+  "이 날은 모든 달에 존재하지 않습니다.<br> 타이머는 31일이 있는 달에만 실행됩니다. "
  ],
  "This field cannot be empty.": [
   null,
@@ -1252,11 +1252,11 @@ return plural;
  ],
  "This unit is an instance of the $0 template.": [
   null,
-  ""
+  "이 장치는 $0 템플릿의 인스턴스입니다. "
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  ""
+  "이 장치는 명시적으로 사용하도록 설계되어 있지 않습니다. "
  ],
  "Thursday": [
   null,
@@ -1268,7 +1268,7 @@ return plural;
  ],
  "Timers": [
   null,
-  ""
+  "타이머 "
  ],
  "Total size: $0": [
   null,
@@ -1276,19 +1276,19 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "타워 "
  ],
  "Triggered By": [
   null,
-  ""
+  "트리거 소스 "
  ],
  "Triggers": [
   null,
-  ""
+  "트리거 "
  ],
  "Trying to synchronize with {{Server}}": [
   null,
-  ""
+  "{{Server}}와 동기화를 시도 중입니다 "
  ],
  "Tuesday": [
   null,
@@ -1304,7 +1304,7 @@ return plural;
  ],
  "Unmask": [
   null,
-  ""
+  "마스크 해제 "
  ],
  "Updates Available": [
   null,
@@ -1312,7 +1312,7 @@ return plural;
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  ""
+  "$0 CPU 코어의 사용량"
  ],
  "Used": [
   null,
@@ -1332,19 +1332,19 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "다른 소프트웨어 관리 작업이 완료될 때 까지 대기 중 "
  ],
  "Wanted By": [
   null,
-  ""
+  "필요 "
  ],
  "Wants": [
   null,
-  ""
+  "필요 "
  ],
  "Warning and above": [
   null,
-  ""
+  "경고 이상의 수준 "
  ],
  "Wednesday": [
   null,
@@ -1356,11 +1356,11 @@ return plural;
  ],
  "White": [
   null,
-  ""
+  "화이트 "
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[바이너리 데이터의 $0 바이트]"
  ],
  "[binary data]": [
   null,
@@ -1372,7 +1372,7 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
-  " Docker 실행을 실패하였습니다: $0"
+  "ssh 호스트 키를 나열하지 못했습니다: $0"
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",

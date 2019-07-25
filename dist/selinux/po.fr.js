@@ -31,6 +31,10 @@ return plural;
   "$0 occurrence",
   "$0 occurrences"
  ],
+ "Ansible Playbook": [
+  null,
+  "Ansible Playbook"
+ ],
  "Apply this solution": [
   null,
   "Appliquez cette solution"
@@ -43,13 +47,29 @@ return plural;
   null,
   "Journal d’audit"
  ],
+ "Automation Script": [
+  null,
+  "Script d'automation"
+ ],
+ "Close": [
+  null,
+  "Fermer"
+ ],
  "Connecting to SETroubleshoot daemon...": [
   null,
   "Connexion au démon SETroubleshoot…"
  ],
+ "Copy to clipboard": [
+  null,
+  "Copier sur presse-papier"
+ ],
  "Enforce policy:": [
   null,
   "Appliquer la stratégie :"
+ ],
+ "Error running semanage to discover system modifications": [
+  null,
+  ""
  ],
  "Error while deleting alert: $0": [
   null,
@@ -67,9 +87,17 @@ return plural;
   null,
   "Installez setroubleshoot-server pour dépanner les événements SELinux."
  ],
+ "Loading system modifications...": [
+  null,
+  "Chargement des modifications système…"
+ ],
  "No SELinux alerts.": [
   null,
   "Pas d’alertes SELinux."
+ ],
+ "No System Modifications": [
+  null,
+  "Aucune modification système"
  ],
  "Not connected": [
   null,
@@ -111,6 +139,10 @@ return plural;
   null,
   "La configuration s’écarte de l’état configuré de départ et reviendra à cet état au prochain démarrage."
  ],
+ "Shell Script": [
+  null,
+  "Script d'interpréteur de commande"
+ ],
  "Solution applied successfully": [
   null,
   "Solution appliquée avec succès"
@@ -123,9 +155,17 @@ return plural;
   null,
   "Solutions"
  ],
+ "System Modifications": [
+  null,
+  "Modifications système"
+ ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
   "L’état configuré est inconnu, il peut changer au démarrage suivant."
+ ],
+ "The logged in user is not permitted to view system modifications": [
+  null,
+  "L’utilisateur actuellement connecté n’est pas autorisé à voir les modifications système"
  ],
  "Unable to apply this solution automatically": [
   null,
@@ -146,6 +186,10 @@ return plural;
  "Unable to start setroubleshootd": [
   null,
   "Incapable de démarrer setroubleshootd"
+ ],
+ "View automation script": [
+  null,
+  "Afficher le script d'automation"
  ],
  "Waiting for details...": [
   null,

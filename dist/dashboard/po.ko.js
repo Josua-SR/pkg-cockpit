@@ -456,7 +456,7 @@ return plural;
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  ""
+  "{{#strong}}{{host}}{{/strong}}의 키가 이전에 사용된 키와 일치하지 않습니다. 이 컴퓨터가 최근에 교체된 것이 아닌 경우 누군가가 이 컴퓨터에 대한 연결을 공격할 가능성이 있습니다."
  ],
  "The passwords do not match.": [
   null,
@@ -468,19 +468,19 @@ return plural;
  ],
  "This machine has already been added.": [
   null,
-  ""
+  "이 컴퓨터는 이미 추가되어 있습니다. "
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  ""
+  "cockpit-ws 버전에서는 다른 사용자 또는 포트가 있는 호스트 연결이 지원되지 않습니다"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "다른 포트를 사용하려면 cockpit-ws를 최신 버전으로 업그레이드해야 합니다. "
  ],
  "Tower": [
   null,
-  ""
+  "타워 "
  ],
  "Type a password": [
   null,
@@ -508,11 +508,11 @@ return plural;
  ],
  "Using available credentials": [
   null,
-  ""
+  "사용 가능한 인증 정보 사용 "
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
-  ""
+  "{{#strong}}{{host}}{{/strong}}에 연결되어 있지만 사용자를 동기화하려면 수퍼 유저 권한을 가진 사용자가 필요합니다. "
  ],
  "You are currently connected directly to this server. You cannot delete it.": [
   null,

@@ -380,7 +380,7 @@ return plural;
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  ""
+  "{{#strong}}{{host}}{{/strong}}의 키가 이전에 사용된 키와 일치하지 않습니다. 이 컴퓨터가 최근에 교체된 것이 아닌 경우 누군가가 이 컴퓨터에 대한 연결을 공격할 가능성이 있습니다."
  ],
  "The machine is restarting": [
   null,
@@ -392,27 +392,27 @@ return plural;
  ],
  "There are currently no active pages": [
   null,
-  ""
+  "현재 활성화된 페이지가 없습니다 "
  ],
  "This machine has already been added.": [
   null,
-  ""
+  "이 컴퓨터는 이미 추가되어 있습니다. "
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  ""
+  "cockpit-ws 버전에서는 다른 사용자 또는 포트가 있는 호스트 연결이 지원되지 않습니다"
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  ""
+  "도움말: 다른 시스템에 자동으로 인증하려면 키 암호가 로그인 암호화 일치해야 합니다. "
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "다른 포트를 사용하려면 cockpit-ws를 최신 버전으로 업그레이드해야 합니다. "
  ],
  "Too many files found": [
   null,
-  ""
+  "너무 많은 파일이 검색되었습니다. "
  ],
  "Troubleshoot": [
   null,
@@ -420,7 +420,7 @@ return plural;
  ],
  "Try to reconnect": [
   null,
-  ""
+  "재연결 시도 "
  ],
  "Type": [
   null,
@@ -440,7 +440,7 @@ return plural;
  ],
  "Unlock Key": [
   null,
-  ""
+  "키 잠금 해제 "
  ],
  "Update": [
   null,
@@ -448,7 +448,7 @@ return plural;
  ],
  "Use the following keys to authenticate against other systems": [
   null,
-  ""
+  "다른 시스템에 대해 인증하려면 다음 키를 사용합니다. "
  ],
  "User name": [
   null,
@@ -456,7 +456,7 @@ return plural;
  ],
  "Using available credentials": [
   null,
-  ""
+  "사용 가능한 인증 정보 사용 "
  ],
  "Version": [
   null,
@@ -464,7 +464,7 @@ return plural;
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
-  ""
+  "{{#strong}}{{host}}{{/strong}}에 연결되어 있지만 사용자를 동기화하려면 수퍼 유저 권한을 가진 사용자가 필요합니다. "
  ],
  "active": [
   null,

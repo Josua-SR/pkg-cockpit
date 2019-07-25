@@ -50,6 +50,10 @@ return plural;
   null,
   "Na {{#strong}}{{host}}{{/strong}} není nainstalovaná kompatibilní verze Cockpit."
  ],
+ "Absent": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "Přidat"
@@ -193,6 +197,10 @@ return plural;
  "Docking Station": [
   null,
   "Dokovací stanice"
+ ],
+ "Dual Rank": [
+  null,
+  ""
  ],
  "Edit Server": [
   null,
@@ -382,6 +390,10 @@ return plural;
   null,
   "Přenosný"
  ],
+ "Present": [
+  null,
+  ""
+ ],
  "Prompting via ssh-add timed out": [
   null,
   "Časový limit výzvy prostřednictvím ssh-add překročen"
@@ -417,6 +429,10 @@ return plural;
  "Set": [
   null,
   "Nastavit"
+ ],
+ "Single Rank": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,

@@ -28,7 +28,7 @@ return plural;
  },
  "$0 Package": [
   "$0 Packages",
-  "$0 パッケージ"
+  "$0 パッケージ\n\n$0 パッケージ"
  ],
  "$0 is not available from any repository.": [
   null,

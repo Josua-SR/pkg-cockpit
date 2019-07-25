@@ -116,7 +116,7 @@ return plural;
  ],
  "Confirm deletion of the Virtual Network": [
   null,
-  ""
+  "Confirmer la suppression du Réseau virtuel"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -196,7 +196,7 @@ return plural;
  ],
  "Delete Network $0": [
   null,
-  "Supprimer $0"
+  "Supprimer le réseau $0"
  ],
  "Delete Storage Pool $0": [
   null,
@@ -272,7 +272,7 @@ return plural;
  ],
  "Failed to fetch the IP addresses of the interfaces present in $0": [
   null,
-  ""
+  "Impossible de récupérer les adresses IP des interfaces présentes dans $0"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -448,7 +448,7 @@ return plural;
  ],
  "Memory must not be 0": [
   null,
-  "La mémoire n'a pas pu être sauvegardée"
+  "La mémoire ne doit pas être 0"
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
@@ -604,7 +604,7 @@ return plural;
  ],
  "Operation is in progress": [
   null,
-  "Connexion oVirt en cours"
+  "Opération en cours"
  ],
  "Overview": [
   null,
@@ -916,7 +916,7 @@ return plural;
  ],
  "The network could not be deleted": [
   null,
-  "Le pool de stockage n’a pas pu être supprimé"
+  "Le réseau n'a pas pu être supprimé"
  ],
  "The pool is empty": [
   null,
@@ -968,7 +968,7 @@ return plural;
  ],
  "Up to $0 $1 available in the default location": [
   null,
-  "Jusqu'à $0 $1 disponibles sur l'hôte"
+  "Jusqu'à $0 $1 disponibles à l'emplacement par défaut"
  ],
  "Up to $0 $1 available on the host": [
   null,
@@ -1260,7 +1260,7 @@ return plural;
  ],
  "virt-install package needs to be installed on the system in order to create new VMs": [
   null,
-  ""
+  "Le paquet virt-install doit être installé sur le système pour pour pouvoir créer les nouvelles VM"
  ],
  "yes": [
   null,

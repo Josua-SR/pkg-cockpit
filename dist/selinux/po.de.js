@@ -67,6 +67,10 @@ return plural;
   null,
   "Politik erzwingen:"
  ],
+ "Error running semanage to discover system modifications": [
+  null,
+  ""
+ ],
  "Error while deleting alert: $0": [
   null,
   "Fehler beim Löschen der Warnung: $0"

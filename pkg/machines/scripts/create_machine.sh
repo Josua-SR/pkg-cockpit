@@ -16,10 +16,15 @@ vmExists(){
    virsh -c "$CONNECTION_URI" list --all | awk  '{print $2}' | grep -q --line-regexp --fixed-strings "$1"
 }
 
-handleFailure(){
+err_handler () {
     rm -f "$XMLS_FILE"
+}
+
+handleFailure(){
     exit $1
 }
+
+trap err_handler EXIT
 
 # prepare virt-install parameters
 if [ "$SOURCE_TYPE" = "disk_image" ]; then
@@ -72,10 +77,12 @@ fi
 XMLS_FILE="`mktemp`"
 
 if [ "$START_VM" = "true" ]; then
-    # Use --wait 0 to not wait till guest console closes.
-    # Simply kick off the install and exit
-    STARTUP_PARAMS="--noautoconsole --wait 0"
+    STARTUP_PARAMS="--noautoconsole"
     HAS_INSTALL_PHASE="false"
+    # Wait for the installer to complete in case we don't use existing image or we don't boot with PXE
+    if [ "$SOURCE_TYPE" != "pxe" ] && [ "$SOURCE_TYPE" != "disk_image" ]; then
+        STARTUP_PARAMS="$STARTUP_PARAMS --wait -1 --noreboot"
+    fi
 else
     # 2 = last phase only
     STARTUP_PARAMS="--print-xml"
@@ -108,6 +115,11 @@ virt-install \
     $INSTALL_METHOD \
     $GRAPHICS_PARAM \
 > "$XMLS_FILE" || handleFailure $?
+
+# The VM got deleted while being installed
+if ! $(vmExists "$VM_NAME") && [ "$START_VM" = "true" ]; then
+    exit 0
+fi
 
 # add metadata to domain
 
@@ -151,5 +163,3 @@ echo "$DOMAIN_MATCHES"  |  sed 's/[^0-9]//g' | while read -r FINISH_LINE ; do
             CURRENT_STEP="`expr $CURRENT_STEP + 1`"
         fi
 done
-
-rm -f "$XMLS_FILE"

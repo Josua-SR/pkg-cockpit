@@ -332,23 +332,30 @@ am_libcockpit_bridge_a_OBJECTS =  \
 	src/bridge/libcockpit_bridge_a-cockpitwebsocketstream.$(OBJEXT) \
 	$(am__objects_2) $(am__objects_1)
 libcockpit_bridge_a_OBJECTS = $(am_libcockpit_bridge_a_OBJECTS)
+libcockpit_common_nodeps_a_AR = $(AR) $(ARFLAGS)
+libcockpit_common_nodeps_a_LIBADD =
+am_libcockpit_common_nodeps_a_OBJECTS = src/common/libcockpit_common_nodeps_a-cockpitauthorize.$(OBJEXT) \
+	src/common/libcockpit_common_nodeps_a-cockpitbase64.$(OBJEXT) \
+	src/common/libcockpit_common_nodeps_a-cockpitconf.$(OBJEXT) \
+	src/common/libcockpit_common_nodeps_a-cockpitframe.$(OBJEXT) \
+	src/common/libcockpit_common_nodeps_a-cockpithex.$(OBJEXT) \
+	src/common/libcockpit_common_nodeps_a-cockpitmemory.$(OBJEXT) \
+	src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.$(OBJEXT) \
+	$(am__objects_1)
+libcockpit_common_nodeps_a_OBJECTS =  \
+	$(am_libcockpit_common_nodeps_a_OBJECTS)
 libcockpit_common_a_AR = $(AR) $(ARFLAGS)
 libcockpit_common_a_LIBADD =
 am_libcockpit_common_a_OBJECTS =  \
-	src/common/libcockpit_common_a-cockpitauthorize.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpitbase64.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitchannel.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpiterror.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitflow.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpitframe.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpithash.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpithex.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitjson.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitlog.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitlocale.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitloopback.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitmachinesjson.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpitmemory.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitpipe.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitpipetransport.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitsystem.$(OBJEXT) \
@@ -359,12 +366,10 @@ am_libcockpit_common_a_OBJECTS =  \
 	src/common/libcockpit_common_a-cockpitunixfd.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitunixsignal.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitversion.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpitwebcertificate.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitwebfilter.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitwebinject.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitwebresponse.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitwebserver.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpitconf.$(OBJEXT) \
 	$(am__objects_1)
 am__objects_3 =  \
 	src/common/libcockpit_common_a-cockpitassets.$(OBJEXT) \
@@ -416,14 +421,12 @@ libcockpit_ssh_a_AR = $(AR) $(ARFLAGS)
 libcockpit_ssh_a_LIBADD =
 am__libcockpit_ssh_a_SOURCES_DIST = src/ssh/cockpitsshoptions.c \
 	src/ssh/cockpitsshoptions.h src/ssh/cockpitsshrelay.h \
-	src/ssh/cockpitsshrelay.c src/common/cockpitauthorize.c \
-	src/common/cockpitauthorize.h src/ssh/cockpitsshknownhosts.h \
+	src/ssh/cockpitsshrelay.c src/ssh/cockpitsshknownhosts.h \
 	src/ssh/cockpitsshknownhosts.c
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__objects_5 = src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.$(OBJEXT) \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__objects_1)
 @WITH_COCKPIT_SSH_TRUE@am_libcockpit_ssh_a_OBJECTS = src/ssh/libcockpit_ssh_a-cockpitsshoptions.$(OBJEXT) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/libcockpit_ssh_a-cockpitsshrelay.$(OBJEXT) \
-@WITH_COCKPIT_SSH_TRUE@	src/common/libcockpit_ssh_a-cockpitauthorize.$(OBJEXT) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__objects_1) $(am__objects_5)
 libcockpit_ssh_a_OBJECTS = $(am_libcockpit_ssh_a_OBJECTS)
 libcockpit_ws_a_AR = $(AR) $(ARFLAGS)
@@ -464,7 +467,8 @@ am_cockpit_askpass_OBJECTS =  \
 cockpit_askpass_OBJECTS = $(am_cockpit_askpass_OBJECTS)
 am__DEPENDENCIES_1 =
 am__DEPENDENCIES_2 = libcockpit-bridge.a libcockpit-common.a \
-	libwebsocket.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+	libcockpit-common-nodeps.a libwebsocket.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 cockpit_askpass_DEPENDENCIES = $(am__DEPENDENCIES_2)
 cockpit_askpass_LINK = $(CCLD) $(cockpit_askpass_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -479,19 +483,17 @@ am__cockpit_pcp_SOURCES_DIST = src/bridge/cockpitpcp.c
 @ENABLE_PCP_TRUE@	src/bridge/cockpit_pcp-cockpitpcp.$(OBJEXT)
 cockpit_pcp_OBJECTS = $(am_cockpit_pcp_OBJECTS)
 @ENABLE_PCP_TRUE@am__DEPENDENCIES_3 = libcockpit-pcp.a \
-@ENABLE_PCP_TRUE@	libcockpit-common.a $(am__DEPENDENCIES_1) \
-@ENABLE_PCP_TRUE@	$(am__DEPENDENCIES_1)
+@ENABLE_PCP_TRUE@	libcockpit-common.a \
+@ENABLE_PCP_TRUE@	libcockpit-common-nodeps.a \
+@ENABLE_PCP_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 @ENABLE_PCP_TRUE@cockpit_pcp_DEPENDENCIES = $(am__DEPENDENCIES_3)
 cockpit_pcp_LINK = $(CCLD) $(cockpit_pcp_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-am_cockpit_session_OBJECTS = src/common/cockpitauthorize.$(OBJEXT) \
-	src/common/cockpitbase64.$(OBJEXT) \
-	src/common/cockpitframe.$(OBJEXT) \
-	src/common/cockpitmemory.$(OBJEXT) \
-	src/ws/session-utils.$(OBJEXT) src/ws/session.$(OBJEXT) \
-	$(am__objects_1)
+am_cockpit_session_OBJECTS = src/ws/session-utils.$(OBJEXT) \
+	src/ws/session.$(OBJEXT) $(am__objects_1)
 cockpit_session_OBJECTS = $(am_cockpit_session_OBJECTS)
-cockpit_session_DEPENDENCIES = $(am__DEPENDENCIES_1)
+cockpit_session_DEPENDENCIES = libcockpit-common-nodeps.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 am__cockpit_ssh_SOURCES_DIST = src/ssh/ssh.c
 @WITH_COCKPIT_SSH_TRUE@am_cockpit_ssh_OBJECTS =  \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpit_ssh-ssh.$(OBJEXT) \
@@ -499,6 +501,7 @@ am__cockpit_ssh_SOURCES_DIST = src/ssh/ssh.c
 cockpit_ssh_OBJECTS = $(am_cockpit_ssh_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@am__DEPENDENCIES_4 = libcockpit-ssh.a \
 @WITH_COCKPIT_SSH_TRUE@	libcockpit-common.a \
+@WITH_COCKPIT_SSH_TRUE@	libcockpit-common-nodeps.a \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1)
 @WITH_COCKPIT_SSH_TRUE@cockpit_ssh_DEPENDENCIES =  \
@@ -511,7 +514,8 @@ am_cockpit_ws_OBJECTS = src/ws/cockpit_ws-main.$(OBJEXT) \
 	$(am__objects_1)
 cockpit_ws_OBJECTS = $(am_cockpit_ws_OBJECTS)
 am__DEPENDENCIES_5 = libcockpit-ws.a libcockpit-common.a \
-	libwebsocket.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+	libcockpit-common-nodeps.a libwebsocket.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 cockpit_ws_DEPENDENCIES = $(am__DEPENDENCIES_5) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 cockpit_ws_LINK = $(CCLD) $(cockpit_ws_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
@@ -522,13 +526,9 @@ frob_websocket_OBJECTS = $(am_frob_websocket_OBJECTS)
 am__DEPENDENCIES_6 = libcockpit-common.a $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 frob_websocket_DEPENDENCIES = libwebsocket.a $(am__DEPENDENCIES_6)
-am_mock_auth_command_OBJECTS = src/common/cockpitauthorize.$(OBJEXT) \
-	src/common/cockpitbase64.$(OBJEXT) \
-	src/common/cockpitframe.$(OBJEXT) \
-	src/common/cockpitmemory.$(OBJEXT) \
-	src/ws/mock-auth-command.$(OBJEXT) $(am__objects_1)
+am_mock_auth_command_OBJECTS = src/ws/mock-auth-command.$(OBJEXT)
 mock_auth_command_OBJECTS = $(am_mock_auth_command_OBJECTS)
-mock_auth_command_LDADD = $(LDADD)
+mock_auth_command_DEPENDENCIES = libcockpit-common-nodeps.a
 am_mock_bridge_OBJECTS = src/bridge/mock_bridge-mock-bridge.$(OBJEXT)
 mock_bridge_OBJECTS = $(am_mock_bridge_OBJECTS)
 mock_bridge_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -554,7 +554,8 @@ am_remotectl_OBJECTS = src/ws/remotectl-cockpitcertificate.$(OBJEXT) \
 	src/ws/remotectl-remotectl-certificate.$(OBJEXT) \
 	src/ws/remotectl-remotectl.$(OBJEXT) $(am__objects_1)
 remotectl_OBJECTS = $(am_remotectl_OBJECTS)
-remotectl_DEPENDENCIES = libcockpit-common.a $(am__DEPENDENCIES_1) \
+remotectl_DEPENDENCIES = libcockpit-common.a \
+	libcockpit-common-nodeps.a $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 remotectl_LINK = $(CCLD) $(remotectl_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
@@ -568,13 +569,9 @@ test_auth_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_7) \
 test_auth_LINK = $(CCLD) $(test_auth_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_authorize_OBJECTS =  \
-	src/common/test_authorize-cockpitauthorize.$(OBJEXT) \
-	src/common/test_authorize-cockpitbase64.$(OBJEXT) \
-	src/common/test_authorize-cockpitmemory.$(OBJEXT) \
-	src/common/test_authorize-test-authorize.$(OBJEXT) \
-	$(am__objects_1)
+	src/common/test_authorize-test-authorize.$(OBJEXT)
 test_authorize_OBJECTS = $(am_test_authorize_OBJECTS)
-test_authorize_DEPENDENCIES = libretest.a
+test_authorize_DEPENDENCIES = libcockpit-common-nodeps.a libretest.a
 test_authorize_LINK = $(CCLD) $(test_authorize_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__test_authssh_SOURCES_DIST = src/ws/test-authssh.c \
@@ -587,11 +584,9 @@ test_authssh_OBJECTS = $(am_test_authssh_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_7)
 test_authssh_LINK = $(CCLD) $(test_authssh_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-am_test_base64_OBJECTS = src/common/test_base64-test-base64.$(OBJEXT) \
-	src/common/test_base64-cockpitbase64.$(OBJEXT) \
-	$(am__objects_1)
+am_test_base64_OBJECTS = src/common/test_base64-test-base64.$(OBJEXT)
 test_base64_OBJECTS = $(am_test_base64_OBJECTS)
-test_base64_DEPENDENCIES = libretest.a
+test_base64_DEPENDENCIES = libcockpit-common-nodeps.a libretest.a
 test_base64_LINK = $(CCLD) $(test_base64_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_bridge_OBJECTS = src/bridge/test_bridge-test-bridge.$(OBJEXT)
@@ -604,8 +599,8 @@ am_test_channel_OBJECTS =  \
 	src/common/test_channel-mock-pressure.$(OBJEXT) \
 	src/common/test_channel-mock-transport.$(OBJEXT)
 test_channel_OBJECTS = $(am_test_channel_OBJECTS)
-am__DEPENDENCIES_8 = libcockpit-common.a libwebsocket.a \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+am__DEPENDENCIES_8 = libcockpit-common.a libcockpit-common-nodeps.a \
+	libwebsocket.a $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_channel_DEPENDENCIES = $(am__DEPENDENCIES_8)
 test_channel_LINK = $(CCLD) $(test_channel_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
@@ -688,7 +683,8 @@ test_json_LINK = $(CCLD) $(test_json_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 am_test_kerberos_OBJECTS =  \
 	src/ws/test_kerberos-test-kerberos.$(OBJEXT)
 test_kerberos_OBJECTS = $(am_test_kerberos_OBJECTS)
-am__DEPENDENCIES_9 = $(am__DEPENDENCIES_1)
+am__DEPENDENCIES_9 = libcockpit-common-nodeps.a $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 test_kerberos_DEPENDENCIES = $(am__DEPENDENCIES_7) \
 	$(am__DEPENDENCIES_9)
 test_kerberos_LINK = $(CCLD) $(test_kerberos_CFLAGS) $(CFLAGS) \
@@ -784,7 +780,8 @@ am_test_remotectlcertificate_OBJECTS = src/ws/test_remotectlcertificate-test-rem
 test_remotectlcertificate_OBJECTS =  \
 	$(am_test_remotectlcertificate_OBJECTS)
 test_remotectlcertificate_DEPENDENCIES = libcockpit-common.a \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+	libcockpit-common-nodeps.a $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
 test_remotectlcertificate_LINK = $(CCLD) \
 	$(test_remotectlcertificate_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
@@ -1035,26 +1032,16 @@ am__depfiles_remade = src/bridge/$(DEPDIR)/cockpit_askpass-askpass.Po \
 	src/bridge/$(DEPDIR)/test_setup-test-setup.Po \
 	src/bridge/$(DEPDIR)/test_stream-test-stream.Po \
 	src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Po \
-	src/common/$(DEPDIR)/cockpitauthorize.Po \
-	src/common/$(DEPDIR)/cockpitbase64.Po \
-	src/common/$(DEPDIR)/cockpitframe.Po \
-	src/common/$(DEPDIR)/cockpitmemory.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitassets.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitjson.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitlocale.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitlog.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitloopback.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitmachinesjson.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipe.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipetransport.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitsystem.Po \
@@ -1065,17 +1052,18 @@ am__depfiles_remade = src/bridge/$(DEPDIR)/cockpit_askpass-askpass.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixfd.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixsignal.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitversion.Po \
-	src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebinject.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebresponse.Po \
 	src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebserver.Po \
-	src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Po \
-	src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Po \
-	src/common/$(DEPDIR)/test_authorize-cockpitbase64.Po \
-	src/common/$(DEPDIR)/test_authorize-cockpitmemory.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Po \
+	src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Po \
 	src/common/$(DEPDIR)/test_authorize-test-authorize.Po \
-	src/common/$(DEPDIR)/test_base64-cockpitbase64.Po \
 	src/common/$(DEPDIR)/test_base64-test-base64.Po \
 	src/common/$(DEPDIR)/test_channel-mock-pressure.Po \
 	src/common/$(DEPDIR)/test_channel-mock-transport.Po \
@@ -1188,6 +1176,7 @@ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
 SOURCES = $(libcockpit_bridge_a_SOURCES) \
+	$(libcockpit_common_nodeps_a_SOURCES) \
 	$(libcockpit_common_a_SOURCES) \
 	$(nodist_libcockpit_common_a_SOURCES) \
 	$(libcockpit_pcp_a_SOURCES) $(libcockpit_ssh_a_SOURCES) \
@@ -1227,6 +1216,7 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
 	$(test_websocketstream_SOURCES)
 DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
+	$(libcockpit_common_nodeps_a_SOURCES) \
 	$(libcockpit_common_a_SOURCES) \
 	$(am__libcockpit_pcp_a_SOURCES_DIST) \
 	$(am__libcockpit_ssh_a_SOURCES_DIST) \
@@ -1737,8 +1727,8 @@ noinst_SCRIPTS = $(WEBPACK_STAMPS) $(WEBPACK_INSTALL) $(base_TESTS) \
 
 # ----------------------------------------------------------------------------------------------------
 noinst_LIBRARIES = libcockpit-bridge.a $(NULL) $(am__append_7) \
-	libcockpit-common.a libwebsocket.a $(am__append_11) \
-	libcockpit-ws.a libretest.a libpam_ssh_add.a
+	libcockpit-common-nodeps.a libcockpit-common.a libwebsocket.a \
+	$(am__append_11) libcockpit-ws.a libretest.a libpam_ssh_add.a
 noinst_DATA = $(am__append_3) $(am__append_9) $(am__append_16)
 
 # preload wrapper library for unit tests that need a temp home dir
@@ -2139,6 +2129,9 @@ DIST_ARCHIVES = \
 	cockpit-cache-$(VERSION).tar.xz
 
 
+# used from containers/unit-tests/run.sh
+XZ_COMPRESS_FLAGS = --extreme
+
 # The concrete set of linguas we are using
 LINGUAS = $(shell cat $(srcdir)/po/LINGUAS)
 
@@ -2409,6 +2402,7 @@ libcockpit_bridge_a_CFLAGS = \
 libcockpit_bridge_LIBS = \
 	libcockpit-bridge.a \
 	libcockpit-common.a \
+	libcockpit-common-nodeps.a \
 	libwebsocket.a \
 	$(COCKPIT_BRIDGE_LIBS) \
 	$(NULL)
@@ -2558,6 +2552,7 @@ pmlogconf_files = src/bridge/pmlogconf/cockpit
 @ENABLE_PCP_TRUE@libcockpit_pcp_LIBS = \
 @ENABLE_PCP_TRUE@	libcockpit-pcp.a \
 @ENABLE_PCP_TRUE@	libcockpit-common.a \
+@ENABLE_PCP_TRUE@	libcockpit-common-nodeps.a \
 @ENABLE_PCP_TRUE@	$(COCKPIT_PCP_LIBS) \
 @ENABLE_PCP_TRUE@	$(NULL)
 
@@ -2587,22 +2582,39 @@ COCKPIT_ASSETS = \
        src/common/cockpitassets.c \
        $(NULL)
 
-libcockpit_common_a_SOURCES = \
+
+# Code that has no dependencies other than libc
+libcockpit_common_nodeps_a_SOURCES = \
 	src/common/cockpitauthorize.c \
 	src/common/cockpitauthorize.h \
 	src/common/cockpitbase64.c \
 	src/common/cockpitbase64.h \
+	src/common/cockpitconf.h \
+	src/common/cockpitconf.c \
+	src/common/cockpitframe.c \
+	src/common/cockpitframe.h \
+	src/common/cockpithex.c \
+	src/common/cockpithex.h \
+	src/common/cockpitmemory.c \
+	src/common/cockpitmemory.h \
+	src/common/cockpitwebcertificate.h \
+	src/common/cockpitwebcertificate.c \
+	$(NULL)
+
+libcockpit_common_nodeps_a_CFLAGS = \
+	-fPIC \
+	$(NULL)
+
+
+# Code that has other dependencies, like glib or libsystemd
+libcockpit_common_a_SOURCES = \
 	src/common/cockpitchannel.c \
 	src/common/cockpitchannel.h \
 	src/common/cockpiterror.h src/common/cockpiterror.c \
 	src/common/cockpitflow.c \
 	src/common/cockpitflow.h \
-	src/common/cockpitframe.c \
-	src/common/cockpitframe.h \
 	src/common/cockpithash.c \
 	src/common/cockpithash.h \
-	src/common/cockpithex.c \
-	src/common/cockpithex.h \
 	src/common/cockpitjson.c \
 	src/common/cockpitjson.h \
 	src/common/cockpitlog.h src/common/cockpitlog.c \
@@ -2612,8 +2624,6 @@ libcockpit_common_a_SOURCES = \
 	src/common/cockpitloopback.h \
 	src/common/cockpitmachinesjson.c \
 	src/common/cockpitmachinesjson.h \
-	src/common/cockpitmemory.c \
-	src/common/cockpitmemory.h \
 	src/common/cockpitpipe.c \
 	src/common/cockpitpipe.h \
 	src/common/cockpitpipetransport.c \
@@ -2634,8 +2644,6 @@ libcockpit_common_a_SOURCES = \
 	src/common/cockpitunixsignal.h \
 	src/common/cockpitversion.c \
 	src/common/cockpitversion.h \
-	src/common/cockpitwebcertificate.h \
-	src/common/cockpitwebcertificate.c \
 	src/common/cockpitwebfilter.h \
 	src/common/cockpitwebfilter.c \
 	src/common/cockpitwebinject.h \
@@ -2644,8 +2652,6 @@ libcockpit_common_a_SOURCES = \
 	src/common/cockpitwebresponse.c \
 	src/common/cockpitwebserver.h \
 	src/common/cockpitwebserver.c \
-	src/common/cockpitconf.h \
-	src/common/cockpitconf.c \
 	$(NULL)
 
 nodist_libcockpit_common_a_SOURCES = \
@@ -2660,6 +2666,7 @@ libcockpit_common_a_CFLAGS = \
 
 libcockpit_common_a_LIBS = \
 	libcockpit-common.a \
+	libcockpit-common-nodeps.a \
 	libwebsocket.a \
 	$(COCKPIT_LIBS) \
 	$(NULL)
@@ -2688,25 +2695,11 @@ COCKPIT_CHECKS = \
 	$(NULL)
 
 test_authorize_CFLAGS = $(libcockpit_common_a_CFLAGS)
-test_authorize_SOURCES = \
-	src/common/cockpitauthorize.c \
-	src/common/cockpitauthorize.h \
-	src/common/cockpitbase64.c \
-	src/common/cockpitbase64.h \
-	src/common/cockpitmemory.c \
-	src/common/cockpitmemory.h \
-	src/common/test-authorize.c \
-	$(NULL)
-
-test_authorize_LDADD = libretest.a
+test_authorize_SOURCES = src/common/test-authorize.c
+test_authorize_LDADD = libcockpit-common-nodeps.a libretest.a
 test_base64_CFLAGS = $(COCKPIT_SESSION_CFLAGS)
-test_base64_SOURCES = \
-	src/common/test-base64.c \
-	src/common/cockpitbase64.h \
-	src/common/cockpitbase64.c \
-	$(NULL)
-
-test_base64_LDADD = libretest.a
+test_base64_SOURCES = src/common/test-base64.c
+test_base64_LDADD = libcockpit-common-nodeps.a libretest.a
 test_channel_SOURCES = \
 	src/common/test-channel.c \
 	src/common/mock-pressure.c src/common/mock-pressure.h \
@@ -2806,9 +2799,7 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshoptions.c \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshoptions.h \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshrelay.h \
-@WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshrelay.c \
-@WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.c \
-@WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.h $(NULL) \
+@WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshrelay.c $(NULL) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__append_13)
 @WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_CFLAGS = \
 @WITH_COCKPIT_SSH_TRUE@	-fPIC \
@@ -2821,6 +2812,7 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_LIBS = \
 @WITH_COCKPIT_SSH_TRUE@	libcockpit-ssh.a \
 @WITH_COCKPIT_SSH_TRUE@	libcockpit-common.a \
+@WITH_COCKPIT_SSH_TRUE@	libcockpit-common-nodeps.a \
 @WITH_COCKPIT_SSH_TRUE@	$(COCKPIT_SSH_SESSION_LIBS) \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
@@ -2892,25 +2884,22 @@ libcockpit_ws_a_CFLAGS = \
 libcockpit_ws_LIBS = \
 	libcockpit-ws.a \
 	libcockpit-common.a \
+	libcockpit-common-nodeps.a \
 	libwebsocket.a \
 	$(COCKPIT_WS_LIBS) \
 	$(NULL)
 
 cockpit_session_SOURCES = \
-	src/common/cockpitauthorize.c \
-	src/common/cockpitauthorize.h \
-	src/common/cockpitbase64.c \
-	src/common/cockpitbase64.h \
-	src/common/cockpitframe.c \
-	src/common/cockpitframe.h \
-	src/common/cockpitmemory.c \
-	src/common/cockpitmemory.h \
 	src/ws/session-utils.c \
 	src/ws/session-utils.h \
 	src/ws/session.c \
 	$(NULL)
 
-cockpit_session_LDADD = $(COCKPIT_SESSION_LIBS)
+cockpit_session_LDADD = \
+	libcockpit-common-nodeps.a \
+	$(COCKPIT_SESSION_LIBS) \
+	$(NULL)
+
 cockpit_ws_SOURCES = \
 	src/ws/main.c					\
 	$(NULL)
@@ -2940,6 +2929,7 @@ remotectl_CFLAGS = \
 
 remotectl_LDADD = \
 	libcockpit-common.a \
+	libcockpit-common-nodeps.a \
 	$(COCKPIT_LIBS) \
 	$(NULL)
 
@@ -3061,6 +3051,7 @@ test_remotectlcertificate_SOURCES = \
 
 test_remotectlcertificate_LDADD = \
 	libcockpit-common.a \
+	libcockpit-common-nodeps.a \
 	$(COCKPIT_LIBS) \
 	$(NULL)
 
@@ -3083,18 +3074,8 @@ test_kerberos_CFLAGS = $(cockpit_ws_CFLAGS) $(cockpit_session_CFLAGS)
 mock_echo_SOURCES = src/ws/mock-echo.c
 mock_echo_CFLAGS = $(COCKPIT_WS_CFLAGS)
 mock_echo_LDADD = $(COCKPIT_WS_LIBS)
-mock_auth_command_SOURCES = \
-	src/common/cockpitauthorize.c \
-	src/common/cockpitauthorize.h \
-	src/common/cockpitbase64.c \
-	src/common/cockpitbase64.h \
-	src/common/cockpitframe.c \
-	src/common/cockpitframe.h \
-	src/common/cockpitmemory.c \
-	src/common/cockpitmemory.h \
-	src/ws/mock-auth-command.c \
-	$(NULL)
-
+mock_auth_command_SOURCES = src/ws/mock-auth-command.c
+mock_auth_command_LDADD = libcockpit-common-nodeps.a
 @WITH_COCKPIT_SSH_TRUE@test_authssh_CFLAGS = $(cockpit_ws_CFLAGS)
 @WITH_COCKPIT_SSH_TRUE@test_authssh_SOURCES = \
 @WITH_COCKPIT_SSH_TRUE@	src/ws/test-authssh.c \
@@ -3455,12 +3436,32 @@ src/common/$(am__dirstamp):
 src/common/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/common/$(DEPDIR)
 	@: > src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitauthorize.$(OBJEXT):  \
+src/common/libcockpit_common_nodeps_a-cockpitauthorize.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitbase64.$(OBJEXT):  \
+src/common/libcockpit_common_nodeps_a-cockpitbase64.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_nodeps_a-cockpitconf.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_nodeps_a-cockpitframe.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_nodeps_a-cockpithex.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_nodeps_a-cockpitmemory.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+
+libcockpit-common-nodeps.a: $(libcockpit_common_nodeps_a_OBJECTS) $(libcockpit_common_nodeps_a_DEPENDENCIES) $(EXTRA_libcockpit_common_nodeps_a_DEPENDENCIES) 
+	$(AM_V_at)-rm -f libcockpit-common-nodeps.a
+	$(AM_V_AR)$(libcockpit_common_nodeps_a_AR) libcockpit-common-nodeps.a $(libcockpit_common_nodeps_a_OBJECTS) $(libcockpit_common_nodeps_a_LIBADD)
+	$(AM_V_at)$(RANLIB) libcockpit-common-nodeps.a
 src/common/libcockpit_common_a-cockpitchannel.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
@@ -3470,13 +3471,7 @@ src/common/libcockpit_common_a-cockpiterror.$(OBJEXT):  \
 src/common/libcockpit_common_a-cockpitflow.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitframe.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpithash.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpithex.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitjson.$(OBJEXT):  \
@@ -3492,9 +3487,6 @@ src/common/libcockpit_common_a-cockpitloopback.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitmachinesjson.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitmemory.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitpipe.$(OBJEXT):  \
@@ -3527,9 +3519,6 @@ src/common/libcockpit_common_a-cockpitunixsignal.$(OBJEXT):  \
 src/common/libcockpit_common_a-cockpitversion.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitwebcertificate.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitwebfilter.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
@@ -3540,9 +3529,6 @@ src/common/libcockpit_common_a-cockpitwebresponse.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitwebserver.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitconf.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitassets.$(OBJEXT):  \
@@ -3610,9 +3596,6 @@ src/ssh/libcockpit_ssh_a-cockpitsshoptions.$(OBJEXT):  \
 	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
 src/ssh/libcockpit_ssh_a-cockpitsshrelay.$(OBJEXT):  \
 	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_ssh_a-cockpitauthorize.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
 src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.$(OBJEXT):  \
 	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
 
@@ -3720,14 +3703,6 @@ src/bridge/cockpit_pcp-cockpitpcp.$(OBJEXT):  \
 cockpit-pcp$(EXEEXT): $(cockpit_pcp_OBJECTS) $(cockpit_pcp_DEPENDENCIES) $(EXTRA_cockpit_pcp_DEPENDENCIES) 
 	@rm -f cockpit-pcp$(EXEEXT)
 	$(AM_V_CCLD)$(cockpit_pcp_LINK) $(cockpit_pcp_OBJECTS) $(cockpit_pcp_LDADD) $(LIBS)
-src/common/cockpitauthorize.$(OBJEXT): src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/cockpitbase64.$(OBJEXT): src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/cockpitframe.$(OBJEXT): src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/cockpitmemory.$(OBJEXT): src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
 src/ws/session-utils.$(OBJEXT): src/ws/$(am__dirstamp) \
 	src/ws/$(DEPDIR)/$(am__dirstamp)
 src/ws/session.$(OBJEXT): src/ws/$(am__dirstamp) \
@@ -3800,15 +3775,6 @@ src/ws/test_auth-mock-auth.$(OBJEXT): src/ws/$(am__dirstamp) \
 test-auth$(EXEEXT): $(test_auth_OBJECTS) $(test_auth_DEPENDENCIES) $(EXTRA_test_auth_DEPENDENCIES) 
 	@rm -f test-auth$(EXEEXT)
 	$(AM_V_CCLD)$(test_auth_LINK) $(test_auth_OBJECTS) $(test_auth_LDADD) $(LIBS)
-src/common/test_authorize-cockpitauthorize.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/test_authorize-cockpitbase64.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/test_authorize-cockpitmemory.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/test_authorize-test-authorize.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
@@ -3825,9 +3791,6 @@ test-authssh$(EXEEXT): $(test_authssh_OBJECTS) $(test_authssh_DEPENDENCIES) $(EX
 	@rm -f test-authssh$(EXEEXT)
 	$(AM_V_CCLD)$(test_authssh_LINK) $(test_authssh_OBJECTS) $(test_authssh_LDADD) $(LIBS)
 src/common/test_base64-test-base64.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/test_base64-cockpitbase64.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 
@@ -4392,26 +4355,16 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_setup-test-setup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_stream-test-stream.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/cockpitauthorize.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/cockpitbase64.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/cockpitframe.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/cockpitmemory.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitassets.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitjson.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitlocale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitlog.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitloopback.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitmachinesjson.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipe.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipetransport.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitsystem.Po@am__quote@ # am--include-marker
@@ -4422,17 +4375,18 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixfd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixsignal.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitversion.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebinject.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebresponse.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebserver.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_authorize-cockpitbase64.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_authorize-cockpitmemory.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_authorize-test-authorize.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_base64-cockpitbase64.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_base64-test-base64.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channel-mock-pressure.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channel-mock-transport.Po@am__quote@ # am--include-marker
@@ -5069,33 +5023,103 @@ src/bridge/libcockpit_bridge_a-cockpitsamples.obj: src/bridge/cockpitsamples.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_bridge_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_bridge_a-cockpitsamples.obj `if test -f 'src/bridge/cockpitsamples.c'; then $(CYGPATH_W) 'src/bridge/cockpitsamples.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitsamples.c'; fi`
 
-src/common/libcockpit_common_a-cockpitauthorize.o: src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitauthorize.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Tpo -c -o src/common/libcockpit_common_a-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_common_a-cockpitauthorize.o' libtool=no @AMDEPBACKSLASH@
+src/common/libcockpit_common_nodeps_a-cockpitauthorize.o: src/common/cockpitauthorize.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitauthorize.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_common_nodeps_a-cockpitauthorize.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
 
-src/common/libcockpit_common_a-cockpitauthorize.obj: src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitauthorize.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Tpo -c -o src/common/libcockpit_common_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_common_a-cockpitauthorize.obj' libtool=no @AMDEPBACKSLASH@
+src/common/libcockpit_common_nodeps_a-cockpitauthorize.obj: src/common/cockpitauthorize.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitauthorize.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_common_nodeps_a-cockpitauthorize.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
 
-src/common/libcockpit_common_a-cockpitbase64.o: src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitbase64.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Tpo -c -o src/common/libcockpit_common_a-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/libcockpit_common_a-cockpitbase64.o' libtool=no @AMDEPBACKSLASH@
+src/common/libcockpit_common_nodeps_a-cockpitbase64.o: src/common/cockpitbase64.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitbase64.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/libcockpit_common_nodeps_a-cockpitbase64.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
 
-src/common/libcockpit_common_a-cockpitbase64.obj: src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitbase64.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Tpo -c -o src/common/libcockpit_common_a-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/libcockpit_common_a-cockpitbase64.obj' libtool=no @AMDEPBACKSLASH@
+src/common/libcockpit_common_nodeps_a-cockpitbase64.obj: src/common/cockpitbase64.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitbase64.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/libcockpit_common_nodeps_a-cockpitbase64.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
+
+src/common/libcockpit_common_nodeps_a-cockpitconf.o: src/common/cockpitconf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitconf.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitconf.o `test -f 'src/common/cockpitconf.c' || echo '$(srcdir)/'`src/common/cockpitconf.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitconf.c' object='src/common/libcockpit_common_nodeps_a-cockpitconf.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitconf.o `test -f 'src/common/cockpitconf.c' || echo '$(srcdir)/'`src/common/cockpitconf.c
+
+src/common/libcockpit_common_nodeps_a-cockpitconf.obj: src/common/cockpitconf.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitconf.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitconf.obj `if test -f 'src/common/cockpitconf.c'; then $(CYGPATH_W) 'src/common/cockpitconf.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitconf.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitconf.c' object='src/common/libcockpit_common_nodeps_a-cockpitconf.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitconf.obj `if test -f 'src/common/cockpitconf.c'; then $(CYGPATH_W) 'src/common/cockpitconf.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitconf.c'; fi`
+
+src/common/libcockpit_common_nodeps_a-cockpitframe.o: src/common/cockpitframe.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitframe.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitframe.o `test -f 'src/common/cockpitframe.c' || echo '$(srcdir)/'`src/common/cockpitframe.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitframe.c' object='src/common/libcockpit_common_nodeps_a-cockpitframe.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitframe.o `test -f 'src/common/cockpitframe.c' || echo '$(srcdir)/'`src/common/cockpitframe.c
+
+src/common/libcockpit_common_nodeps_a-cockpitframe.obj: src/common/cockpitframe.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitframe.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitframe.obj `if test -f 'src/common/cockpitframe.c'; then $(CYGPATH_W) 'src/common/cockpitframe.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitframe.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitframe.c' object='src/common/libcockpit_common_nodeps_a-cockpitframe.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitframe.obj `if test -f 'src/common/cockpitframe.c'; then $(CYGPATH_W) 'src/common/cockpitframe.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitframe.c'; fi`
+
+src/common/libcockpit_common_nodeps_a-cockpithex.o: src/common/cockpithex.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpithex.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpithex.o `test -f 'src/common/cockpithex.c' || echo '$(srcdir)/'`src/common/cockpithex.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpithex.c' object='src/common/libcockpit_common_nodeps_a-cockpithex.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpithex.o `test -f 'src/common/cockpithex.c' || echo '$(srcdir)/'`src/common/cockpithex.c
+
+src/common/libcockpit_common_nodeps_a-cockpithex.obj: src/common/cockpithex.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpithex.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpithex.obj `if test -f 'src/common/cockpithex.c'; then $(CYGPATH_W) 'src/common/cockpithex.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpithex.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpithex.c' object='src/common/libcockpit_common_nodeps_a-cockpithex.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpithex.obj `if test -f 'src/common/cockpithex.c'; then $(CYGPATH_W) 'src/common/cockpithex.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpithex.c'; fi`
+
+src/common/libcockpit_common_nodeps_a-cockpitmemory.o: src/common/cockpitmemory.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitmemory.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitmemory.o `test -f 'src/common/cockpitmemory.c' || echo '$(srcdir)/'`src/common/cockpitmemory.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmemory.c' object='src/common/libcockpit_common_nodeps_a-cockpitmemory.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitmemory.o `test -f 'src/common/cockpitmemory.c' || echo '$(srcdir)/'`src/common/cockpitmemory.c
+
+src/common/libcockpit_common_nodeps_a-cockpitmemory.obj: src/common/cockpitmemory.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitmemory.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitmemory.obj `if test -f 'src/common/cockpitmemory.c'; then $(CYGPATH_W) 'src/common/cockpitmemory.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmemory.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmemory.c' object='src/common/libcockpit_common_nodeps_a-cockpitmemory.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitmemory.obj `if test -f 'src/common/cockpitmemory.c'; then $(CYGPATH_W) 'src/common/cockpitmemory.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmemory.c'; fi`
+
+src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.o: src/common/cockpitwebcertificate.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.o `test -f 'src/common/cockpitwebcertificate.c' || echo '$(srcdir)/'`src/common/cockpitwebcertificate.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitwebcertificate.c' object='src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.o `test -f 'src/common/cockpitwebcertificate.c' || echo '$(srcdir)/'`src/common/cockpitwebcertificate.c
+
+src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.obj: src/common/cockpitwebcertificate.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Tpo -c -o src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.obj `if test -f 'src/common/cockpitwebcertificate.c'; then $(CYGPATH_W) 'src/common/cockpitwebcertificate.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitwebcertificate.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Tpo src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitwebcertificate.c' object='src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_nodeps_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_nodeps_a-cockpitwebcertificate.obj `if test -f 'src/common/cockpitwebcertificate.c'; then $(CYGPATH_W) 'src/common/cockpitwebcertificate.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitwebcertificate.c'; fi`
 
 src/common/libcockpit_common_a-cockpitchannel.o: src/common/cockpitchannel.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitchannel.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Tpo -c -o src/common/libcockpit_common_a-cockpitchannel.o `test -f 'src/common/cockpitchannel.c' || echo '$(srcdir)/'`src/common/cockpitchannel.c
@@ -5139,20 +5163,6 @@ src/common/libcockpit_common_a-cockpitflow.obj: src/common/cockpitflow.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitflow.obj `if test -f 'src/common/cockpitflow.c'; then $(CYGPATH_W) 'src/common/cockpitflow.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitflow.c'; fi`
 
-src/common/libcockpit_common_a-cockpitframe.o: src/common/cockpitframe.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitframe.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Tpo -c -o src/common/libcockpit_common_a-cockpitframe.o `test -f 'src/common/cockpitframe.c' || echo '$(srcdir)/'`src/common/cockpitframe.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitframe.c' object='src/common/libcockpit_common_a-cockpitframe.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitframe.o `test -f 'src/common/cockpitframe.c' || echo '$(srcdir)/'`src/common/cockpitframe.c
-
-src/common/libcockpit_common_a-cockpitframe.obj: src/common/cockpitframe.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitframe.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Tpo -c -o src/common/libcockpit_common_a-cockpitframe.obj `if test -f 'src/common/cockpitframe.c'; then $(CYGPATH_W) 'src/common/cockpitframe.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitframe.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitframe.c' object='src/common/libcockpit_common_a-cockpitframe.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitframe.obj `if test -f 'src/common/cockpitframe.c'; then $(CYGPATH_W) 'src/common/cockpitframe.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitframe.c'; fi`
-
 src/common/libcockpit_common_a-cockpithash.o: src/common/cockpithash.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpithash.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Tpo -c -o src/common/libcockpit_common_a-cockpithash.o `test -f 'src/common/cockpithash.c' || echo '$(srcdir)/'`src/common/cockpithash.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po
@@ -5166,20 +5176,6 @@ src/common/libcockpit_common_a-cockpithash.obj: src/common/cockpithash.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpithash.c' object='src/common/libcockpit_common_a-cockpithash.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpithash.obj `if test -f 'src/common/cockpithash.c'; then $(CYGPATH_W) 'src/common/cockpithash.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpithash.c'; fi`
-
-src/common/libcockpit_common_a-cockpithex.o: src/common/cockpithex.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpithex.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Tpo -c -o src/common/libcockpit_common_a-cockpithex.o `test -f 'src/common/cockpithex.c' || echo '$(srcdir)/'`src/common/cockpithex.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpithex.c' object='src/common/libcockpit_common_a-cockpithex.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpithex.o `test -f 'src/common/cockpithex.c' || echo '$(srcdir)/'`src/common/cockpithex.c
-
-src/common/libcockpit_common_a-cockpithex.obj: src/common/cockpithex.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpithex.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Tpo -c -o src/common/libcockpit_common_a-cockpithex.obj `if test -f 'src/common/cockpithex.c'; then $(CYGPATH_W) 'src/common/cockpithex.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpithex.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpithex.c' object='src/common/libcockpit_common_a-cockpithex.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpithex.obj `if test -f 'src/common/cockpithex.c'; then $(CYGPATH_W) 'src/common/cockpithex.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpithex.c'; fi`
 
 src/common/libcockpit_common_a-cockpitjson.o: src/common/cockpitjson.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitjson.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitjson.Tpo -c -o src/common/libcockpit_common_a-cockpitjson.o `test -f 'src/common/cockpitjson.c' || echo '$(srcdir)/'`src/common/cockpitjson.c
@@ -5250,20 +5246,6 @@ src/common/libcockpit_common_a-cockpitmachinesjson.obj: src/common/cockpitmachin
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmachinesjson.c' object='src/common/libcockpit_common_a-cockpitmachinesjson.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitmachinesjson.obj `if test -f 'src/common/cockpitmachinesjson.c'; then $(CYGPATH_W) 'src/common/cockpitmachinesjson.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmachinesjson.c'; fi`
-
-src/common/libcockpit_common_a-cockpitmemory.o: src/common/cockpitmemory.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitmemory.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Tpo -c -o src/common/libcockpit_common_a-cockpitmemory.o `test -f 'src/common/cockpitmemory.c' || echo '$(srcdir)/'`src/common/cockpitmemory.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmemory.c' object='src/common/libcockpit_common_a-cockpitmemory.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitmemory.o `test -f 'src/common/cockpitmemory.c' || echo '$(srcdir)/'`src/common/cockpitmemory.c
-
-src/common/libcockpit_common_a-cockpitmemory.obj: src/common/cockpitmemory.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitmemory.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Tpo -c -o src/common/libcockpit_common_a-cockpitmemory.obj `if test -f 'src/common/cockpitmemory.c'; then $(CYGPATH_W) 'src/common/cockpitmemory.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmemory.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmemory.c' object='src/common/libcockpit_common_a-cockpitmemory.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitmemory.obj `if test -f 'src/common/cockpitmemory.c'; then $(CYGPATH_W) 'src/common/cockpitmemory.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmemory.c'; fi`
 
 src/common/libcockpit_common_a-cockpitpipe.o: src/common/cockpitpipe.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitpipe.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipe.Tpo -c -o src/common/libcockpit_common_a-cockpitpipe.o `test -f 'src/common/cockpitpipe.c' || echo '$(srcdir)/'`src/common/cockpitpipe.c
@@ -5405,20 +5387,6 @@ src/common/libcockpit_common_a-cockpitversion.obj: src/common/cockpitversion.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitversion.obj `if test -f 'src/common/cockpitversion.c'; then $(CYGPATH_W) 'src/common/cockpitversion.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitversion.c'; fi`
 
-src/common/libcockpit_common_a-cockpitwebcertificate.o: src/common/cockpitwebcertificate.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitwebcertificate.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Tpo -c -o src/common/libcockpit_common_a-cockpitwebcertificate.o `test -f 'src/common/cockpitwebcertificate.c' || echo '$(srcdir)/'`src/common/cockpitwebcertificate.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitwebcertificate.c' object='src/common/libcockpit_common_a-cockpitwebcertificate.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitwebcertificate.o `test -f 'src/common/cockpitwebcertificate.c' || echo '$(srcdir)/'`src/common/cockpitwebcertificate.c
-
-src/common/libcockpit_common_a-cockpitwebcertificate.obj: src/common/cockpitwebcertificate.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitwebcertificate.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Tpo -c -o src/common/libcockpit_common_a-cockpitwebcertificate.obj `if test -f 'src/common/cockpitwebcertificate.c'; then $(CYGPATH_W) 'src/common/cockpitwebcertificate.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitwebcertificate.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitwebcertificate.c' object='src/common/libcockpit_common_a-cockpitwebcertificate.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitwebcertificate.obj `if test -f 'src/common/cockpitwebcertificate.c'; then $(CYGPATH_W) 'src/common/cockpitwebcertificate.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitwebcertificate.c'; fi`
-
 src/common/libcockpit_common_a-cockpitwebfilter.o: src/common/cockpitwebfilter.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitwebfilter.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Tpo -c -o src/common/libcockpit_common_a-cockpitwebfilter.o `test -f 'src/common/cockpitwebfilter.c' || echo '$(srcdir)/'`src/common/cockpitwebfilter.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Po
@@ -5474,20 +5442,6 @@ src/common/libcockpit_common_a-cockpitwebserver.obj: src/common/cockpitwebserver
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitwebserver.c' object='src/common/libcockpit_common_a-cockpitwebserver.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitwebserver.obj `if test -f 'src/common/cockpitwebserver.c'; then $(CYGPATH_W) 'src/common/cockpitwebserver.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitwebserver.c'; fi`
-
-src/common/libcockpit_common_a-cockpitconf.o: src/common/cockpitconf.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitconf.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Tpo -c -o src/common/libcockpit_common_a-cockpitconf.o `test -f 'src/common/cockpitconf.c' || echo '$(srcdir)/'`src/common/cockpitconf.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitconf.c' object='src/common/libcockpit_common_a-cockpitconf.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitconf.o `test -f 'src/common/cockpitconf.c' || echo '$(srcdir)/'`src/common/cockpitconf.c
-
-src/common/libcockpit_common_a-cockpitconf.obj: src/common/cockpitconf.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitconf.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Tpo -c -o src/common/libcockpit_common_a-cockpitconf.obj `if test -f 'src/common/cockpitconf.c'; then $(CYGPATH_W) 'src/common/cockpitconf.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitconf.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitconf.c' object='src/common/libcockpit_common_a-cockpitconf.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitconf.obj `if test -f 'src/common/cockpitconf.c'; then $(CYGPATH_W) 'src/common/cockpitconf.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitconf.c'; fi`
 
 src/common/libcockpit_common_a-cockpitassets.o: src/common/cockpitassets.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitassets.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitassets.Tpo -c -o src/common/libcockpit_common_a-cockpitassets.o `test -f 'src/common/cockpitassets.c' || echo '$(srcdir)/'`src/common/cockpitassets.c
@@ -5726,20 +5680,6 @@ src/ssh/libcockpit_ssh_a-cockpitsshrelay.obj: src/ssh/cockpitsshrelay.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/cockpitsshrelay.c' object='src/ssh/libcockpit_ssh_a-cockpitsshrelay.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/ssh/libcockpit_ssh_a-cockpitsshrelay.obj `if test -f 'src/ssh/cockpitsshrelay.c'; then $(CYGPATH_W) 'src/ssh/cockpitsshrelay.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/cockpitsshrelay.c'; fi`
-
-src/common/libcockpit_ssh_a-cockpitauthorize.o: src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_ssh_a-cockpitauthorize.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Tpo -c -o src/common/libcockpit_ssh_a-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Tpo src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_ssh_a-cockpitauthorize.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_ssh_a-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
-
-src/common/libcockpit_ssh_a-cockpitauthorize.obj: src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_ssh_a-cockpitauthorize.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Tpo -c -o src/common/libcockpit_ssh_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Tpo src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_ssh_a-cockpitauthorize.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_ssh_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
 
 src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o: src/ssh/cockpitsshknownhosts.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -MT src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o -MD -MP -MF src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Tpo -c -o src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o `test -f 'src/ssh/cockpitsshknownhosts.c' || echo '$(srcdir)/'`src/ssh/cockpitsshknownhosts.c
@@ -6147,48 +6087,6 @@ src/ws/test_auth-mock-auth.obj: src/ws/mock-auth.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_auth_CFLAGS) $(CFLAGS) -c -o src/ws/test_auth-mock-auth.obj `if test -f 'src/ws/mock-auth.c'; then $(CYGPATH_W) 'src/ws/mock-auth.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/mock-auth.c'; fi`
 
-src/common/test_authorize-cockpitauthorize.o: src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-cockpitauthorize.o -MD -MP -MF src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Tpo -c -o src/common/test_authorize-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Tpo src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/test_authorize-cockpitauthorize.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -c -o src/common/test_authorize-cockpitauthorize.o `test -f 'src/common/cockpitauthorize.c' || echo '$(srcdir)/'`src/common/cockpitauthorize.c
-
-src/common/test_authorize-cockpitauthorize.obj: src/common/cockpitauthorize.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-cockpitauthorize.obj -MD -MP -MF src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Tpo -c -o src/common/test_authorize-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Tpo src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/test_authorize-cockpitauthorize.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -c -o src/common/test_authorize-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
-
-src/common/test_authorize-cockpitbase64.o: src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-cockpitbase64.o -MD -MP -MF src/common/$(DEPDIR)/test_authorize-cockpitbase64.Tpo -c -o src/common/test_authorize-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-cockpitbase64.Tpo src/common/$(DEPDIR)/test_authorize-cockpitbase64.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/test_authorize-cockpitbase64.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -c -o src/common/test_authorize-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
-
-src/common/test_authorize-cockpitbase64.obj: src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-cockpitbase64.obj -MD -MP -MF src/common/$(DEPDIR)/test_authorize-cockpitbase64.Tpo -c -o src/common/test_authorize-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-cockpitbase64.Tpo src/common/$(DEPDIR)/test_authorize-cockpitbase64.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/test_authorize-cockpitbase64.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -c -o src/common/test_authorize-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
-
-src/common/test_authorize-cockpitmemory.o: src/common/cockpitmemory.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-cockpitmemory.o -MD -MP -MF src/common/$(DEPDIR)/test_authorize-cockpitmemory.Tpo -c -o src/common/test_authorize-cockpitmemory.o `test -f 'src/common/cockpitmemory.c' || echo '$(srcdir)/'`src/common/cockpitmemory.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-cockpitmemory.Tpo src/common/$(DEPDIR)/test_authorize-cockpitmemory.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmemory.c' object='src/common/test_authorize-cockpitmemory.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -c -o src/common/test_authorize-cockpitmemory.o `test -f 'src/common/cockpitmemory.c' || echo '$(srcdir)/'`src/common/cockpitmemory.c
-
-src/common/test_authorize-cockpitmemory.obj: src/common/cockpitmemory.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-cockpitmemory.obj -MD -MP -MF src/common/$(DEPDIR)/test_authorize-cockpitmemory.Tpo -c -o src/common/test_authorize-cockpitmemory.obj `if test -f 'src/common/cockpitmemory.c'; then $(CYGPATH_W) 'src/common/cockpitmemory.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmemory.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-cockpitmemory.Tpo src/common/$(DEPDIR)/test_authorize-cockpitmemory.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitmemory.c' object='src/common/test_authorize-cockpitmemory.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -c -o src/common/test_authorize-cockpitmemory.obj `if test -f 'src/common/cockpitmemory.c'; then $(CYGPATH_W) 'src/common/cockpitmemory.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitmemory.c'; fi`
-
 src/common/test_authorize-test-authorize.o: src/common/test-authorize.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_authorize_CFLAGS) $(CFLAGS) -MT src/common/test_authorize-test-authorize.o -MD -MP -MF src/common/$(DEPDIR)/test_authorize-test-authorize.Tpo -c -o src/common/test_authorize-test-authorize.o `test -f 'src/common/test-authorize.c' || echo '$(srcdir)/'`src/common/test-authorize.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_authorize-test-authorize.Tpo src/common/$(DEPDIR)/test_authorize-test-authorize.Po
@@ -6244,20 +6142,6 @@ src/common/test_base64-test-base64.obj: src/common/test-base64.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-base64.c' object='src/common/test_base64-test-base64.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_base64_CFLAGS) $(CFLAGS) -c -o src/common/test_base64-test-base64.obj `if test -f 'src/common/test-base64.c'; then $(CYGPATH_W) 'src/common/test-base64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-base64.c'; fi`
-
-src/common/test_base64-cockpitbase64.o: src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_base64_CFLAGS) $(CFLAGS) -MT src/common/test_base64-cockpitbase64.o -MD -MP -MF src/common/$(DEPDIR)/test_base64-cockpitbase64.Tpo -c -o src/common/test_base64-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_base64-cockpitbase64.Tpo src/common/$(DEPDIR)/test_base64-cockpitbase64.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/test_base64-cockpitbase64.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_base64_CFLAGS) $(CFLAGS) -c -o src/common/test_base64-cockpitbase64.o `test -f 'src/common/cockpitbase64.c' || echo '$(srcdir)/'`src/common/cockpitbase64.c
-
-src/common/test_base64-cockpitbase64.obj: src/common/cockpitbase64.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_base64_CFLAGS) $(CFLAGS) -MT src/common/test_base64-cockpitbase64.obj -MD -MP -MF src/common/$(DEPDIR)/test_base64-cockpitbase64.Tpo -c -o src/common/test_base64-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_base64-cockpitbase64.Tpo src/common/$(DEPDIR)/test_base64-cockpitbase64.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitbase64.c' object='src/common/test_base64-cockpitbase64.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_base64_CFLAGS) $(CFLAGS) -c -o src/common/test_base64-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
 
 src/bridge/test_bridge-test-bridge.o: src/bridge/test-bridge.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_bridge_CFLAGS) $(CFLAGS) -MT src/bridge/test_bridge-test-bridge.o -MD -MP -MF src/bridge/$(DEPDIR)/test_bridge-test-bridge.Tpo -c -o src/bridge/test_bridge-test-bridge.o `test -f 'src/bridge/test-bridge.c' || echo '$(srcdir)/'`src/bridge/test-bridge.c
@@ -8956,26 +8840,16 @@ distclean: distclean-am
 	-rm -f src/bridge/$(DEPDIR)/test_setup-test-setup.Po
 	-rm -f src/bridge/$(DEPDIR)/test_stream-test-stream.Po
 	-rm -f src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Po
-	-rm -f src/common/$(DEPDIR)/cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/cockpitbase64.Po
-	-rm -f src/common/$(DEPDIR)/cockpitframe.Po
-	-rm -f src/common/$(DEPDIR)/cockpitmemory.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitassets.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitjson.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitlocale.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitlog.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitloopback.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitmachinesjson.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipe.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipetransport.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitsystem.Po
@@ -8986,17 +8860,18 @@ distclean: distclean-am
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixfd.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixsignal.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitversion.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebinject.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebresponse.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebserver.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/test_authorize-cockpitbase64.Po
-	-rm -f src/common/$(DEPDIR)/test_authorize-cockpitmemory.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Po
 	-rm -f src/common/$(DEPDIR)/test_authorize-test-authorize.Po
-	-rm -f src/common/$(DEPDIR)/test_base64-cockpitbase64.Po
 	-rm -f src/common/$(DEPDIR)/test_base64-test-base64.Po
 	-rm -f src/common/$(DEPDIR)/test_channel-mock-pressure.Po
 	-rm -f src/common/$(DEPDIR)/test_channel-mock-transport.Po
@@ -9231,26 +9106,16 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/bridge/$(DEPDIR)/test_setup-test-setup.Po
 	-rm -f src/bridge/$(DEPDIR)/test_stream-test-stream.Po
 	-rm -f src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Po
-	-rm -f src/common/$(DEPDIR)/cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/cockpitbase64.Po
-	-rm -f src/common/$(DEPDIR)/cockpitframe.Po
-	-rm -f src/common/$(DEPDIR)/cockpitmemory.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitassets.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitjson.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitlocale.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitlog.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitloopback.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitmachinesjson.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitmemory.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipe.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitpipetransport.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitsystem.Po
@@ -9261,17 +9126,18 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixfd.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitunixsignal.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitversion.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebcertificate.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebfilter.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebinject.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebresponse.Po
 	-rm -f src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebserver.Po
-	-rm -f src/common/$(DEPDIR)/libcockpit_ssh_a-cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/test_authorize-cockpitauthorize.Po
-	-rm -f src/common/$(DEPDIR)/test_authorize-cockpitbase64.Po
-	-rm -f src/common/$(DEPDIR)/test_authorize-cockpitmemory.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitauthorize.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitbase64.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitconf.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitframe.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpithex.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitmemory.Po
+	-rm -f src/common/$(DEPDIR)/libcockpit_common_nodeps_a-cockpitwebcertificate.Po
 	-rm -f src/common/$(DEPDIR)/test_authorize-test-authorize.Po
-	-rm -f src/common/$(DEPDIR)/test_base64-cockpitbase64.Po
 	-rm -f src/common/$(DEPDIR)/test_base64-test-base64.Po
 	-rm -f src/common/$(DEPDIR)/test_channel-mock-pressure.Po
 	-rm -f src/common/$(DEPDIR)/test_channel-mock-transport.Po
@@ -9635,8 +9501,8 @@ dist-gzip: distdir
 	$(DIST_TAR_CACHE) | GZIP=$(GZIP_ENV) gzip -c > cockpit-cache-$(VERSION).tar.gz
 	find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)"
 dist-xz: distdir
-	$(DIST_TAR_MAIN) | xz -ec > $(distdir).tar.xz
-	$(DIST_TAR_CACHE) | xz -ec > cockpit-cache-$(VERSION).tar.xz
+	$(DIST_TAR_MAIN) | xz $(XZ_COMPRESS_FLAGS) > $(distdir).tar.xz
+	$(DIST_TAR_CACHE) | xz $(XZ_COMPRESS_FLAGS) > cockpit-cache-$(VERSION).tar.xz
 	find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)"
 
 distcheck-hook::
