@@ -601,6 +601,7 @@ class TestMachines(NetworkCase):
                 use_existing_volume=False,
                 expected_target='vda', permanent=False, cache_mode=None,
                 verify=True, pool_type=None,
+                volume_format=None,
             ):
                 print(pool_name, volume_name)
                 self.test_obj = test_obj
@@ -615,6 +616,7 @@ class TestMachines(NetworkCase):
                 self.cache_mode = cache_mode
                 self.verify = verify
                 self.pool_type = pool_type
+                self.volume_format = volume_format
 
             def execute(self):
                 self.open()
@@ -649,9 +651,8 @@ class TestMachines(NetworkCase):
                     b.set_input_text("#vm-{0}-disks-adddisk-new-size".format(self.vm_name), str(self.volume_size))
                     b.select_from_dropdown("#vm-{0}-disks-adddisk-new-unit".format(self.vm_name), self.volume_size_unit)
 
-                    # Switch between format types to ensure availability
-                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-diskfileformat".format(self.vm_name), "raw") # verify content of the dropdown box
-                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-diskfileformat".format(self.vm_name), "qcow2") # and switch it back
+                    if self.volume_format:
+                        b.select_from_dropdown("#vm-{0}-disks-adddisk-new-diskfileformat".format(self.vm_name), self.volume_format)
 
                     # Configure persistency - by default the check box in unchecked for running VMs
                     if self.permanent:
@@ -686,16 +687,26 @@ class TestMachines(NetworkCase):
                 b.wait_in_text("#vm-{0}-disks-{1}-device".format(self.vm_name, self.expected_target), "disk")
 
                 # Detect volume format
-                detect_format_cmd = "virsh dumpxml {0} | xmllint --xpath '/domain/devices/disk[@type=\"{1}\"]/driver[@type=\"qcow2\"]' -"
+                detect_format_cmd = "virsh vol-dumpxml {0} {1} | xmllint --xpath '/volume/target/format' -".format(self.volume_name, self.pool_name)
 
                 if self.test_obj.provider == "libvirt-dbus":
                     b.wait_in_text('#vm-{0}-disks-{1}-source-volume'.format(self.vm_name, self.expected_target), self.volume_name)
                     if self.cache_mode:
                         b.wait_in_text("#vm-{0}-disks-{1}-cache".format(self.vm_name, self.expected_target), self.cache_mode)
-                    m.execute(detect_format_cmd.format(self.vm_name, "volume"))
+                    # Guess by the name of the pool it's format to avoid passing more parameters
+                    if self.pool_type == 'iscsi':
+                        expected_format = 'unknown'
+                    else:
+                        expected_format = 'qcow2'
+                    self.test_obj.assertEqual(
+                        m.execute(detect_format_cmd).rstrip(),
+                        '<format type="{0}"/>'.format(self.volume_format or expected_format)
+                    )
                 else:
-                    b.wait_in_text('#vm-{0}-disks-{1}-source-file'.format(self.vm_name, self.expected_target), self.volume_name)
-                    m.execute(detect_format_cmd.format(self.vm_name, "file"))
+                    if self.pool_type == 'disk':
+                        b.wait_in_text('#vm-{0}-disks-{1}-source-device'.format(self.vm_name, self.expected_target), self.volume_name)
+                    else:
+                        b.wait_in_text('#vm-{0}-disks-{1}-source-file'.format(self.vm_name, self.expected_target), self.volume_name)
 
                 return self
 
@@ -824,6 +835,7 @@ class TestMachines(NetworkCase):
             VMAddDiskDialog(
                 self,
                 pool_name='iscsi-pool',
+                pool_type='iscsi',
                 volume_name='unit:0:0:0',
                 expected_target='vdi',
                 use_existing_volume='True',
@@ -865,6 +877,25 @@ class TestMachines(NetworkCase):
             b.click("#vm-subVmTest1-disks") # open the "Disks" subtab
             # Check that usage information can't be fetched since the pool is inactive
             b.wait_not_present("#vm-subVmTest1-disks-vdd-used")
+
+        prepareDisk(self.machine)
+        cmds = [
+            "virsh pool-define-as disk-pool disk - - /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1 - /tmp/poolDiskImages",
+            "virsh pool-build disk-pool --overwrite",
+            "virsh pool-start disk-pool",
+        ]
+        self.machine.execute(" && ".join(cmds))
+        partition = str(self.machine.execute("readlink -f /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1 | cut -d '/' -f 3").strip()) + "1"
+        VMAddDiskDialog(
+            self,
+            pool_name='disk-pool',
+            pool_type='disk',
+            volume_name=partition,
+            volume_size=10,
+            volume_size_unit='MiB',
+            expected_target='vdc',
+            volume_format='none',
+        ).execute()
 
     def testVmNICs(self):
         b = self.browser
@@ -1212,12 +1243,6 @@ class TestMachines(NetworkCase):
         self.login_and_go("/machines")
         self.browser.wait_in_text("body", "Virtual Machines")
 
-        def checkVendorsLoadedInUi(dialog):
-            dialog.open()
-            self.browser.wait_present("#vendor-select")
-            self.browser.wait_present("#vendor-select option[value='%s']" % dialog.os_vendor)
-            dialog.cancel()
-
         def cancelDialogTest(dialog):
             dialog.open() \
                 .fill() \
@@ -1227,7 +1252,7 @@ class TestMachines(NetworkCase):
 
         def checkFilteredOsTest(dialog):
             dialog.open() \
-                .checkOsOrVendorFiltered() \
+                .checkOsFiltered() \
                 .cancel(True)
             runner.assertScriptFinished() \
                 .checkEnvIsEmpty()
@@ -1282,11 +1307,6 @@ class TestMachines(NetworkCase):
                 .deleteVm(dialog) \
                 .checkEnvIsEmpty()
 
-        # wait for os and vendors to load.
-        runner.assertOsInfoQueryFinished()
-        rhDialog = TestMachines.VmDialog(self, "loadVendors", os_vendor=config.REDHAT_VENDOR)
-        checkVendorsLoadedInUi(rhDialog)
-
         runner.checkEnvIsEmpty()
 
         # define default storage pool for system connection
@@ -1299,33 +1319,32 @@ class TestMachines(NetworkCase):
         self.browser.enter_page('/machines')
         self.browser.wait_in_text("body", "Virtual Machines")
 
+        createTest(TestMachines.VmDialog(self, sourceType='url',
+                                         location=config.VALID_URL,
+                                         storage_size=1,
+                                         os_name=config.CIRROS))
+
         # test just the DIALOG CREATION and cancel
         print("    *\n    * validation errors and ui info/warn messages expected:\n    * ")
         cancelDialogTest(TestMachines.VmDialog(self, sourceType='file',
                                                location=config.NOVELL_MOCKUP_ISO_PATH,
                                                memory_size=1, memory_size_unit='MiB',
                                                storage_size=12500, storage_size_unit='GiB',
-                                               os_vendor=config.UNSPECIFIED_VENDOR,
-                                               os_name=config.OTHER_OS,
                                                start_vm=True))
 
         cancelDialogTest(TestMachines.VmDialog(self, sourceType='url',
                                                location=config.VALID_URL,
                                                memory_size=256, memory_size_unit='MiB',
                                                storage_size=0, storage_size_unit='MiB',
-                                               os_vendor=config.NOVELL_VENDOR,
-                                               os_name=config.NOVELL_NETWARE_4,
+                                               os_name=config.FEDORA_28,
                                                start_vm=False))
 
         # check if older os are filtered
-        checkFilteredOsTest(TestMachines.VmDialog(self, os_vendor=config.REDHAT_VENDOR,
-                                                  storage_size=1, os_name=config.REDHAT_RHEL_4_7_FILTERED_OS))
+        checkFilteredOsTest(TestMachines.VmDialog(self, storage_size=1, os_name=config.REDHAT_RHEL_4_7_FILTERED_OS))
 
-        checkFilteredOsTest(TestMachines.VmDialog(self, os_vendor=config.MANDRIVA_FILTERED_VENDOR,
-                                                  storage_size=1, os_name=config.MANDRIVA_2011_FILTERED_OS))
+        checkFilteredOsTest(TestMachines.VmDialog(self, storage_size=1, os_name=config.MANDRIVA_2011_FILTERED_OS))
 
-        checkFilteredOsTest(TestMachines.VmDialog(self, os_vendor=config.MAGEIA_VENDOR,
-                                                  storage_size=1, os_name=config.MAGEIA_3_FILTERED_OS))
+        checkFilteredOsTest(TestMachines.VmDialog(self, storage_size=1, os_name=config.MAGEIA_3_FILTERED_OS))
 
         # try to CREATE WITH DIALOG ERROR
 
@@ -1335,61 +1354,52 @@ class TestMachines(NetworkCase):
         # location
         checkDialogFormValidationTest(TestMachines.VmDialog(self, sourceType='url',
                                                             location="invalid/url", storage_size=1,
-                                                            os_vendor=config.NOVELL_VENDOR,
-                                                            os_name=config.NOVELL_NETWARE_4), {"Source": "Source should start with"})
+                                                            os_name=config.FEDORA_28), {"Source": "Source should start with"})
 
         # memory
         checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1, memory_size=0), {"Memory": "Memory must not be 0"})
 
         # memory
         checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1,
-                                                            os_vendor=config.FEDORA_VENDOR,
                                                             os_name=config.FEDORA_28,
                                                             memory_size=256, memory_size_unit='MiB'), {"Memory": "minimum memory requirement of 1024 MiB"})
 
         # start vm
         checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1,
-                                                            os_vendor=config.NOVELL_VENDOR,
-                                                            os_name=config.NOVELL_NETWARE_6, start_vm=True),
+                                                            os_name=config.FEDORA_28, start_vm=True),
                                       {"Source": "Installation Source should not be empty"})
 
-        # disallow UNSPECIFIED_VENDOR in case of URL installation media and start_vm=False
+        # disallow empty OS in case of URL installation media and start_vm=False
         checkDialogFormValidationTest(TestMachines.VmDialog(self, sourceType='url', location=config.VALID_URL,
-                                                            os_vendor=config.UNSPECIFIED_VENDOR,
                                                             storage_size=100, storage_size_unit='MiB',
-                                                            os_name=config.OTHER_OS, start_vm=False),
-                                      {"OS Vendor": "You need to select the most closely matching OS vendor and Operating System"})
+                                                            start_vm=False),
+                                      {"Operating System": "You need to select the most closely matching Operating System"})
 
         # try to CREATE few machines
         createTest(TestMachines.VmDialog(self, sourceType='url',
                                          location=config.VALID_URL,
-                                         storage_size=1,
                                          memory_size=512, memory_size_unit='MiB',
-                                         os_vendor=config.MICROSOFT_VENDOR,
-                                         os_name=config.MICROSOFT_VISTA))
+                                         storage_size=1,
+                                         os_name=config.MICROSOFT_SERVER_2016))
 
         createTest(TestMachines.VmDialog(self, sourceType='url',
                                          location=config.VALID_URL,
                                          memory_size=512, memory_size_unit='MiB',
                                          storage_size=100, storage_size_unit='MiB',
-                                         os_vendor=config.MICROSOFT_VENDOR,
-                                         os_name=config.MICROSOFT_XP_OS,
+                                         os_name=config.MICROSOFT_SERVER_2016,
                                          start_vm=False))
 
         createTest(TestMachines.VmDialog(self, sourceType='url',
                                          location=config.VALID_URL,
                                          memory_size=256, memory_size_unit='MiB',
                                          storage_size=100, storage_size_unit='MiB',
-                                         os_vendor=config.APPLE_VENDOR,
-                                         os_name=config.MACOS_X_TIGER,
+                                         os_name=config.CIRROS,
                                          start_vm=False))
-
         createTest(TestMachines.VmDialog(self, sourceType='file',
                                          location=config.NOVELL_MOCKUP_ISO_PATH,
                                          memory_size=256, memory_size_unit='MiB',
                                          storage_size=0, storage_size_unit='MiB',
-                                         os_vendor=config.APPLE_VENDOR,
-                                         os_name=config.MACOS_X_TIGER,
+                                         os_name=config.CIRROS,
                                          start_vm=False,
                                          connection='session'))
 
@@ -1397,10 +1407,9 @@ class TestMachines(NetworkCase):
         # The dialog should auto-adjust it to match the pool's available space
         createTest(TestMachines.VmDialog(self, sourceType='file',
                                          location=config.NOVELL_MOCKUP_ISO_PATH,
-                                         memory_size=100, memory_size_unit='MiB',
+                                         memory_size=256, memory_size_unit='MiB',
                                          storage_size=100000, storage_size_unit='GiB',
-                                         os_vendor=config.APPLE_VENDOR,
-                                         os_name=config.MACOS_X_TIGER,
+                                         os_name=config.CIRROS,
                                          start_vm=False))
 
         # Try setting the memory to value bigger than it's available on the OS
@@ -1409,16 +1418,14 @@ class TestMachines(NetworkCase):
                                          location=config.NOVELL_MOCKUP_ISO_PATH,
                                          memory_size=100000, memory_size_unit='MiB',
                                          storage_size=0, storage_size_unit='MiB',
-                                         os_vendor=config.APPLE_VENDOR,
-                                         os_name=config.MACOS_X_TIGER,
+                                         os_name=config.OPENBSD_6_3,
                                          start_vm=False))
 
         # Start of tests for import existing disk as installation option
         createTest(TestMachines.VmDialog(self, sourceType='disk_image',
                                          location=config.VALID_DISK_IMAGE_PATH,
                                          memory_size=256, memory_size_unit='MiB',
-                                         os_vendor=config.OPENBSD_VENDOR,
-                                         os_name=config.OPENBSD_5_4,
+                                         os_name=config.CIRROS,
                                          start_vm=False))
 
         # Recreate the image the previous test just deleted to reuse it
@@ -1434,8 +1441,7 @@ class TestMachines(NetworkCase):
         createTest(TestMachines.VmDialog(self, sourceType='disk_image',
                                          location=config.VALID_DISK_IMAGE_PATH,
                                          memory_size=256, memory_size_unit='MiB',
-                                         os_vendor=config.OPENBSD_VENDOR,
-                                         os_name=config.OPENBSD_5_4,
+                                         os_name=config.CIRROS,
                                          start_vm=True))
         # End of tests for import existing disk as installation option
 
@@ -1455,9 +1461,8 @@ class TestMachines(NetworkCase):
         # Check choosing existing volume as destination storage
         createTest(TestMachines.VmDialog(self, sourceType='file',
                                          location=config.NOVELL_MOCKUP_ISO_PATH,
-                                         memory_size=50, memory_size_unit='MiB',
-                                         os_vendor=config.NOVELL_VENDOR,
-                                         os_name=config.NOVELL_NETWARE_6,
+                                         memory_size=256, memory_size_unit='MiB',
+                                         os_name=config.CIRROS,
                                          storage_pool="tmpPool",
                                          storage_volume="vmTmpDestination.qcow2",
                                          start_vm=True,))
@@ -1465,9 +1470,8 @@ class TestMachines(NetworkCase):
         # Check "No Storage" option (only define VM)
         createTest(TestMachines.VmDialog(self, sourceType='file',
                                          location=config.NOVELL_MOCKUP_ISO_PATH,
-                                         memory_size=50, memory_size_unit='MiB',
-                                         os_vendor=config.NOVELL_VENDOR,
-                                         os_name=config.NOVELL_NETWARE_6,
+                                         memory_size=256, memory_size_unit='MiB',
+                                         os_name=config.CIRROS,
                                          storage_pool="No Storage",
                                          start_vm=True,))
 
@@ -1488,7 +1492,7 @@ class TestMachines(NetworkCase):
         # Check choosing existing volume as destination storage
         createThenInstallTest(TestMachines.VmDialog(self, sourceType='file',
                                                     location=config.NOVELL_MOCKUP_ISO_PATH,
-                                                    memory_size=50, memory_size_unit='MiB',
+                                                    memory_size=256, memory_size_unit='MiB',
                                                     storage_pool="poolDisk",
                                                     storage_volume="sda1"))
 
@@ -1512,7 +1516,7 @@ class TestMachines(NetworkCase):
             # Check choosing existing volume as destination storage
             createThenInstallTest(TestMachines.VmDialog(self, sourceType='file',
                                                         location=config.NOVELL_MOCKUP_ISO_PATH,
-                                                        memory_size=50, memory_size_unit='MiB',
+                                                        memory_size=256, memory_size_unit='MiB',
                                                         storage_pool="poolIscsi",
                                                         storage_volume="unit:0:0:0"))
 
@@ -1552,8 +1556,6 @@ class TestMachines(NetworkCase):
                                              location=config.ISO_URL,
                                              memory_size=256, memory_size_unit='MiB',
                                              storage_size=0, storage_size_unit='MiB',
-                                             os_vendor=config.UNSPECIFIED_VENDOR,
-                                             os_name=config.OTHER_OS,
                                              start_vm=True))
 
             # This functionality works on debian only because of extra dep.
@@ -1565,8 +1567,6 @@ class TestMachines(NetworkCase):
                                                            location=config.ISO_URL,
                                                            memory_size=256, memory_size_unit='MiB',
                                                            storage_size=0, storage_size_unit='MiB',
-                                                           os_vendor=config.UNSPECIFIED_VENDOR,
-                                                           os_name=config.OTHER_OS,
                                                            start_vm=True), ["qemu", "protocol"])
 
             self.addCleanup(self.machine.execute, "kill {0}".format(server))
@@ -1614,10 +1614,9 @@ class TestMachines(NetworkCase):
             # to have serial console at bios and also redirect serial console to a file
             createTest(TestMachines.VmDialog(self, name='pxe-guest', sourceType='pxe',
                                              location="Virtual Network pxe-nat: NAT",
-                                             memory_size=50, memory_size_unit='MiB',
+                                             memory_size=256, memory_size_unit='MiB',
                                              storage_size=0, storage_size_unit='MiB',
-                                             os_vendor=config.NOVELL_VENDOR,
-                                             os_name=config.NOVELL_NETWARE_6,
+                                             os_name=config.CIRROS,
                                              start_vm=True, delete=False))
 
             # We don't want to use start_vm == False because if we get a seperate install phase
@@ -1670,10 +1669,9 @@ class TestMachines(NetworkCase):
             # Check that host network devices are appearing in the options for PXE boot sources
             createTest(TestMachines.VmDialog(self, sourceType='pxe',
                                              location="Host Device {0}: macvtap".format(iface),
-                                             memory_size=50, memory_size_unit='MiB',
+                                             memory_size=256, memory_size_unit='MiB',
                                              storage_size=0, storage_size_unit='MiB',
-                                             os_vendor=config.NOVELL_VENDOR,
-                                             os_name=config.NOVELL_NETWARE_6,
+                                             os_name=config.CIRROS,
                                              start_vm=False))
 
             # When switching from PXE mode to anything else make sure that the source input is empty
@@ -1681,8 +1679,7 @@ class TestMachines(NetworkCase):
                                                                 sourceType='pxe',
                                                                 location="Host Device {0}: macvtap".format(iface),
                                                                 sourceTypeSecondChoice='url',
-                                                                os_vendor=config.NOVELL_VENDOR,
-                                                                os_name=config.NOVELL_NETWARE_6, start_vm=False),
+                                                                os_name=config.CIRROS, start_vm=False),
                                           {"Source": "Installation Source should not be empty"})
 
         # When switching between no pxe installation modes with the source already set
@@ -1691,8 +1688,7 @@ class TestMachines(NetworkCase):
                                          sourceTypeSecondChoice='disk_image',
                                          location=config.NOVELL_MOCKUP_ISO_PATH,
                                          memory_size=256, memory_size_unit='MiB',
-                                         os_vendor=config.OPENBSD_VENDOR,
-                                         os_name=config.OPENBSD_5_4,
+                                         os_name=config.OPENBSD_6_3,
                                          start_vm=False))
 
         # Test that removing virt-install executable will disable Create VM button
@@ -1731,38 +1727,19 @@ class TestMachines(NetworkCase):
         NOT_EXISTENT_PATH = '/tmp/not-existent.iso'
         ISO_URL = 'https://localhost:8000/novell.iso'
 
-        UNSPECIFIED_VENDOR = 'Unspecified'
-        OTHER_OS = 'Other OS'
+        OPENBSD_6_3 = 'OpenBSD 6.3'
 
-        NOVELL_VENDOR = 'Novell'
-        NOVELL_NETWARE_4 = 'Novell Netware 4'
-        NOVELL_NETWARE_5 = 'Novell Netware 5'
-        NOVELL_NETWARE_6 = 'Novell Netware 6'
-
-        OPENBSD_VENDOR = 'OpenBSD Project'
-        OPENBSD_5_4 = 'OpenBSD 5.4'
-
-        MICROSOFT_VENDOR = 'Microsoft Corporation'
-        MICROSOFT_MILLENNIUM_OS = 'Microsoft Windows Millennium Edition'
-        MICROSOFT_XP_OS = 'Microsoft Windows XP'
-        MICROSOFT_VISTA = 'Microsoft Windows Vista'
-        MICROSOFT_10_OS = 'Microsoft Windows 10'
-
-        APPLE_VENDOR = 'Apple Inc.'
-        MACOS_X_TIGER = 'MacOS X Tiger'
-        MACOS_X_LEOPARD = 'MacOS X Leopard'
+        MICROSOFT_SERVER_2016 = 'Microsoft Windows Server 2016'
 
         # LINUX can be filtered if 3 years old
-        REDHAT_VENDOR = 'Red Hat, Inc'
         REDHAT_RHEL_4_7_FILTERED_OS = 'Red Hat Enterprise Linux 4.9'
 
-        FEDORA_VENDOR = 'Fedora Project'
         FEDORA_28 = 'Fedora 28'
 
-        MANDRIVA_FILTERED_VENDOR = 'Mandriva'
+        CIRROS = 'CirrOS'
+
         MANDRIVA_2011_FILTERED_OS = 'Mandriva Linux 2011'
 
-        MAGEIA_VENDOR = 'Mageia'
         MAGEIA_3_FILTERED_OS = 'Mageia 3'
 
         LIBVIRT_CONNECTION = {
@@ -1776,7 +1753,6 @@ class TestMachines(NetworkCase):
                      sourceType='file', sourceTypeSecondChoice=None, location='',
                      memory_size=256, memory_size_unit='MiB',
                      storage_size=None, storage_size_unit='GiB',
-                     os_vendor=None,
                      os_name=None,
                      storage_pool='Create New Volume', storage_volume='',
                      start_vm=False,
@@ -1801,8 +1777,7 @@ class TestMachines(NetworkCase):
             self.memory_size_unit = memory_size_unit
             self.storage_size = storage_size
             self.storage_size_unit = storage_size_unit
-            self.os_vendor = os_vendor if os_vendor else TestMachines.TestCreateConfig.UNSPECIFIED_VENDOR
-            self.os_name = os_name if os_name else TestMachines.TestCreateConfig.OTHER_OS
+            self.os_name = os_name
             self.start_vm = start_vm
             self.storage_pool = storage_pool
             self.storage_volume = storage_volume
@@ -1821,48 +1796,29 @@ class TestMachines(NetworkCase):
             b.wait_present("#create-vm-dialog")
             b.wait_in_text(".modal-dialog .modal-header .modal-title", "Create New Virtual Machine")
 
-            if self.os_name != TestMachines.TestCreateConfig.OTHER_OS and self.os_vendor != TestMachines.TestCreateConfig.UNSPECIFIED_VENDOR:
-                # check if there is os and vendor present in osinfo-query because it can be filtered out in the UI
-                query_result = '{0}|{1}'.format(self.os_name, self.os_vendor)
+            if self.os_name is not None:
+                # check if there is os present in osinfo-query because it can be filtered out in the UI
+                query_result = '{0}'.format(self.os_name)
                 # throws exception if grep fails
                 self.machine.execute(
-                    "osinfo-query os --fields=name,vendor | tail -n +3 | sed -e 's/\s*|\s*/|/g; s/^\s*//g; s/\s*$//g' | grep '{0}'".format(
+                    "osinfo-query os --fields=name | tail -n +3 | sed -e 's/\s*|\s*/|/g; s/^\s*//g; s/\s*$//g' | grep '{0}'".format(
                         query_result))
 
             return self
 
-        def checkOsOrVendorFiltered(self):
+        def checkOsFiltered(self):
             b = self.browser
 
-            vendor_selector = "#vendor-select"
-            vendor_item_selector = "#vendor-select option[data-value*='{0}']".format(self.os_vendor)
-
-            b.wait_visible(vendor_selector)
-            if b.val(vendor_selector) != self.os_vendor:
-                try:
-                    with b.wait_timeout(1):
-                        b.wait_present(vendor_item_selector)
-                except Error:
-                    # vendor not found which is ok
-                    return self
-                b.set_val(vendor_selector, self.os_vendor)
-            b.wait_in_text(vendor_selector, self.os_vendor)
-            # vendor successfully found
-
-            system_selector = "#system-select"
-            system_item_selector = "#system-select option[data-value*='{0}']".format(self.os_name)
-
-            b.wait_visible(system_selector)
+            b.focus("label:contains('Operating System') + div > div > div > input")
+            b.key_press(self.os_name)
+            b.key_press("\t")
             try:
                 with b.wait_timeout(1):
-                    b.wait_visible(system_item_selector)
+                    b.wait_in_text("#os-select li a", "No matches found")
+                return self
+            except AssertionError:
                 # os found which is not ok
                 raise AssertionError("{0} was not filtered".format(self.os_name))
-            except AssertionError:
-                raise
-            except Error:
-                # os not found which is ok
-                return self
 
         def checkPXENotAvailableSession(self):
             self.browser.select_from_dropdown("#connection", self.connectionText)
@@ -1922,8 +1878,10 @@ class TestMachines(NetworkCase):
                         self.storage_size = min(self.storage_size, space_available)
                         b.wait_val("#storage-size", self.storage_size)
 
-            b.select_from_dropdown("#vendor-select", self.os_vendor, substring=True)
-            b.select_from_dropdown("#system-select", self.os_name, substring=True)
+            if self.os_name:
+                b.focus("label:contains('Operating System') + div > div > div > input")
+                b.key_press(self.os_name)
+                b.key_press("\t")
 
             # First select the unit so that UI will auto-adjust the memory input
             # value according to the available total memory on the host
@@ -2174,16 +2132,29 @@ class TestMachines(NetworkCase):
 
             # Test disk got imported/created
             if dialog.sourceType == 'disk_image' or dialog.sourceTypeSecondChoice == 'disk_image':
-                b.wait_present("#vm-{0}-disks-vda-device".format(name))
-                b.wait_in_text("#vm-{0}-disks-vda-source-file".format(name), dialog.location)
+                if b.is_present("#vm-{0}-disks-vda-device".format(name)):
+                    b.wait_in_text("#vm-{0}-disks-vda-source-file".format(name), dialog.location)
+                elif b.is_present("#vm-{0}-disks-hda-device".format(name)):
+                    b.wait_in_text("#vm-{0}-disks-hda-source-file".format(name), dialog.location)
+                else:
+                    raise AssertionError("Unknown disk device")
             # New volume was created or existing volume was already chosen as destination
             elif (dialog.storage_size is not None and dialog.storage_size > 0) or dialog.storage_pool not in ["No Storage", "Create New Volume"]:
                 if b.is_present("#vm-{0}-disks-vda-device".format(name)):
                     b.wait_in_text("#vm-{0}-disks-vda-device".format(name), "disk")
-                else:
+                elif b.is_present("#vm-{0}-disks-hda-device".format(name)):
                     b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "disk")
+                elif b.is_present("#vm-{0}-disks-sda-device".format(name)):
+                    b.wait_in_text("#vm-{0}-disks-sda-device".format(name), "disk")
+                else:
+                    raise AssertionError("Unknown disk device")
             elif dialog.start_vm and (((dialog.storage_pool == 'No Storage' or dialog.storage_size == 0) and dialog.sourceType == 'file') or dialog.sourceType == 'url'):
-                b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "cdrom")
+                if b.is_present("#vm-{0}-disks-sda-device".format(name)):
+                    b.wait_in_text("#vm-{0}-disks-sda-device".format(name), "cdrom")
+                elif b.is_present("#vm-{0}-disks-hda-device".format(name)):
+                    b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "cdrom")
+                else:
+                    raise AssertionError("Unknown disk device")
             else:
                 b.wait_in_text("tbody tr td div.listing-ct-body", "No disks defined")
             return self

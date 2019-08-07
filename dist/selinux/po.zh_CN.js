@@ -62,13 +62,13 @@ return plural;
   null,
   "复制到剪贴板"
  ],
- "Enforce policy:": [
+ "Enforcing": [
   null,
-  "强制策略："
+  "强制"
  ],
  "Error running semanage to discover system modifications": [
   null,
-  ""
+  "运行 semanage 来发现系统的改变时出错"
  ],
  "Error while deleting alert: $0": [
   null,
@@ -109,6 +109,10 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "在 $0 和 $1 间发生"
+ ],
+ "Permissive": [
+  null,
+  "Permissive"
  ],
  "SELinux Access Control Errors": [
   null,

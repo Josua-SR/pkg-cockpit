@@ -222,6 +222,18 @@ return plural;
   null,
   "第9"
  ],
+ "Absent": [
+  null,
+  "缺席"
+ ],
+ "Active since ": [
+  null,
+  "活跃自"
+ ],
+ "Additional actions": [
+  null,
+  "额外操作"
+ ],
  "Additional packages:": [
   null,
   "额外的软件包："
@@ -250,6 +262,10 @@ return plural;
   null,
   "多合一"
  ],
+ "Allow running (unmask)": [
+  null,
+  "允许运行 (非掩盖)"
+ ],
  "Appearance:": [
   null,
   "外观："
@@ -265,6 +281,10 @@ return plural;
  "Automatic Startup": [
   null,
   "自动启动"
+ ],
+ "Automatically starts": [
+  null,
+  "自动开始"
  ],
  "Automatically using NTP": [
   null,
@@ -462,10 +482,6 @@ return plural;
   null,
   "详情"
  ],
- "Disable": [
-  null,
-  "禁用"
- ],
  "Disable simultaneous multithreading": [
   null,
   "禁用同步多线程"
@@ -473,6 +489,10 @@ return plural;
  "Disabled": [
   null,
   "禁用"
+ ],
+ "Disallow running (mask)": [
+  null,
+  "不允许运行 (掩盖)"
  ],
  "Disk I/O": [
   null,
@@ -494,17 +514,13 @@ return plural;
   null,
   "正在下载"
  ],
+ "Dual Rank": [
+  null,
+  "Dual Rank"
+ ],
  "Embedded PC": [
   null,
   "嵌入式 PC"
- ],
- "Enable": [
-  null,
-  "启用"
- ],
- "Enable Forcefully": [
-  null,
-  "强制启用"
  ],
  "Enable stored metrics…": [
   null,
@@ -538,9 +554,17 @@ return plural;
   null,
   "扩展机箱"
  ],
+ "Failed to start": [
+  null,
+  "启动失败"
+ ],
  "Filter by name or description...": [
   null,
   "根据名称或描述进行过滤..."
+ ],
+ "Forbidden from running": [
+  null,
+  "禁止运行"
  ],
  "Friday": [
   null,
@@ -590,6 +614,10 @@ return plural;
   null,
   "I/O 等待"
  ],
+ "ID": [
+  null,
+  "ID"
+ ],
  "Info and above": [
   null,
   "Info 及以上级别"
@@ -605,6 +633,10 @@ return plural;
  "Installing $0": [
   null,
   "正在安装 $0"
+ ],
+ "Instance of template: ": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -718,13 +750,17 @@ return plural;
   null,
   "手动的"
  ],
- "Mask": [
+ "Mask Service": [
   null,
-  "Mask"
+  "掩盖服务"
  ],
- "Mask Forcefully": [
+ "Masked": [
   null,
-  "强制 Mask"
+  "掩盖的"
+ ],
+ "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
+  null,
+  "掩盖服务会阻止所有依赖的单元被运行。这所造成的结果可能会比预期的大。请确认您需要掩盖这个单元。"
  ],
  "Memory": [
   null,
@@ -733,6 +769,10 @@ return plural;
  "Memory & Swap": [
   null,
   "内存和交换空间"
+ ],
+ "Memory Technology": [
+  null,
+  "内存拓扑"
  ],
  "Message to logged in users": [
   null,
@@ -809,6 +849,10 @@ return plural;
  "Not authorized to upload-report": [
   null,
   "没有授权来上传报告"
+ ],
+ "Not running": [
+  null,
+  "未运行"
  ],
  "Not synchronized": [
   null,
@@ -894,13 +938,9 @@ return plural;
   null,
   "电源选项"
  ],
- "Preset": [
+ "Present": [
   null,
-  "预置"
- ],
- "Preset Forcefully": [
-  null,
-  "强制预设"
+  "当前"
  ],
  "Pretty Host Name": [
   null,
@@ -930,9 +970,17 @@ return plural;
   null,
   "机架式机箱"
  ],
+ "Rank": [
+  null,
+  "Rank"
+ ],
  "Read more...": [
   null,
   "了解更多..."
+ ],
+ "Read-only": [
+  null,
+  "只读"
  ],
  "Real Host Name": [
   null,
@@ -1010,9 +1058,17 @@ return plural;
   null,
   "要求的"
  ],
+ "Required by ": [
+  null,
+  "要求自"
+ ],
  "Requires": [
   null,
   "要求"
+ ],
+ "Requires administration access to edit": [
+  null,
+  "需要管理访问权限进行编辑"
  ],
  "Requisite": [
   null,
@@ -1034,9 +1090,9 @@ return plural;
   null,
   "运行"
  ],
- "Running Since": [
+ "Running": [
   null,
-  "运行自"
+  "运行中"
  ],
  "Saturday": [
   null,
@@ -1106,6 +1162,14 @@ return plural;
   null,
   "关机"
  ],
+ "Single Rank": [
+  null,
+  "Single Rank"
+ ],
+ "Size": [
+  null,
+  "大小"
+ ],
  "Slot": [
   null,
   "插槽"
@@ -1126,9 +1190,21 @@ return plural;
   null,
   "指定时间"
  ],
+ "Speed": [
+  null,
+  "速度"
+ ],
  "Start": [
   null,
   "启动"
+ ],
+ "Start Service": [
+  null,
+  "启动服务"
+ ],
+ "Start and Enable": [
+  null,
+  "开始并启用"
  ],
  "State": [
   null,
@@ -1149,6 +1225,10 @@ return plural;
  "Stop": [
   null,
   "停止"
+ ],
+ "Stop and Disable": [
+  null,
+  "停止并禁用"
  ],
  "Store Metrics": [
   null,
@@ -1226,10 +1306,6 @@ return plural;
   null,
   "用户 <b>$0</b> 不允许修改系统时间"
  ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "用户<b>$0</ b>不允许启用或禁用服务"
- ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "用户 <b>$0</b> 不允许修改主机名"
@@ -1238,10 +1314,6 @@ return plural;
   null,
   "用户 <b>$0</b> 不允许关闭或重启该服务器"
  ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "用户<b>$0</ b>不允许启用或禁用服务"
- ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   "这天不是所有月份都有。<br> 定时器将只会在有 31 号的月份执行。"
@@ -1249,10 +1321,6 @@ return plural;
  "This field cannot be empty.": [
   null,
   "该字段不能为空。"
- ],
- "This unit is an instance of the $0 template.": [
-  null,
-  "该单元是模板 $0 的实例."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1302,13 +1370,13 @@ return plural;
   null,
   "未知"
  ],
- "Unmask": [
-  null,
-  "Unmask"
- ],
  "Updates Available": [
   null,
   "可用的更新"
+ ],
+ "Updating status...": [
+  null,
+  "更新状态 ..."
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

@@ -52,7 +52,7 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "Chybí"
  ],
  "Add": [
   null,
@@ -200,7 +200,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "Dual Rank"
  ],
  "Edit Server": [
   null,
@@ -392,7 +392,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "Přítomno"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -432,7 +432,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "Single Rank"
  ],
  "Space-saving Computer": [
   null,

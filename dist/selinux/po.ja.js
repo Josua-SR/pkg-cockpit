@@ -64,7 +64,7 @@ return plural;
  ],
  "Enforcing": [
   null,
-  ""
+  "強制"
  ],
  "Error running semanage to discover system modifications": [
   null,
@@ -112,7 +112,7 @@ return plural;
  ],
  "Permissive": [
   null,
-  ""
+  "許容"
  ],
  "SELinux Access Control Errors": [
   null,

@@ -2232,7 +2232,7 @@ h4 {
 .bootstrap-select.btn-group .btn,
 .content-header-extra .dropdown-toggle,
 .dropdown-toggle,
-.form-control:not(.ct-select):not(select) {
+.form-control:not(.ct-select):not(.rbt-input):not(select) {
   background-image: none !important;
 }
 .input-group-addon,
@@ -2390,6 +2390,7 @@ h4 {
 .input-group > .input-group-btn > .btn {
   min-width: 2.5rem;
 }
+.rbt-input.form-control,
 select.form-control {
   --dropdown-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='8'%3E%3Cpath fill='%23151515' d='M18.804 1h8.392c.58 0 .87.701.46 1.112L23.46 6.31a.653.653 0 0 1-.922 0l-4.194-4.197A.651.651 0 0 1 18.805 1z'/%3E%3C/svg%3E");
   --dropdown-background: var(--pf-global--BackgroundColor--100);
@@ -2398,6 +2399,18 @@ select.form-control {
   appearance: none;
   background: var(--dropdown-image) no-repeat 100% 50%, var(--dropdown-background) !important;
   padding-right: 2.5em !important;
+}
+.rbt-input-hint,
+.rbt-input-hint > input {
+  height: 100%;
+}
+.rbt-input-hint > input {
+  border-width: 0 1px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.rbt-aux {
+  right: 2rem !important;
 }
 .dropdown-menu > li {
   padding: 0;
@@ -2414,8 +2427,17 @@ select.form-control {
   background-color: var(--pf-global--BackgroundColor--light-300);
   border-color: var(--pf-global--BackgroundColor--light-300);
 }
+.dropdown-menu > li.active > a,
 .dropdown-menu > li > a:active {
   color: var(--pf-global--Color--100) !important;
+}
+.dropdown-menu > li.active > a,
+.dropdown-menu > li.active > a:active,
+.dropdown-menu > li.active > a:focus,
+.dropdown-menu > li.active > a:hover {
+  color: var(--pf-global--Color--100) !important;
+  background-color: var(--pf-global--BackgroundColor--light-300) !important;
+  border-color: var(--pf-global--BackgroundColor--light-300) !important;
 }
 .dropdown-menu > li.selected > a {
   color: var(--pf-global--Color--100);

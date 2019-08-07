@@ -222,6 +222,18 @@ return plural;
   null,
   "9ème"
  ],
+ "Absent": [
+  null,
+  "Absent"
+ ],
+ "Active since ": [
+  null,
+  "Actif depuis"
+ ],
+ "Additional actions": [
+  null,
+  "Actions supplémenaires"
+ ],
  "Additional packages:": [
   null,
   "Paquets supplémentaires :"
@@ -250,6 +262,10 @@ return plural;
   null,
   "Tout en un"
  ],
+ "Allow running (unmask)": [
+  null,
+  "Autoriser l'exécution (unmask)"
+ ],
  "Appearance:": [
   null,
   "Apparence :"
@@ -265,6 +281,10 @@ return plural;
  "Automatic Startup": [
   null,
   "Démarrage automatique"
+ ],
+ "Automatically starts": [
+  null,
+  "Démarre automatiquement"
  ],
  "Automatically using NTP": [
   null,
@@ -462,10 +482,6 @@ return plural;
   null,
   "Détails"
  ],
- "Disable": [
-  null,
-  "Désactiver"
- ],
  "Disable simultaneous multithreading": [
   null,
   "Désactiver le multithreading simultané"
@@ -473,6 +489,10 @@ return plural;
  "Disabled": [
   null,
   "Désactivé"
+ ],
+ "Disallow running (mask)": [
+  null,
+  "Cesser l'exécution (mask)"
  ],
  "Disk I/O": [
   null,
@@ -494,17 +514,13 @@ return plural;
   null,
   "Téléchargement $0"
  ],
+ "Dual Rank": [
+  null,
+  "Double rang"
+ ],
  "Embedded PC": [
   null,
   "PC intégré"
- ],
- "Enable": [
-  null,
-  "Activer"
- ],
- "Enable Forcefully": [
-  null,
-  "Activer avec force"
  ],
  "Enable stored metrics…": [
   null,
@@ -538,9 +554,17 @@ return plural;
   null,
   "Châssis d’extension"
  ],
+ "Failed to start": [
+  null,
+  "N'a pas pu démarrer"
+ ],
  "Filter by name or description...": [
   null,
   "Filtrer par nom ou description…"
+ ],
+ "Forbidden from running": [
+  null,
+  "Non autorisé à exécuter"
  ],
  "Friday": [
   null,
@@ -590,6 +614,10 @@ return plural;
   null,
   "I / O Attente"
  ],
+ "ID": [
+  null,
+  "ID"
+ ],
  "Info and above": [
   null,
   "Info et au-dessus"
@@ -605,6 +633,10 @@ return plural;
  "Installing $0": [
   null,
   "Installation de $0"
+ ],
+ "Instance of template: ": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -718,13 +750,17 @@ return plural;
   null,
   "Manuellement"
  ],
- "Mask": [
+ "Mask Service": [
   null,
-  "Masque"
+  "Service Masque"
  ],
- "Mask Forcefully": [
+ "Masked": [
   null,
-  "Masquage forcé"
+  "Masqué"
+ ],
+ "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
+  null,
+  "Le service Masque empêche toutes les unités dépendantes d'exécuter. Cela peut avoir un plus gros impact que prévu. Veuillez confirmer que vous souhaitez masquer cette unité."
  ],
  "Memory": [
   null,
@@ -733,6 +769,10 @@ return plural;
  "Memory & Swap": [
   null,
   "Mémoire & Swap"
+ ],
+ "Memory Technology": [
+  null,
+  "Technologie de mémoire"
  ],
  "Message to logged in users": [
   null,
@@ -809,6 +849,10 @@ return plural;
  "Not authorized to upload-report": [
   null,
   "Non autorisé à téléverser le rapport"
+ ],
+ "Not running": [
+  null,
+  "Pas en cours d’exécution"
  ],
  "Not synchronized": [
   null,
@@ -894,13 +938,9 @@ return plural;
   null,
   "Options d’alimentation"
  ],
- "Preset": [
+ "Present": [
   null,
-  "Préconfigurer"
- ],
- "Preset Forcefully": [
-  null,
-  "Forcer la pré-configuration"
+  "Présent"
  ],
  "Pretty Host Name": [
   null,
@@ -930,9 +970,17 @@ return plural;
   null,
   "Châssis de montage en rack"
  ],
+ "Rank": [
+  null,
+  "Rang"
+ ],
  "Read more...": [
   null,
   "En savoir plus…"
+ ],
+ "Read-only": [
+  null,
+  "Lecture seule"
  ],
  "Real Host Name": [
   null,
@@ -1010,9 +1058,17 @@ return plural;
   null,
   "Requis par"
  ],
+ "Required by ": [
+  null,
+  "Requis par"
+ ],
  "Requires": [
   null,
   "Nécessite"
+ ],
+ "Requires administration access to edit": [
+  null,
+  "Nécessite un accès adminitratif pour pouvoir modifier"
  ],
  "Requisite": [
   null,
@@ -1034,9 +1090,9 @@ return plural;
   null,
   "Exécuter"
  ],
- "Running Since": [
+ "Running": [
   null,
-  "En fonctionnement depuis"
+  "En cours"
  ],
  "Saturday": [
   null,
@@ -1106,6 +1162,14 @@ return plural;
   null,
   "Fermeture"
  ],
+ "Single Rank": [
+  null,
+  "Rang unique"
+ ],
+ "Size": [
+  null,
+  "Taille"
+ ],
  "Slot": [
   null,
   "Emplacement"
@@ -1126,9 +1190,21 @@ return plural;
   null,
   "Temps spécifique"
  ],
+ "Speed": [
+  null,
+  "Vitesse"
+ ],
  "Start": [
   null,
   "Démarrer"
+ ],
+ "Start Service": [
+  null,
+  "Démarrer le service"
+ ],
+ "Start and Enable": [
+  null,
+  "Démarrer et activer"
  ],
  "State": [
   null,
@@ -1149,6 +1225,10 @@ return plural;
  "Stop": [
   null,
   "Arrêter"
+ ],
+ "Stop and Disable": [
+  null,
+  "Arrêter et désactiver"
  ],
  "Store Metrics": [
   null,
@@ -1226,10 +1306,6 @@ return plural;
   null,
   "L’utilisateur <b>$0</b> n’a pas le droit de modifier les heures système"
  ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "L’utilisateur <b>$0</b> n’est pas autorisé à activer ou désactiver les services"
- ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "L’utilisateur <b>$0</b> n’est pas autorisé à modifier les noms d’hôte"
@@ -1238,10 +1314,6 @@ return plural;
   null,
   "L’utilisateur <b>$0</b> n’est pas autorisé à arrêter ou redémarrer ce serveur"
  ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "L’utilisateur <b>$0</b> n’est pas autorisé à démarrer ou arrêter les services"
- ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   "Ce jour n’est pas présent tous les mois. <br> Le timer ne sera exécuté que dans les mois qui ont un 31ème jour."
@@ -1249,10 +1321,6 @@ return plural;
  "This field cannot be empty.": [
   null,
   "Ce champ ne peut pas être vide."
- ],
- "This unit is an instance of the $0 template.": [
-  null,
-  "Cette unité est une instance du modèle $0."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1302,13 +1370,13 @@ return plural;
   null,
   "Inconnu"
  ],
- "Unmask": [
-  null,
-  "Démasquer"
- ],
  "Updates Available": [
   null,
   "Mises à jour disponibles"
+ ],
+ "Updating status...": [
+  null,
+  "Mise à jour du statut..."
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

@@ -26,10 +26,6 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.6.2"
  },
- " template.": [
-  null,
-  ""
- ],
  "$0 Template": [
   null,
   "Шаблон $0"
@@ -228,15 +224,15 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "Відсутній"
  ],
  "Active since ": [
   null,
-  ""
+  "Активний з "
  ],
  "Additional actions": [
   null,
-  ""
+  "Додаткові дії"
  ],
  "Additional packages:": [
   null,
@@ -268,7 +264,7 @@ return plural;
  ],
  "Allow running (unmask)": [
   null,
-  ""
+  "Дозволити запуск (зняти маску)"
  ],
  "Appearance:": [
   null,
@@ -288,7 +284,7 @@ return plural;
  ],
  "Automatically starts": [
   null,
-  ""
+  "Запускати автоматично"
  ],
  "Automatically using NTP": [
   null,
@@ -496,7 +492,7 @@ return plural;
  ],
  "Disallow running (mask)": [
   null,
-  ""
+  "Заборонити запуск (замаскувати)"
  ],
  "Disk I/O": [
   null,
@@ -520,7 +516,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "Подвійний ранг"
  ],
  "Embedded PC": [
   null,
@@ -560,7 +556,7 @@ return plural;
  ],
  "Failed to start": [
   null,
-  ""
+  "Не вдалося запустити"
  ],
  "Filter by name or description...": [
   null,
@@ -568,7 +564,7 @@ return plural;
  ],
  "Forbidden from running": [
   null,
-  ""
+  "Заборонено запускати"
  ],
  "Friday": [
   null,
@@ -620,7 +616,7 @@ return plural;
  ],
  "ID": [
   null,
-  ""
+  "Ід."
  ],
  "Info and above": [
   null,
@@ -637,6 +633,10 @@ return plural;
  "Installing $0": [
   null,
   "Встановлюємо $0"
+ ],
+ "Instance of template: ": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -752,15 +752,15 @@ return plural;
  ],
  "Mask Service": [
   null,
-  ""
+  "Замаскувати службу"
  ],
  "Masked": [
   null,
-  ""
+  "Замасковано"
  ],
  "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
   null,
-  ""
+  "Маскування служби забороняє запуск усіх залежних модулів. Це може спричинити значніші наслідки, ніж ви очікуєте. Будь ласка, підтвердьте, що ви хочете замаскувати цей модуль."
  ],
  "Memory": [
   null,
@@ -772,7 +772,7 @@ return plural;
  ],
  "Memory Technology": [
   null,
-  ""
+  "Технологія пам'яті"
  ],
  "Message to logged in users": [
   null,
@@ -940,7 +940,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "Поточна"
  ],
  "Pretty Host Name": [
   null,
@@ -972,7 +972,7 @@ return plural;
  ],
  "Rank": [
   null,
-  ""
+  "Ранг"
  ],
  "Read more...": [
   null,
@@ -980,7 +980,7 @@ return plural;
  ],
  "Read-only": [
   null,
-  ""
+  "Лише читання"
  ],
  "Real Host Name": [
   null,
@@ -1060,7 +1060,7 @@ return plural;
  ],
  "Required by ": [
   null,
-  ""
+  "Потрібен для"
  ],
  "Requires": [
   null,
@@ -1068,7 +1068,7 @@ return plural;
  ],
  "Requires administration access to edit": [
   null,
-  ""
+  "Потребує адміністративного доступу для редагування"
  ],
  "Requisite": [
   null,
@@ -1164,7 +1164,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "Єдиний ранг"
  ],
  "Size": [
   null,
@@ -1192,7 +1192,7 @@ return plural;
  ],
  "Speed": [
   null,
-  ""
+  "Швидкість"
  ],
  "Start": [
   null,
@@ -1204,7 +1204,7 @@ return plural;
  ],
  "Start and Enable": [
   null,
-  ""
+  "Запустити і увімкнути"
  ],
  "State": [
   null,
@@ -1228,7 +1228,7 @@ return plural;
  ],
  "Stop and Disable": [
   null,
-  ""
+  "Зупинити і вимкнути"
  ],
  "Store Metrics": [
   null,
@@ -1322,10 +1322,6 @@ return plural;
   null,
   "Вміст цього поля не може бути порожнім."
  ],
- "This unit is an instanced from ": [
-  null,
-  ""
- ],
  "This unit is not designed to be enabled explicitly.": [
   null,
   "Цей модуль не створено для вмикання явним чином."
@@ -1380,7 +1376,7 @@ return plural;
  ],
  "Updating status...": [
   null,
-  ""
+  "Оновлюємо стан…"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

@@ -506,6 +506,10 @@ return plural;
   null,
   "Мережеве завантаження (PXE)"
  ],
+ "Network Boot is available only when using System connection": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Мережева файлова система"
@@ -924,11 +928,11 @@ return plural;
  ],
  "The selected Operating System has minimum memory requirement of $0 $1": [
   null,
-  ""
+  "Для вибраної операційної системи мінімальним обсягом пам'яті є $0 $1"
  ],
  "This pool type does not support Storage Volume creation": [
   null,
-  ""
+  "Для буферів цього типу не передбачено створення томів сховища даних"
  ],
  "This volume is already used by another VM.": [
   null,

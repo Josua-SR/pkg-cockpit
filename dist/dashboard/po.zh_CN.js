@@ -50,6 +50,10 @@ return plural;
   null,
   "{{#strong}}{{host}}{{/strong}} 上未安装一个兼容版本的 Cockpit。"
  ],
+ "Absent": [
+  null,
+  "缺席"
+ ],
  "Add": [
   null,
   "添加"
@@ -193,6 +197,10 @@ return plural;
  "Docking Station": [
   null,
   "Docking Station"
+ ],
+ "Dual Rank": [
+  null,
+  "Dual Rank"
  ],
  "Edit Server": [
   null,
@@ -382,6 +390,10 @@ return plural;
   null,
   "手提"
  ],
+ "Present": [
+  null,
+  "当前"
+ ],
  "Prompting via ssh-add timed out": [
   null,
   "通过 ssh-add 提示超时"
@@ -417,6 +429,10 @@ return plural;
  "Set": [
   null,
   "设置"
+ ],
+ "Single Rank": [
+  null,
+  "Single Rank"
  ],
  "Space-saving Computer": [
   null,

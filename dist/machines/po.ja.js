@@ -506,6 +506,10 @@ return plural;
   null,
   "ネットワークブート (PXE)"
  ],
+ "Network Boot is available only when using System connection": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "ネットワークファイルシステム"
@@ -924,11 +928,11 @@ return plural;
  ],
  "The selected Operating System has minimum memory requirement of $0 $1": [
   null,
-  ""
+  "選択したオペレーティングシステムには、必要なメモリー $0 $1 があります"
  ],
  "This pool type does not support Storage Volume creation": [
   null,
-  ""
+  "このプールタイプは、ストレージボリュームの作成に対応していません"
  ],
  "This volume is already used by another VM.": [
   null,

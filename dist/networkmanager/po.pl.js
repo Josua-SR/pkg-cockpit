@@ -146,6 +146,10 @@ return plural;
   null,
   "Dodanie <b>$0</b> zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
  ],
+ "Adding custom ports will reload firewalld. A reload will result in the loss of any runtime-only configuration!": [
+  null,
+  "Dodanie niestandardowych portów spowoduje ponowne wczytanie zapory sieciowej. Ponowne wczytanie spowoduje utratę całej konfiguracji tylko dla obecnej sesji."
+ ],
  "Additional DNS $val": [
   null,
   "Dodatkowy DNS $val"

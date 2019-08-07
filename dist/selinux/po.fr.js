@@ -63,13 +63,13 @@ return plural;
   null,
   "Copier sur presse-papier"
  ],
- "Enforce policy:": [
+ "Enforcing": [
   null,
-  "Appliquer la stratégie :"
+  "Faire exécuter"
  ],
  "Error running semanage to discover system modifications": [
   null,
-  ""
+  "Erreur d'exécution de semanage pour découvrir les modifications du système"
  ],
  "Error while deleting alert: $0": [
   null,
@@ -110,6 +110,10 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "S’est produit entre $0 et $1"
+ ],
+ "Permissive": [
+  null,
+  "Permissif"
  ],
  "SELinux Access Control Errors": [
   null,

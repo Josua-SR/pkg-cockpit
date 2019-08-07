@@ -506,6 +506,10 @@ return plural;
   null,
   "Démarrage réseau (PXE)"
  ],
+ "Network Boot is available only when using System connection": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Système de fichiers par réseau (NFS)"
@@ -921,6 +925,14 @@ return plural;
  "The pool is empty": [
   null,
   "La pool est vide"
+ ],
+ "The selected Operating System has minimum memory requirement of $0 $1": [
+  null,
+  "Le système d'exécution sélectionné a un besoin en mémoire minimum de $0 $1"
+ ],
+ "This pool type does not support Storage Volume creation": [
+  null,
+  "Ce type de pool ne prend pas en charge la création de Volumes de stockage"
  ],
  "This volume is already used by another VM.": [
   null,

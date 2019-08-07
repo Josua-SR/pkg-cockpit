@@ -40,7 +40,7 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "Відсутній"
  ],
  "Add Additional Storage": [
   null,
@@ -250,7 +250,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "Подвійний ранг"
  ],
  "Duplicate alias": [
   null,
@@ -564,7 +564,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "Поточна"
  ],
  "Problems": [
   null,
@@ -656,7 +656,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "Єдиний ранг"
  ],
  "Size": [
   null,

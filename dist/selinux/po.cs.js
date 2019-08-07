@@ -66,7 +66,7 @@ return plural;
  ],
  "Enforcing": [
   null,
-  ""
+  "Vynucující"
  ],
  "Error running semanage to discover system modifications": [
   null,
@@ -114,7 +114,7 @@ return plural;
  ],
  "Permissive": [
   null,
-  ""
+  "Permisivní"
  ],
  "SELinux Access Control Errors": [
   null,

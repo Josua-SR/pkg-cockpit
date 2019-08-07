@@ -1,3 +1,11 @@
+/* Standard dialog is too wide */
+#vm-memory-modal > .modal-dialog {
+    max-width: 50rem;
+}
+
+#memory-config-dialog input[type=number] {
+    max-width: 7rem;
+}
 a {
     cursor: pointer;
 }
@@ -681,14 +689,6 @@ input[type=number] {
 .notification-message {
     white-space: pre-wrap;
 }
-/* Standard dialog is too wide */
-#vm-memory-modal > .modal-dialog {
-    max-width: 50rem;
-}
-
-#memory-config-dialog input[type=number] {
-    max-width: 7rem;
-}
 .boot-order .list-group {
     --machines-boot-list-offset: 15rem;
     max-height: calc(100vh - var(--machines-boot-list-offset));
@@ -787,6 +787,11 @@ input[type=number] {
 .label-title {
   font-weight: 800;
   text-align: left !important;
+}
+.create-network-dialog-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1em;
 }
 .input-group {
   width: 100%;
@@ -1097,7 +1102,6 @@ tbody.active .listing-ct-head {
 }
 .listing-ct-body {
   padding: 1rem 1.5rem;
-  font-size: 13px;
   border: 1px solid var(--color-light-gray);
   background-color: #fff;
 }
@@ -1280,7 +1284,7 @@ tr.listing-ct-head + tr.listing-ct-head td {
 }
 tr.listing-ct-body td {
   padding: 1rem 1.5rem;
-  font-size: 13px;
+  font-size: var(--font-size-s);
 }
 .listing-ct-empty {
   color: var(--color-subtle-copy);
@@ -1322,7 +1326,7 @@ div.listing-ct-head {
   margin-left: 0.3em;
 }
 table.listing-ct > caption a {
-  font-size: 16px;
+  font-size: var(--font-size-md);
 }
 tbody tr.listing-ct-noexpand {
   cursor: default;

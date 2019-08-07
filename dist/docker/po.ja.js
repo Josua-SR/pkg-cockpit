@@ -40,7 +40,7 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "不在"
  ],
  "Add Additional Storage": [
   null,
@@ -248,7 +248,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "デュアルランク"
  ],
  "Duplicate alias": [
   null,
@@ -560,7 +560,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "存在"
  ],
  "Problems": [
   null,
@@ -652,7 +652,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "シングルランク"
  ],
  "Size": [
   null,

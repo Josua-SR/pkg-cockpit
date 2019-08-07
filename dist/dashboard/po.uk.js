@@ -52,7 +52,7 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "Відсутній"
  ],
  "Add": [
   null,
@@ -200,7 +200,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "Подвійний ранг"
  ],
  "Edit Server": [
   null,
@@ -392,7 +392,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "Поточна"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -432,7 +432,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "Єдиний ранг"
  ],
  "Space-saving Computer": [
   null,

@@ -146,6 +146,10 @@ return plural;
   null,
   "添加 <b>$0</b> 将会中断与服务器的连接，并且将导致管理界面不可用。"
  ],
+ "Adding custom ports will reload firewalld. A reload will result in the loss of any runtime-only configuration!": [
+  null,
+  "添加自定义端口将会重新加载 firewalld。重新加载将会导致运行时配置丢失。"
+ ],
  "Additional DNS $val": [
   null,
   "额外的 DNS $val"
