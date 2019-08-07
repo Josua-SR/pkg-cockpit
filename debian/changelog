@@ -1,3 +1,13 @@
+cockpit (200-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Machines: Type-ahead OS selection
+    - Machines: LVM storage pools
+    - Networking: Show included firewalld services
+    - Web server: Split out TLS handling
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 07 Aug 2019 20:50:03 +0000
+
 cockpit (199-1) unstable; urgency=medium
 
   * New upstream release:
