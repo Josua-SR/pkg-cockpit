@@ -40,7 +40,7 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "Chybí"
  ],
  "Add Additional Storage": [
   null,
@@ -250,7 +250,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "Dual Rank"
  ],
  "Duplicate alias": [
   null,
@@ -564,7 +564,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "Přítomno"
  ],
  "Problems": [
   null,
@@ -656,7 +656,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "Single Rank"
  ],
  "Size": [
   null,

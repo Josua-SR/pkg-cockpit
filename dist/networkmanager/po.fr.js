@@ -146,6 +146,10 @@ return plural;
   null,
   "Ajouter <b>$0</b> interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
+ "Adding custom ports will reload firewalld. A reload will result in the loss of any runtime-only configuration!": [
+  null,
+  "Ajouter des ports personnalisés rechargera firwalld. Le chargement à nouveau entraînera la perte des configurations d'exécution-uniquement."
+ ],
  "Additional DNS $val": [
   null,
   "DNS supplémentaire $val"

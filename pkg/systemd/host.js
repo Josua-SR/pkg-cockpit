@@ -234,6 +234,16 @@ PageServer.prototype = {
         return null;
     },
 
+    relayout: function() {
+        var self = this;
+        if (self.cpu_plot) {
+            self.cpu_plot.resize();
+            self.memory_plot.resize();
+            self.network_plot.resize();
+            self.disk_plot.resize();
+        }
+    },
+
     setup: function() {
         var self = this;
         update_hostname_privileged();
@@ -506,8 +516,18 @@ PageServer.prototype = {
 
         function check_for_updates() {
             var os_updates = { };
-            self.os_updates = null;
 
+            // skip update check when becoming invisible
+            if (document.visibilityState != "visible")
+                return;
+            const lastCheck = window.sessionStorage.getItem("last_sw_update_check");
+            // check at most once per hour, as this is expensive on embedded machines
+            // this gets reset on applying software updates updates
+            if (self.os_updates && lastCheck && Date.now() - lastCheck < 3600000)
+                return;
+            window.sessionStorage.setItem("last_sw_update_check", Date.now());
+
+            self.os_updates = null;
             packagekit.cancellableTransaction(
                 "GetUpdates", [0],
                 function(data) {
@@ -557,6 +577,7 @@ PageServer.prototype = {
         machine_id.read()
                 .done(function(content) {
                     $("#system_machine_id").text(content);
+                    self.relayout();
                 })
                 .fail(function(ex) {
                     console.error("Error reading machine id", ex);
@@ -722,12 +743,7 @@ PageServer.prototype = {
 
         self.plot_controls.reset([ self.cpu_plot, self.memory_plot, self.network_plot, self.disk_plot ]);
 
-        $(window).on('resize.server', function() {
-            self.cpu_plot.resize();
-            self.memory_plot.resize();
-            self.network_plot.resize();
-            self.disk_plot.resize();
-        });
+        $(window).on('resize.server', () => { self.relayout() });
 
         let asset_tag_text = $("#system_information_asset_tag_text");
         let hardware_text = $("#system_information_hardware_text");
@@ -739,6 +755,7 @@ PageServer.prototype = {
                     asset_tag_text.text(fields.product_serial || fields.chassis_serial);
                     asset_tag_text.toggle(present);
                     asset_tag_text.prev().toggle(present);
+                    self.relayout();
                 })
                 .fail(function(ex) {
                     debug("couldn't read dmi info: " + ex);

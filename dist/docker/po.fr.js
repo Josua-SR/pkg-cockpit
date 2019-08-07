@@ -38,6 +38,10 @@ return plural;
   null,
   "$ {hip}: $ {hport} -> $cport"
  ],
+ "Absent": [
+  null,
+  "Absent"
+ ],
  "Add Additional Storage": [
   null,
   "Ajouter un espace de stockage supplémentaire"
@@ -242,6 +246,10 @@ return plural;
  "Drive": [
   null,
   "Lecteur"
+ ],
+ "Dual Rank": [
+  null,
+  "Double rang"
  ],
  "Duplicate alias": [
   null,
@@ -552,6 +560,10 @@ return plural;
   null,
   "Ports :"
  ],
+ "Present": [
+  null,
+  "Présent"
+ ],
  "Problems": [
   null,
   "Problèmes"
@@ -639,6 +651,10 @@ return plural;
  "Show all images": [
   null,
   "Afficher toutes les images"
+ ],
+ "Single Rank": [
+  null,
+  "Rang unique"
  ],
  "Size": [
   null,

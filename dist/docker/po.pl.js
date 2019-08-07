@@ -38,6 +38,10 @@ return plural;
   null,
   "${hip}:${hport} → $cport"
  ],
+ "Absent": [
+  null,
+  "Nieobecne"
+ ],
  "Add Additional Storage": [
   null,
   "Dodaj dodatkowe urządzenia do przechowywania danych"
@@ -243,6 +247,10 @@ return plural;
  "Drive": [
   null,
   "Napęd"
+ ],
+ "Dual Rank": [
+  null,
+  "Podwójny stopień"
  ],
  "Duplicate alias": [
   null,
@@ -554,6 +562,10 @@ return plural;
   null,
   "Porty:"
  ],
+ "Present": [
+  null,
+  "Obecne"
+ ],
  "Problems": [
   null,
   "Problemy"
@@ -604,11 +616,11 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  "Polityka ponownego uruchamiania"
+  "Zasady ponownego uruchamiania"
  ],
  "Restart Policy:": [
   null,
-  "Polityka ponownego uruchamiania:"
+  "Zasady ponownego uruchamiania:"
  ],
  "Retries:": [
   null,
@@ -641,6 +653,10 @@ return plural;
  "Show all images": [
   null,
   "Wyświetl wszystkie obrazy"
+ ],
+ "Single Rank": [
+  null,
+  "Pojedynczy stopień"
  ],
  "Size": [
   null,

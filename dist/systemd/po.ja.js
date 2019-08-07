@@ -26,10 +26,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
- " template.": [
-  null,
-  ""
- ],
  "$0 Template": [
   null,
   "$0 テンプレート"
@@ -228,15 +224,15 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "不在"
  ],
  "Active since ": [
   null,
-  ""
+  "以下以降アクティブ"
  ],
  "Additional actions": [
   null,
-  ""
+  "その他の操作"
  ],
  "Additional packages:": [
   null,
@@ -268,7 +264,7 @@ return plural;
  ],
  "Allow running (unmask)": [
   null,
-  ""
+  "実行を許可 (マスク解除)"
  ],
  "Appearance:": [
   null,
@@ -288,7 +284,7 @@ return plural;
  ],
  "Automatically starts": [
   null,
-  ""
+  "自動起動"
  ],
  "Automatically using NTP": [
   null,
@@ -496,7 +492,7 @@ return plural;
  ],
  "Disallow running (mask)": [
   null,
-  ""
+  "実行を禁止 (マスク)"
  ],
  "Disk I/O": [
   null,
@@ -520,7 +516,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "デュアルランク"
  ],
  "Embedded PC": [
   null,
@@ -560,7 +556,7 @@ return plural;
  ],
  "Failed to start": [
   null,
-  ""
+  "起動に失敗しました"
  ],
  "Filter by name or description...": [
   null,
@@ -568,7 +564,7 @@ return plural;
  ],
  "Forbidden from running": [
   null,
-  ""
+  "実行が禁止されています"
  ],
  "Friday": [
   null,
@@ -620,7 +616,7 @@ return plural;
  ],
  "ID": [
   null,
-  ""
+  "ID"
  ],
  "Info and above": [
   null,
@@ -637,6 +633,10 @@ return plural;
  "Installing $0": [
   null,
   "$0 をインストール中"
+ ],
+ "Instance of template: ": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -752,15 +752,15 @@ return plural;
  ],
  "Mask Service": [
   null,
-  ""
+  "サービスのマスク"
  ],
  "Masked": [
   null,
-  ""
+  "マスク"
  ],
  "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
   null,
-  ""
+  "サービスをマスクすると、すべての依存するユニットが実行されなくなります。大きな影響が及ぶ可能性があります。このユニットをマスクすることを確認してください。"
  ],
  "Memory": [
   null,
@@ -772,7 +772,7 @@ return plural;
  ],
  "Memory Technology": [
   null,
-  ""
+  "メモリーテクノロジー"
  ],
  "Message to logged in users": [
   null,
@@ -940,7 +940,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "存在"
  ],
  "Pretty Host Name": [
   null,
@@ -972,7 +972,7 @@ return plural;
  ],
  "Rank": [
   null,
-  ""
+  "ランク"
  ],
  "Read more...": [
   null,
@@ -980,7 +980,7 @@ return plural;
  ],
  "Read-only": [
   null,
-  ""
+  "読み取り専用"
  ],
  "Real Host Name": [
   null,
@@ -1060,7 +1060,7 @@ return plural;
  ],
  "Required by ": [
   null,
-  ""
+  "以下により必要"
  ],
  "Requires": [
   null,
@@ -1068,7 +1068,7 @@ return plural;
  ],
  "Requires administration access to edit": [
   null,
-  ""
+  "編集には管理者アクセスが必要"
  ],
  "Requisite": [
   null,
@@ -1164,7 +1164,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "シングルランク"
  ],
  "Size": [
   null,
@@ -1192,7 +1192,7 @@ return plural;
  ],
  "Speed": [
   null,
-  ""
+  "速度"
  ],
  "Start": [
   null,
@@ -1204,7 +1204,7 @@ return plural;
  ],
  "Start and Enable": [
   null,
-  ""
+  "起動と有効化"
  ],
  "State": [
   null,
@@ -1228,7 +1228,7 @@ return plural;
  ],
  "Stop and Disable": [
   null,
-  ""
+  "停止と無効化"
  ],
  "Store Metrics": [
   null,
@@ -1322,10 +1322,6 @@ return plural;
   null,
   "このフィールドは空にできません。"
  ],
- "This unit is an instanced from ": [
-  null,
-  ""
- ],
  "This unit is not designed to be enabled explicitly.": [
   null,
   "このユニットは明示的に有効にするよう設計されていません。"
@@ -1380,7 +1376,7 @@ return plural;
  ],
  "Updating status...": [
   null,
-  ""
+  "ステータスを更新中..."
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

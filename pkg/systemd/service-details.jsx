@@ -165,7 +165,7 @@ class ServiceActions extends React.Component {
                     <MenuItem key="stop" onClick={() => this.props.actionCallback("StopUnit")}>{ _("Stop") }</MenuItem>,
                 );
             }
-            if (!this.props.isStatic && (this.props.enabled || this.props.active)) {
+            if (this.props.enabled || this.props.active) {
                 if (actions.length > 0) {
                     actions.push(
                         <MenuItem key="divider1" divider />
@@ -217,7 +217,6 @@ ServiceActions.propTypes = {
     masked: PropTypes.bool.isRequired,
     active: PropTypes.bool.isRequired,
     enabled: PropTypes.bool.isRequired,
-    isStatic: PropTypes.bool.isRequired,
     actionCallback: PropTypes.func.isRequired,
     fileActionCallback: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
@@ -334,7 +333,7 @@ export class ServiceDetails extends React.Component {
                 <div key="failed" className="status-failed">
                     <span className="pficon pficon-error-circle-o status-icon" />
                     <span className="status">{ _("Failed to start") }</span>
-                    <button className="btn btn-default action-button" onClick={() => this.props.actionCallback("StartUnit") }>{ _("Start Service") }</button>
+                    <button className="btn btn-default action-button" onClick={() => this.unitAction("StartUnit") }>{ _("Start Service") }</button>
                 </div>
             );
         }
@@ -464,7 +463,7 @@ export class ServiceDetails extends React.Component {
                                             </span>
                                         </OverlayTrigger>
                                     }
-                                    <ServiceActions { ...{ active, enabled, isStatic, masked } } actionCallback={this.unitAction} fileActionCallback={this.unitFileAction} disabled={this.state.waitsAction || this.state.waitsFileAction} />
+                                    <ServiceActions { ...{ active, enabled, masked } } actionCallback={this.unitAction} fileActionCallback={this.unitFileAction} disabled={this.state.waitsAction || this.state.waitsFileAction} />
                                 </React.Fragment>
                             }
                         </div>
@@ -480,7 +479,7 @@ export class ServiceDetails extends React.Component {
                             { this.props.originTemplate &&
                                 <React.Fragment>
                                     <label className="control-label" />
-                                    <span>{_("This unit is an instanced from ")}<a href={"#/" + this.props.originTemplate}>{this.props.originTemplate}</a>{ _(" template.")}</span>
+                                    <span>{_("Instance of template: ")}<a href={"#/" + this.props.originTemplate}>{this.props.originTemplate}</a></span>
                                 </React.Fragment>
                             }
                             { notMetConditions.length > 0 &&

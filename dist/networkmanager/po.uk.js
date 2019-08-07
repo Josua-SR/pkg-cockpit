@@ -148,7 +148,7 @@ return plural;
  ],
  "Adding custom ports will reload firewalld. A reload will result in the loss of any runtime-only configuration!": [
   null,
-  ""
+  "Додавання нетипових портів призведе до перезавантаження firewalld. Це перезавантаження спричинить втрату усіх налаштувань окремого сеансу роботи!"
  ],
  "Additional DNS $val": [
   null,

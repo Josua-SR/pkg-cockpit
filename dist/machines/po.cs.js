@@ -506,6 +506,10 @@ return plural;
   null,
   "Zavádění ze sítě (PXE)"
  ],
+ "Network Boot is available only when using System connection": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Síťový souborový systém"
@@ -924,11 +928,11 @@ return plural;
  ],
  "The selected Operating System has minimum memory requirement of $0 $1": [
   null,
-  ""
+  "Zvolený operační systém vyžaduje přinejmenším $0 $1 operační paměti"
  ],
  "This pool type does not support Storage Volume creation": [
   null,
-  ""
+  "Tento typ fondu nepodporuje vytvoření svazku úložiště"
  ],
  "This volume is already used by another VM.": [
   null,

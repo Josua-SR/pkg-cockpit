@@ -222,6 +222,18 @@ return plural;
   null,
   "9."
  ],
+ "Absent": [
+  null,
+  "Nieobecne"
+ ],
+ "Active since ": [
+  null,
+  "Aktywna od "
+ ],
+ "Additional actions": [
+  null,
+  "Dodatkowe działania"
+ ],
  "Additional packages:": [
   null,
   "Dodatkowe pakiety:"
@@ -250,6 +262,10 @@ return plural;
   null,
   "Zintegrowane"
  ],
+ "Allow running (unmask)": [
+  null,
+  "Zezwolenie na uruchamianie (odmaskowanie)"
+ ],
  "Appearance:": [
   null,
   "Wygląd:"
@@ -265,6 +281,10 @@ return plural;
  "Automatic Startup": [
   null,
   "Automatyczne uruchamianie"
+ ],
+ "Automatically starts": [
+  null,
+  "Automatycznie się uruchamia"
  ],
  "Automatically using NTP": [
   null,
@@ -462,10 +482,6 @@ return plural;
   null,
   "Szczegóły"
  ],
- "Disable": [
-  null,
-  "Wyłącz"
- ],
  "Disable simultaneous multithreading": [
   null,
   "Wyłącz wielowątkowość współbieżną"
@@ -473,6 +489,10 @@ return plural;
  "Disabled": [
   null,
   "Wyłączone"
+ ],
+ "Disallow running (mask)": [
+  null,
+  "Bez zezwolenia na uruchamianie (zamaskowanie)"
  ],
  "Disk I/O": [
   null,
@@ -494,17 +514,13 @@ return plural;
   null,
   "Pobieranie $0"
  ],
+ "Dual Rank": [
+  null,
+  "Podwójny stopień"
+ ],
  "Embedded PC": [
   null,
   "Komputer osadzony"
- ],
- "Enable": [
-  null,
-  "Włącz"
- ],
- "Enable Forcefully": [
-  null,
-  "Wymuś włączenie"
  ],
  "Enable stored metrics…": [
   null,
@@ -538,9 +554,17 @@ return plural;
   null,
   "Obudowa rozszerzenia"
  ],
+ "Failed to start": [
+  null,
+  "Uruchomienie się nie powiodło"
+ ],
  "Filter by name or description...": [
   null,
   "Wyszukiwanie według nazwy lub opisu…"
+ ],
+ "Forbidden from running": [
+  null,
+  "Zabronione uruchamianie"
  ],
  "Friday": [
   null,
@@ -590,6 +614,10 @@ return plural;
   null,
   "Oczekiwanie wejścia/wyjścia"
  ],
+ "ID": [
+  null,
+  "Identyfikator"
+ ],
  "Info and above": [
   null,
   "Informacje i powyżej"
@@ -605,6 +633,10 @@ return plural;
  "Installing $0": [
   null,
   "Instalowanie $0"
+ ],
+ "Instance of template: ": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -718,13 +750,17 @@ return plural;
   null,
   "Ręcznie"
  ],
- "Mask": [
+ "Mask Service": [
   null,
-  "Maskuj"
+  "Zamaskuj usługę"
  ],
- "Mask Forcefully": [
+ "Masked": [
   null,
-  "Wymuś maskowanie"
+  "Zamaskowana"
+ ],
+ "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
+  null,
+  "Zamaskowanie usługi uniemożliwia uruchomienie wszystkich zależnych usług. Może to mieć większy efekt, niż się wydaje. Proszę potwierdzić, że ta jednostka ma zostać zamaskowana."
  ],
  "Memory": [
   null,
@@ -733,6 +769,10 @@ return plural;
  "Memory & Swap": [
   null,
   "Pamięć i przestrzeń wymiany"
+ ],
+ "Memory Technology": [
+  null,
+  "Technologia pamięci"
  ],
  "Message to logged in users": [
   null,
@@ -809,6 +849,10 @@ return plural;
  "Not authorized to upload-report": [
   null,
   "Brak upoważnienia do „upload-report”"
+ ],
+ "Not running": [
+  null,
+  "Niedziałające"
  ],
  "Not synchronized": [
   null,
@@ -894,13 +938,9 @@ return plural;
   null,
   "Opcje zasilania"
  ],
- "Preset": [
+ "Present": [
   null,
-  "Ustaw wstępnie"
- ],
- "Preset Forcefully": [
-  null,
-  "Wymuś ustawienie wstępne"
+  "Obecne"
  ],
  "Pretty Host Name": [
   null,
@@ -930,9 +970,17 @@ return plural;
   null,
   "Obudowa do montowania w szafie"
  ],
+ "Rank": [
+  null,
+  "Stopień"
+ ],
  "Read more...": [
   null,
   "Więcej informacji…"
+ ],
+ "Read-only": [
+  null,
+  "Tylko do odczytu"
  ],
  "Real Host Name": [
   null,
@@ -1010,9 +1058,17 @@ return plural;
   null,
   "Wymagane przez"
  ],
+ "Required by ": [
+  null,
+  "Wymagana przez "
+ ],
  "Requires": [
   null,
   "Wymaga"
+ ],
+ "Requires administration access to edit": [
+  null,
+  "Modyfikacja wymaga dostępu administratora"
  ],
  "Requisite": [
   null,
@@ -1034,9 +1090,9 @@ return plural;
   null,
   "Uruchom"
  ],
- "Running Since": [
+ "Running": [
   null,
-  "Działa od"
+  "Działające"
  ],
  "Saturday": [
   null,
@@ -1106,6 +1162,14 @@ return plural;
   null,
   "Wyłącz"
  ],
+ "Single Rank": [
+  null,
+  "Pojedynczy stopień"
+ ],
+ "Size": [
+  null,
+  "Rozmiar"
+ ],
  "Slot": [
   null,
   "Gniazdo"
@@ -1126,9 +1190,21 @@ return plural;
   null,
   "Podany czas"
  ],
+ "Speed": [
+  null,
+  "Prędkość"
+ ],
  "Start": [
   null,
   "Rozpocznij"
+ ],
+ "Start Service": [
+  null,
+  "Uruchom usługę"
+ ],
+ "Start and Enable": [
+  null,
+  "Uruchom i włącz"
  ],
  "State": [
   null,
@@ -1149,6 +1225,10 @@ return plural;
  "Stop": [
   null,
   "Zatrzymaj"
+ ],
+ "Stop and Disable": [
+  null,
+  "Zatrzymaj i wyłącz"
  ],
  "Store Metrics": [
   null,
@@ -1226,10 +1306,6 @@ return plural;
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na zmianę czasu systemu"
  ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "Użytkownik <b>$0</b> nie ma zezwolenia na włączanie lub wyłączanie usług"
- ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na modyfikowanie nazw komputerów"
@@ -1238,10 +1314,6 @@ return plural;
   null,
   "Użytkownik <b>$0</b> nie może wyłączać ani ponownie uruchamiać tego serwera"
  ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "Użytkownik <b>$0</b> nie ma zezwolenia na uruchamianie lub zatrzymywanie usług"
- ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   "Ten dzień nie istnieje we wszystkich miesiącach.<br> Licznik będzie wykonywany tylko w miesiącach z 31. dniem."
@@ -1249,10 +1321,6 @@ return plural;
  "This field cannot be empty.": [
   null,
   "To pole nie może być puste."
- ],
- "This unit is an instance of the $0 template.": [
-  null,
-  "Ta jednostka jest wystąpieniem szablonu $0."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1302,13 +1370,13 @@ return plural;
   null,
   "Nieznane"
  ],
- "Unmask": [
-  null,
-  "Anuluj maskowanie"
- ],
  "Updates Available": [
   null,
   "Dostępne są aktualizacje"
+ ],
+ "Updating status...": [
+  null,
+  "Aktualizowanie stanu…"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

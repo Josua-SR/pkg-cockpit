@@ -2791,7 +2791,7 @@ h1{font-size:var(--pf-global--FontSize--4xl)}
 h2{font-size:var(--pf-global--FontSize--3xl)}
 h3{font-size:var(--pf-global--FontSize--2xl)}
 h4{font-size:var(--pf-global--FontSize--lg)}
-.bootstrap-select.btn-group .btn,.content-header-extra .dropdown-toggle,.dropdown-toggle,.form-control:not(.ct-select):not(select),.input-group-addon{background-image:none!important}
+.bootstrap-select.btn-group .btn,.content-header-extra .dropdown-toggle,.dropdown-toggle,.form-control:not(.ct-select):not(.rbt-input):not(select),.input-group-addon{background-image:none!important}
 .bootstrap-select.btn-group .btn,.content-header-extra .dropdown-toggle,.dropdown-toggle,.form-control:not(.ct-select),.input-group-addon{border-radius:3px;border-color:var(--pf-global--BorderColor--300);border-bottom-color:var(--pf-global--Color--200);color:var(--pf-global--Color--100);box-shadow:none!important;min-height:2.25rem}
 .bootstrap-select.btn-group .btn:not(.bootstrap-select):not(.dropdown-form-control),.content-header-extra .dropdown-toggle:not(.bootstrap-select):not(.dropdown-form-control),.dropdown-toggle:not(.bootstrap-select):not(.dropdown-form-control),.form-control:not(.ct-select):not(.bootstrap-select):not(.dropdown-form-control),.input-group-addon:not(.bootstrap-select):not(.dropdown-form-control){padding:1px .5rem}
 .bootstrap-select.btn-group .btn .caret,.content-header-extra .dropdown-toggle .caret,.dropdown-toggle .caret,.form-control:not(.ct-select) .caret,.input-group-addon .caret{align-self:center}
@@ -2809,13 +2809,17 @@ h4{font-size:var(--pf-global--FontSize--lg)}
 .input-group>.dropdown,.input-group>.dropdown-toggle,.input-group>.input-group-addon{display:flex;width:auto;align-items:stretch}
 .input-group>.input-group-btn{width:auto}
 .input-group>.input-group-btn>.btn{min-width:2.5rem}
-select.form-control{--dropdown-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='8'%3E%3Cpath fill='%23151515' d='M18.804 1h8.392c.58 0 .87.701.46 1.112L23.46 6.31a.653.653 0 0 1-.922 0l-4.194-4.197A.651.651 0 0 1 18.805 1z'/%3E%3C/svg%3E");--dropdown-background:var(--pf-global--BackgroundColor--100);-webkit-appearance:none;-moz-appearance:none;appearance:none;background:100% 50% no-repeat var(--dropdown-image),var(--dropdown-background)!important;padding-right:2.5em!important}
-.dropdown-menu>li.selected>a,.dropdown-menu>li:not(.disabled)>a:active,.dropdown-menu>li:not(.disabled)>a:focus,.dropdown-menu>li:not(.disabled)>a:hover{background-color:var(--pf-global--BackgroundColor--light-300);border-color:var(--pf-global--BackgroundColor--light-300)}
+.rbt-input.form-control,select.form-control{--dropdown-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='8'%3E%3Cpath fill='%23151515' d='M18.804 1h8.392c.58 0 .87.701.46 1.112L23.46 6.31a.653.653 0 0 1-.922 0l-4.194-4.197A.651.651 0 0 1 18.805 1z'/%3E%3C/svg%3E");--dropdown-background:var(--pf-global--BackgroundColor--100);-webkit-appearance:none;-moz-appearance:none;appearance:none;background:100% 50% no-repeat var(--dropdown-image),var(--dropdown-background)!important;padding-right:2.5em!important}
+.rbt-input-hint,.rbt-input-hint>input{height:100%}
+.rbt-input-hint>input{border-width:0 1px!important;padding-top:0!important;padding-bottom:0!important}
+.rbt-aux{right:2rem!important}
 .dropdown-menu>li{padding:0}
 .dropdown-menu>li>a{padding:.5rem 1rem}
 .dropdown-menu>li:not(.disabled)>a{color:var(--pf-global--Color--100)}
-.dropdown-menu>li>a:active{color:var(--pf-global--Color--100)!important}
-.dropdown-menu>li.selected>a{color:var(--pf-global--Color--100)}
+.dropdown-menu>li:not(.disabled)>a:active,.dropdown-menu>li:not(.disabled)>a:focus,.dropdown-menu>li:not(.disabled)>a:hover{background-color:var(--pf-global--BackgroundColor--light-300);border-color:var(--pf-global--BackgroundColor--light-300)}
+.dropdown-menu>li.active>a,.dropdown-menu>li>a:active{color:var(--pf-global--Color--100)!important}
+.dropdown-menu>li.active>a,.dropdown-menu>li.active>a:active,.dropdown-menu>li.active>a:focus,.dropdown-menu>li.active>a:hover{color:var(--pf-global--Color--100)!important;background-color:var(--pf-global--BackgroundColor--light-300)!important;border-color:var(--pf-global--BackgroundColor--light-300)!important}
+.dropdown-menu>li.selected>a{color:var(--pf-global--Color--100);background-color:var(--pf-global--BackgroundColor--light-300);border-color:var(--pf-global--BackgroundColor--light-300)}
 .dropdown>.dropdown-menu{min-width:100%}
 .btn,.pagination a[role=button]{padding:.375rem 1rem;transition:background .3s,border .3s,color .3s}
 .btn:not(.dropdown-toggle):not(.dropdown):not(.bootstrap-select):not(.ct-select),.pagination a[role=button]:not(.dropdown-toggle):not(.dropdown):not(.bootstrap-select):not(.ct-select){background-image:none!important;border-radius:3px}

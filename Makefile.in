@@ -111,17 +111,20 @@ POST_UNINSTALL = :
 bin_PROGRAMS = cockpit-bridge$(EXEEXT)
 check_PROGRAMS = test-server$(EXEEXT)
 libexec_PROGRAMS = cockpit-askpass$(EXEEXT) $(am__EXEEXT_1) \
-	$(am__EXEEXT_2) cockpit-ws$(EXEEXT) cockpit-session$(EXEEXT)
+	$(am__EXEEXT_2) cockpit-ws$(EXEEXT) cockpit-session$(EXEEXT) \
+	cockpit-tls$(EXEEXT)
 noinst_PROGRAMS = $(am__EXEEXT_5) mock-bridge$(EXEEXT) $(am__EXEEXT_6) \
 	frob-websocket$(EXEEXT) test-websocket$(EXEEXT) \
 	$(am__EXEEXT_3) $(am__EXEEXT_9) test-server$(EXEEXT) \
 	$(am__EXEEXT_11) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
-	$(am__EXEEXT_3) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_12)
+	$(am__EXEEXT_3) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_12) \
+	$(am__EXEEXT_13)
 sbin_PROGRAMS = remotectl$(EXEEXT)
-TESTS = $(am__EXEEXT_3) $(am__EXEEXT_13) $(am__EXEEXT_16) \
+TESTS = $(am__EXEEXT_3) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 	$(am__EXEEXT_5) $(am__EXEEXT_6) test-websocket$(EXEEXT) \
 	$(am__EXEEXT_3) tools/test-static-code $(am__EXEEXT_3) \
-	$(am__EXEEXT_17) $(am__EXEEXT_11) $(am__EXEEXT_12)
+	$(am__EXEEXT_18) $(am__EXEEXT_11) $(am__EXEEXT_12) \
+	$(am__EXEEXT_13)
 @VALGRIND_MINADDR_HACK_TRUE@am__append_1 = --aspace-minaddr=0x100000000
 @ENABLE_DOC_TRUE@am__append_2 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
@@ -133,6 +136,7 @@ TESTS = $(am__EXEEXT_3) $(am__EXEEXT_13) $(am__EXEEXT_16) \
 @ENABLE_DOC_TRUE@	doc/guide/footer.html doc/guide/version.in \
 @ENABLE_DOC_TRUE@	$(NULL) doc/man/cockpit-bridge.xml $(NULL) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.xml doc/man/cockpit-ws.xml \
+@ENABLE_DOC_TRUE@	doc/man/cockpit-tls.xml \
 @ENABLE_DOC_TRUE@	doc/man/cockpit-desktop.xml \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.conf.xml \
 @ENABLE_DOC_TRUE@	doc/man/pam_ssh_add.xml doc/man/remotectl.xml \
@@ -150,9 +154,9 @@ TESTS = $(am__EXEEXT_3) $(am__EXEEXT_13) $(am__EXEEXT_16) \
 
 @ENABLE_DOC_TRUE@am__append_5 = doc/man/cockpit-bridge.1 $(NULL) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.1 doc/man/cockpit-desktop.1 \
-@ENABLE_DOC_TRUE@	doc/man/cockpit-ws.8 doc/man/cockpit.conf.5 \
-@ENABLE_DOC_TRUE@	doc/man/pam_ssh_add.8 doc/man/remotectl.8 \
-@ENABLE_DOC_TRUE@	$(NULL)
+@ENABLE_DOC_TRUE@	doc/man/cockpit-ws.8 doc/man/cockpit-tls.8 \
+@ENABLE_DOC_TRUE@	doc/man/cockpit.conf.5 doc/man/pam_ssh_add.8 \
+@ENABLE_DOC_TRUE@	doc/man/remotectl.8 $(NULL)
 @ENABLE_PCP_TRUE@am__append_6 = cockpit-pcp
 @ENABLE_PCP_TRUE@am__append_7 = libcockpit-pcp.a
 @ENABLE_PCP_TRUE@am__append_8 = \
@@ -277,7 +281,10 @@ am__EXEEXT_11 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
 	test-handlers$(EXEEXT) test-kerberos$(EXEEXT) \
 	test-remotectlcertificate$(EXEEXT) $(am__EXEEXT_3) \
 	$(am__EXEEXT_10)
-am__EXEEXT_12 = test-ssh-add$(EXEEXT) $(am__EXEEXT_3)
+am__EXEEXT_12 = test-tls-connection$(EXEEXT) \
+	test-tls-wsinstance$(EXEEXT) test-tls-server$(EXEEXT) \
+	$(am__EXEEXT_3)
+am__EXEEXT_13 = test-ssh-add$(EXEEXT) $(am__EXEEXT_3)
 PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS) \
 	$(sbin_PROGRAMS)
 LIBRARIES = $(noinst_LIBRARIES)
@@ -509,6 +516,15 @@ cockpit_ssh_OBJECTS = $(am_cockpit_ssh_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1)
 cockpit_ssh_LINK = $(CCLD) $(cockpit_ssh_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+am_cockpit_tls_OBJECTS = src/tls/cockpit_tls-wsinstance.$(OBJEXT) \
+	src/tls/cockpit_tls-connection.$(OBJEXT) \
+	src/tls/cockpit_tls-server.$(OBJEXT) \
+	src/tls/cockpit_tls-main.$(OBJEXT) $(am__objects_1)
+cockpit_tls_OBJECTS = $(am_cockpit_tls_OBJECTS)
+cockpit_tls_DEPENDENCIES = libcockpit-common-nodeps.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+cockpit_tls_LINK = $(CCLD) $(cockpit_tls_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_cockpit_ws_OBJECTS = src/ws/cockpit_ws-main.$(OBJEXT) \
 	$(am__objects_1)
@@ -852,6 +868,34 @@ test_template_OBJECTS = $(am_test_template_OBJECTS)
 test_template_DEPENDENCIES = $(am__DEPENDENCIES_8)
 test_template_LINK = $(CCLD) $(test_template_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+am_test_tls_connection_OBJECTS =  \
+	src/tls/test_tls_connection-connection.$(OBJEXT) \
+	src/tls/test_tls_connection-test-connection.$(OBJEXT) \
+	$(am__objects_1)
+test_tls_connection_OBJECTS = $(am_test_tls_connection_OBJECTS)
+am__DEPENDENCIES_12 = libcockpit-common.a libcockpit-common-nodeps.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+test_tls_connection_DEPENDENCIES = $(am__DEPENDENCIES_12)
+test_tls_connection_LINK = $(CCLD) $(test_tls_connection_CFLAGS) \
+	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+am_test_tls_server_OBJECTS =  \
+	src/tls/test_tls_server-wsinstance.$(OBJEXT) \
+	src/tls/test_tls_server-connection.$(OBJEXT) \
+	src/tls/test_tls_server-server.$(OBJEXT) \
+	src/tls/test_tls_server-test-server.$(OBJEXT) $(am__objects_1)
+test_tls_server_OBJECTS = $(am_test_tls_server_OBJECTS)
+test_tls_server_DEPENDENCIES = $(am__DEPENDENCIES_12)
+test_tls_server_LINK = $(CCLD) $(test_tls_server_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+am_test_tls_wsinstance_OBJECTS =  \
+	src/tls/test_tls_wsinstance-wsinstance.$(OBJEXT) \
+	src/tls/test_tls_wsinstance-test-wsinstance.$(OBJEXT) \
+	$(am__objects_1)
+test_tls_wsinstance_OBJECTS = $(am_test_tls_wsinstance_OBJECTS)
+test_tls_wsinstance_DEPENDENCIES = $(am__DEPENDENCIES_12)
+test_tls_wsinstance_LINK = $(CCLD) $(test_tls_wsinstance_CFLAGS) \
+	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_transport_OBJECTS =  \
 	src/common/test_transport-test-transport.$(OBJEXT) \
 	src/common/test_transport-mock-transport.$(OBJEXT)
@@ -1116,6 +1160,18 @@ am__depfiles_remade = src/bridge/$(DEPDIR)/cockpit_askpass-askpass.Po \
 	src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po \
 	src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po \
 	src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po \
+	src/tls/$(DEPDIR)/cockpit_tls-connection.Po \
+	src/tls/$(DEPDIR)/cockpit_tls-main.Po \
+	src/tls/$(DEPDIR)/cockpit_tls-server.Po \
+	src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Po \
+	src/tls/$(DEPDIR)/test_tls_connection-connection.Po \
+	src/tls/$(DEPDIR)/test_tls_connection-test-connection.Po \
+	src/tls/$(DEPDIR)/test_tls_server-connection.Po \
+	src/tls/$(DEPDIR)/test_tls_server-server.Po \
+	src/tls/$(DEPDIR)/test_tls_server-test-server.Po \
+	src/tls/$(DEPDIR)/test_tls_server-wsinstance.Po \
+	src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Po \
+	src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Po \
 	src/websocket/$(DEPDIR)/frob_websocket-frob-websocket.Po \
 	src/websocket/$(DEPDIR)/libwebsocket_a-websocket.Po \
 	src/websocket/$(DEPDIR)/libwebsocket_a-websocketclient.Po \
@@ -1184,11 +1240,11 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(libretest_a_SOURCES) $(libwebsocket_a_SOURCES) \
 	$(cockpit_askpass_SOURCES) $(cockpit_bridge_SOURCES) \
 	$(cockpit_pcp_SOURCES) $(cockpit_session_SOURCES) \
-	$(cockpit_ssh_SOURCES) $(cockpit_ws_SOURCES) \
-	$(frob_websocket_SOURCES) $(mock_auth_command_SOURCES) \
-	$(mock_bridge_SOURCES) $(mock_echo_SOURCES) \
-	$(mock_pam_conv_mod_so_SOURCES) $(mock_sshd_SOURCES) \
-	$(remotectl_SOURCES) $(test_auth_SOURCES) \
+	$(cockpit_ssh_SOURCES) $(cockpit_tls_SOURCES) \
+	$(cockpit_ws_SOURCES) $(frob_websocket_SOURCES) \
+	$(mock_auth_command_SOURCES) $(mock_bridge_SOURCES) \
+	$(mock_echo_SOURCES) $(mock_pam_conv_mod_so_SOURCES) \
+	$(mock_sshd_SOURCES) $(remotectl_SOURCES) $(test_auth_SOURCES) \
 	$(test_authorize_SOURCES) $(test_authssh_SOURCES) \
 	$(test_base64_SOURCES) $(test_bridge_SOURCES) \
 	$(test_channel_SOURCES) $(test_channelresponse_SOURCES) \
@@ -1210,11 +1266,12 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_ssh_add_SOURCES) $(test_sshbridge_SOURCES) \
 	$(test_sshoptions_SOURCES) $(test_stream_SOURCES) \
 	$(test_system_SOURCES) $(test_template_SOURCES) \
-	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
-	$(test_unixsignal_SOURCES) $(test_version_SOURCES) \
-	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
-	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
-	$(test_websocketstream_SOURCES)
+	$(test_tls_connection_SOURCES) $(test_tls_server_SOURCES) \
+	$(test_tls_wsinstance_SOURCES) $(test_transport_SOURCES) \
+	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
+	$(test_version_SOURCES) $(test_webresponse_SOURCES) \
+	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
+	$(test_websocket_SOURCES) $(test_websocketstream_SOURCES)
 DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(libcockpit_common_nodeps_a_SOURCES) \
 	$(libcockpit_common_a_SOURCES) \
@@ -1224,24 +1281,24 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(libretest_a_SOURCES) $(libwebsocket_a_SOURCES) \
 	$(cockpit_askpass_SOURCES) $(cockpit_bridge_SOURCES) \
 	$(am__cockpit_pcp_SOURCES_DIST) $(cockpit_session_SOURCES) \
-	$(am__cockpit_ssh_SOURCES_DIST) $(cockpit_ws_SOURCES) \
-	$(frob_websocket_SOURCES) $(mock_auth_command_SOURCES) \
-	$(mock_bridge_SOURCES) $(mock_echo_SOURCES) \
-	$(mock_pam_conv_mod_so_SOURCES) $(am__mock_sshd_SOURCES_DIST) \
-	$(remotectl_SOURCES) $(test_auth_SOURCES) \
-	$(test_authorize_SOURCES) $(am__test_authssh_SOURCES_DIST) \
-	$(test_base64_SOURCES) $(test_bridge_SOURCES) \
-	$(test_channel_SOURCES) $(test_channelresponse_SOURCES) \
-	$(test_compat_SOURCES) $(test_config_SOURCES) \
-	$(test_connect_SOURCES) $(test_creds_SOURCES) \
-	$(test_dbus_meta_SOURCES) $(test_fs_SOURCES) \
-	$(test_handlers_SOURCES) $(test_hash_SOURCES) \
-	$(test_hex_SOURCES) $(test_httpstream_SOURCES) \
-	$(test_json_SOURCES) $(test_kerberos_SOURCES) \
-	$(am__test_knownhosts_SOURCES_DIST) $(test_locale_SOURCES) \
-	$(test_metrics_SOURCES) $(test_packages_SOURCES) \
-	$(test_packet_channel_SOURCES) $(test_paths_SOURCES) \
-	$(am__test_pcp_SOURCES_DIST) \
+	$(am__cockpit_ssh_SOURCES_DIST) $(cockpit_tls_SOURCES) \
+	$(cockpit_ws_SOURCES) $(frob_websocket_SOURCES) \
+	$(mock_auth_command_SOURCES) $(mock_bridge_SOURCES) \
+	$(mock_echo_SOURCES) $(mock_pam_conv_mod_so_SOURCES) \
+	$(am__mock_sshd_SOURCES_DIST) $(remotectl_SOURCES) \
+	$(test_auth_SOURCES) $(test_authorize_SOURCES) \
+	$(am__test_authssh_SOURCES_DIST) $(test_base64_SOURCES) \
+	$(test_bridge_SOURCES) $(test_channel_SOURCES) \
+	$(test_channelresponse_SOURCES) $(test_compat_SOURCES) \
+	$(test_config_SOURCES) $(test_connect_SOURCES) \
+	$(test_creds_SOURCES) $(test_dbus_meta_SOURCES) \
+	$(test_fs_SOURCES) $(test_handlers_SOURCES) \
+	$(test_hash_SOURCES) $(test_hex_SOURCES) \
+	$(test_httpstream_SOURCES) $(test_json_SOURCES) \
+	$(test_kerberos_SOURCES) $(am__test_knownhosts_SOURCES_DIST) \
+	$(test_locale_SOURCES) $(test_metrics_SOURCES) \
+	$(test_packages_SOURCES) $(test_packet_channel_SOURCES) \
+	$(test_paths_SOURCES) $(am__test_pcp_SOURCES_DIST) \
 	$(am__test_pcp_archives_SOURCES_DIST) $(test_peer_SOURCES) \
 	$(test_pipe_SOURCES) $(test_pipe_channel_SOURCES) \
 	$(test_process_SOURCES) $(test_remotectlcertificate_SOURCES) \
@@ -1250,11 +1307,12 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_ssh_add_SOURCES) $(am__test_sshbridge_SOURCES_DIST) \
 	$(am__test_sshoptions_SOURCES_DIST) $(test_stream_SOURCES) \
 	$(test_system_SOURCES) $(test_template_SOURCES) \
-	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
-	$(test_unixsignal_SOURCES) $(test_version_SOURCES) \
-	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
-	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
-	$(test_websocketstream_SOURCES)
+	$(test_tls_connection_SOURCES) $(test_tls_server_SOURCES) \
+	$(test_tls_wsinstance_SOURCES) $(test_transport_SOURCES) \
+	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
+	$(test_version_SOURCES) $(test_webresponse_SOURCES) \
+	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
+	$(test_websocket_SOURCES) $(test_websocketstream_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -1456,8 +1514,8 @@ am__set_TESTS_bases = \
   bases=`for i in $$bases; do echo $$i; done | sed 's/\.log$$//'`; \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
-am__EXEEXT_13 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_3)
-am__EXEEXT_14 = dist/base1/test-base64.html dist/base1/test-utf8.html \
+am__EXEEXT_14 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_3)
+am__EXEEXT_15 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-events.html dist/base1/test-chan.html \
 	dist/base1/test-dbus.html dist/base1/test-dbus-address.html \
 	dist/base1/test-echo.html dist/base1/test-spawn.html \
@@ -1471,11 +1529,11 @@ am__EXEEXT_14 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-browser-storage.html \
 	dist/base1/test-promise.html dist/base1/test-protocol.html \
 	$(am__EXEEXT_3)
-am__EXEEXT_15 = dist/base1/test-no-jquery.html \
+am__EXEEXT_16 = dist/base1/test-no-jquery.html \
 	dist/base1/test-framed-cache.html dist/base1/test-framed.html \
 	dist/base1/test-dbus-framed.html $(am__EXEEXT_3)
-am__EXEEXT_16 = $(am__EXEEXT_14) $(am__EXEEXT_15)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_17 = $(am__EXEEXT_8)
+am__EXEEXT_17 = $(am__EXEEXT_15) $(am__EXEEXT_16)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_18 = $(am__EXEEXT_8)
 TEST_SUITE_LOG = test-suite.log
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1514,6 +1572,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
 	$(srcdir)/src/pam-ssh-add/Makefile.am \
 	$(srcdir)/src/retest/Makefile.am \
 	$(srcdir)/src/ssh/Makefile-ssh.am \
+	$(srcdir)/src/tls/Makefile-tls.am \
 	$(srcdir)/src/websocket/Makefile-websocket.am \
 	$(srcdir)/src/ws/Makefile-ws.am \
 	$(srcdir)/tools/Makefile-tools.am \
@@ -1565,6 +1624,8 @@ COCKPIT_SESSION_CFLAGS = @COCKPIT_SESSION_CFLAGS@
 COCKPIT_SESSION_LIBS = @COCKPIT_SESSION_LIBS@
 COCKPIT_SSH_SESSION_CFLAGS = @COCKPIT_SSH_SESSION_CFLAGS@
 COCKPIT_SSH_SESSION_LIBS = @COCKPIT_SSH_SESSION_LIBS@
+COCKPIT_TLS_CFLAGS = @COCKPIT_TLS_CFLAGS@
+COCKPIT_TLS_LIBS = @COCKPIT_TLS_LIBS@
 COCKPIT_USER = @COCKPIT_USER@
 COCKPIT_WS_CFLAGS = @COCKPIT_WS_CFLAGS@
 COCKPIT_WS_LIBS = @COCKPIT_WS_LIBS@
@@ -1584,6 +1645,8 @@ GIO_CFLAGS = @GIO_CFLAGS@
 GIO_LIBS = @GIO_LIBS@
 GMOFILES = @GMOFILES@
 GMSGFMT = @GMSGFMT@
+GNUTLS_CFLAGS = @GNUTLS_CFLAGS@
+GNUTLS_LIBS = @GNUTLS_LIBS@
 GOLANG = @GOLANG@
 GREP = @GREP@
 INSTALL = @INSTALL@
@@ -2009,6 +2072,7 @@ VALGRIND_SUPPRESSIONS = \
 	tools/zlib.supp \
 	tools/libssh.supp \
 	tools/json-glib.supp \
+	tools/gnutls.supp \
 	$(NULL)
 
 FONTSDIR = dist/static/fonts
@@ -3090,6 +3154,67 @@ mock_auth_command_LDADD = libcockpit-common-nodeps.a
 mock_pam_conv_mod_so_SOURCES = src/ws/mock-pam-conv-mod.c
 testassetsdir = $(prefix)/lib/cockpit-test-assets
 testserviceddir = $(systemdunitdir)/cockpit.service.d
+cockpit_tls_SOURCES = \
+	src/tls/utils.h					\
+	src/tls/wsinstance.h				\
+	src/tls/wsinstance.c				\
+	src/tls/connection.h				\
+	src/tls/connection.c				\
+	src/tls/server.h				\
+	src/tls/server.c				\
+	src/tls/main.c					\
+	$(NULL)
+
+cockpit_tls_CFLAGS = \
+	-I$(top_srcdir)/src/tls				\
+	$(COCKPIT_TLS_CFLAGS)				\
+	$(NULL)
+
+cockpit_tls_LDADD = \
+	libcockpit-common-nodeps.a			\
+	$(COCKPIT_TLS_LIBS)				\
+	$(NULL)
+
+
+# TESTS
+TEST_CFLAGS = $(COCKPIT_TLS_CFLAGS) $(COCKPIT_CFLAGS)
+TEST_LDADD = \
+	libcockpit-common.a				\
+	libcockpit-common-nodeps.a			\
+	$(COCKPIT_TLS_LIBS)				\
+	$(COCKPIT_LIBS)					\
+	$(JSON_GLIB_LIBS)				\
+	$(NULL)
+
+TLS_TESTS = \
+	test-tls-connection				\
+	test-tls-wsinstance				\
+	test-tls-server					\
+	$(NULL)
+
+test_tls_connection_SOURCES = \
+	src/tls/connection.c				\
+	src/tls/test-connection.c			\
+	$(NULL)
+
+test_tls_connection_CFLAGS = $(TEST_CFLAGS)
+test_tls_connection_LDADD = $(TEST_LDADD)
+test_tls_wsinstance_SOURCES = \
+	src/tls/wsinstance.c				\
+	src/tls/test-wsinstance.c			\
+	$(NULL)
+
+test_tls_wsinstance_CFLAGS = $(TEST_CFLAGS)
+test_tls_wsinstance_LDADD = $(TEST_LDADD)
+test_tls_server_SOURCES = \
+	src/tls/wsinstance.c				\
+	src/tls/connection.c				\
+	src/tls/server.c				\
+	src/tls/test-server.c				\
+	$(NULL)
+
+test_tls_server_CFLAGS = $(TEST_CFLAGS)
+test_tls_server_LDADD = $(TEST_LDADD)
 libretest_a_SOURCES = \
 	src/retest/retest.c \
 	src/retest/retest.h \
@@ -3124,7 +3249,7 @@ all: $(BUILT_SOURCES) config.h
 .SUFFIXES: .css .css.gz .html .html.gz .js .js.gz .json .json.in .jsx .map .map.gz .mo .po .service .service.in .socket .socket.in .svg .svg.gz .woff .woff.gz .1 .8 .5 .c .html$(EXEEXT) .log .o .obj .sh .sh$(EXEEXT) .trs .xml
 am--refresh: Makefile
 	@:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/po/Makefile.am $(srcdir)/pkg/Makefile.am $(srcdir)/src/base1/Makefile.am $(srcdir)/src/branding/centos/Makefile.am $(srcdir)/src/branding/debian/Makefile.am $(srcdir)/src/branding/default/Makefile.am $(srcdir)/src/branding/fedora/Makefile.am $(srcdir)/src/branding/kubernetes/Makefile.am $(srcdir)/src/branding/registry/Makefile.am $(srcdir)/src/branding/rhel/Makefile.am $(srcdir)/src/branding/scientific/Makefile.am $(srcdir)/src/branding/ubuntu/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ssh/Makefile-ssh.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/containers/Makefile.am $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/po/Makefile.am $(srcdir)/pkg/Makefile.am $(srcdir)/src/base1/Makefile.am $(srcdir)/src/branding/centos/Makefile.am $(srcdir)/src/branding/debian/Makefile.am $(srcdir)/src/branding/default/Makefile.am $(srcdir)/src/branding/fedora/Makefile.am $(srcdir)/src/branding/kubernetes/Makefile.am $(srcdir)/src/branding/registry/Makefile.am $(srcdir)/src/branding/rhel/Makefile.am $(srcdir)/src/branding/scientific/Makefile.am $(srcdir)/src/branding/ubuntu/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ssh/Makefile-ssh.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/tls/Makefile-tls.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/containers/Makefile.am $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -3146,7 +3271,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/po/Makefile.am $(srcdir)/pkg/Makefile.am $(srcdir)/src/base1/Makefile.am $(srcdir)/src/branding/centos/Makefile.am $(srcdir)/src/branding/debian/Makefile.am $(srcdir)/src/branding/default/Makefile.am $(srcdir)/src/branding/fedora/Makefile.am $(srcdir)/src/branding/kubernetes/Makefile.am $(srcdir)/src/branding/registry/Makefile.am $(srcdir)/src/branding/rhel/Makefile.am $(srcdir)/src/branding/scientific/Makefile.am $(srcdir)/src/branding/ubuntu/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ssh/Makefile-ssh.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/containers/Makefile.am $(am__empty):
+$(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/po/Makefile.am $(srcdir)/pkg/Makefile.am $(srcdir)/src/base1/Makefile.am $(srcdir)/src/branding/centos/Makefile.am $(srcdir)/src/branding/debian/Makefile.am $(srcdir)/src/branding/default/Makefile.am $(srcdir)/src/branding/fedora/Makefile.am $(srcdir)/src/branding/kubernetes/Makefile.am $(srcdir)/src/branding/registry/Makefile.am $(srcdir)/src/branding/rhel/Makefile.am $(srcdir)/src/branding/scientific/Makefile.am $(srcdir)/src/branding/ubuntu/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ssh/Makefile-ssh.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/tls/Makefile-tls.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/containers/Makefile.am $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	$(SHELL) ./config.status --recheck
@@ -3717,6 +3842,24 @@ src/ssh/cockpit_ssh-ssh.$(OBJEXT): src/ssh/$(am__dirstamp) \
 cockpit-ssh$(EXEEXT): $(cockpit_ssh_OBJECTS) $(cockpit_ssh_DEPENDENCIES) $(EXTRA_cockpit_ssh_DEPENDENCIES) 
 	@rm -f cockpit-ssh$(EXEEXT)
 	$(AM_V_CCLD)$(cockpit_ssh_LINK) $(cockpit_ssh_OBJECTS) $(cockpit_ssh_LDADD) $(LIBS)
+src/tls/$(am__dirstamp):
+	@$(MKDIR_P) src/tls
+	@: > src/tls/$(am__dirstamp)
+src/tls/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) src/tls/$(DEPDIR)
+	@: > src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/cockpit_tls-wsinstance.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/cockpit_tls-connection.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/cockpit_tls-server.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/cockpit_tls-main.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+
+cockpit-tls$(EXEEXT): $(cockpit_tls_OBJECTS) $(cockpit_tls_DEPENDENCIES) $(EXTRA_cockpit_tls_DEPENDENCIES) 
+	@rm -f cockpit-tls$(EXEEXT)
+	$(AM_V_CCLD)$(cockpit_tls_LINK) $(cockpit_tls_OBJECTS) $(cockpit_tls_LDADD) $(LIBS)
 src/ws/cockpit_ws-main.$(OBJEXT): src/ws/$(am__dirstamp) \
 	src/ws/$(DEPDIR)/$(am__dirstamp)
 
@@ -4115,6 +4258,34 @@ src/common/test_template-test-template.$(OBJEXT):  \
 test-template$(EXEEXT): $(test_template_OBJECTS) $(test_template_DEPENDENCIES) $(EXTRA_test_template_DEPENDENCIES) 
 	@rm -f test-template$(EXEEXT)
 	$(AM_V_CCLD)$(test_template_LINK) $(test_template_OBJECTS) $(test_template_LDADD) $(LIBS)
+src/tls/test_tls_connection-connection.$(OBJEXT):  \
+	src/tls/$(am__dirstamp) src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/test_tls_connection-test-connection.$(OBJEXT):  \
+	src/tls/$(am__dirstamp) src/tls/$(DEPDIR)/$(am__dirstamp)
+
+test-tls-connection$(EXEEXT): $(test_tls_connection_OBJECTS) $(test_tls_connection_DEPENDENCIES) $(EXTRA_test_tls_connection_DEPENDENCIES) 
+	@rm -f test-tls-connection$(EXEEXT)
+	$(AM_V_CCLD)$(test_tls_connection_LINK) $(test_tls_connection_OBJECTS) $(test_tls_connection_LDADD) $(LIBS)
+src/tls/test_tls_server-wsinstance.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/test_tls_server-connection.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/test_tls_server-server.$(OBJEXT): src/tls/$(am__dirstamp) \
+	src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/test_tls_server-test-server.$(OBJEXT):  \
+	src/tls/$(am__dirstamp) src/tls/$(DEPDIR)/$(am__dirstamp)
+
+test-tls-server$(EXEEXT): $(test_tls_server_OBJECTS) $(test_tls_server_DEPENDENCIES) $(EXTRA_test_tls_server_DEPENDENCIES) 
+	@rm -f test-tls-server$(EXEEXT)
+	$(AM_V_CCLD)$(test_tls_server_LINK) $(test_tls_server_OBJECTS) $(test_tls_server_LDADD) $(LIBS)
+src/tls/test_tls_wsinstance-wsinstance.$(OBJEXT):  \
+	src/tls/$(am__dirstamp) src/tls/$(DEPDIR)/$(am__dirstamp)
+src/tls/test_tls_wsinstance-test-wsinstance.$(OBJEXT):  \
+	src/tls/$(am__dirstamp) src/tls/$(DEPDIR)/$(am__dirstamp)
+
+test-tls-wsinstance$(EXEEXT): $(test_tls_wsinstance_OBJECTS) $(test_tls_wsinstance_DEPENDENCIES) $(EXTRA_test_tls_wsinstance_DEPENDENCIES) 
+	@rm -f test-tls-wsinstance$(EXEEXT)
+	$(AM_V_CCLD)$(test_tls_wsinstance_LINK) $(test_tls_wsinstance_OBJECTS) $(test_tls_wsinstance_LDADD) $(LIBS)
 src/common/test_transport-test-transport.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
@@ -4275,6 +4446,7 @@ mostlyclean-compile:
 	-rm -f src/pam-ssh-add/*.$(OBJEXT)
 	-rm -f src/retest/*.$(OBJEXT)
 	-rm -f src/ssh/*.$(OBJEXT)
+	-rm -f src/tls/*.$(OBJEXT)
 	-rm -f src/websocket/*.$(OBJEXT)
 	-rm -f src/ws/*.$(OBJEXT)
 
@@ -4439,6 +4611,18 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/cockpit_tls-connection.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/cockpit_tls-main.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/cockpit_tls-server.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_connection-connection.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_connection-test-connection.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_server-connection.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_server-server.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_server-test-server.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_server-wsinstance.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/frob_websocket-frob-websocket.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/libwebsocket_a-websocket.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/libwebsocket_a-websocketclient.Po@am__quote@ # am--include-marker
@@ -5947,6 +6131,62 @@ src/ssh/cockpit_ssh-ssh.obj: src/ssh/ssh.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_ssh_CFLAGS) $(CFLAGS) -c -o src/ssh/cockpit_ssh-ssh.obj `if test -f 'src/ssh/ssh.c'; then $(CYGPATH_W) 'src/ssh/ssh.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/ssh.c'; fi`
 
+src/tls/cockpit_tls-wsinstance.o: src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-wsinstance.o -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Tpo -c -o src/tls/cockpit_tls-wsinstance.o `test -f 'src/tls/wsinstance.c' || echo '$(srcdir)/'`src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Tpo src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/wsinstance.c' object='src/tls/cockpit_tls-wsinstance.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-wsinstance.o `test -f 'src/tls/wsinstance.c' || echo '$(srcdir)/'`src/tls/wsinstance.c
+
+src/tls/cockpit_tls-wsinstance.obj: src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-wsinstance.obj -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Tpo -c -o src/tls/cockpit_tls-wsinstance.obj `if test -f 'src/tls/wsinstance.c'; then $(CYGPATH_W) 'src/tls/wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/wsinstance.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Tpo src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/wsinstance.c' object='src/tls/cockpit_tls-wsinstance.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-wsinstance.obj `if test -f 'src/tls/wsinstance.c'; then $(CYGPATH_W) 'src/tls/wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/wsinstance.c'; fi`
+
+src/tls/cockpit_tls-connection.o: src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-connection.o -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-connection.Tpo -c -o src/tls/cockpit_tls-connection.o `test -f 'src/tls/connection.c' || echo '$(srcdir)/'`src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-connection.Tpo src/tls/$(DEPDIR)/cockpit_tls-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/connection.c' object='src/tls/cockpit_tls-connection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-connection.o `test -f 'src/tls/connection.c' || echo '$(srcdir)/'`src/tls/connection.c
+
+src/tls/cockpit_tls-connection.obj: src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-connection.obj -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-connection.Tpo -c -o src/tls/cockpit_tls-connection.obj `if test -f 'src/tls/connection.c'; then $(CYGPATH_W) 'src/tls/connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/connection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-connection.Tpo src/tls/$(DEPDIR)/cockpit_tls-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/connection.c' object='src/tls/cockpit_tls-connection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-connection.obj `if test -f 'src/tls/connection.c'; then $(CYGPATH_W) 'src/tls/connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/connection.c'; fi`
+
+src/tls/cockpit_tls-server.o: src/tls/server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-server.o -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-server.Tpo -c -o src/tls/cockpit_tls-server.o `test -f 'src/tls/server.c' || echo '$(srcdir)/'`src/tls/server.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-server.Tpo src/tls/$(DEPDIR)/cockpit_tls-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/server.c' object='src/tls/cockpit_tls-server.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-server.o `test -f 'src/tls/server.c' || echo '$(srcdir)/'`src/tls/server.c
+
+src/tls/cockpit_tls-server.obj: src/tls/server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-server.obj -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-server.Tpo -c -o src/tls/cockpit_tls-server.obj `if test -f 'src/tls/server.c'; then $(CYGPATH_W) 'src/tls/server.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/server.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-server.Tpo src/tls/$(DEPDIR)/cockpit_tls-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/server.c' object='src/tls/cockpit_tls-server.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-server.obj `if test -f 'src/tls/server.c'; then $(CYGPATH_W) 'src/tls/server.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/server.c'; fi`
+
+src/tls/cockpit_tls-main.o: src/tls/main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-main.o -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-main.Tpo -c -o src/tls/cockpit_tls-main.o `test -f 'src/tls/main.c' || echo '$(srcdir)/'`src/tls/main.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-main.Tpo src/tls/$(DEPDIR)/cockpit_tls-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/main.c' object='src/tls/cockpit_tls-main.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-main.o `test -f 'src/tls/main.c' || echo '$(srcdir)/'`src/tls/main.c
+
+src/tls/cockpit_tls-main.obj: src/tls/main.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -MT src/tls/cockpit_tls-main.obj -MD -MP -MF src/tls/$(DEPDIR)/cockpit_tls-main.Tpo -c -o src/tls/cockpit_tls-main.obj `if test -f 'src/tls/main.c'; then $(CYGPATH_W) 'src/tls/main.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/main.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/cockpit_tls-main.Tpo src/tls/$(DEPDIR)/cockpit_tls-main.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/main.c' object='src/tls/cockpit_tls-main.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_tls_CFLAGS) $(CFLAGS) -c -o src/tls/cockpit_tls-main.obj `if test -f 'src/tls/main.c'; then $(CYGPATH_W) 'src/tls/main.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/main.c'; fi`
+
 src/ws/cockpit_ws-main.o: src/ws/main.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(cockpit_ws_CFLAGS) $(CFLAGS) -MT src/ws/cockpit_ws-main.o -MD -MP -MF src/ws/$(DEPDIR)/cockpit_ws-main.Tpo -c -o src/ws/cockpit_ws-main.o `test -f 'src/ws/main.c' || echo '$(srcdir)/'`src/ws/main.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/cockpit_ws-main.Tpo src/ws/$(DEPDIR)/cockpit_ws-main.Po
@@ -7024,6 +7264,118 @@ src/common/test_template-test-template.obj: src/common/test-template.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-template.c' object='src/common/test_template-test-template.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_template_CFLAGS) $(CFLAGS) -c -o src/common/test_template-test-template.obj `if test -f 'src/common/test-template.c'; then $(CYGPATH_W) 'src/common/test-template.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-template.c'; fi`
+
+src/tls/test_tls_connection-connection.o: src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_connection-connection.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_connection-connection.Tpo -c -o src/tls/test_tls_connection-connection.o `test -f 'src/tls/connection.c' || echo '$(srcdir)/'`src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_connection-connection.Tpo src/tls/$(DEPDIR)/test_tls_connection-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/connection.c' object='src/tls/test_tls_connection-connection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_connection-connection.o `test -f 'src/tls/connection.c' || echo '$(srcdir)/'`src/tls/connection.c
+
+src/tls/test_tls_connection-connection.obj: src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_connection-connection.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_connection-connection.Tpo -c -o src/tls/test_tls_connection-connection.obj `if test -f 'src/tls/connection.c'; then $(CYGPATH_W) 'src/tls/connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/connection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_connection-connection.Tpo src/tls/$(DEPDIR)/test_tls_connection-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/connection.c' object='src/tls/test_tls_connection-connection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_connection-connection.obj `if test -f 'src/tls/connection.c'; then $(CYGPATH_W) 'src/tls/connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/connection.c'; fi`
+
+src/tls/test_tls_connection-test-connection.o: src/tls/test-connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_connection-test-connection.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_connection-test-connection.Tpo -c -o src/tls/test_tls_connection-test-connection.o `test -f 'src/tls/test-connection.c' || echo '$(srcdir)/'`src/tls/test-connection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_connection-test-connection.Tpo src/tls/$(DEPDIR)/test_tls_connection-test-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/test-connection.c' object='src/tls/test_tls_connection-test-connection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_connection-test-connection.o `test -f 'src/tls/test-connection.c' || echo '$(srcdir)/'`src/tls/test-connection.c
+
+src/tls/test_tls_connection-test-connection.obj: src/tls/test-connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_connection-test-connection.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_connection-test-connection.Tpo -c -o src/tls/test_tls_connection-test-connection.obj `if test -f 'src/tls/test-connection.c'; then $(CYGPATH_W) 'src/tls/test-connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/test-connection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_connection-test-connection.Tpo src/tls/$(DEPDIR)/test_tls_connection-test-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/test-connection.c' object='src/tls/test_tls_connection-test-connection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_connection_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_connection-test-connection.obj `if test -f 'src/tls/test-connection.c'; then $(CYGPATH_W) 'src/tls/test-connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/test-connection.c'; fi`
+
+src/tls/test_tls_server-wsinstance.o: src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-wsinstance.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-wsinstance.Tpo -c -o src/tls/test_tls_server-wsinstance.o `test -f 'src/tls/wsinstance.c' || echo '$(srcdir)/'`src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-wsinstance.Tpo src/tls/$(DEPDIR)/test_tls_server-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/wsinstance.c' object='src/tls/test_tls_server-wsinstance.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-wsinstance.o `test -f 'src/tls/wsinstance.c' || echo '$(srcdir)/'`src/tls/wsinstance.c
+
+src/tls/test_tls_server-wsinstance.obj: src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-wsinstance.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-wsinstance.Tpo -c -o src/tls/test_tls_server-wsinstance.obj `if test -f 'src/tls/wsinstance.c'; then $(CYGPATH_W) 'src/tls/wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/wsinstance.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-wsinstance.Tpo src/tls/$(DEPDIR)/test_tls_server-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/wsinstance.c' object='src/tls/test_tls_server-wsinstance.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-wsinstance.obj `if test -f 'src/tls/wsinstance.c'; then $(CYGPATH_W) 'src/tls/wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/wsinstance.c'; fi`
+
+src/tls/test_tls_server-connection.o: src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-connection.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-connection.Tpo -c -o src/tls/test_tls_server-connection.o `test -f 'src/tls/connection.c' || echo '$(srcdir)/'`src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-connection.Tpo src/tls/$(DEPDIR)/test_tls_server-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/connection.c' object='src/tls/test_tls_server-connection.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-connection.o `test -f 'src/tls/connection.c' || echo '$(srcdir)/'`src/tls/connection.c
+
+src/tls/test_tls_server-connection.obj: src/tls/connection.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-connection.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-connection.Tpo -c -o src/tls/test_tls_server-connection.obj `if test -f 'src/tls/connection.c'; then $(CYGPATH_W) 'src/tls/connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/connection.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-connection.Tpo src/tls/$(DEPDIR)/test_tls_server-connection.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/connection.c' object='src/tls/test_tls_server-connection.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-connection.obj `if test -f 'src/tls/connection.c'; then $(CYGPATH_W) 'src/tls/connection.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/connection.c'; fi`
+
+src/tls/test_tls_server-server.o: src/tls/server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-server.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-server.Tpo -c -o src/tls/test_tls_server-server.o `test -f 'src/tls/server.c' || echo '$(srcdir)/'`src/tls/server.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-server.Tpo src/tls/$(DEPDIR)/test_tls_server-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/server.c' object='src/tls/test_tls_server-server.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-server.o `test -f 'src/tls/server.c' || echo '$(srcdir)/'`src/tls/server.c
+
+src/tls/test_tls_server-server.obj: src/tls/server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-server.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-server.Tpo -c -o src/tls/test_tls_server-server.obj `if test -f 'src/tls/server.c'; then $(CYGPATH_W) 'src/tls/server.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/server.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-server.Tpo src/tls/$(DEPDIR)/test_tls_server-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/server.c' object='src/tls/test_tls_server-server.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-server.obj `if test -f 'src/tls/server.c'; then $(CYGPATH_W) 'src/tls/server.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/server.c'; fi`
+
+src/tls/test_tls_server-test-server.o: src/tls/test-server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-test-server.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-test-server.Tpo -c -o src/tls/test_tls_server-test-server.o `test -f 'src/tls/test-server.c' || echo '$(srcdir)/'`src/tls/test-server.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-test-server.Tpo src/tls/$(DEPDIR)/test_tls_server-test-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/test-server.c' object='src/tls/test_tls_server-test-server.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-test-server.o `test -f 'src/tls/test-server.c' || echo '$(srcdir)/'`src/tls/test-server.c
+
+src/tls/test_tls_server-test-server.obj: src/tls/test-server.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_server-test-server.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_server-test-server.Tpo -c -o src/tls/test_tls_server-test-server.obj `if test -f 'src/tls/test-server.c'; then $(CYGPATH_W) 'src/tls/test-server.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/test-server.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_server-test-server.Tpo src/tls/$(DEPDIR)/test_tls_server-test-server.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/test-server.c' object='src/tls/test_tls_server-test-server.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_server_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_server-test-server.obj `if test -f 'src/tls/test-server.c'; then $(CYGPATH_W) 'src/tls/test-server.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/test-server.c'; fi`
+
+src/tls/test_tls_wsinstance-wsinstance.o: src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_wsinstance-wsinstance.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Tpo -c -o src/tls/test_tls_wsinstance-wsinstance.o `test -f 'src/tls/wsinstance.c' || echo '$(srcdir)/'`src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Tpo src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/wsinstance.c' object='src/tls/test_tls_wsinstance-wsinstance.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_wsinstance-wsinstance.o `test -f 'src/tls/wsinstance.c' || echo '$(srcdir)/'`src/tls/wsinstance.c
+
+src/tls/test_tls_wsinstance-wsinstance.obj: src/tls/wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_wsinstance-wsinstance.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Tpo -c -o src/tls/test_tls_wsinstance-wsinstance.obj `if test -f 'src/tls/wsinstance.c'; then $(CYGPATH_W) 'src/tls/wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/wsinstance.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Tpo src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/wsinstance.c' object='src/tls/test_tls_wsinstance-wsinstance.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_wsinstance-wsinstance.obj `if test -f 'src/tls/wsinstance.c'; then $(CYGPATH_W) 'src/tls/wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/wsinstance.c'; fi`
+
+src/tls/test_tls_wsinstance-test-wsinstance.o: src/tls/test-wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_wsinstance-test-wsinstance.o -MD -MP -MF src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Tpo -c -o src/tls/test_tls_wsinstance-test-wsinstance.o `test -f 'src/tls/test-wsinstance.c' || echo '$(srcdir)/'`src/tls/test-wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Tpo src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/test-wsinstance.c' object='src/tls/test_tls_wsinstance-test-wsinstance.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_wsinstance-test-wsinstance.o `test -f 'src/tls/test-wsinstance.c' || echo '$(srcdir)/'`src/tls/test-wsinstance.c
+
+src/tls/test_tls_wsinstance-test-wsinstance.obj: src/tls/test-wsinstance.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -MT src/tls/test_tls_wsinstance-test-wsinstance.obj -MD -MP -MF src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Tpo -c -o src/tls/test_tls_wsinstance-test-wsinstance.obj `if test -f 'src/tls/test-wsinstance.c'; then $(CYGPATH_W) 'src/tls/test-wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/test-wsinstance.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Tpo src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/tls/test-wsinstance.c' object='src/tls/test_tls_wsinstance-test-wsinstance.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_tls_wsinstance_CFLAGS) $(CFLAGS) -c -o src/tls/test_tls_wsinstance-test-wsinstance.obj `if test -f 'src/tls/test-wsinstance.c'; then $(CYGPATH_W) 'src/tls/test-wsinstance.c'; else $(CYGPATH_W) '$(srcdir)/src/tls/test-wsinstance.c'; fi`
 
 src/common/test_transport-test-transport.o: src/common/test-transport.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_transport_CFLAGS) $(CFLAGS) -MT src/common/test_transport-test-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_transport-test-transport.Tpo -c -o src/common/test_transport-test-transport.o `test -f 'src/common/test-transport.c' || echo '$(srcdir)/'`src/common/test-transport.c
@@ -8495,6 +8847,27 @@ test-authssh.log: test-authssh$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-tls-connection.log: test-tls-connection$(EXEEXT)
+	@p='test-tls-connection$(EXEEXT)'; \
+	b='test-tls-connection'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-tls-wsinstance.log: test-tls-wsinstance$(EXEEXT)
+	@p='test-tls-wsinstance$(EXEEXT)'; \
+	b='test-tls-wsinstance'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-tls-server.log: test-tls-server$(EXEEXT)
+	@p='test-tls-server$(EXEEXT)'; \
+	b='test-tls-server'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-ssh-add.log: test-ssh-add$(EXEEXT)
 	@p='test-ssh-add$(EXEEXT)'; \
 	b='test-ssh-add'; \
@@ -8747,6 +9120,8 @@ distclean-generic:
 	-rm -f src/retest/$(am__dirstamp)
 	-rm -f src/ssh/$(DEPDIR)/$(am__dirstamp)
 	-rm -f src/ssh/$(am__dirstamp)
+	-rm -f src/tls/$(DEPDIR)/$(am__dirstamp)
+	-rm -f src/tls/$(am__dirstamp)
 	-rm -f src/websocket/$(DEPDIR)/$(am__dirstamp)
 	-rm -f src/websocket/$(am__dirstamp)
 	-rm -f src/ws/$(DEPDIR)/$(am__dirstamp)
@@ -8924,6 +9299,18 @@ distclean: distclean-am
 	-rm -f src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po
 	-rm -f src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po
 	-rm -f src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-connection.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-main.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-server.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_connection-connection.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_connection-test-connection.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-connection.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-server.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-test-server.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-wsinstance.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Po
 	-rm -f src/websocket/$(DEPDIR)/frob_websocket-frob-websocket.Po
 	-rm -f src/websocket/$(DEPDIR)/libwebsocket_a-websocket.Po
 	-rm -f src/websocket/$(DEPDIR)/libwebsocket_a-websocketclient.Po
@@ -9190,6 +9577,18 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po
 	-rm -f src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po
 	-rm -f src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-connection.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-main.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-server.Po
+	-rm -f src/tls/$(DEPDIR)/cockpit_tls-wsinstance.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_connection-connection.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_connection-test-connection.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-connection.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-server.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-test-server.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_server-wsinstance.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_wsinstance-test-wsinstance.Po
+	-rm -f src/tls/$(DEPDIR)/test_tls_wsinstance-wsinstance.Po
 	-rm -f src/websocket/$(DEPDIR)/frob_websocket-frob-websocket.Po
 	-rm -f src/websocket/$(DEPDIR)/libwebsocket_a-websocket.Po
 	-rm -f src/websocket/$(DEPDIR)/libwebsocket_a-websocketclient.Po

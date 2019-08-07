@@ -786,7 +786,7 @@ input[type=number] {
 }
 .plot-unit {
     display:      inline-block;
-    min-width:    1.5rem;
+    min-width:    2rem;
     font-size:    var(--pf-global--FontSize--xs);
     text-align:   right;
     color:        var(--color-gray-9);
@@ -798,7 +798,7 @@ input[type=number] {
 }
 
 .flot-y-axis .flot-tick-label {
-    width: 1.5rem;
+    width: 2rem;
     margin-right: 0.5rem;
 }
 
@@ -1287,6 +1287,18 @@ h1 .onoff-ct {
 #zones-listing,
 #services-listing {
     margin: 2rem 0;
+}
+
+#services-listing .listing-ct-body h5 {
+    margin: 1.5rem 0 1rem;
+}
+
+#services-listing .listing-ct-body ul {
+    padding-left: 1rem;
+}
+
+#services-listing .listing-ct-body li + li {
+    margin-top: 1rem;
 }
 
 #add-zone-dialog .add-zone-zones legend {

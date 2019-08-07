@@ -506,6 +506,10 @@ return plural;
   null,
   "网络引导 (PXE)"
  ],
+ "Network Boot is available only when using System connection": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "网络文件系统"
@@ -921,6 +925,14 @@ return plural;
  "The pool is empty": [
   null,
   "池为空"
+ ],
+ "The selected Operating System has minimum memory requirement of $0 $1": [
+  null,
+  "所选操作系统的最小内存要求是 $0 $1"
+ ],
+ "This pool type does not support Storage Volume creation": [
+  null,
+  "这个池类型不支持创建存储卷"
  ],
  "This volume is already used by another VM.": [
   null,

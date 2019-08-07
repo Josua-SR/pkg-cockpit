@@ -50,6 +50,10 @@ return plural;
   null,
   "Une version compatible de Cockpit n’’est pas installée sur {{#strong}}{{host}}{{/strong}}."
  ],
+ "Absent": [
+  null,
+  "Absent"
+ ],
  "Add": [
   null,
   "Ajouter"
@@ -193,6 +197,10 @@ return plural;
  "Docking Station": [
   null,
   "Station d’accueil"
+ ],
+ "Dual Rank": [
+  null,
+  "Double rang"
  ],
  "Edit Server": [
   null,
@@ -382,6 +390,10 @@ return plural;
   null,
   "Portable"
  ],
+ "Present": [
+  null,
+  "Présent"
+ ],
  "Prompting via ssh-add timed out": [
   null,
   "L’invite via ssh-add a expiré"
@@ -417,6 +429,10 @@ return plural;
  "Set": [
   null,
   "Ensemble"
+ ],
+ "Single Rank": [
+  null,
+  "Rang unique"
  ],
  "Space-saving Computer": [
   null,

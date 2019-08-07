@@ -38,6 +38,10 @@ return plural;
   null,
   "${hip}:${hport} -> $cport"
  ],
+ "Absent": [
+  null,
+  "缺席"
+ ],
  "Add Additional Storage": [
   null,
   "添加额外的存储"
@@ -241,6 +245,10 @@ return plural;
  "Drive": [
   null,
   "驱动"
+ ],
+ "Dual Rank": [
+  null,
+  "Dual Rank"
  ],
  "Duplicate alias": [
   null,
@@ -550,6 +558,10 @@ return plural;
   null,
   "端口："
  ],
+ "Present": [
+  null,
+  "当前"
+ ],
  "Problems": [
   null,
   "问题"
@@ -637,6 +649,10 @@ return plural;
  "Show all images": [
   null,
   "显示所有镜像"
+ ],
+ "Single Rank": [
+  null,
+  "Single Rank"
  ],
  "Size": [
   null,

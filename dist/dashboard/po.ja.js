@@ -52,7 +52,7 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "不在"
  ],
  "Add": [
   null,
@@ -200,7 +200,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "デュアルランク"
  ],
  "Edit Server": [
   null,
@@ -392,7 +392,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "存在"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -432,7 +432,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "シングルランク"
  ],
  "Space-saving Computer": [
   null,

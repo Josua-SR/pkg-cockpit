@@ -230,7 +230,7 @@ done
 for lib in systemd tmpfiles.d firewalld; do
     rm -r %{buildroot}/%{_prefix}/%{__lib}/$lib
 done
-for libexec in cockpit-askpass cockpit-session cockpit-ws cockpit-desktop; do
+for libexec in cockpit-askpass cockpit-session cockpit-ws cockpit-tls cockpit-desktop; do
     rm %{buildroot}/%{_libexecdir}/$libexec
 done
 rm -r %{buildroot}/%{_libdir}/security %{buildroot}/%{_sysconfdir}/pam.d %{buildroot}/%{_sysconfdir}/motd.d %{buildroot}/%{_sysconfdir}/issue.d
@@ -399,6 +399,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %doc %{_mandir}/man1/cockpit-desktop.1.gz
 %doc %{_mandir}/man5/cockpit.conf.5.gz
 %doc %{_mandir}/man8/cockpit-ws.8.gz
+%doc %{_mandir}/man8/cockpit-tls.8.gz
 %doc %{_mandir}/man8/remotectl.8.gz
 %doc %{_mandir}/man8/pam_ssh_add.8.gz
 %config(noreplace) %{_sysconfdir}/cockpit/ws-certs.d
@@ -414,6 +415,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %{_sbindir}/remotectl
 %{_libdir}/security/pam_ssh_add.so
 %{_libexecdir}/cockpit-ws
+%{_libexecdir}/cockpit-tls
 %{_libexecdir}/cockpit-desktop
 %attr(4750, root, cockpit-ws) %{_libexecdir}/cockpit-session
 %attr(775, -, wheel) %{_localstatedir}/lib/cockpit
@@ -428,6 +430,33 @@ getent passwd cockpit-ws >/dev/null || useradd -r -g cockpit-ws -d /nonexisting 
 %systemd_post cockpit.socket
 # firewalld only partially picks up changes to its services files without this
 test -f %{_bindir}/firewall-cmd && firewall-cmd --reload --quiet || true
+
+%if 0%{?rhel} || 0%{?fedora} == 29
+# HACK: SELinux policy adjustment for cockpit-tls; see https://github.com/fedora-selinux/selinux-policy-contrib/pull/114
+if type semanage >/dev/null 2>&1; then
+    set -ex
+    echo "Applying SELinux policy change for cockpit-tls.."
+    semanage fcontext -a /usr/libexec/cockpit-tls -t cockpit_ws_exec_t
+    restorecon /usr/libexec/cockpit-tls
+    tmp=$(mktemp -d)
+    cat <<EOF > $tmp/local.te
+module local 1.0;
+require {
+    type cockpit_ws_t;
+    type cockpit_ws_exec_t;
+    class unix_stream_socket { create_stream_socket_perms connectto };
+    class file { execute_no_trans};
+}
+
+allow cockpit_ws_t cockpit_ws_t:unix_stream_socket { create_stream_socket_perms connectto };
+allow cockpit_ws_t cockpit_ws_exec_t:file { execute_no_trans };
+EOF
+    checkmodule -M -m -o $tmp/local.mod $tmp/local.te
+    semodule_package -o $tmp/local.pp -m $tmp/local.mod
+    semodule -i $tmp/local.pp
+    rm -rf "$tmp"
+fi
+%endif
 
 %preun ws
 %systemd_preun cockpit.socket
@@ -609,7 +638,7 @@ bastion hosts, and a basic dashboard.
 Summary: Cockpit user interface for Docker containers
 Requires: cockpit-bridge >= 122
 Requires: cockpit-shell >= 122
-Requires: (docker or moby-engine)
+Requires: (docker or moby-engine or docker-ce)
 Requires: %{__python3}
 
 %description -n cockpit-docker

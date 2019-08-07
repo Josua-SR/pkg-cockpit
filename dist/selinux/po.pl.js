@@ -64,13 +64,13 @@ return plural;
   null,
   "Skopiuj do schowka"
  ],
- "Enforce policy:": [
+ "Enforcing": [
   null,
-  "Wymuszanie polityki:"
+  "Wymuszanie"
  ],
  "Error running semanage to discover system modifications": [
   null,
-  ""
+  "Błąd podczas wykonywania polecenia semanage, aby wykryć modyfikacje systemu"
  ],
  "Error while deleting alert: $0": [
   null,
@@ -111,6 +111,10 @@ return plural;
  "Occurred between $0 and $1": [
   null,
   "Wystąpiło między $0 a $1"
+ ],
+ "Permissive": [
+  null,
+  "Zezwalanie"
  ],
  "SELinux Access Control Errors": [
   null,

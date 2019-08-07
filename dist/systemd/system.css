@@ -1145,7 +1145,7 @@ h1 label.onoff-ct {
 }
 .plot-unit {
     display:      inline-block;
-    min-width:    1.5rem;
+    min-width:    2rem;
     font-size:    var(--pf-global--FontSize--xs);
     text-align:   right;
     color:        var(--color-gray-9);
@@ -1157,7 +1157,7 @@ h1 label.onoff-ct {
 }
 
 .flot-y-axis .flot-tick-label {
-    width: 1.5rem;
+    width: 2rem;
     margin-right: 0.5rem;
 }
 

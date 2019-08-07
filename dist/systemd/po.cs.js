@@ -26,10 +26,6 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
- " template.": [
-  null,
-  ""
- ],
  "$0 Template": [
   null,
   "$0 Šablona"
@@ -228,15 +224,15 @@ return plural;
  ],
  "Absent": [
   null,
-  ""
+  "Chybí"
  ],
  "Active since ": [
   null,
-  ""
+  "Aktivní od"
  ],
  "Additional actions": [
   null,
-  ""
+  "Další akce"
  ],
  "Additional packages:": [
   null,
@@ -268,7 +264,7 @@ return plural;
  ],
  "Allow running (unmask)": [
   null,
-  ""
+  "Umožnit spouštění (odmaskovat)"
  ],
  "Appearance:": [
   null,
@@ -288,7 +284,7 @@ return plural;
  ],
  "Automatically starts": [
   null,
-  ""
+  "Spouští se automaticky"
  ],
  "Automatically using NTP": [
   null,
@@ -496,7 +492,7 @@ return plural;
  ],
  "Disallow running (mask)": [
   null,
-  ""
+  "Nepovolit spuštění (maskovat)"
  ],
  "Disk I/O": [
   null,
@@ -520,7 +516,7 @@ return plural;
  ],
  "Dual Rank": [
   null,
-  ""
+  "Dual Rank"
  ],
  "Embedded PC": [
   null,
@@ -560,7 +556,7 @@ return plural;
  ],
  "Failed to start": [
   null,
-  ""
+  "Nepodařilo se spustit"
  ],
  "Filter by name or description...": [
   null,
@@ -568,7 +564,7 @@ return plural;
  ],
  "Forbidden from running": [
   null,
-  ""
+  "Spuštění zakázáno"
  ],
  "Friday": [
   null,
@@ -620,7 +616,7 @@ return plural;
  ],
  "ID": [
   null,
-  ""
+  "Identif."
  ],
  "Info and above": [
   null,
@@ -637,6 +633,10 @@ return plural;
  "Installing $0": [
   null,
   "Instaluje se $0"
+ ],
+ "Instance of template: ": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -752,15 +752,15 @@ return plural;
  ],
  "Mask Service": [
   null,
-  ""
+  "Maskovat službu"
  ],
  "Masked": [
   null,
-  ""
+  "Maskováno"
  ],
  "Masking service prevents all dependant units from running. This can have bigger impact than anticipated. Please confirm that you want to mask this unit.": [
   null,
-  ""
+  "Maskování služby zabrání všem závislým jednotkám ve spouštění. To může mít větší dopad, než zamýšleno. Potvrďte, že chcete tuto jednotku maskovat."
  ],
  "Memory": [
   null,
@@ -772,7 +772,7 @@ return plural;
  ],
  "Memory Technology": [
   null,
-  ""
+  "Technologie paměti"
  ],
  "Message to logged in users": [
   null,
@@ -940,7 +940,7 @@ return plural;
  ],
  "Present": [
   null,
-  ""
+  "Přítomno"
  ],
  "Pretty Host Name": [
   null,
@@ -972,7 +972,7 @@ return plural;
  ],
  "Rank": [
   null,
-  ""
+  "Rank"
  ],
  "Read more...": [
   null,
@@ -980,7 +980,7 @@ return plural;
  ],
  "Read-only": [
   null,
-  ""
+  "Pouze pro čtení"
  ],
  "Real Host Name": [
   null,
@@ -1060,7 +1060,7 @@ return plural;
  ],
  "Required by ": [
   null,
-  ""
+  "Vyžadováno"
  ],
  "Requires": [
   null,
@@ -1068,7 +1068,7 @@ return plural;
  ],
  "Requires administration access to edit": [
   null,
-  ""
+  "Pro úpravu jsou vyžadována oprávnění správce systému"
  ],
  "Requisite": [
   null,
@@ -1164,7 +1164,7 @@ return plural;
  ],
  "Single Rank": [
   null,
-  ""
+  "Single Rank"
  ],
  "Size": [
   null,
@@ -1192,7 +1192,7 @@ return plural;
  ],
  "Speed": [
   null,
-  ""
+  "Rychlost"
  ],
  "Start": [
   null,
@@ -1204,7 +1204,7 @@ return plural;
  ],
  "Start and Enable": [
   null,
-  ""
+  "Spustit a zapnout"
  ],
  "State": [
   null,
@@ -1228,7 +1228,7 @@ return plural;
  ],
  "Stop and Disable": [
   null,
-  ""
+  "Zastavit a vypnout"
  ],
  "Store Metrics": [
   null,
@@ -1322,10 +1322,6 @@ return plural;
   null,
   "Tuto kolonku je třeba vyplnit."
  ],
- "This unit is an instanced from ": [
-  null,
-  ""
- ],
  "This unit is not designed to be enabled explicitly.": [
   null,
   "Tato jednotka není navržena k tomu, aby byla výslovně zapnuta."
@@ -1380,7 +1376,7 @@ return plural;
  ],
  "Updating status...": [
   null,
-  ""
+  "Aktualizace stavu…"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
