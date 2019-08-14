@@ -1,3 +1,9 @@
+cockpit (200-1sr1) unstable; urgency=medium
+
+  * add openvpn, wifi and modem support
+
+ -- Josua Mayer <josua@solid-run.com>  Wed, 14 Aug 2019 08:17:31 +0000
+
 cockpit (200-1) unstable; urgency=medium
 
   * New upstream release:

@@ -18,6 +18,7 @@ endif
 	dh $@
 
 override_dh_auto_configure:
+	find . -type f -exec touch -r configure.ac {} \;
 	dh_auto_configure -- \
 		--with-networkmanager-needs-root=yes \
 		--with-cockpit-user=cockpit-ws \

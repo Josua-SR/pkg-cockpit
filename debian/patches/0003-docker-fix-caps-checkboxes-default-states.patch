@@ -1,0 +1,33 @@
+From a916ed91d52318f2a77a617ec1b6f4efa3d80c02 Mon Sep 17 00:00:00 2001
+From: Artur Raglis <artur.raglis@3mdeb.com>
+Date: Wed, 12 Jun 2019 15:19:46 +0200
+Subject: [PATCH 3/4] docker: fix caps checkboxes default states
+
+---
+ pkg/docker/run.js | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/pkg/docker/run.js b/pkg/docker/run.js
+index 82c5adc7b..a7692bb2d 100644
+--- a/pkg/docker/run.js
++++ b/pkg/docker/run.js
+@@ -250,9 +250,16 @@ $(function() {
+ 
+         /* uncheck add-all-capabilities button by default */
+         $('#add-all-capabilities').prop('checked', false);
++        $('#add-all-capabilities').prop('disabled', false);
+ 
+         /* uncheck drop-all-capabilities button by default */
+         $('#drop-all-capabilities').prop('checked', false);
++        $('#drop-all-capabilities').prop('disabled', false);
++
++        /* uncheck claim-capabilities button by default */
++        $('#claim-capabilities').prop('checked', false);
++        $('#claim-capabilities').prop('disabled', false);
++        $('#select-claimed-capabilities').hide();
+ 
+         /* delete any old capabilities claiming entries */
+         var capabilities_claiming = $('#select-claimed-capabilities');
+-- 
+2.20.1
+
